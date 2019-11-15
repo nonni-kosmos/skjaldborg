@@ -9,7 +9,7 @@ import {Container} from "./Styled"
 const <%= h.capitalize(title) %> = () => {
     return (
         <Container>
-            title
+           <%= title %>
         </Container>
     )
 }
