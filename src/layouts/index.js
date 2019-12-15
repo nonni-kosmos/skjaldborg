@@ -1,9 +1,10 @@
 import React from "react"
 import { Container } from "./Styled"
 import { connect } from "react-redux"
-import { setDevice } from "../../state/action"
+import { setDevice } from "../state/action"
+import { GlobalStyle } from "../components/GlobalStyle"
 
-class Wrap extends React.Component {
+class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.callBack = this.callBack.bind(this)
@@ -20,7 +21,12 @@ class Wrap extends React.Component {
     dispatch(setDevice(window.innerWidth))
   }
   render() {
-    return <Container>{this.props.device}</Container>
+    return (
+      <Container>
+        <GlobalStyle></GlobalStyle>
+        {this.props.children}
+      </Container>
+    )
   }
 }
 
@@ -28,4 +34,4 @@ const mapStateToProps = state => ({
   device: state.reducer.device,
 })
 
-export default connect(mapStateToProps)(Wrap)
+export default connect(mapStateToProps)(Layout)

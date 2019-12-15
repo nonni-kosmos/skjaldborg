@@ -17,13 +17,21 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `verkefni`,
-        path: `${__dirname}/static/content/verkefni`,
+        path: `${__dirname}/static/verkefni`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: ["gatsby-remark-relative-images", "gatsby-remark-images"],
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-styled-components`,

@@ -8,8 +8,9 @@ public_folder: "assets"
 collections:
   - name: "verkefni"
     label: "Verkefni"
-    folder: "static/content/verkefni"
+    folder: "static/verkefni"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Lýsing", name: "lysing", widget: "" }
+      - { label: "Lýsing", name: "lysing", widget: "text" }
+      - { label: "Forsíðu mynd", name: "forsidu-mynd", widget: "image" }
