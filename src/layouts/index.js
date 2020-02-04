@@ -1,37 +1,28 @@
-import React from "react"
-import { Container } from "./Styled"
-import { connect } from "react-redux"
-import { setDevice } from "../state/action"
-import { GlobalStyle } from "../components/GlobalStyle"
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { SET_DEVICE } from "../state/action"
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.callBack = this.callBack.bind(this)
+/** components */
+import { GlobalStyle } from "../components/GlobalStyle"
+import { PageContainer } from "./Styled"
+
+const Layout = ({ children }) => {
+  const dispatch = useDispatch()
+  const callBack = () => {
+    dispatch({ type: SET_DEVICE, width: window.innerWidth })
   }
-  componentDidMount() {
-    this.callBack()
-    window.addEventListener("resize", this.callBack)
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.callBack)
-  }
-  callBack() {
-    const { dispatch } = this.props
-    dispatch(setDevice(window.innerWidth))
-  }
-  render() {
-    return (
-      <Container>
-        <GlobalStyle></GlobalStyle>
-        {this.props.children}
-      </Container>
-    )
-  }
+  useEffect(() => {
+    window.addEventListener("resize", callBack)
+    return () => {
+      window.removeEventListener("resize", callBack)
+    }
+  }, [])
+  return (
+    <>
+      <GlobalStyle></GlobalStyle>
+      <PageContainer>{children}</PageContainer>
+    </>
+  )
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(Layout)
+export default Layout
