@@ -1,3 +1,7 @@
+// components
+import Movies from "../components/Movies"
+
+// tech
 import React from "react"
 
-export default () => <div>Hello world!</div>
+export default () => <Movies></Movies>

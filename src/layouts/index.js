@@ -8,15 +8,16 @@ import { PageContainer } from "./Styled"
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch()
-  const callBack = () => {
-    dispatch({ type: SET_DEVICE, width: window.innerWidth })
-  }
+
   useEffect(() => {
+    const callBack = () => {
+      dispatch({ type: SET_DEVICE, width: window.innerWidth })
+    }
     window.addEventListener("resize", callBack)
     return () => {
       window.removeEventListener("resize", callBack)
     }
-  }, [])
+  }, [dispatch])
   return (
     <>
       <GlobalStyle></GlobalStyle>
