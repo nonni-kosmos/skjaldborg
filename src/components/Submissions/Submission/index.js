@@ -7,7 +7,7 @@ import React from "react"
 import { convert } from "../../../methods"
 
 const Submission = ({ movie }) => {
-  console.log(movie.frontmatter.createdAt.seconds)
+  console.log(movie.frontmatter)
   return (
     <Container>
       {" "}
@@ -16,7 +16,7 @@ const Submission = ({ movie }) => {
         dangerouslySetInnerHTML={{ __html: movie.frontmatter.markdown }}
       ></div>
       <SubmissionDetails>
-        <Applicant id={movie.frontmatter.applicantID}></Applicant>
+        <Applicant id={movie.frontmatter.applicantId}></Applicant>
         <p>At {convert(movie.frontmatter.createdAt.seconds)}</p>
       </SubmissionDetails>
     </Container>

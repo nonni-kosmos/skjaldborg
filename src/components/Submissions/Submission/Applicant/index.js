@@ -3,6 +3,7 @@ import { useGetSingleDoc } from "../../../../hooks/useGetSingleDoc"
 
 const Applicant = ({ id }) => {
   const [fullname, setFullname] = useState(null)
+  console.log("sending in this applicant ID: " + id)
   const applicant = useGetSingleDoc("applicants", id)
   useEffect(() => {
     if (applicant.doc) {

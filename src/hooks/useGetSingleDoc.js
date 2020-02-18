@@ -7,6 +7,7 @@ export const useGetSingleDoc = (colName, docId) => {
   const [error, setError] = useState(null)
   const [doc, setDoc] = useState(null)
 
+  console.log(docId)
   useEffect(() => {
     const lazyApp = import("firebase/app")
     const lazyDB = import("firebase/firestore")
