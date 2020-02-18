@@ -1,7 +1,6 @@
 // components
-import Movies from "../components/Movies"
 
 // tech
 import React from "react"
 
-export default () => <Movies></Movies>
+export default () => <h1>Frontpage yahoo!</h1>

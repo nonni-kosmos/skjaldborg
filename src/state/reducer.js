@@ -4,7 +4,7 @@ const initialState = {
   device: undefined,
 }
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_DEVICE:
       let device
@@ -22,3 +22,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default reducer

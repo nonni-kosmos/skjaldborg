@@ -1,35 +1,41 @@
 import { useEffect, useState } from "react"
+import "firebase/firestore"
 import { getFirebase } from "../service/firebase"
-import firebase from "firebase/app"
 
-// gets collection by it's name
-const useFirestoreCollection = colName => {
-  const { firestore } = getFirebase(firebase)
-
+export const useGetCollectionData = colName => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [docs, setDocs] = useState([])
 
   useEffect(() => {
-    const unsubscribe = firestore()
-      .collection(colName)
-      .onSnapshot(
-        querySnapshop => {
+    const lazyApp = import("firebase/app")
+    const lazyDB = import("firebase/firestore")
+
+    Promise.all([lazyApp, lazyDB]).then(([firebase]) => {
+      const db = getFirebase(firebase).firestore()
+      let items = []
+
+      const unsubscribe = db
+        .collection(colName)
+        .get()
+        .then(querySnapshot => {
           setIsLoading(false)
-          setDocs(
-            querySnapshop.docs.map(doc => ({
-              _id: doc.id,
-              ...doc.data(),
-            }))
+          querySnapshot.forEach(
+            doc => {
+              items.push({
+                id: doc.id,
+                frontmatter: doc.data(),
+              })
+            },
+            err => {
+              setError(err)
+            }
           )
-        },
-        err => {
-          setError(err)
-        }
-      )
-    return () => unsubscribe()
+          setDocs(items)
+          return () => unsubscribe()
+        })
+    })
   }, [colName])
+
   return [docs, isLoading, error]
 }
-
-export default useFirestoreCollection

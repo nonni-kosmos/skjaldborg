@@ -1,17 +1,29 @@
 import "firebase/auth"
 import "firebase/firestore"
-import { config } from "./config"
 
-let firebaseInstance
+const config = {
+  apiKey: "AIzaSyCabQ7UMR7KkoLK8prihjDkTC6eXyx7NKE",
+  authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.GATSBY_FIREBASE_DATABASE_URL,
+  projectId: "skjaldborg-9c060",
+  storageBucket: process.env.GATSBY_FIREBASE_STORAGE_BUCKET,
+}
+
+let firebaseCache
+
+export const getUiConfig = firebase => ({
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+})
+
 export const getFirebase = firebase => {
-  if (firebaseInstance) {
-    return firebaseInstance
+  if (firebaseCache) {
+    return firebaseCache
   }
 
   firebase.initializeApp(config)
-  firebaseInstance = firebase
-
-  let auth = firebase.auth()
-  let firestore = firebase.firestore()
-  return { auth, firestore }
+  firebaseCache = firebase
+  return firebase
 }
