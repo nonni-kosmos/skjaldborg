@@ -19,3 +19,12 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage(page)
   }
 }
+
+// env variable fix
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: "empty",
+    },
+  })
+}
