@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react"
 import useAuth from "../../../hooks/useAuth"
 import useGetAuth from "../../../hooks/useGetAuth"
 import { navigate } from "gatsby"
-
-// TESTS!
+import Button from "../../Button"
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -58,7 +57,7 @@ const Login = () => {
             type="password"
           ></input>
         </label>
-        <input type="submit" value="Log in"></input>
+        <Button text={"Log in"} type={"submit"}></Button>
       </form>
     </>
   )

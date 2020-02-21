@@ -4,7 +4,7 @@ import { Container, Image } from "./styled"
 
 const Logo = ({ data: { logo_black } }) => {
   return (
-    <Container>
+    <Container to="/">
       <Image fluid={logo_black.fluid}></Image>
     </Container>
   )

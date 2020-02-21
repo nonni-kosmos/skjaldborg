@@ -1,14 +1,13 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const metadata = {
+  title: `Skjaldborg`,
+  subtitle: `Hátíð íslenskra heimildamynda`,
+  year: 2020,
+  period: `28.-31. maí`,
+  location: `Patreksfjörður`,
+}
 
 module.exports = {
-  siteMetadata: {
-    title: `Skjaldborg`,
-    subtitle: `Hátíð íslenskra heimildamynda`,
-  },
+  siteMetadata: metadata,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

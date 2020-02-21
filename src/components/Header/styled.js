@@ -12,4 +12,18 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   background: ${backgroundColor};
+  position: relative;
+  #header-text-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5rem;
+    box-sizing: border-box;
+  }
+  #user-wrapper {
+    position: absolute;
+    right: 15rem;
+    top: 0;
+    opacity: 0.7;
+  }
 `

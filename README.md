@@ -5,6 +5,7 @@ _to del oo_
   - [x] master account // read,write
   - [ ] minion account // read
   - [x] restrict staff routes
+  - [ ] restrict access to firestore
 - [ ] LOG IN PAGE
   - [ ] create frontend
     - [ ] style
