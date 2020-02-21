@@ -5,9 +5,9 @@ import useAuth from "../hooks/useAuth"
 
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"
-import { PageContainer } from "./Styled"
+import PageContainer from "../components/PageContainer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const dispatch = useDispatch()
 
   // i) platform detection
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle></GlobalStyle>
-      <PageContainer>{children}</PageContainer>
+      <PageContainer pathname={location.pathname}>{children}</PageContainer>
     </>
   )
 }

@@ -5,6 +5,10 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Skjaldborg`,
+    subtitle: `Hátíð íslenskra heimildamynda`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

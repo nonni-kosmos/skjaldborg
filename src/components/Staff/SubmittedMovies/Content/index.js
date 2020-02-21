@@ -16,7 +16,8 @@ const Content = () => {
         <p>Velkomin/n {profile ? profile.email : ""}</p>
         <button onClick={() => auth.signOut()}>Log out</button>
       </Header>
-      <Submissions></Submissions>
+      {/* noRestrict prop only in the backend! */}
+      <Submissions noRestrict></Submissions>
     </>
   )
 }

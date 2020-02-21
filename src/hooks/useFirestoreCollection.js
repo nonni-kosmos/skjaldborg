@@ -37,5 +37,5 @@ export const useGetCollectionData = colName => {
     })
   }, [colName])
 
-  return [docs, isLoading, error]
+  return { docs, isLoading, error }
 }

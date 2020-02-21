@@ -1,6 +1,9 @@
 // components
 
-// tech
 import React from "react"
 
-export default () => <h1>Frontpage yahoo!</h1>
+const index = () => {
+  return <h1>fronter!</h1>
+}
+
+export default index

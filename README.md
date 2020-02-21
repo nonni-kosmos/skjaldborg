@@ -1,3 +1,24 @@
-# My Gatsby Starter template
+_to del oo_
 
-## initial setup inspired by => https://github.com/epilande/gatsby-theme-firebase/blob/master/gatsby-theme-firebase/src/hooks/useAuth.ts
+- [x] SETUP FIRESTORE
+- [ ] SETUP AUTHENTICATION
+  - [x] master account // read,write
+  - [ ] minion account // read
+  - [x] restrict staff routes
+- [ ] LOG IN PAGE
+  - [ ] create frontend
+    - [ ] style
+    - [x] logic
+- [ ] SUBMISSIONS
+  - [ ] create frontend
+    - [ ] style
+    - [ ] logic
+  - [ ] form submits to firestore successfully
+  - [ ] store applicant info on submit
+  - [ ] captcha
+- [x] SETUP THEMES
+  - [x] staff
+  - [x] main
+- [ ] HEADER
+  - [ ] navigation
+  - [ ] styling
