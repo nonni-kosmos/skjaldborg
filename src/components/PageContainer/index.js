@@ -1,5 +1,7 @@
 // components
 import Header from "../Header"
+import Burger from "../Burger"
+import Menu from "../Menu"
 
 // tech
 import React, { useState, useEffect } from "react"
@@ -8,13 +10,12 @@ import theme from "styled-theming"
 
 // Theme configs
 const backgroundColor = theme("mode", {
-  main: "gold",
+  main: "white",
   staff: "white",
 })
 
 const Container = styled.div`
   background: ${backgroundColor};
-  padding: 5rem;
   box-sizing: border-box;
 `
 
@@ -31,6 +32,8 @@ const PageContainer = ({ children, pathname }) => {
   return (
     <ThemeProvider theme={{ mode: theme }}>
       <Header></Header>
+      <Burger></Burger>
+      <Menu></Menu>
       <Container>{children}</Container>
     </ThemeProvider>
   )

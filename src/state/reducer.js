@@ -1,23 +1,26 @@
-import { SET_DEVICE } from "./action"
+import { SET_PLATFORM, TRIGGER_MENU } from "./action"
 
 const initialState = {
-  device: undefined,
+  platform: undefined,
+  menu: `closed`,
 }
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_DEVICE:
-      let device
+    case SET_PLATFORM:
+      let platform
       if (action.width <= 750) {
-        device = `mobile`
+        platform = `mobile`
       }
       if (action.width > 750 && action.width <= 1050) {
-        device = `tablet`
+        platform = `tablet`
       }
       if (action.width > 1050) {
-        device = `browser`
+        platform = `desktop`
       }
-      return { ...state, device: device }
+      return { ...state, platform: platform }
+    case TRIGGER_MENU:
+      return { ...state, menu: action.trigger }
     default:
       return state
   }

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { SET_DEVICE, AUTHENTICATE } from "../state/action"
+import { SET_PLATFORM, AUTHENTICATE } from "../state/action"
 import useAuth from "../hooks/useAuth"
 
 /** components */
@@ -13,7 +13,7 @@ const Layout = ({ children, location }) => {
   // i) platform detection
   useEffect(() => {
     const callBack = () => {
-      dispatch({ type: SET_DEVICE, width: window.innerWidth })
+      dispatch({ type: SET_PLATFORM, width: window.innerWidth })
     }
     window.addEventListener("resize", callBack)
     return () => {

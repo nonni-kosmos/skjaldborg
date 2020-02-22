@@ -2,11 +2,12 @@ import styled from "styled-components"
 import theme from "styled-theming"
 
 const backgroundColor = theme("mode", {
-  main: "green",
+  main: "#F5F5F5",
   staff: "#E5E5E5",
 })
 
 export const Container = styled.div`
+  z-index: 4;
   height: 7.5rem;
   width: 100%;
   top: 0;

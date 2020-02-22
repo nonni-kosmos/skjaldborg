@@ -21,5 +21,12 @@ _to del oo_
   - [x] staff
   - [x] main
 - [ ] HEADER
-  - [ ] navigation
-  - [ ] styling
+  - [x] navigation
+  - [|] styling
+- BURGER / MENU
+  - [x] Burger
+    - [x] style
+    - [x] logic
+  - [ ] Menu
+    - [ ] style
+    - [ ] logic

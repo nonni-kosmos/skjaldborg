@@ -1,0 +1,2 @@
+umsóknaferli:
+	póstlisti, viðvörun

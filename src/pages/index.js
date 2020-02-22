@@ -1,9 +1,8 @@
-// components
-
 import React from "react"
+import Frontpage from "../components/Frontpage"
 
 const index = () => {
-  return <h1>fronter!</h1>
+  return <Frontpage>fronter!</Frontpage>
 }
 
 export default index

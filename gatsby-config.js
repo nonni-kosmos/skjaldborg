@@ -1,9 +1,16 @@
+const pages = [
+  { name: `Heim`, slug: `/` },
+  { name: `Heimildamyndir`, slug: `/heimildamyndir` },
+  { name: `Umsókn`, slug: `/umsokn` },
+  { name: `Hátíðin`, slug: `/hatidin` },
+]
 const metadata = {
   title: `Skjaldborg`,
   subtitle: `Hátíð íslenskra heimildamynda`,
   year: 2020,
   period: `28.-31. maí`,
   location: `Patreksfjörður`,
+  pages: pages,
 }
 
 module.exports = {
@@ -24,7 +31,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1080,
+              maxWidth: 2160,
             },
           },
         ],
