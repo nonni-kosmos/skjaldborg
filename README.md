@@ -27,6 +27,6 @@ _to del oo_
   - [x] Burger
     - [x] style
     - [x] logic
-  - [ ] Menu
-    - [ ] style
-    - [ ] logic
+  - [x] Menu
+    - [x] style
+    - [x] logic

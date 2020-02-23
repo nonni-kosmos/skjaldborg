@@ -17,7 +17,7 @@ export default props => (
         frontpage_image: imageSharp(
           fluid: { originalName: { eq: "frontpage.jpeg" } }
         ) {
-          fluid(quality: 85) {
+          fluid(quality: 100, maxWidth: 2600) {
             ...GatsbyImageSharpFluid
           }
         }

@@ -9,7 +9,7 @@ export const Container = styled.div`
   transition: 0.2s ease-in-out;
   background: #e5e5e5;
   z-index: 5;
-  padding-top: 7.5rem;
+  padding-top: 2rem;
 `
 export const List = styled.div`
   display: flex;
@@ -18,4 +18,14 @@ export const List = styled.div`
   box-sizing: border-box;
   padding: 0 4.5rem;
   overflow: hidden;
+  height: 100%;
+  z-index: 2;
+`
+export const Sensor = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  z-index: 1;
 `
