@@ -1,7 +1,7 @@
 import { SET_PLATFORM, TRIGGER_MENU } from "./action"
 
 const initialState = {
-  platform: undefined,
+  platform: null,
   menu: `closed`,
 }
 

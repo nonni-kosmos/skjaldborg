@@ -3,6 +3,7 @@ const pages = [
   { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   { name: `Umsókn`, slug: `/umsokn` },
   { name: `Hátíðin`, slug: `/hatidin` },
+  { name: `Staff`, slug: `/staff` },
 ]
 const metadata = {
   title: `Skjaldborg`,

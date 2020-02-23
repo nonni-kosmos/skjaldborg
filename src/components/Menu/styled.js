@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   box-sizing: border-box;
   padding: 0 4.5rem;
   overflow: hidden;

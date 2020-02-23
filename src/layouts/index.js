@@ -1,7 +1,8 @@
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { SET_PLATFORM, AUTHENTICATE } from "../state/action"
+import { AUTHENTICATE } from "../state/action"
 import useAuth from "../hooks/useAuth"
+import useSetPlatform from "../hooks/useSetPlatform"
 
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"
@@ -10,16 +11,7 @@ import PageContainer from "../components/PageContainer"
 const Layout = ({ children, location }) => {
   const dispatch = useDispatch()
 
-  // i) platform detection
-  useEffect(() => {
-    const callBack = () => {
-      dispatch({ type: SET_PLATFORM, width: window.innerWidth })
-    }
-    window.addEventListener("resize", callBack)
-    return () => {
-      window.removeEventListener("resize", callBack)
-    }
-  }, [dispatch])
+  useSetPlatform()
 
   const { isLoading, profile } = useAuth()
 
