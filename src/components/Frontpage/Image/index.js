@@ -18,7 +18,7 @@ export default props => (
           fluid: { originalName: { eq: "frontpage.jpeg" } }
         ) {
           fluid(quality: 100, maxWidth: 2600) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
