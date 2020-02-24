@@ -3,6 +3,7 @@ import Header from "../Header"
 import Burger from "../Burger"
 import Menu from "../Menu"
 import { Loader, Container } from "./styled"
+import Cursor from "../Cursor"
 
 // tech
 import React, { useState, useEffect } from "react"
@@ -24,6 +25,7 @@ const PageContainer = ({ children, pathname }) => {
   return (
     <ThemeProvider theme={{ mode: theme }}>
       <Loader opacity={platform}>
+        <Cursor></Cursor>
         <Header></Header>
         <Burger></Burger>
         <Menu></Menu>

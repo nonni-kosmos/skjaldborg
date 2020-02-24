@@ -10,7 +10,6 @@ const ButtonNeu = styled.button`
   color: black;
   transition: 0.2s;
   &&:hover {
-    cursor: pointer;
     box-shadow: 0.06rem 0.06rem 3px #939393, -0.06rem -0.06rem 3px #ffffff;
   }
 `

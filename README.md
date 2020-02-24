@@ -30,3 +30,5 @@ _to del oo_
   - [x] Menu
     - [x] style
     - [x] logic
+- CUSTOM CURSOR
+  - [x] hover 

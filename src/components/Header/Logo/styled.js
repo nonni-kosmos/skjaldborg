@@ -7,8 +7,5 @@ export const Container = styled(Link)`
   width: 7.5rem;
   box-sizing: border-box;
   padding: 1.5rem;
-  &&:hover {
-    cursor: pointer;
-  }
 `
 export const Image = styled(Img)``

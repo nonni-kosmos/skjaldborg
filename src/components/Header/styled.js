@@ -10,8 +10,6 @@ export const Container = styled.div`
   z-index: 4;
   height: 7.5rem;
   width: 100%;
-  top: 0;
-  left: 0;
   background: ${backgroundColor};
   position: relative;
   #header-text-wrapper {

@@ -1,8 +1,9 @@
-import { SET_PLATFORM, TRIGGER_MENU } from "./action"
+import { SET_PLATFORM, TRIGGER_MENU, TRIGGER_RED_CURSOR } from "./action"
 
 const initialState = {
   platform: null,
   menu: `closed`,
+  redCursor: `hidden`,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -21,6 +22,8 @@ export const reducer = (state = initialState, action) => {
       return { ...state, platform: platform }
     case TRIGGER_MENU:
       return { ...state, menu: action.trigger }
+    case TRIGGER_RED_CURSOR:
+      return { ...state, redCursor: action.trigger }
     default:
       return state
   }

@@ -11,9 +11,6 @@ export const Container = styled.div`
   align-content: center;
   justify-content: space-around;
   z-index: 6;
-  &&:hover {
-    cursor: pointer;
-  }
 `
 export const Line = styled.span`
   height: 4px;

@@ -18,3 +18,8 @@ export const triggerMenu = trigger => ({
   type: TRIGGER_MENU,
   trigger,
 })
+export const TRIGGER_RED_CURSOR = "TRIGGER_RED_CURSOR"
+export const triggerRedCursor = trigger => ({
+  type: TRIGGER_RED_CURSOR,
+  trigger,
+})
