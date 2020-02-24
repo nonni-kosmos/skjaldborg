@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, List, Sensor } from "./styled"
 import { useSelector, useDispatch } from "react-redux"
-import { TRIGGER_MENU } from "../../state/action"
+import { TRIGGER_MENU, TRIGGER_RED_CURSOR } from "../../state/action"
 import Item from "./Item"
 import { graphql, StaticQuery } from "gatsby"
 

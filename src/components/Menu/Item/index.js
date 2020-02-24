@@ -1,5 +1,6 @@
 import React from "react"
 import { Text, Anchor } from "./styled"
+import Plus from "./Plus"
 import { useDispatch } from "react-redux"
 import { TRIGGER_MENU, TRIGGER_RED_CURSOR } from "../../../state/action"
 
@@ -20,6 +21,7 @@ const Item = ({ item }) => {
         to={item.slug}
       >
         {item.name}
+        {item.name === `Heim` ? <Plus></Plus> : null}
       </Anchor>
     </Text>
   )

@@ -8,11 +8,13 @@ const Color = theme("mode", {
 })
 
 export const Text = styled.h1`
-  margin: 1rem;
+  margin: 0;
+  padding: 0.4rem;
 `
 export const Anchor = styled(Link)`
   text-decoration: none;
   font-size: 3rem;
+  padding: 0.8rem;
   color: ${Color};
   &&:hover {
     color: white;

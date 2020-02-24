@@ -19,14 +19,14 @@ const Ball = styled.div.attrs(({ top, left }) => ({
     left,
   },
 }))`
-  height: 15px;
-  width: 15px;
-  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
   background: rgba(221, 48, 48, 0.6);
   position: absolute;
   z-index: 10;
   pointer-events: none;
-  transition: 50ms;
+  transition: 150ms;
 `
 
 const Cursor = () => {
@@ -43,7 +43,7 @@ const Cursor = () => {
       })
     }
   }, [])
-  return redCursor === "show" ? <Ball left={x - 7} top={y - 10}></Ball> : null
+  return redCursor === "show" ? <Ball left={x - 50} top={y - 50}></Ball> : null
 }
 
 export default Cursor
