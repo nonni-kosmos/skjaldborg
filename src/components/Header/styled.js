@@ -8,7 +8,7 @@ const backgroundColor = theme("mode", {
 
 export const Container = styled.div`
   z-index: 4;
-  height: 7.5rem;
+  height: 8.5rem;
   width: 100%;
   background: ${backgroundColor};
   position: relative;

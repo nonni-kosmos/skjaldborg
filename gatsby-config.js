@@ -1,9 +1,13 @@
 const pages = [
-  { name: `Heim`, slug: `/` },
-  { name: `Heimildamyndir`, slug: `/heimildamyndir` },
-  { name: `Umsókn`, slug: `/umsokn` },
   { name: `Hátíðin`, slug: `/hatidin` },
-  { name: `Staff`, slug: `/staff` },
+  { name: `Heimildamyndir`, slug: `/heimildamyndir` },
+  { name: `Sarpur`, slug: `/sarpur` },
+  { name: `Dagskrá`, slug: `/dagskra` },
+]
+const dropdownPages = [
+  { name: `Skjaldborgarhátíðin`, slug: `/hatidin` },
+  { name: `Skjaldborgarbíó`, slug: `/bio` },
+  { name: `Gisting/Ferðalag`, slug: `/gisting-ferdalag` },
 ]
 const metadata = {
   title: `Skjaldborg`,
@@ -12,6 +16,7 @@ const metadata = {
   period: `28.-31. maí`,
   location: `Patreksfjörður`,
   pages: pages,
+  dropdownpages: dropdownPages,
 }
 
 module.exports = {

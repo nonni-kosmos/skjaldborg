@@ -26,8 +26,8 @@ export const List = styled.div`
 export const Sensor = styled.div`
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: ${props => props.width};
   top: 0;
-  left: -100%;
-  z-index: 1;
+  left: 0;
+  z-index: 10;
 `

@@ -7,6 +7,16 @@ export const backgroundColor = theme("mode", {
   staff: "white",
 })
 
+export const greenColor = theme("mode", {
+  main: "#4CE33E",
+  staff: "black",
+})
+
+export const redColor = theme("mode", {
+  main: "#DD3030",
+  staff: "gray",
+})
+
 export const Container = styled.div`
   background: ${backgroundColor};
   box-sizing: border-box;

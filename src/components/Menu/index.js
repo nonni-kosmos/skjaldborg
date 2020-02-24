@@ -16,12 +16,16 @@ const Menu = ({
   const dispatch = useDispatch()
   return (
     <>
+      <Sensor
+        width={menu === "open" ? "50%" : "0%"}
+        onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
+      ></Sensor>
       <Container width={menu === "open" ? "50%" : "0%"}>
-        <Sensor
-          onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
-        ></Sensor>
         <List
           onMouseOver={() =>
+            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
+          }
+          onFocus={() =>
             dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
           }
           onMouseLeave={() =>
