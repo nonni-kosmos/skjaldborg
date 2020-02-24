@@ -10,16 +10,18 @@ export const Container = styled.div`
   background: #e5e5e5;
   z-index: 5;
   padding-top: 2rem;
+  overflow: hidden;
 `
 export const List = styled.div`
-  display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding: 0 4.5rem;
-  overflow: hidden;
-  height: 100%;
   z-index: 2;
+  position: absolute;
+  overflow: auto;
+  display: table;
+  margin-top: 7.5rem;
+  margin-left: 2.5rem;
 `
 export const Sensor = styled.div`
   position: absolute;

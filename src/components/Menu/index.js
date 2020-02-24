@@ -20,7 +20,14 @@ const Menu = ({
         <Sensor
           onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
         ></Sensor>
-        <List>
+        <List
+          onMouseOver={() =>
+            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
+          }
+          onMouseLeave={() =>
+            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "hidden" })
+          }
+        >
           {pages.map((item, index) => (
             <Item key={index} item={item}></Item>
           ))}

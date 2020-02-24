@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { useSelector } from "react-redux"
 
-const RedBall = styled.div`
-  height: 15px;
-  width: 15px;
-  border-radius: 10px;
-  background: rgba(221, 48, 48, 0.6);
-  position: absolute;
-  z-index: 10;
-  pointer-events: none;
-  transition: 50ms;
+const grow = keyframes`
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 `
 
 const Ball = styled.div.attrs(({ top, left }) => ({
@@ -19,14 +17,15 @@ const Ball = styled.div.attrs(({ top, left }) => ({
     left,
   },
 }))`
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
   border-radius: 50%;
   background: rgba(221, 48, 48, 0.6);
   position: absolute;
   z-index: 10;
   pointer-events: none;
   transition: 150ms;
+  animation: ${grow} 0.2s ease-in-out 0s forwards;
 `
 
 const Cursor = () => {

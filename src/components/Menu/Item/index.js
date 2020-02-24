@@ -9,12 +9,6 @@ const Item = ({ item }) => {
   return (
     <Text>
       <Anchor
-        onMouseOver={() =>
-          dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
-        }
-        onMouseLeave={() =>
-          dispatch({ type: TRIGGER_RED_CURSOR, trigger: "hidden" })
-        }
         partiallyActive={item.name === "Staff"}
         activeStyle={{ color: "white" }}
         onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
