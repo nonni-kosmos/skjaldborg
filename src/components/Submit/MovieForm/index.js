@@ -159,7 +159,12 @@ const MovieForm = () => {
         />
         {errors.applicantEmail && <Warning>Verður að fylla út!</Warning>}
 
-        <input id="submit-btn" type="submit" value="Submit" />
+        <input
+          name="submitFormBtn"
+          id="submit-btn"
+          type="submit"
+          value="Submit"
+        />
       </form>
     </>
   )
