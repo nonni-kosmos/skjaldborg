@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { AUTHENTICATE } from "../state/action"
 import useAuth from "../hooks/useAuth"
 import useSetPlatform from "../hooks/useSetPlatform"
+import "./font.css"
 
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"

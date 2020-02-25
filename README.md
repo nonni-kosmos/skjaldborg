@@ -30,5 +30,12 @@ _to del oo_
   - [x] Menu
     - [x] style
     - [x] logic
-- CUSTOM CURSOR
-  - [x] hover 
+- [x] CUSTOM CURSOR
+- [ ] CMS
+- [ ] CMS GENERATED PAGES
+
+# MOVIES
+- [ ] show accepted movies on page 
+- [ ] generate subpage for each accepted movie
+  
+# DAGSKRÁ

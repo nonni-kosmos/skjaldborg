@@ -1,7 +1,8 @@
 import React from "react"
+import AcceptedMovies from "../components/AcceptedMovies"
 
 const Heimildamyndir = () => {
-  return <div>docs</div>
+  return <AcceptedMovies></AcceptedMovies>
 }
 
 export default Heimildamyndir

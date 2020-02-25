@@ -17,6 +17,7 @@ const Dropdown = ({
   return (
     <Button onClick={() => setOpen(!open)}>
       <Title
+        className="titlar"
         onMouseOver={() => {
           dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
         }}
@@ -28,8 +29,10 @@ const Dropdown = ({
         {open ? "-" : "+"}
       </Title>
       <List height={open ? 5 + "rem" : "0"} padTop={open ? "1.5rem" : 0}>
-        {dropdownpages.map(item => (
+        {dropdownpages.map((item, index) => (
           <Item
+            className="titlar"
+            key={index}
             onMouseOver={() => {
               dispatch({
                 type: SET_RED_CURSOR_SIZE,

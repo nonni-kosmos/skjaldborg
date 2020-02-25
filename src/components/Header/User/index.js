@@ -11,7 +11,6 @@ const User = () => {
     setUser(profile)
   }, [profile])
 
-  console.log("USER " + user)
   return !isLoading && user ? (
     <>
       <p style={{ fontSize: ".9rem" }}>
