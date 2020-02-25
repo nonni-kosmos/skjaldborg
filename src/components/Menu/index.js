@@ -23,13 +23,22 @@ const Menu = ({
       <Container width={menu === "open" ? "50%" : "0%"}>
         <List
           onMouseOver={() =>
-            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
+            dispatch({
+              type: TRIGGER_RED_CURSOR,
+              trigger: `show`,
+            })
           }
           onFocus={() =>
-            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "show" })
+            dispatch({
+              type: TRIGGER_RED_CURSOR,
+              trigger: `show`,
+            })
           }
           onMouseLeave={() =>
-            dispatch({ type: TRIGGER_RED_CURSOR, trigger: "hidden" })
+            dispatch({
+              type: TRIGGER_RED_CURSOR,
+              trigger: `hide`,
+            })
           }
         >
           {pages.map((item, index) => (

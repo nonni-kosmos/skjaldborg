@@ -1,6 +1,8 @@
 import React, { useState } from "react"
-import { Button, List, Item } from "./styled"
+import { Button, List, Item, Title } from "./styled"
 import { graphql, StaticQuery } from "gatsby"
+import { useDispatch } from "react-redux"
+import { SET_RED_CURSOR_SIZE } from "../../../../state/action"
 
 const Dropdown = ({
   children,
@@ -11,13 +13,38 @@ const Dropdown = ({
   },
 }) => {
   const [open, setOpen] = useState(false)
+  const dispatch = useDispatch()
   return (
     <Button onClick={() => setOpen(!open)}>
-      {children}
-      {open ? "-" : "+"}
+      <Title
+        onMouseOver={() => {
+          dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
+        }}
+        onFocus={() => {
+          dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
+        }}
+      >
+        {children}
+        {open ? "-" : "+"}
+      </Title>
       <List height={open ? 5 + "rem" : "0"} padTop={open ? "1.5rem" : 0}>
         {dropdownpages.map(item => (
-          <Item>{item.name}</Item>
+          <Item
+            onMouseOver={() => {
+              dispatch({
+                type: SET_RED_CURSOR_SIZE,
+                size: `small`,
+              })
+            }}
+            onFocus={() => {
+              dispatch({
+                type: SET_RED_CURSOR_SIZE,
+                size: `small`,
+              })
+            }}
+          >
+            {item.name}
+          </Item>
         ))}
       </List>
     </Button>

@@ -23,3 +23,8 @@ export const triggerRedCursor = trigger => ({
   type: TRIGGER_RED_CURSOR,
   trigger,
 })
+export const SET_RED_CURSOR_SIZE = "SET_RED_CURSOR_SIZE"
+export const setRedCursorSize = size => ({
+  type: SET_RED_CURSOR_SIZE,
+  size,
+})

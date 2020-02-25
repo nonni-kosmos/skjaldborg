@@ -1,10 +1,12 @@
 import styled from "styled-components"
-import { greenColor, redColor } from "../../../PageContainer/styled"
+import { redColor } from "../../../PageContainer/styled"
 
 export const Button = styled.div`
   text-decoration: none;
   font-size: 3rem;
   color: ${redColor};
+`
+export const Title = styled.span`
   &&:hover {
     color: white;
     cursor: default;
@@ -26,5 +28,6 @@ export const Item = styled.p`
   margin: 0;
   &&:hover {
     color: white;
+    cursor: default;
   }
 `

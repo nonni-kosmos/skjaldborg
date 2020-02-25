@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { greenColor, redColor } from "../PageContainer/styled"
+import { greenColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
   position: fixed;
