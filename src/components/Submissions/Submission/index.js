@@ -27,11 +27,11 @@ const Submission = ({ movie }) => {
       <Container>
         <h1>{movie.frontmatter.name}</h1>
         <div
-          dangerouslySetInnerHTML={{ __html: movie.frontmatter.markdown }}
+          dangerouslySetInnerHTML={{ __html: movie.frontmatter.description }}
         ></div>
         <SubmissionDetails>
           <Applicant id={movie.frontmatter.applicantId}></Applicant>
-          <p>At {convert(movie.frontmatter.createdAt.seconds)}</p>
+          <p>At {convert(movie.frontmatter.createdAt)}</p>
         </SubmissionDetails>
         <label>
           Velja mynd
