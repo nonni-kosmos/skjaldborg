@@ -75,8 +75,8 @@ const MovieForm = () => {
         name="moviesubmitform"
         data-netlify="true"
         onSubmit={handleSubmit(onSubmit)}
-        action=""
         method="post"
+        enctype="multipart/form-data"
       >
         <legend>Kvikmynd</legend>
         <InputBox
