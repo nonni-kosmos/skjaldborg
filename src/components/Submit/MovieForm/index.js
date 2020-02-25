@@ -72,8 +72,8 @@ const MovieForm = () => {
   return (
     <>
       <form
-        name="movie-submit-form"
-        netlify
+        name="moviesubmitform"
+        data-netlify="true"
         onSubmit={handleSubmit(onSubmit)}
         action=""
         method="post"
