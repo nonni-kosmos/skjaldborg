@@ -15,7 +15,7 @@ const Dropdown = ({
     <Button onClick={() => setOpen(!open)}>
       {children}
       {open ? "-" : "+"}
-      <List height={open ? 5 + "rem" : "0"}>
+      <List height={open ? 5 + "rem" : "0"} padTop={open ? "1.5rem" : 0}>
         {dropdownpages.map(item => (
           <Item>{item.name}</Item>
         ))}

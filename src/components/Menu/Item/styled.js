@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { greenColor } from "../../PageContainer/styled"
+import { greenColor, redColor } from "../../PageContainer/styled"
 
 export const Text = styled.h1`
   margin: 0;
@@ -9,8 +9,8 @@ export const Text = styled.h1`
 export const Anchor = styled(Link)`
   text-decoration: none;
   font-size: 3rem;
-  padding: 0.8rem;
-  color: ${greenColor};
+  padding: 0rem;
+  color: ${redColor};
   &&:hover {
     color: white;
     cursor: default;

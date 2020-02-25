@@ -2,7 +2,7 @@ import styled from "styled-components"
 import theme from "styled-theming"
 
 const backgroundColor = theme("mode", {
-  main: "#F5F5F5",
+  main: "white",
   staff: "#E5E5E5",
 })
 

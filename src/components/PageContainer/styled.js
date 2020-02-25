@@ -8,12 +8,12 @@ export const backgroundColor = theme("mode", {
 })
 
 export const greenColor = theme("mode", {
-  main: "#4CE33E",
+  main: "#84DF7B",
   staff: "black",
 })
 
 export const redColor = theme("mode", {
-  main: "#DD3030",
+  main: "#E64746",
   staff: "gray",
 })
 

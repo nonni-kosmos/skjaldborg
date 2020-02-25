@@ -1,11 +1,14 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import { Container, GatsbyImage } from "./styled"
+import { Container, BackgroundImage, LogoImage, LogoContainer } from "./styled"
 
-const Image = ({ data: { frontpage_image } }) => {
+const Image = ({ data: { frontpage_image, logo } }) => {
   return (
     <Container>
-      <GatsbyImage fluid={frontpage_image.fluid}></GatsbyImage>
+      <BackgroundImage fluid={frontpage_image.fluid}></BackgroundImage>
+      <LogoContainer>
+        <LogoImage fluid={logo.fluid}></LogoImage>
+      </LogoContainer>
     </Container>
   )
 }
@@ -15,9 +18,16 @@ export default props => (
     query={graphql`
       {
         frontpage_image: imageSharp(
-          fluid: { originalName: { eq: "frontpage.jpeg" } }
+          fluid: { originalName: { eq: "cinema.jpg" } }
         ) {
           fluid(quality: 100, maxWidth: 2600) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+        logo: imageSharp(
+          fluid: { originalName: { eq: "skjaldborg_logo.png" } }
+        ) {
+          fluid {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }

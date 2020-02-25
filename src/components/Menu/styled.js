@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { greenColor, redColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
   position: fixed;
@@ -7,9 +8,9 @@ export const Container = styled.div`
   height: 100%;
   width: ${props => props.width};
   transition: 0.2s ease-in-out;
-  background: #e5e5e5;
+  background: ${greenColor};
   z-index: 5;
-  padding-top: 2rem;
+  padding-top: 1rem;
   overflow: hidden;
 `
 export const List = styled.div`
