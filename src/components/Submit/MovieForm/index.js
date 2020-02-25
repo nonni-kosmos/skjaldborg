@@ -71,7 +71,13 @@ const MovieForm = () => {
 
   return (
     <>
-      <form netlify onSubmit={handleSubmit(onSubmit)} action="" method="post">
+      <form
+        name="movie-submit-form"
+        netlify
+        onSubmit={handleSubmit(onSubmit)}
+        action=""
+        method="post"
+      >
         <legend>Kvikmynd</legend>
         <InputBox
           ref={register({ required: true })}
