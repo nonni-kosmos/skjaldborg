@@ -6,7 +6,7 @@ const Text = ({ meta, about }) => {
     <Container>
       {about ? (
         <>
-          <h1>{meta.title}</h1>
+          <h1 className="titlar">{meta.title}</h1>
           <p>{meta.subtitle}</p>
         </>
       ) : (

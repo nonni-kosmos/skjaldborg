@@ -35,7 +35,10 @@ _to del oo_
 - [ ] CMS GENERATED PAGES
 
 # MOVIES
-- [ ] show accepted movies on page 
+
+- [x] show accepted movies on page
 - [ ] generate subpage for each accepted movie
-  
-# DAGSKRÁ
+- [ ] submit movie with image
+  - [ ] setup Cloudinary
+  - [ ] fetch from Cloudinary
+  - [ ] submit to Cloudinary via form
