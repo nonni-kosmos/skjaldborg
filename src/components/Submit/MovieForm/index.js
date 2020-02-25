@@ -23,6 +23,7 @@ const MovieForm = () => {
 
   const updateValues = e => {
     const { name, value } = e.target
+    console.log(value)
     setState(prevState => ({
       ...prevState,
       [name]: value,
@@ -75,8 +76,8 @@ const MovieForm = () => {
         name="moviesubmitform"
         data-netlify="true"
         onSubmit={handleSubmit(onSubmit)}
-        method="post"
-        enctype="multipart/form-data"
+        method="POST"
+        encType="multipart/form-data"
       >
         <legend>Kvikmynd</legend>
         <InputBox
