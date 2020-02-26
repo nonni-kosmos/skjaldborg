@@ -3,8 +3,6 @@ import "firebase/firestore"
 import { getFirebase } from "../service/firebase"
 
 export const useGetCollection = colName => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
   const [collection, setCollection] = useState([])
 
   useEffect(() => {
@@ -18,5 +16,5 @@ export const useGetCollection = colName => {
     })
   }, [colName])
 
-  return { collection, isLoading, error }
+  return { collection }
 }

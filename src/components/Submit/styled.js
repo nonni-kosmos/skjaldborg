@@ -68,3 +68,19 @@ export const Warning = styled.p`
   margin-top: -0.5rem;
   font-size: 0.8rem;
 `
+export const FileBTN = styled.label`
+  padding: 1rem;
+  border: 1px solid;
+  width: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  &&:hover {
+    cursor: pointer;
+  }
+  ${props =>
+    props.status === "ok" &&
+    css`
+      background: green;
+      color: white;
+    `}
+`

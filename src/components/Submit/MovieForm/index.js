@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { InputBox, Warning } from "../styled"
+import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
 import { useGetCollection } from "../../../hooks/useGetCollection"
 import { useGetStorage } from "../../../hooks/useGetStorage"
@@ -8,6 +8,7 @@ import { submitData } from "./submitData"
 
 const MovieForm = () => {
   const [emailOk, setEmailOk] = useState(false)
+  const [file, setFile] = useState({ ok: false, name: null })
 
   const { register, handleSubmit, errors } = useForm({
     defaultValues: defaultValues,
@@ -25,9 +26,14 @@ const MovieForm = () => {
     }
   }
 
+  const validateFile = e => {
+    if (e.target.files[0].size <= 2000000) {
+      setFile({ ok: true, name: e.target.value })
+    }
+  }
+
   const onSubmit = (data, e) => {
-    console.log(data)
-    submitData(data, movieCollection, applicantCollection, storage)
+    submitData(data, movieCollection, applicantCollection, storage, e)
   }
 
   return (
@@ -37,65 +43,9 @@ const MovieForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
       >
-        <legend>Kvikmynd</legend>
+        <legend>Tengiliður</legend>
         <InputBox
-          ref={register({ required: true, maxLength: 80 })}
-          placeholder={"Title"}
-          type="text"
-          name="title"
-          id="movie-title"
-        />
-        {errors.title && <Warning>{errorMsg}</Warning>}
-
-        <InputBox
-          placeholder="Director"
-          type="text"
-          name="director"
-          id="director"
-          ref={register({ required: true, maxLength: 80 })}
-        />
-        {errors.director && <Warning>{errorMsg}</Warning>}
-
-        <InputBox
-          placeholder="Producer"
-          type="text"
-          name="producer"
-          id="producer"
-          ref={register({ maxLength: 80 })}
-        />
-        <InputBox
-          placeholder="Duration (minutes)"
-          type="number"
-          name="duration"
-          id="duration"
-          ref={register({ required: true, min: 1 })}
-        />
-        {errors.duration && <Warning>Invalid duration</Warning>}
-
-        <label style={{ paddingTop: "1rem" }} htmlFor="image">
-          Still:
-          <InputBox
-            accept="image/png, image/jpg, image/jpeg"
-            type="file"
-            name="image"
-            id="image"
-            ref={register}
-          />
-          {errors.image && <Warning>{errorMsg}</Warning>}
-        </label>
-        <textarea
-          placeholder="Description"
-          name="description"
-          id="description"
-          cols="30"
-          rows="10"
-          ref={register({ required: true })}
-        ></textarea>
-        {errors.description && <Warning>{errorMsg}</Warning>}
-
-        <legend>Applicant</legend>
-        <InputBox
-          placeholder="Name"
+          placeholder="Fullt nafn"
           type="text"
           name="applicantName"
           id="applicantName"
@@ -105,7 +55,7 @@ const MovieForm = () => {
         <InputBox
           email
           color={emailOk ? "green" : "inherit"}
-          placeholder="Email"
+          placeholder="Netfang"
           type="text"
           name="applicantEmail"
           id="applicantEmail"
@@ -113,6 +63,68 @@ const MovieForm = () => {
           ref={register({ required: true, pattern: emailRegexPattern })}
         />
         {errors.applicantEmail && <Warning>Invalid email</Warning>}
+        <legend>Kvikmynd</legend>
+        <InputBox
+          ref={register({ required: true, maxLength: 80 })}
+          placeholder="Titill"
+          type="text"
+          name="title"
+          id="movie-title"
+        />
+        {errors.title && <Warning>{errorMsg}</Warning>}
+
+        <InputBox
+          placeholder="Leikstjóri"
+          type="text"
+          name="director"
+          id="director"
+          ref={register({ required: true, maxLength: 80 })}
+        />
+        {errors.director && <Warning>{errorMsg}</Warning>}
+
+        <InputBox
+          placeholder="Framleiðandi"
+          type="text"
+          name="producer"
+          id="producer"
+          ref={register({ maxLength: 80 })}
+        />
+        <InputBox
+          placeholder="Lengd í mínútum"
+          type="number"
+          name="duration"
+          id="duration"
+          ref={register({ required: true, min: 1 })}
+        />
+        {errors.duration && <Warning>Invalid duration</Warning>}
+
+        <FileBTN
+          status={file.ok ? "ok" : null}
+          style={{ paddingTop: "1rem" }}
+          htmlFor="image"
+        >
+          {file.ok ? file.name : "Veldu stillu (hámark 2MB)"}
+          <InputBox
+            style={{ display: "none" }}
+            accept="image/png, image/jpg, image/jpeg"
+            type="file"
+            name="image"
+            id="image"
+            placeholder="Engin skrá valin"
+            ref={register}
+            onChange={e => validateFile(e)}
+          />
+          {errors.image && <Warning>{errorMsg}</Warning>}
+        </FileBTN>
+        <textarea
+          placeholder="Description"
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          ref={register({ required: true })}
+        ></textarea>
+        {errors.description && <Warning>{errorMsg}</Warning>}
 
         <input
           name="submitFormBtn"
