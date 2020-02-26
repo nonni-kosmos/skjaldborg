@@ -39,8 +39,11 @@ _to del oo_
 - [x] show accepted movies on page
 - [ ] generate subpage for each accepted movie
 - [ ] submit movie with image
- - [x] setup firebase storage
-   - [x] upload
-   - [x] reference file in /heimildamyndir
- - [ ] remove cloudinary
- - [ ] simplify form
+- [x] setup firebase storage
+  - [x] upload
+  - [x] reference file in /heimildamyndir
+- [x] remove cloudinary
+- [ ] simplify form
+  - [ ] clear data on submit
+  - [ ] split into components?
+  - [ ] validate data

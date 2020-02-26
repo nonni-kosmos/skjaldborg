@@ -19,6 +19,18 @@ const Menu = ({
       <Sensor
         width={menu === "open" ? "50%" : "0%"}
         onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
+        onMouseOver={() =>
+          dispatch({
+            type: TRIGGER_RED_CURSOR,
+            trigger: `hide`,
+          })
+        }
+        onFocus={() =>
+          dispatch({
+            type: TRIGGER_RED_CURSOR,
+            trigger: `hide`,
+          })
+        }
       ></Sensor>
       <Container width={menu === "open" ? "50%" : "0%"}>
         <List

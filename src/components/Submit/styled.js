@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { redColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
@@ -48,6 +48,11 @@ export const InputBox = styled.input`
   padding: 1rem;
   font-size: 1rem;
   margin: 1em 0 1rem;
+  ${props =>
+    props.email &&
+    css`
+      color: ${props => props.color};
+    `}
 `
 
 export const PageTitle = styled.h1`

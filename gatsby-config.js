@@ -1,12 +1,8 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 const pages = [
   { name: `Hátíðin`, slug: `/hatidin` },
   { name: `Heimildamyndir`, slug: `/heimildamyndir` },
-  { name: `Sarpur`, slug: `/sarpur` },
   { name: `Dagskrá`, slug: `/dagskra` },
+  { name: `Umsókn`, slug: `/umsokn` },
 ]
 const dropdownPages = [
   { name: `Skjaldborgarhátíðin`, slug: `/hatidin` },
@@ -45,16 +41,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: "gatsby-transformer-cloudinary",
-      options: {
-        cloudName: process.env.GATSBY_CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.GATSBY_CLOUDINARY_API_KEY,
-        apiSecret: process.env.GATSBY_CLOUDINARY_API_SECRET,
-
-        uploadFolder: "gatsby-cloudinary",
       },
     },
     `gatsby-plugin-styled-components`,

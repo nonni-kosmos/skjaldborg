@@ -3,91 +3,31 @@ import { InputBox, Warning } from "../styled"
 import { useForm } from "react-hook-form"
 import { useGetCollection } from "../../../hooks/useGetCollection"
 import { useGetStorage } from "../../../hooks/useGetStorage"
+import { errorMsg, emailRegexPattern, defaultValues } from "./config"
+import { submitData } from "./submitData"
 
 const MovieForm = () => {
-  const [state, setState] = useState({
-    title: "",
-    director: "",
-    producer: "",
-    duration: 0,
-    image: null,
-    description: "",
-    applicantName: "",
-    applicantEmail: "",
-  })
+  const [emailOk, setEmailOk] = useState(false)
 
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: defaultValues,
+  })
 
   const { collection: movieCollection } = useGetCollection("movies")
   const { collection: applicantCollection } = useGetCollection("applicants")
-
   const { storage } = useGetStorage()
 
-  const updateValues = e => {
-    const { name, value } = e.target
-    console.log(value)
-    setState(prevState => ({
-      ...prevState,
-      [name]: value,
-    }))
+  const validateEmail = e => {
+    if (emailRegexPattern.test(e.target.value)) {
+      setEmailOk(true)
+    } else {
+      setEmailOk(false)
+    }
   }
 
-  const onSubmit = data => {
+  const onSubmit = (data, e) => {
     console.log(data)
-    let movie = {
-      accepted: false,
-      createdAt: new Date().getTime(),
-      director: data.director,
-      duration: data.duration,
-      description: data.description,
-      title: data.movieTitle,
-      imageLocation: "",
-      applicantId: "",
-    }
-    let applicant = {
-      name: data.applicantName,
-      email: data.applicantEmail,
-    }
-
-    // post applicant
-    applicantCollection
-      .add(applicant)
-      .then(apRef => {
-        console.log("succesfully added applicant with id: " + apRef.id)
-
-        movie.applicantId = apRef.id
-
-        // upload image
-        let uploadLocation =
-          movie.title.toLowerCase().replace(/ /g, "-") +
-          "/" +
-          data.image[0].name
-        storage
-          .child(uploadLocation)
-          .put(data.image[0])
-          .then(d => {
-            console.log(d)
-            console.log(
-              "uploaded image to " + uploadLocation + ", with ease..."
-            )
-            movie.imageLocation = uploadLocation
-            // save movie
-            movieCollection
-              .add(movie)
-              .then(() => {
-                console.log("Succesfully submitted movie...")
-              })
-              .catch(err => {
-                console.log(err)
-              })
-          })
-          .catch(err => {
-            console.log(err)
-          })
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    submitData(data, movieCollection, applicantCollection, storage)
   }
 
   return (
@@ -99,42 +39,38 @@ const MovieForm = () => {
       >
         <legend>Kvikmynd</legend>
         <InputBox
-          ref={register({ required: true })}
+          ref={register({ required: true, maxLength: 80 })}
           placeholder={"Title"}
           type="text"
-          name="movieTitle"
+          name="title"
           id="movie-title"
-          onChange={e => updateValues(e)}
         />
-        {errors.movieTitle && <Warning>Verður að fylla út!</Warning>}
+        {errors.title && <Warning>{errorMsg}</Warning>}
 
         <InputBox
           placeholder="Director"
           type="text"
           name="director"
           id="director"
-          onChange={e => updateValues(e)}
-          ref={register({ required: true })}
+          ref={register({ required: true, maxLength: 80 })}
         />
-        {errors.director && <Warning>Verður að fylla út!</Warning>}
+        {errors.director && <Warning>{errorMsg}</Warning>}
 
         <InputBox
           placeholder="Producer"
           type="text"
           name="producer"
           id="producer"
-          onChange={e => updateValues(e)}
-          ref={register}
+          ref={register({ maxLength: 80 })}
         />
         <InputBox
           placeholder="Duration (minutes)"
           type="number"
           name="duration"
           id="duration"
-          onChange={e => updateValues(e)}
-          ref={register({ required: true })}
+          ref={register({ required: true, min: 1 })}
         />
-        {errors.duration && <Warning>Verður að fylla út!</Warning>}
+        {errors.duration && <Warning>Invalid duration</Warning>}
 
         <label style={{ paddingTop: "1rem" }} htmlFor="image">
           Still:
@@ -143,9 +79,9 @@ const MovieForm = () => {
             type="file"
             name="image"
             id="image"
-            onChange={e => updateValues(e)}
             ref={register}
           />
+          {errors.image && <Warning>{errorMsg}</Warning>}
         </label>
         <textarea
           placeholder="Description"
@@ -153,10 +89,9 @@ const MovieForm = () => {
           id="description"
           cols="30"
           rows="10"
-          onChange={e => updateValues(e)}
           ref={register({ required: true })}
         ></textarea>
-        {errors.description && <Warning>Verður að fylla út!</Warning>}
+        {errors.description && <Warning>{errorMsg}</Warning>}
 
         <legend>Applicant</legend>
         <InputBox
@@ -164,19 +99,20 @@ const MovieForm = () => {
           type="text"
           name="applicantName"
           id="applicantName"
-          onChange={e => updateValues(e)}
-          ref={register}
+          ref={register({ required: true, maxLength: 80 })}
         />
-        {errors.applicantName && <Warning>Verður að fylla út!</Warning>}
+        {errors.applicantName && <Warning>{errorMsg}</Warning>}
         <InputBox
+          email
+          color={emailOk ? "green" : "inherit"}
           placeholder="Email"
           type="text"
           name="applicantEmail"
           id="applicantEmail"
-          onChange={e => updateValues(e)}
-          ref={register}
+          onChange={e => validateEmail(e)}
+          ref={register({ required: true, pattern: emailRegexPattern })}
         />
-        {errors.applicantEmail && <Warning>Verður að fylla út!</Warning>}
+        {errors.applicantEmail && <Warning>Invalid email</Warning>}
 
         <input
           name="submitFormBtn"
