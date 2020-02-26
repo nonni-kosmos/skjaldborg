@@ -6,17 +6,9 @@ export const Box = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background: rgba(16, 16, 16, 1);
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0.5;
-  }
+  background: rgb(16, 16, 16);
+  opacity: ${props => props.opacity};
+  transition: 0.5s;
 `
 export const Title = styled.p`
   color: ${greenColor};
@@ -36,3 +28,14 @@ export const Details = styled.div`
 `
 export const DirectorsName = styled.p``
 export const Duration = styled.p``
+export const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+  transition: 0.2s;
+`

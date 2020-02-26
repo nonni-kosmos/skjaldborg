@@ -1,14 +1,13 @@
-import React from "react"
-import { Box, Title, Details, DirectorsName, Duration } from "./styled"
-import { Image } from "cloudinary-react"
+import React, { useState } from "react"
+import { Box, Title, Details, DirectorsName, Duration, Image } from "./styled"
+import { useGetImage } from "../../../hooks/useGetImage"
 
 const Movie = ({ movie }) => {
+  const { image, isLoading } = useGetImage(movie.frontmatter.imageLocation)
+  console.log(image, isLoading)
   return (
-    <Box>
-      <Image
-        cloudName={"dgekvli3k"}
-        publicId="gatsby-cloudinary/test4_k9pwrk.jpg"
-      ></Image>
+    <Box opacity={!isLoading && image ? 1 : 0}>
+      <Image src={image} alt={movie.frontmatter.title} />
       <Title>{movie.frontmatter.title}</Title>
       <Details>
         <DirectorsName className="les-texti">

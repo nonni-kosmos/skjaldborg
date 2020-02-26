@@ -39,7 +39,8 @@ _to del oo_
 - [x] show accepted movies on page
 - [ ] generate subpage for each accepted movie
 - [ ] submit movie with image
-  - [x] setup Cloudinary
-  - [x] query with graphql from Cloudinary
-  - [ ] do a dynamic fetch from Cloudinary <-
-  - [ ] submit to Cloudinary via form
+ - [x] setup firebase storage
+   - [x] upload
+   - [x] reference file in /heimildamyndir
+ - [ ] remove cloudinary
+ - [ ] simplify form

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { InputBox, Warning } from "../styled"
 import { useForm } from "react-hook-form"
 import { useGetCollection } from "../../../hooks/useGetCollection"
-import { uploadImage } from "../../../service/cloudinary"
+import { useGetStorage } from "../../../hooks/useGetStorage"
 
 const MovieForm = () => {
   const [state, setState] = useState({
@@ -20,6 +20,8 @@ const MovieForm = () => {
 
   const { collection: movieCollection } = useGetCollection("movies")
   const { collection: applicantCollection } = useGetCollection("applicants")
+
+  const { storage } = useGetStorage()
 
   const updateValues = e => {
     const { name, value } = e.target
@@ -39,7 +41,7 @@ const MovieForm = () => {
       duration: data.duration,
       description: data.description,
       title: data.movieTitle,
-      imageName: data.image[0].name,
+      imageLocation: "",
       applicantId: "",
     }
     let applicant = {
@@ -54,12 +56,30 @@ const MovieForm = () => {
         console.log("succesfully added applicant with id: " + apRef.id)
 
         movie.applicantId = apRef.id
-        // post movie
-        movieCollection
-          .add(movie)
-          .then(() => {
-            console.log("Succesfully submitted movie...")
-            // upload image
+
+        // upload image
+        let uploadLocation =
+          movie.title.toLowerCase().replace(/ /g, "-") +
+          "/" +
+          data.image[0].name
+        storage
+          .child(uploadLocation)
+          .put(data.image[0])
+          .then(d => {
+            console.log(d)
+            console.log(
+              "uploaded image to " + uploadLocation + ", with ease..."
+            )
+            movie.imageLocation = uploadLocation
+            // save movie
+            movieCollection
+              .add(movie)
+              .then(() => {
+                console.log("Succesfully submitted movie...")
+              })
+              .catch(err => {
+                console.log(err)
+              })
           })
           .catch(err => {
             console.log(err)
@@ -74,10 +94,8 @@ const MovieForm = () => {
     <>
       <form
         name="moviesubmitform"
-        data-netlify="true"
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
-        encType="multipart/form-data"
       >
         <legend>Kvikmynd</legend>
         <InputBox

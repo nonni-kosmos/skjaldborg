@@ -25,7 +25,7 @@ const Submission = ({ movie }) => {
   if (movie) {
     return (
       <Container>
-        <h1>{movie.frontmatter.name}</h1>
+        <h1>{movie.frontmatter.title}</h1>
         <div
           dangerouslySetInnerHTML={{ __html: movie.frontmatter.description }}
         ></div>
