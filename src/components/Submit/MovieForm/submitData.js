@@ -8,8 +8,7 @@ export const submitData = (
 ) => {
   // spread the initial data
   let { movie, applicant } = spreadDataToSchema(data)
-
-  let location = ""
+  let movPromise
 
   const apPromise = new Promise((resolve, reject) => {
     applicantCollection
@@ -17,6 +16,19 @@ export const submitData = (
       .then(ref => {
         console.log("Applicant saved")
         movie.applicantId = ref.id
+        // applicant has to register BEFORE we register the movie
+        movPromise = new Promise((resolve, reject) => {
+          movieCollection
+            .add(movie)
+            .then(() => {
+              console.log("Movie saved")
+              resolve()
+            })
+            .catch(error => {
+              console.log("Movie error: " + error.message)
+              reject()
+            })
+        })
         resolve()
       })
       .catch(error => {
@@ -25,29 +37,20 @@ export const submitData = (
       })
   })
   const imgPromise = new Promise((resolve, reject) => {
-    location = generateImageLocation(movie.title, data.image[0].name)
-    storage
-      .child(location)
-      .put(data.image[0])
+    let storageFolder = generateImageLocation(movie.title)
+    let file = data.image[0]
+    let filename = file.name
+
+    let storageRef = storage.ref(storageFolder + "/" + filename)
+    storageRef
+      .put(file)
       .then(() => {
         console.log("Image saved")
-        movie.imageLocation = location
+        movie.imageLocation = storageFolder + filename
         resolve()
       })
       .catch(error => {
         console.log("Image error: " + error.message)
-        reject()
-      })
-  })
-  const movPromise = new Promise((resolve, reject) => {
-    movieCollection
-      .add(movie)
-      .then(() => {
-        console.log("Movie saved")
-        resolve()
-      })
-      .catch(error => {
-        console.log("Movie error: " + error.message)
         reject()
       })
   })

@@ -4,7 +4,6 @@ import { useGetImage } from "../../../hooks/useGetImage"
 
 const Movie = ({ movie }) => {
   const { image, isLoading } = useGetImage(movie.frontmatter.imageLocation)
-  console.log(image, isLoading)
   return (
     <Box opacity={!isLoading && image ? 1 : 0}>
       <Image src={image} alt={movie.frontmatter.title} />

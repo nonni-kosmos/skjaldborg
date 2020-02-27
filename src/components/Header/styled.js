@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import theme from "styled-theming"
+import { breakpoints } from "../../constants"
 
 const backgroundColor = theme("mode", {
   main: "white",
@@ -13,11 +14,21 @@ export const Container = styled.div`
   background: ${backgroundColor};
   position: relative;
   #header-text-wrapper {
-    width: 50%;
     display: flex;
     justify-content: space-between;
     padding-right: 5rem;
     box-sizing: border-box;
+
+    /** mobile */
+    width: 95%;
+    /** tablets */
+    @media only screen and (min-width: ${breakpoints.tablet}) {
+      max-width: 85%;
+    }
+    /** desktop */
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      width: 50%;
+    }
   }
   #user-wrapper {
     position: absolute;

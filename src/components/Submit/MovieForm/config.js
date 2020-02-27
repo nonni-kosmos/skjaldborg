@@ -21,7 +21,7 @@ export const spreadDataToSchema = data => {
     duration: data.duration,
     description: data.description,
     title: data.title,
-    imageLocation: "",
+    imageLocation: generateImageLocation(data.title) + "/" + data.image[0].name,
     applicantId: "",
   }
   let applicant = {
@@ -31,6 +31,8 @@ export const spreadDataToSchema = data => {
   return { movie, applicant }
 }
 
-export const generateImageLocation = (movieTitle, imageName) => {
-  return movieTitle.toLowerCase().replace(/ /g, "-") + "/" + imageName
+export const generateImageLocation = movieTitle => {
+  return movieTitle.toLowerCase().replace(/ /g, "-")
 }
+
+export const uploadLimit = 5000000 // 5MB

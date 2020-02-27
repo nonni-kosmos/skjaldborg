@@ -12,11 +12,7 @@ export const useGetStorage = () => {
     const lazyStorage = import("firebase/storage")
 
     Promise.all([lazyApp, lazyStorage]).then(([firebase]) => {
-      setStorage(
-        getFirebase(firebase)
-          .storage()
-          .ref()
-      )
+      setStorage(getFirebase(firebase).storage())
       setIsLoading(false)
     })
   }, [])

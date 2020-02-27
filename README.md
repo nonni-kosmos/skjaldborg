@@ -38,12 +38,14 @@ _to del oo_
 
 - [x] show accepted movies on page
 - [ ] generate subpage for each accepted movie
-- [ ] submit movie with image
+- [x] submit movie with image
+- [ ] redirect to success page after submission
 - [x] setup firebase storage
   - [x] upload
   - [x] reference file in /heimildamyndir
 - [x] remove cloudinary
-- [ ] simplify form
-  - [ ] clear data on submit
-  - [ ] split into components?
-  - [ ] validate data
+- [x] simplify form
+  - [x] clear data on submit
+  - [x] split into components?
+  - [!] validate data
+    - [ ] validate in firebase

@@ -3,7 +3,12 @@ import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
 import { useGetCollection } from "../../../hooks/useGetCollection"
 import { useGetStorage } from "../../../hooks/useGetStorage"
-import { errorMsg, emailRegexPattern, defaultValues } from "./config"
+import {
+  errorMsg,
+  emailRegexPattern,
+  defaultValues,
+  uploadLimit,
+} from "./config"
 import { submitData } from "./submitData"
 
 const MovieForm = () => {
@@ -27,12 +32,15 @@ const MovieForm = () => {
   }
 
   const validateFile = e => {
-    if (e.target.files[0].size <= 2000000) {
-      setFile({ ok: true, name: e.target.value })
+    for (var i = 0; i < e.target.files.length; i++) {
+      if (e.target.files[i].size <= uploadLimit) {
+        setFile({ ok: true, name: e.target.files[i].name })
+      }
     }
   }
 
   const onSubmit = (data, e) => {
+    console.log(data)
     submitData(data, movieCollection, applicantCollection, storage, e)
   }
 
@@ -103,7 +111,7 @@ const MovieForm = () => {
           style={{ paddingTop: "1rem" }}
           htmlFor="image"
         >
-          {file.ok ? file.name : "Veldu stillu (hámark 2MB)"}
+          {file.ok ? file.name : "Veldu stillu (hámark 5MB)"}
           <InputBox
             style={{ display: "none" }}
             accept="image/png, image/jpg, image/jpeg"
