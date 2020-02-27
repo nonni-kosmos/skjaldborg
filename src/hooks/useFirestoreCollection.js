@@ -56,17 +56,16 @@ export const useGetAcceptedMovies = () => {
 
       const unsubscribe = db
         .collection("movies")
+        .where("accepted", "==", true)
         .get()
         .then(querySnapshot => {
           setIsLoading(false)
           querySnapshot.forEach(
             doc => {
-              if (doc.data().accepted) {
-                items.push({
-                  id: doc.id,
-                  frontmatter: doc.data(),
-                })
-              }
+              items.push({
+                id: doc.id,
+                frontmatter: doc.data(),
+              })
             },
             err => {
               setError(err)

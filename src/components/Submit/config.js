@@ -1,18 +1,20 @@
 export const errorMsg = "Required"
 export const emailRegexPattern = /\S+@\S+\.\S+/
-export const defaultValues = {
+export const defaultMovieValues = {
   // movie
   title: "",
   director: "",
   producer: "",
   duration: 0,
   description: "",
+}
+export const defaultApplicantValues = {
   // applicant
-  applicantName: "",
-  applicantEmail: "",
+  name: "",
+  email: "",
 }
 
-export const spreadDataToSchema = data => {
+export const spreadDataToSchema = (data, applicant) => {
   // do validation here as well ?
   let movie = {
     accepted: false,
@@ -22,13 +24,10 @@ export const spreadDataToSchema = data => {
     description: data.description,
     title: data.title,
     imageLocation: generateImageLocation(data.title) + "/" + data.image[0].name,
-    applicantId: "",
+    applicantId: applicant.applicantId,
+    applicantName: applicant.name,
   }
-  let applicant = {
-    name: data.applicantName,
-    email: data.applicantEmail,
-  }
-  return { movie, applicant }
+  return { movie }
 }
 
 export const generateImageLocation = movieTitle => {

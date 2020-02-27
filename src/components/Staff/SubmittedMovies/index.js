@@ -1,32 +1,25 @@
 // components
-import Content from "./Content"
+import { Header } from "./Styled"
+import Submissions from "../../Submissions"
 
 // tech
-import React, { useEffect, useState } from "react"
-import useAuth from "../../../hooks/useAuth"
-import { navigate } from "gatsby"
+import React from "react"
+import useGetAuth from "../../../hooks/useGetAuth"
+import { useSelector } from "react-redux"
 
-const SubmittedMovies = () => {
-  const { isLoggedIn, isLoading } = useAuth()
-  const [authenticated, authenticate] = useState(undefined)
-
-  useEffect(() => {
-    if (!isLoading) authenticate(isLoggedIn)
-  }, [isLoggedIn, isLoading])
-
-  // has not determined
-  if (authenticated === undefined) {
-    return <p>checking credentials</p>
-  } else if (!authenticated) {
-    navigate("/staff")
-    return null
-  }
-
+const Content = () => {
+  const { auth } = useGetAuth()
+  const profile = useSelector(state => state.firebaseReducer.profile)
   return (
-    // the page contents
-    // submissions are in here
-    <Content></Content>
+    <>
+      <Header>
+        <p>Velkomin/n {profile ? profile.email : ""}</p>
+        <button onClick={() => auth.signOut()}>Log out</button>
+      </Header>
+      {/* noRestrict prop only in the backend! */}
+      <Submissions noRestrict></Submissions>
+    </>
   )
 }
 
-export default SubmittedMovies
+export default Content

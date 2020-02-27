@@ -1,35 +1,46 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
 import { useGetCollection } from "../../../hooks/useGetCollection"
 import { useGetStorage } from "../../../hooks/useGetStorage"
-import {
-  errorMsg,
-  emailRegexPattern,
-  defaultValues,
-  uploadLimit,
-} from "./config"
-import { submitData } from "./submitData"
+import { submitData } from "../submitData"
+import useAuth from "../../../hooks/useAuth"
+import { errorMsg, uploadLimit, defaultMovieValues } from "../config"
 
 const MovieForm = () => {
-  const [emailOk, setEmailOk] = useState(false)
+  const [applicant, setApplicant] = useState({
+    name: "",
+    email: "",
+    applicantId: "",
+  })
   const [file, setFile] = useState({ ok: false, name: null })
 
   const { register, handleSubmit, errors } = useForm({
-    defaultValues: defaultValues,
+    defaultValues: defaultMovieValues,
   })
 
   const { collection: movieCollection } = useGetCollection("movies")
   const { collection: applicantCollection } = useGetCollection("applicants")
   const { storage } = useGetStorage()
 
-  const validateEmail = e => {
-    if (emailRegexPattern.test(e.target.value)) {
-      setEmailOk(true)
-    } else {
-      setEmailOk(false)
+  // register applicant when profile has loaded
+  const { profile, isLoading } = useAuth()
+  useEffect(() => {
+    if (profile && !isLoading) {
+      applicantCollection
+        .where("applicantId", "==", profile.uid)
+        .get()
+        .then(d => {
+          d.forEach(applicant => {
+            setApplicant({
+              name: applicant.data().name,
+              email: applicant.data().email,
+              applicantId: applicant.data().applicantId,
+            })
+          })
+        })
     }
-  }
+  })
 
   const validateFile = e => {
     for (var i = 0; i < e.target.files.length; i++) {
@@ -41,7 +52,7 @@ const MovieForm = () => {
 
   const onSubmit = (data, e) => {
     console.log(data)
-    submitData(data, movieCollection, applicantCollection, storage, e)
+    submitData(data, movieCollection, applicant, storage, e)
   }
 
   return (
@@ -51,26 +62,8 @@ const MovieForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
       >
-        <legend>Tengiliður</legend>
-        <InputBox
-          placeholder="Fullt nafn"
-          type="text"
-          name="applicantName"
-          id="applicantName"
-          ref={register({ required: true, maxLength: 80 })}
-        />
-        {errors.applicantName && <Warning>{errorMsg}</Warning>}
-        <InputBox
-          email
-          color={emailOk ? "green" : "inherit"}
-          placeholder="Netfang"
-          type="text"
-          name="applicantEmail"
-          id="applicantEmail"
-          onChange={e => validateEmail(e)}
-          ref={register({ required: true, pattern: emailRegexPattern })}
-        />
-        {errors.applicantEmail && <Warning>Invalid email</Warning>}
+        <legend>Tengiliður: </legend>
+        <p>{applicant ? applicant.name : ""}</p>
         <legend>Kvikmynd</legend>
         <InputBox
           ref={register({ required: true, maxLength: 80 })}
@@ -136,7 +129,7 @@ const MovieForm = () => {
 
         <input
           name="submitFormBtn"
-          id="submit-btn"
+          className="submit-btn"
           type="submit"
           value="Submit"
         />

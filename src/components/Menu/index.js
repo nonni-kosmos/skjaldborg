@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Container, List, Sensor } from "./styled"
 import { useSelector, useDispatch } from "react-redux"
 import { TRIGGER_MENU, TRIGGER_RED_CURSOR } from "../../state/action"
@@ -14,25 +14,37 @@ const Menu = ({
 }) => {
   const menu = useSelector(state => state.reducer.menu)
   const dispatch = useDispatch()
+  const platform = useSelector(state => state.reducer.platform)
+
+  const [menuMaxSize, setMenuMaxSize] = useState(undefined)
+  useEffect(() => {
+    if (platform === "desktop") {
+      setMenuMaxSize("50%")
+    } else {
+      setMenuMaxSize("100%")
+    }
+  }, [platform])
   return (
     <>
-      <Sensor
-        width={menu === "open" ? "50%" : "0%"}
-        onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
-        onMouseOver={() =>
-          dispatch({
-            type: TRIGGER_RED_CURSOR,
-            trigger: `hide`,
-          })
-        }
-        onFocus={() =>
-          dispatch({
-            type: TRIGGER_RED_CURSOR,
-            trigger: `hide`,
-          })
-        }
-      ></Sensor>
-      <Container width={menu === "open" ? "50%" : "0%"}>
+      {platform === "desktop" ? (
+        <Sensor
+          width={menu === "open" ? menuMaxSize : "0%"}
+          onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
+          onMouseOver={() =>
+            dispatch({
+              type: TRIGGER_RED_CURSOR,
+              trigger: `hide`,
+            })
+          }
+          onFocus={() =>
+            dispatch({
+              type: TRIGGER_RED_CURSOR,
+              trigger: `hide`,
+            })
+          }
+        ></Sensor>
+      ) : null}
+      <Container width={menu === "open" ? menuMaxSize : "0%"}>
         <List
           onMouseOver={() =>
             dispatch({

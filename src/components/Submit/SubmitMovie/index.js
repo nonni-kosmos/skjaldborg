@@ -1,6 +1,6 @@
 // components
-import { Container, PageTitle } from "./styled"
-import MovieForm from "./MovieForm"
+import { Container, PageTitle } from "../styled"
+import MovieForm from "../MovieForm"
 
 // tech
 import React from "react"

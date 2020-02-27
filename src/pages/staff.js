@@ -1,6 +1,7 @@
 // components
 import SubmittedMovies from "../components/Staff/SubmittedMovies"
 import Login from "../components/Staff/Login"
+import RestrictedRoute from "../components/RestrictedRoute"
 
 // tech
 import React from "react"
@@ -10,7 +11,12 @@ const Staff = () => {
   return (
     <Router basepath="/staff">
       <Login path="/"></Login>
-      <SubmittedMovies path="/submitted-movies"></SubmittedMovies>
+      <RestrictedRoute
+        isStaff
+        component={SubmittedMovies}
+        redirectPath="/staff"
+        path="/submitted-movies"
+      ></RestrictedRoute>
     </Router>
   )
 }

@@ -34,7 +34,7 @@ export const Container = styled.div`
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-  #submit-btn {
+  .submit-btn {
     margin: 1rem auto;
     padding: 0.5rem 1rem;
     font-size: 1rem;

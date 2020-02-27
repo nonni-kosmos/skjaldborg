@@ -34,18 +34,11 @@ _to del oo_
 - [ ] CMS
 - [ ] CMS GENERATED PAGES
 
-# MOVIES
+# Umsóknir
 
-- [x] show accepted movies on page
-- [ ] generate subpage for each accepted movie
-- [x] submit movie with image
-- [ ] redirect to success page after submission
-- [x] setup firebase storage
-  - [x] upload
-  - [x] reference file in /heimildamyndir
-- [x] remove cloudinary
-- [x] simplify form
-  - [x] clear data on submit
-  - [x] split into components?
-  - [!] validate data
-    - [ ] validate in firebase
+- [x] Create umækjandi form
+- [x] Restrict access to umsókn
+- [x] Register user on submit form & create applicant that is connected to userID
+- [x] Update movie form, based on changes 
+- [ ] Restrict access to staff backend
+- [x] Create firebase rules
