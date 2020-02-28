@@ -26,7 +26,8 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <GlobalStyle></GlobalStyle>
-      <PageContainer pathname={location.pathname}>{children}</PageContainer>
+      {children}
+      {/* <PageContainer pathname={location.pathname}>{children}</PageContainer> */}
     </>
   )
 }
