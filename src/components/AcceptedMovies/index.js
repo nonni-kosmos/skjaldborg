@@ -4,23 +4,42 @@ import Movie from "./Movie"
 // tech
 import React from "react"
 import { useGetAcceptedMovies } from "../../hooks/useFirestoreCollection"
+import { StaticQuery, graphql } from "gatsby"
 
-const AcceptedMovies = () => {
-  const { docs: submissions, isLoading } = useGetAcceptedMovies()
+const AcceptedMovies = ({
+  data: {
+    allMovie: { nodes: submissions },
+  },
+}) => {
   return (
     <>
       <PageTitle className="titlar">Heimildamyndir</PageTitle>
       <Container>
-        {isLoading ? (
-          <p>Fetching submissions...</p>
-        ) : (
-          submissions.map((movie, index) => (
-            <Movie key={index} movie={movie}></Movie>
-          ))
-        )}
+        {submissions.map((movie, index) => (
+          <Movie key={index} movie={movie}></Movie>
+        ))}
       </Container>
     </>
   )
 }
 
-export default AcceptedMovies
+export default props => (
+  <StaticQuery
+    query={graphql`
+      {
+        allMovie(filter: { accepted: { eq: true } }) {
+          nodes {
+            title
+            director
+            imageLocation
+            duration
+            createdAt
+            applicantName
+            applicantId
+          }
+        }
+      }
+    `}
+    render={data => <AcceptedMovies data={data} {...props}></AcceptedMovies>}
+  ></StaticQuery>
+)

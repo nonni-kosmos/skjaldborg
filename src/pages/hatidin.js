@@ -1,7 +1,8 @@
 import React from "react"
+import { Router } from "@reach/router"
 
 const Hatidin = () => {
-  return <div>Hátið í bæ</div>
+  return <Router basepath="/hatidin"></Router>
 }
 
 export default Hatidin

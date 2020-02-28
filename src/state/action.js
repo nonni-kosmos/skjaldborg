@@ -28,3 +28,8 @@ export const setRedCursorSize = size => ({
   type: SET_RED_CURSOR_SIZE,
   size,
 })
+export const SELECT_MOVIE = "SELECT_MOVIE"
+export const selectMovie = movieId => ({
+  type: SELECT_MOVIE,
+  movieId,
+})

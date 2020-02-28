@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { greenColor } from "../../PageContainer/styled"
+import { Link } from "gatsby"
 
-export const Box = styled.div`
+export const Box = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;

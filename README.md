@@ -42,3 +42,10 @@ _to del oo_
 - [x] Update movie form, based on changes 
 - [ ] Restrict access to staff backend
 - [x] Create firebase rules
+
+
+# Detail page for movie
+
+- [ ] Gatsby source firestore
+- [ ] Gatsby node generates pages via graphql query from store
+- [ ] Find a solution if page has not yet re-deployed and a movie has been accepted, hide it?

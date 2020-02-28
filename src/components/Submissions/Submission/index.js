@@ -30,8 +30,12 @@ const Submission = ({ movie }) => {
           dangerouslySetInnerHTML={{ __html: movie.frontmatter.description }}
         ></div>
         <SubmissionDetails>
-          <Applicant id={movie.frontmatter.applicantId}></Applicant>
-          <p>At {convert(movie.frontmatter.createdAt)}</p>
+          {movie.frontmatter.applicantId !== "" ? (
+            <>
+              <Applicant id={movie.frontmatter.applicantId}></Applicant>
+              <p>At {convert(movie.frontmatter.createdAt)}</p>
+            </>
+          ) : null}
         </SubmissionDetails>
         <label>
           Velja mynd

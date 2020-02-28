@@ -3,7 +3,7 @@ import Header from "../Header"
 import Burger from "../Burger"
 import Menu from "../Menu"
 import { Loader, Container } from "./styled"
-import Cursor from "../Cursor"
+// import Cursor from "../Cursor"
 
 // tech
 import React, { useState, useEffect } from "react"

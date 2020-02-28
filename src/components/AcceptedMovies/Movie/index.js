@@ -1,18 +1,21 @@
 import React from "react"
 import { Box, Title, Details, DirectorsName, Duration, Image } from "./styled"
 import { useGetImage } from "../../../hooks/useGetImage"
+import { titleToURL } from "../../../methods"
+import slugify from "slugify"
 
-const Movie = ({ movie }) => {
-  const { image, isLoading } = useGetImage(movie.frontmatter.imageLocation)
+const Movie = ({ movie: { title, director, duration, imageLocation } }) => {
+  const { image, isLoading } = useGetImage(imageLocation)
   return (
-    <Box opacity={!isLoading && image ? 1 : 0}>
-      <Image src={image} alt={movie.frontmatter.title} />
-      <Title>{movie.frontmatter.title}</Title>
+    <Box
+      to={"/heimildamyndir/" + slugify(title)}
+      opacity={!isLoading && image ? 1 : 0}
+    >
+      <Image src={image} alt={title} />
+      <Title>{title}</Title>
       <Details>
-        <DirectorsName className="les-texti">
-          {movie.frontmatter.director}
-        </DirectorsName>
-        <Duration>{movie.frontmatter.duration} mín.</Duration>
+        <DirectorsName className="les-texti">{director}</DirectorsName>
+        <Duration>{duration} mín.</Duration>
       </Details>
     </Box>
   )

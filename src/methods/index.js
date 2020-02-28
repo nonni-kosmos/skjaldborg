@@ -52,3 +52,7 @@ export const convert = timestampSeconds => {
 
   return convdataTime
 }
+
+export const titleToURL = title => {
+  return title.replace(/ /g, "-").toLowerCase()
+}

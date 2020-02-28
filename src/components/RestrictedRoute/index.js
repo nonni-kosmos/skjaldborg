@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
 import useAuth from "../../hooks/useAuth"
-import { useGetCollection } from "../../hooks/useGetCollection"
 import { navigate } from "gatsby"
 
-const RestrictedRoute = ({ component: Component, redirectPath, isStaff }) => {
-  const { isLoggedIn, isLoading, profile } = useAuth()
+const RestrictedRoute = ({ component: Component, redirectPath }) => {
+  const { isLoggedIn, isLoading } = useAuth()
   const [authenticated, authenticate] = useState(undefined)
 
   useEffect(() => {
