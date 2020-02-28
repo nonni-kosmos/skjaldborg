@@ -39,6 +39,6 @@ _to del oo_
 - [x] Create umækjandi form
 - [x] Restrict access to umsókn
 - [x] Register user on submit form & create applicant that is connected to userID
-- [x] Update movie form, based on changes 
+- [x] Update movie form, based on changes
 - [ ] Restrict access to staff backend
 - [x] Create firebase rules

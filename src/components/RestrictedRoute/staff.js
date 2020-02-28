@@ -2,15 +2,20 @@ import React, { useEffect, useState } from "react"
 import useAuth from "../../hooks/useAuth"
 import { navigate } from "gatsby"
 
-const RestrictedRoute = ({ component: Component, redirectPath, isStaff }) => {
-  const { isLoggedIn, isLoading } = useAuth()
+const RestrictedRouteStaff = ({ component: Component, redirectPath }) => {
+  const { isLoggedIn, isLoading, profile } = useAuth()
   const [authenticated, authenticate] = useState(undefined)
 
   useEffect(() => {
     if (!isLoading) {
+      if (profile) {
+        if (profile.email === "master@master.is") {
+          authenticate(isLoggedIn)
+        }
+      }
       authenticate(isLoggedIn)
     }
-  }, [isLoggedIn, isLoading])
+  }, [isLoggedIn, isLoading, profile])
 
   // has not determined
   if (authenticated === undefined) {
@@ -22,4 +27,4 @@ const RestrictedRoute = ({ component: Component, redirectPath, isStaff }) => {
   return <Component></Component>
 }
 
-export default RestrictedRoute
+export default RestrictedRouteStaff
