@@ -21,12 +21,11 @@ export const Container = styled.div`
   background: ${greenColor};
   box-sizing: border-box;
   padding: 2.5rem;
-  height: 100vh;
   width: 100%;
+  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

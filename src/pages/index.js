@@ -26,6 +26,16 @@ const ImageContainer = styled.div`
   width: 300px;
   margin: 0 auto;
   box-sizing: border-box;
+  /** browser */
+  @media only screen and (min-width: 750px) {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -175px;
+  }
 `
 
 /* ATH* Setja linkinn: https://www.facebook.com/skjaldborg.hatid.islenskra.heimildamynda/ undir FACEBOOK. */
