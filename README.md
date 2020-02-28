@@ -3,20 +3,20 @@ _to del oo_
 - [x] SETUP FIRESTORE
 - [ ] SETUP AUTHENTICATION
   - [x] master account // read,write
-  - [ ] minion account // read
+  - [x] minion account // read
   - [x] restrict staff routes
-  - [ ] restrict access to firestore
+  - [x] restrict access to firestore
 - [ ] LOG IN PAGE
   - [ ] create frontend
     - [ ] style
     - [x] logic
 - [ ] SUBMISSIONS
-  - [ ] create frontend
-    - [ ] style
-    - [ ] logic
-  - [ ] form submits to firestore successfully
-  - [ ] store applicant info on submit
-  - [ ] captcha
+  - [x] create frontend
+    - [x] style
+    - [x] logic
+  - [x] form submits to firestore successfully
+  - [x] store applicant info on submit
+  - [?] captcha
 - [x] SETUP THEMES
   - [x] staff
   - [x] main

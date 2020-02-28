@@ -25,7 +25,7 @@ const PageContainer = ({ children, pathname }) => {
   return (
     <ThemeProvider theme={{ mode: theme }}>
       <Loader opacity={platform}>
-        <Cursor></Cursor>
+        {/* <Cursor></Cursor> */}
         <Header></Header>
         <Burger></Burger>
         <Menu></Menu>
