@@ -14,20 +14,10 @@ const Layout = ({ children, location }) => {
 
   useSetPlatform()
 
-  const { isLoading, profile } = useAuth()
-
-  useEffect(() => {
-    if (!isLoading) {
-      console.log("authenticating:" + profile)
-      dispatch({ type: AUTHENTICATE, profile: profile })
-    }
-  }, [isLoading, dispatch, profile])
-
   return (
     <>
       <GlobalStyle></GlobalStyle>
-      {children}
-      {/* <PageContainer pathname={location.pathname}>{children}</PageContainer> */}
+      <PageContainer>{children}</PageContainer>
     </>
   )
 }
