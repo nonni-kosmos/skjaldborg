@@ -1,9 +1,9 @@
 // components
-import { Container, PageTitle } from "./styled"
+import { Container } from "./styled"
+import PageTitle from "../PageTitle"
 import Movie from "./Movie"
 // tech
 import React from "react"
-import { useGetAcceptedMovies } from "../../hooks/useFirestoreCollection"
 import { StaticQuery, graphql } from "gatsby"
 
 const AcceptedMovies = ({

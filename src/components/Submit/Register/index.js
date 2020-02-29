@@ -1,8 +1,9 @@
 import React, { useEffect } from "react"
 import ApplicantFrom from "../ApplicantForm"
-import { PageTitle, Container } from "../styled"
+import { Container } from "../styled"
 import useAuth from "../../../hooks/useAuth"
 import { navigate } from "gatsby"
+import PageTitle from "../../PageTitle"
 
 // applicant form
 const Register = () => {
@@ -16,7 +17,7 @@ const Register = () => {
   }, [isLoggedIn])
   return (
     <Container>
-      <PageTitle className="titlar">Umsækjandi</PageTitle>
+      <PageTitle nopad>Umsækjandi</PageTitle>
       <ApplicantFrom></ApplicantFrom>
     </Container>
   )

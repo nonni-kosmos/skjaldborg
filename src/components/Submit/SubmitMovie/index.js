@@ -1,5 +1,6 @@
 // components
-import { Container, PageTitle } from "../styled"
+import { Container } from "../styled"
+import PageTitle from "../../PageTitle"
 import MovieForm from "../MovieForm"
 
 // tech

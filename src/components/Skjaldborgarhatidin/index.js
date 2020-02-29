@@ -1,20 +1,12 @@
-// components
-import {Container} from "./styled"
-
-// tech
-import React from 'react'
+import React from "react"
+import PageTitle from "../PageTitle"
 
 const Skjaldborgarhatidin = () => {
-    return (
-        <Container>
-           Skjaldborgarhatidin
-        </Container>
-    )
+  return (
+    <>
+      <PageTitle>Skjaldborgarhátíðin</PageTitle>
+    </>
+  )
 }
 
 export default Skjaldborgarhatidin
-
-
-
-
-
