@@ -8,6 +8,7 @@ import "./font.css"
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"
 import PageContainer from "../components/PageContainer"
+import SEO from "../components/seo"
 
 const Layout = ({ children, location }) => {
   const dispatch = useDispatch()
@@ -26,6 +27,7 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <GlobalStyle></GlobalStyle>
+      <SEO></SEO>
       <PageContainer pathname={location.pathname}>{children}</PageContainer>
     </>
   )

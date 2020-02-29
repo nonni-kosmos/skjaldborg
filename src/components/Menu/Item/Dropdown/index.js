@@ -47,7 +47,9 @@ const Dropdown = ({
             }}
             onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
           >
-            <Anchor to={item.slug}>{item.name}</Anchor>
+            <Anchor activeStyle={{ color: "white" }} to={item.slug}>
+              {item.name}
+            </Anchor>
           </Item>
         ))}
       </List>

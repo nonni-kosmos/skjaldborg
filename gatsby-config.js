@@ -13,6 +13,9 @@ const dropdownPages = [
 const metadata = {
   title: `Skjaldborg`,
   subtitle: `Hátíð íslenskra heimildamynda`,
+  url: `https://skjaldborg.is/`,
+  favicon: `/assets/favicon.png`,
+  logo: `/assets/logo_colored.png`,
   year: 2020,
   period: `28.-31. maí`,
   location: `Patreksfjörður`,
