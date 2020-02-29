@@ -48,6 +48,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/static/hatidin-undirsidur`,
+      },
+    },
+    {
       resolve: `gatsby-source-firestore`,
       options: {
         credential: require("./skjaldborg-9c060-firebase-adminsdk-a0qf5-b570a59c08.json"),

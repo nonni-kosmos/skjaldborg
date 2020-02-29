@@ -2,7 +2,10 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 export const Container = styled.div`
-  height: 40rem;
+  height: 35rem;
   width: 100%;
+  padding: 4rem 0 4rem 0;
 `
-export const Image = styled(Img)``
+export const Image = styled(Img)`
+  height: 100%;
+`

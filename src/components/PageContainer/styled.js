@@ -8,13 +8,18 @@ export const backgroundColor = theme("mode", {
 })
 
 export const greenColor = theme("mode", {
-  main: "#84DF7B",
+  main: " rgb(188,220,186)",
   staff: "black",
 })
 
 export const redColor = theme("mode", {
   main: "#E64746",
   staff: "gray",
+})
+
+export const greenTextColor = theme("mode", {
+  main: "#9DD79A",
+  staff: "black",
 })
 
 export const Container = styled.div`
