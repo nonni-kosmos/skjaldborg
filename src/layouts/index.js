@@ -1,22 +1,20 @@
-import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { AUTHENTICATE } from "../state/action"
-import useAuth from "../hooks/useAuth"
+import React from "react"
+
 import useSetPlatform from "../hooks/useSetPlatform"
 import "./font.css"
 
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"
 import PageContainer from "../components/PageContainer"
+import SEO from "../components/seo"
 
-const Layout = ({ children, location }) => {
-  const dispatch = useDispatch()
-
+const Layout = ({ children }) => {
   useSetPlatform()
 
   return (
     <>
       <GlobalStyle></GlobalStyle>
+      <SEO></SEO>
       <PageContainer>{children}</PageContainer>
     </>
   )
