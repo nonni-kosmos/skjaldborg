@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { greenColor, redColor } from "../../PageContainer/styled"
+import { redColor, greenTextColor } from "../../PageContainer/styled"
 
 export const Container = styled.div`
   padding-top: 1.5rem;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   h1 {
     margin: 0;
     font-size: 1.6rem;
-    color: ${greenColor};
+    color: ${greenTextColor};
   }
   p {
     margin: 0;

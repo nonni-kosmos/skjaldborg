@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button, List, Item, Title, Anchor } from "./styled"
 import { graphql, StaticQuery } from "gatsby"
 import { useDispatch } from "react-redux"
-import { SET_RED_CURSOR_SIZE, TRIGGER_MENU } from "../../../../state/action"
+import { TRIGGER_MENU } from "../../../../state/action"
 
 const Dropdown = ({
   children,
@@ -16,15 +16,7 @@ const Dropdown = ({
   const dispatch = useDispatch()
   return (
     <Button onClick={() => setOpen(!open)}>
-      <Title
-        className="titlar"
-        onMouseOver={() => {
-          dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
-        }}
-        onFocus={() => {
-          dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
-        }}
-      >
+      <Title className="titlar">
         {children}
         {open ? "-" : "+"}
       </Title>
@@ -33,18 +25,6 @@ const Dropdown = ({
           <Item
             className="titlar"
             key={index}
-            onMouseOver={() => {
-              dispatch({
-                type: SET_RED_CURSOR_SIZE,
-                size: `small`,
-              })
-            }}
-            onFocus={() => {
-              dispatch({
-                type: SET_RED_CURSOR_SIZE,
-                size: `small`,
-              })
-            }}
             onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
           >
             <Anchor activeStyle={{ color: "white" }} to={item.slug}>

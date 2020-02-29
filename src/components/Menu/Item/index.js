@@ -2,7 +2,7 @@ import React from "react"
 import { Text, Anchor } from "./styled"
 import Dropdown from "./Dropdown"
 import { useDispatch } from "react-redux"
-import { TRIGGER_MENU, SET_RED_CURSOR_SIZE } from "../../../state/action"
+import { TRIGGER_MENU } from "../../../state/action"
 
 const Item = ({ item }) => {
   const dispatch = useDispatch()
@@ -22,12 +22,6 @@ const Item = ({ item }) => {
             })
           }
           to={item.slug}
-          onMouseOver={() => {
-            dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
-          }}
-          onFocus={() => {
-            dispatch({ type: SET_RED_CURSOR_SIZE, size: `large` })
-          }}
         >
           {item.name}
         </Anchor>

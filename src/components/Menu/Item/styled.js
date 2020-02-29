@@ -13,6 +13,6 @@ export const Anchor = styled(Link)`
   color: ${redColor};
   &&:hover {
     color: white;
-    cursor: default;
+    cursor: pointer;
   }
 `

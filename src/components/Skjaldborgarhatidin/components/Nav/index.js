@@ -1,6 +1,7 @@
 import React from "react"
-import { List, Item, Anchor } from "./styled"
+import { List, Item } from "./styled"
 import { graphql, StaticQuery } from "gatsby"
+import Anchor from "../../../Anchor"
 
 const Nav = ({
   data: {
@@ -13,7 +14,7 @@ const Nav = ({
     <List>
       {dropdownpages.map((item, index) => (
         <Item key={index}>
-          <Anchor to={item.slug}>{item.name}</Anchor>
+          <Anchor item={item} />
         </Item>
       ))}
     </List>

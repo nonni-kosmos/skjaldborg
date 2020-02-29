@@ -10,7 +10,7 @@ export const Button = styled.div`
 export const Title = styled.span`
   &&:hover {
     color: white;
-    cursor: default;
+    cursor: pointer;
   }
 `
 export const List = styled.div`
@@ -29,7 +29,7 @@ export const Item = styled.p`
   margin: 0;
   &&:hover {
     color: white;
-    cursor: default;
+    cursor: pointer;
   }
 `
 export const Anchor = styled(Link)`
