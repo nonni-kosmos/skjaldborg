@@ -2,12 +2,13 @@ const pages = [
   { name: `Hátíðin`, slug: `/hatidin` },
   // { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   // { name: `Dagskrá`, slug: `/dagskra` },
+  { name: `Sarpur`, slug: `/sarpur` },
   { name: `Umsókn`, slug: `/umsokn` },
 ]
 const dropdownPages = [
   { name: `Skjaldborgarhátíðin`, slug: `/hatidin` },
-  { name: `Skjaldborgarbíó`, slug: `/bio` },
-  { name: `Gisting/Ferðalag`, slug: `/gisting-ferdalag` },
+  { name: `Skjaldborgarbíó`, slug: `/hatidin/bio` },
+  { name: `Gisting/Ferðalag`, slug: `/hatidin/gisting-ferdalag` },
 ]
 const metadata = {
   title: `Skjaldborg`,

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { redColor } from "../../../PageContainer/styled"
+import { Link } from "gatsby"
 
 export const Button = styled.div`
   text-decoration: none;
@@ -30,4 +31,8 @@ export const Item = styled.p`
     color: white;
     cursor: default;
   }
+`
+export const Anchor = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { Button, List, Item, Title } from "./styled"
+import { Button, List, Item, Title, Anchor } from "./styled"
 import { graphql, StaticQuery } from "gatsby"
 import { useDispatch } from "react-redux"
-import { SET_RED_CURSOR_SIZE } from "../../../../state/action"
+import { SET_RED_CURSOR_SIZE, TRIGGER_MENU } from "../../../../state/action"
 
 const Dropdown = ({
   children,
@@ -45,8 +45,9 @@ const Dropdown = ({
                 size: `small`,
               })
             }}
+            onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
           >
-            {item.name}
+            <Anchor to={item.slug}>{item.name}</Anchor>
           </Item>
         ))}
       </List>
