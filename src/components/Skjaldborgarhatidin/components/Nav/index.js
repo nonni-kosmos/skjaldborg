@@ -14,7 +14,7 @@ const Nav = ({
     <List>
       {dropdownpages.map((item, index) => (
         <Item key={index}>
-          <Anchor item={item} />
+          <Anchor color="green" item={item} />
         </Item>
       ))}
     </List>

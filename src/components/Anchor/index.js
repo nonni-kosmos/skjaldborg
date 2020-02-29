@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { Container, Ball } from "./styled"
 
-const Anchor = ({ item }) => {
-  const [active, setActive] = useState(false)
+const Anchor = ({ item, color }) => {
   return (
-    <Container activeClassName="selected" to={item.slug}>
+    <Container color={color} activeClassName="selected" to={item.slug}>
       <Ball></Ball>
       {item.name}
     </Container>

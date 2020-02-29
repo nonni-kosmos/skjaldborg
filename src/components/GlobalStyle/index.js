@@ -12,6 +12,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #E64746;
     }
     .selected > span {
-        opacity: 0.6;
+        transform: scale(1);
     }
 `

@@ -13,7 +13,7 @@ export const greenColor = theme("mode", {
 })
 
 export const redColor = theme("mode", {
-  main: "#E64746",
+  main: `rgb(230, 71, 70)`,
   staff: "gray",
 })
 

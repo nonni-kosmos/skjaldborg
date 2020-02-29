@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Button, List, Item, Title, Anchor } from "./styled"
+import { Button, List, Item, Title } from "./styled"
+import Anchor from "../../../Anchor"
 import { graphql, StaticQuery } from "gatsby"
 import { useDispatch } from "react-redux"
 import { TRIGGER_MENU } from "../../../../state/action"
@@ -27,9 +28,7 @@ const Dropdown = ({
             key={index}
             onClick={() => dispatch({ type: TRIGGER_MENU, trigger: "closed" })}
           >
-            <Anchor activeStyle={{ color: "white" }} to={item.slug}>
-              {item.name}
-            </Anchor>
+            <Anchor color="red" item={item}></Anchor>
           </Item>
         ))}
       </List>
