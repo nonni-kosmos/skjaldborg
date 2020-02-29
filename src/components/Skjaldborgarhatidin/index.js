@@ -4,6 +4,7 @@ import TopImage from "../TopImage"
 import Content from "../Content"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "./styled"
+import Nav from "./components/Nav"
 
 const Skjaldborgarhatidin = ({
   data: {
@@ -15,7 +16,7 @@ const Skjaldborgarhatidin = ({
       <PageTitle>Skjaldborgarhátíðin</PageTitle>
       <TopImage image={frontmatter.mynd}></TopImage>
       <Wrap>
-        <p>list</p>
+        <Nav></Nav>
         <Content html={html}></Content>
       </Wrap>
     </>

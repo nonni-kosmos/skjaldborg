@@ -7,4 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         font-weight: normal;
     }
+    ::selection {
+        color: #9DD79A;
+        background-color: #E64746;
+    }
 `
