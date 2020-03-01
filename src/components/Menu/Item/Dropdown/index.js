@@ -16,8 +16,8 @@ const Dropdown = ({
   const [open, setOpen] = useState(false)
   const dispatch = useDispatch()
   return (
-    <Button onClick={() => setOpen(!open)}>
-      <Title className="titlar">
+    <Button>
+      <Title onClick={() => setOpen(!open)} className="titlar">
         {children}
         {open ? "-" : "+"}
       </Title>
