@@ -24,7 +24,7 @@ export const Ball = styled.span`
   background: ${redColor};
   border-radius: 50%;
   transition: 0.2s ease-in-out;
-  opacity: 0.6;
+  opacity: 0.5;
   pointer-events: none;
   transform: scale(0);
   ${Container}:hover & {
