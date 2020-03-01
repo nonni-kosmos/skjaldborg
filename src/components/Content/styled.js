@@ -15,4 +15,8 @@ export const Container = styled.div`
   blockquote > p {
     margin: 0;
   }
+  h1 {
+    text-transform: uppercase;
+    color ${redColor};
+  }
 `

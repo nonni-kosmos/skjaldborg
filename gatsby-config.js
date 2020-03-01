@@ -50,8 +50,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
+        name: `hatidin-undirstidur`,
         path: `${__dirname}/static/hatidin-undirsidur`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `gisting`,
+        path: `${__dirname}/static/gisting`,
       },
     },
     {

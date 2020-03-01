@@ -5,11 +5,14 @@ import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "../styled"
 import Nav from "../components/Nav"
 import Content from "../../Content"
+import { GuesthousesGrid } from "./styled"
+import Guesthouse from "./Guesthouse"
 
 // Gisting / Ferðalagið
 const Gisting = ({
   data: {
     markdownRemark: { html, frontmatter },
+    guesthouses,
   },
 }) => {
   return (
@@ -20,6 +23,11 @@ const Gisting = ({
         <Nav></Nav>
         <Content html={html}></Content>
       </Wrap>
+      <GuesthousesGrid>
+        {guesthouses.nodes.map((guesthouse, index) => (
+          <Guesthouse key={index} guesthouse={guesthouse}></Guesthouse>
+        ))}
+      </GuesthousesGrid>
     </>
   )
 }
@@ -37,6 +45,28 @@ export default props => (
                 fluid(maxHeight: 1200, quality: 85) {
                   ...GatsbyImageSharpFluid
                 }
+              }
+            }
+          }
+        }
+        guesthouses: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/static/gisting/" } }
+        ) {
+          nodes {
+            frontmatter {
+              title
+              mynd {
+                childImageSharp {
+                  fluid(quality: 95, maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              google_maps_url
+              stadsetning {
+                baer
+                heimilisfang
+                simi
               }
             }
           }
