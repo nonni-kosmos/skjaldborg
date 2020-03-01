@@ -2,6 +2,10 @@
 title: Gisting/Ferðalagið
 mynd: /assets/skjaldborg_060dscf4118_byontkovic.jpg
 ---
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+# Ferðalagið
 
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+Flugfélagið Ernir flýgur frá Reykjavík til Bíldudals, og þaðan fer rúta til Patreksfjarðar. Það ferðalag tekur um klukktíma frá Reykjavík. Innritun í flug fer sunnan megin við Hótel Loftleiði.
+
+Ekið er til Stykkishólms, þaðan er ferjan Baldur tekin yfir á Brjánslæk og þá tekur við 40 mín akstur til Patreksfjarðar. Hægt er að fara úr ferjunni í Flatey og eiga þar dagsstund áður en haldið er áfram ferðalaginu. Baldur siglir tvisvar á sólarhring frá Stykkishólmi og vissara er að lesa tímatöfluna á heimasíðu þeirra.
+
+Að keyra alla leið er um 6-7 tíma ferðalag, en með mörgum verðlaunum á leiðinni. Náttúrupottar og gullfallegt útsýnið hefur lokkað marga á þennan rúnt. HÉR er hægt að sjá leiðina á korti, með tillögum að stoppum.
