@@ -1,13 +1,16 @@
 import styled from "styled-components"
-import { redColor, greenTextColor } from "../PageContainer/styled"
+import { redColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
   line-height: 135%;
+  * {
+    font-family: les;
+  }
   p {
     color: ${redColor};
   }
   blockquote > * {
-    color: ${greenTextColor};
+    text-transform: uppercase;
   }
   blockquote {
     margin: 0;

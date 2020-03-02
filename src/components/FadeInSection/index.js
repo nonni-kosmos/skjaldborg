@@ -3,7 +3,8 @@ import styled, { css } from "styled-components"
 
 const Section = styled.div`
   opacity: 0;
-  transform: translateX(20vh);
+  transform: ${props =>
+    props.direction === "up" ? `translateY(20vh)` : `translateX(10vh)`};
   visibility: hidden;
   transition: opacity 0.2s ease-out, transform 0.5s ease-out;
   will-change: opacity, visibility;
@@ -16,7 +17,7 @@ const Section = styled.div`
     `}
 `
 
-const Fadeinsection = ({ children }) => {
+const Fadeinsection = ({ children, direction }) => {
   const [isVisible, setVisible] = useState(true)
   const domRef = useRef()
 
@@ -30,7 +31,7 @@ const Fadeinsection = ({ children }) => {
   }, [])
 
   return (
-    <Section visible={isVisible} ref={domRef}>
+    <Section direction={direction} visible={isVisible} ref={domRef}>
       {children}
     </Section>
   )

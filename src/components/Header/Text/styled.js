@@ -8,6 +8,7 @@ export const Container = styled.div`
     margin: 0;
     font-size: 1.6rem;
     color: ${redColor};
+    padding-bottom: 0.5rem;
     ${props =>
       props.color === "white" &&
       css`
@@ -15,6 +16,7 @@ export const Container = styled.div`
       `}
   }
   p {
+    font-family: les;
     margin: 0;
     color: ${redColor};
     ${props =>

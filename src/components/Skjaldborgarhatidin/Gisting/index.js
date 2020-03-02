@@ -7,6 +7,7 @@ import Nav from "../components/Nav"
 import Content from "../../Content"
 import { GuesthousesGrid } from "./styled"
 import Guesthouse from "./Guesthouse"
+import Fadeinsection from "../../FadeInSection"
 
 // Gisting / Ferðalagið
 const Gisting = ({
@@ -21,11 +22,15 @@ const Gisting = ({
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
         <Nav></Nav>
-        <Content html={html}></Content>
+        <Fadeinsection>
+          <Content html={html}></Content>
+        </Fadeinsection>
       </Wrap>
       <GuesthousesGrid>
         {guesthouses.nodes.map((guesthouse, index) => (
-          <Guesthouse key={index} guesthouse={guesthouse}></Guesthouse>
+          <Fadeinsection direction={"up"}>
+            <Guesthouse key={index} guesthouse={guesthouse}></Guesthouse>
+          </Fadeinsection>
         ))}
       </GuesthousesGrid>
     </>

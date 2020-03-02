@@ -42,6 +42,7 @@ export const Container = styled.div`
   legend {
     margin: 1rem 0 1rem -3rem;
     font-size: 1.5rem;
+    text-transform: uppercase;
   }
 `
 export const InputBox = styled.input`

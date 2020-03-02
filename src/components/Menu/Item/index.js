@@ -3,7 +3,6 @@ import { Text, Anchor } from "./styled"
 import Dropdown from "./Dropdown"
 import { useDispatch } from "react-redux"
 import { TRIGGER_MENU } from "../../../state/action"
-import { greenColor } from "../../PageContainer/styled"
 
 const Item = ({ item }) => {
   const dispatch = useDispatch()
@@ -15,7 +14,7 @@ const Item = ({ item }) => {
         <Anchor
           className="titlar"
           partiallyActive={item.name === "Staff"}
-          activeStyle={{ color: `${greenColor}` }}
+          activeStyle={{ color: `rgb(188,220,186)` }}
           onClick={() =>
             dispatch({
               type: TRIGGER_MENU,

@@ -34,8 +34,8 @@ export const FillerImage = styled.img`
   width: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: 0.2s ease-in-out;
+  transition: 0.4s ease-in-out;
   ${Box}:hover & {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 `

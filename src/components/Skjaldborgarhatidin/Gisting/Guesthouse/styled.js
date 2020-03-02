@@ -16,6 +16,7 @@ export const Info = styled.div`
     color: ${greenTextColor};
     font-size: 1.5rem;
     margin: 1rem 0;
+    text-transform: uppercase;
   }
   .contact-details-wrap {
     display: flex;

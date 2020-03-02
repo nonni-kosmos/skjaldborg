@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { redColor } from "../PageContainer/styled"
+import { redColor, greenColor } from "../PageContainer/styled"
 
 export const Text = styled.p`
   height: 3rem;
@@ -31,7 +31,7 @@ export const Anchor = styled(Link)`
 export const Fill = styled.span`
   left: 0;
   top: 0;
-  background: ${redColor};
+  background: ${greenColor};
   width: 0%;
   height: 100%;
   position: absolute;
