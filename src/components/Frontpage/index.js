@@ -10,9 +10,11 @@ const Frontpage = ({ data: { imageSharp } }) => {
   return (
     <Container>
       <TopImage image={imageSharp}></TopImage>
+
       <FadeInSection>
         <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
       </FadeInSection>
+
       <FadeInSection>
         <ExcerptBtns />
         {/* sponsar */}

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 
 const Section = styled.div`
   opacity: 0;
-  transform: translateY(20vh);
+  transform: translateX(20vh);
   visibility: hidden;
   transition: opacity 0.2s ease-out, transform 0.5s ease-out;
   will-change: opacity, visibility;
