@@ -4,15 +4,23 @@ import TopImage from "../TopImage"
 import BigBtn from "../BigBtn"
 import { graphql, StaticQuery } from "gatsby"
 import ExcerptBtns from "../ExcerptBtns"
+import FadeInSection from "../FadeInSection"
 
 const Frontpage = ({ data: { imageSharp } }) => {
   return (
     <Container>
       <TopImage image={imageSharp}></TopImage>
-      <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
-      <ExcerptBtns></ExcerptBtns>
-      {/* sponsar */}
-      <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
+      <FadeInSection>
+        <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
+      </FadeInSection>
+      <FadeInSection>
+        <ExcerptBtns />
+        {/* sponsar */}
+      </FadeInSection>
+
+      <FadeInSection>
+        <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
+      </FadeInSection>
     </Container>
   )
 }
