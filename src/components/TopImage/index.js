@@ -4,7 +4,7 @@ import { Container, Image } from "./styled"
 const Topimage = ({ image }) => {
   return (
     <Container>
-      <Image fluid={image.childImageSharp.fluid}></Image>{" "}
+      <Image fluid={image.fluid}></Image>{" "}
     </Container>
   )
 }

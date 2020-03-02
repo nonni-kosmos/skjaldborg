@@ -49,3 +49,9 @@ _to del oo_
 - [ ] Gatsby source firestore
 - [ ] Gatsby node generates pages via graphql query from store
 - [ ] Find a solution if page has not yet re-deployed and a movie has been accepted, hide it?
+
+# Forsíða update
+- [x] Umsókn BTN
+- [x] Excerpt takkar
+- [ ] Sponsar
+- [ ] Fótur

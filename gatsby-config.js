@@ -6,9 +6,21 @@ const pages = [
   { name: `Umsókn`, slug: `/umsokn` },
 ]
 const dropdownPages = [
-  { name: `Skjaldborgarhátíðin`, slug: `/hatidin` },
-  { name: `Skjaldborgarbíó`, slug: `/hatidin/bio` },
-  { name: `Gisting/Ferðalag`, slug: `/hatidin/gisting-ferdalag` },
+  {
+    name: `Skjaldborgarhátíðin`,
+    slug: `/hatidin`,
+    image: `/assets/skjaldborg_byontkovic.jpg`,
+  },
+  {
+    name: `Skjaldborgarbíó`,
+    slug: `/hatidin/bio`,
+    image: `/assets/skjaldborg_092dscf5141_byontkovic.jpg`,
+  },
+  {
+    name: `Gisting/Ferðalag`,
+    slug: `/hatidin/gisting-ferdalag`,
+    image: `/assets/skjaldborg_060dscf4118_byontkovic.jpg`,
+  },
 ]
 const metadata = {
   title: `Skjaldborg`,

@@ -18,7 +18,7 @@ const Gisting = ({
   return (
     <>
       <PageTitle>Gisting / Ferðalagið</PageTitle>
-      <TopImage image={frontmatter.mynd}></TopImage>
+      <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
         <Nav></Nav>
         <Content html={html}></Content>
