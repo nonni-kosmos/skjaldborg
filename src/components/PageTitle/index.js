@@ -6,7 +6,7 @@ export default styled.h1`
   ${props =>
     !props.nopad &&
     css`
-      padding: 0 0 0 10rem;
+      padding: 2rem 0 2rem 10rem;
     `}
   text-transform: uppercase;
 `

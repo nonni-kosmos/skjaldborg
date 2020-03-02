@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { redColor, greenTextColor } from "../PageContainer/styled"
+import { redColor } from "../PageContainer/styled"
 
 export const Text = styled.p`
   height: 3rem;

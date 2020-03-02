@@ -54,4 +54,6 @@ _to del oo_
 - [x] Umsókn BTN
 - [x] Excerpt takkar
 - [ ] Sponsar
-- [ ] Fótur
+- [x] Póstlista BTN // vantar virkni
+- [x] Fótur
+- [x] Hausinn

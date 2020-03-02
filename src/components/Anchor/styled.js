@@ -10,7 +10,7 @@ export const Container = styled(Link)`
   ${props =>
     props.color === "red" &&
     css`
-      color: ${redColor};
+      color: white;
     `}
   text-transform: uppercase;
   z-index: 1;

@@ -1,15 +1,15 @@
 import React from "react"
 import { Anchor, Text, Fill } from "./styled"
 
-const Umsoknbtn = () => {
+const BigBtn = ({ text, slug }) => {
   return (
     <Text>
-      <Anchor to="/umsokn">
+      <Anchor to={slug}>
         <Fill></Fill>
-        <span style={{ zIndex: 1 }}>Innsending mynda 2020</span>
+        <span style={{ zIndex: 1 }}>{text}</span>
       </Anchor>
     </Text>
   )
 }
 
-export default Umsoknbtn
+export default BigBtn

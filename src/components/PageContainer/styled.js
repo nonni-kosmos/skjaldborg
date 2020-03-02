@@ -8,7 +8,7 @@ export const backgroundColor = theme("mode", {
 })
 
 export const greenColor = theme("mode", {
-  main: " rgb(188,220,186)",
+  main: "rgb(188,220,186)",
   staff: "black",
 })
 

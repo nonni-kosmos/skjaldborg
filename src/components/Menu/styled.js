@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { greenColor } from "../PageContainer/styled"
+import { redColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
   position: fixed;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 100%;
   width: ${props => props.width};
   transition: 0.2s ease-in-out;
-  background: ${greenColor};
+  background: ${redColor};
   z-index: 5;
   padding-top: 1rem;
   overflow: hidden;

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { redColor } from "../PageContainer/styled"
-import Img from "gatsby-image"
 
 export const Container = styled.div`
   display: grid;
