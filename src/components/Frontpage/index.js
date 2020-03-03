@@ -10,12 +10,14 @@ const Frontpage = ({ data: { imageSharp } }) => {
     <Container>
       <TopImage frontpage image={imageSharp}></TopImage>
 
-      <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
+      <div id="wrappo" style={{ background: "white", position: "relative" }}>
+        <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
 
-      <ExcerptBtns />
-      {/* sponsar */}
+        <ExcerptBtns />
+        {/* sponsar */}
 
-      <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
+        <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
+      </div>
     </Container>
   )
 }
