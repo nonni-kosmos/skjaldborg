@@ -1,7 +1,7 @@
 // components
-import SubmittedMovies from "../components/Staff/SubmittedMovies"
-import Login from "../components/Staff/Login"
-import RestrictedRoute from "../components/RestrictedRoute"
+import SubmittedMovies from "../pageComponents/Staff/SubmittedMovies"
+import Login from "../pageComponents/Staff/Login"
+import RestrictedRoute from "../techComponents/RestrictedRoute"
 
 // tech
 import React from "react"

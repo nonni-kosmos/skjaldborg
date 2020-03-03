@@ -1,8 +1,8 @@
 import React from "react"
-import SubmitMovie from "../components/Submit/SubmitMovie"
-import Register from "../components/Submit/Register"
+import SubmitMovie from "../pageComponents/Submit/SubmitMovie"
+import Register from "../pageComponents/Submit/Register"
 import { Router } from "@reach/router"
-import RestrictedRoute from "../components/RestrictedRoute"
+import RestrictedRoute from "../techComponents/RestrictedRoute"
 
 const Umsokn = () => {
   // applicant & movie form

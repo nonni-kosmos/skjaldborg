@@ -1,8 +1,8 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Skjaldborgarhatidin from "../components/Skjaldborgarhatidin"
-import Skjaldborgarbio from "../components/Skjaldborgarhatidin/Skjaldborgarbio"
-import Gisting from "../components/Skjaldborgarhatidin/Gisting"
+import Skjaldborgarhatidin from "../pageComponents/Skjaldborgarhatidin"
+import Skjaldborgarbio from "../pageComponents/Skjaldborgarhatidin/Skjaldborgarbio"
+import Gisting from "../pageComponents/Skjaldborgarhatidin/Gisting"
 
 const Hatidin = () => {
   return (
