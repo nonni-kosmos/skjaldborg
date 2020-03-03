@@ -36,9 +36,18 @@ const Fadeinsection = ({ children, direction, effectType }) => {
 
   useEffect(() => {
     const current = domRef.current
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting))
-    })
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          setVisible(entry.isIntersecting)
+          if (entry.isIntersecting) {
+            observer.unobserve(current)
+          }
+        })
+      },
+      { threshold: [0.2, 0.4, 0.6, 0.8] }
+    )
     observer.observe(current)
     return () => observer.unobserve(current)
   }, [])

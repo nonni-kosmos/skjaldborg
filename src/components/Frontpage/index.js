@@ -4,6 +4,7 @@ import TopImage from "../TopImage"
 import BigBtn from "../BigBtn"
 import { graphql, StaticQuery } from "gatsby"
 import ExcerptBtns from "../ExcerptBtns"
+import Sponsors from "../Sponsors"
 
 const Frontpage = ({ data: { imageSharp } }) => {
   return (
@@ -13,7 +14,8 @@ const Frontpage = ({ data: { imageSharp } }) => {
       <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
 
       <ExcerptBtns />
-      {/* sponsar */}
+
+      <Sponsors></Sponsors>
 
       <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
     </Container>
