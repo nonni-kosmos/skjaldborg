@@ -22,14 +22,12 @@ const Gisting = ({
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
         <Nav></Nav>
-        <Fadeinsection>
-          <Content html={html}></Content>
-        </Fadeinsection>
+        <Content html={html}></Content>
       </Wrap>
       <GuesthousesGrid>
         {guesthouses.nodes.map((guesthouse, index) => (
-          <Fadeinsection direction={"up"}>
-            <Guesthouse key={index} guesthouse={guesthouse}></Guesthouse>
+          <Fadeinsection key={index} effectType="slider" direction={"up"}>
+            <Guesthouse guesthouse={guesthouse}></Guesthouse>
           </Fadeinsection>
         ))}
       </GuesthousesGrid>

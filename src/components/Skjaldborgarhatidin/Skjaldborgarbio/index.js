@@ -5,7 +5,6 @@ import TopImage from "../../TopImage"
 import Content from "../../Content"
 import { Wrap } from "../styled"
 import Nav from "../components/Nav"
-import Fadeinsection from "../../FadeInSection"
 
 const Skjaldborgarbio = ({
   data: {
@@ -18,9 +17,7 @@ const Skjaldborgarbio = ({
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
         <Nav></Nav>
-        <Fadeinsection>
-          <Content html={html}></Content>
-        </Fadeinsection>
+        <Content html={html}></Content>
       </Wrap>
     </>
   )

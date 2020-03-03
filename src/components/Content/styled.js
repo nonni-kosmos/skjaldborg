@@ -3,6 +3,7 @@ import { redColor } from "../PageContainer/styled"
 
 export const Container = styled.div`
   line-height: 135%;
+  max-width: 35rem;
   * {
     font-family: les;
   }

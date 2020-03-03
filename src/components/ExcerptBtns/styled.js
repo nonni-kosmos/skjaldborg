@@ -36,6 +36,6 @@ export const FillerImage = styled.img`
   opacity: 0;
   transition: 0.4s ease-in-out;
   ${Box}:hover & {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 `

@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Image } from "./styled"
 
-const Topimage = ({ image }) => {
+const Topimage = ({ image, frontpage }) => {
   return (
-    <Container>
+    <Container frontpage={frontpage}>
       <Image fluid={image.fluid}></Image>{" "}
     </Container>
   )

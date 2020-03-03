@@ -23,7 +23,7 @@ export const Anchor = styled(Link)`
   align-items: center;
   border: 2px solid ${redColor};
   &&:hover {
-    color: white;
+    color: ${redColor};
   }
   position: relative;
   transition: 0.2s ease-in-out;

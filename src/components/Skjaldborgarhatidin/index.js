@@ -5,7 +5,6 @@ import Content from "../Content"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "./styled"
 import Nav from "./components/Nav"
-import FadeInSection from "../FadeInSection"
 
 const Skjaldborgarhatidin = ({
   data: {
@@ -18,9 +17,7 @@ const Skjaldborgarhatidin = ({
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
         <Nav></Nav>
-        <FadeInSection>
-          <Content html={html}></Content>
-        </FadeInSection>
+        <Content html={html}></Content>
       </Wrap>
     </>
   )

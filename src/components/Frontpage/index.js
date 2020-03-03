@@ -8,7 +8,7 @@ import ExcerptBtns from "../ExcerptBtns"
 const Frontpage = ({ data: { imageSharp } }) => {
   return (
     <Container>
-      <TopImage image={imageSharp}></TopImage>
+      <TopImage frontpage image={imageSharp}></TopImage>
 
       <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
 
