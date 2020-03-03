@@ -1,4 +1,5 @@
 const pages = [
+  { name: `Heim`, slug: `/` },
   { name: `Hátíðin`, slug: `/hatidin` },
   // { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   // { name: `Dagskrá`, slug: `/dagskra` },

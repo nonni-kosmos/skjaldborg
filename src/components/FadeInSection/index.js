@@ -3,8 +3,7 @@ import styled, { css } from "styled-components"
 
 const Slider = styled.div`
   opacity: 0;
-  transform: ${props =>
-    props.direction === "up" ? `translateY(20vh)` : `translateX(10vh)`};
+  transform: translateY(20vh);
   visibility: hidden;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: opacity, visibility;

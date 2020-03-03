@@ -9,7 +9,7 @@ export const Text = styled.p`
   font-size: 1.5rem;
   margin: 0 auto;
   text-transform: uppercase;
-  color: ${redColor};
+  color: ${greenColor};
   padding: 2rem 0 2rem 0;
   position: relative;
 `
@@ -21,9 +21,9 @@ export const Anchor = styled(Link)`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${redColor};
+  border: 2px solid ${greenColor};
   &&:hover {
-    color: ${redColor};
+    color: ${greenColor};
   }
   position: relative;
   transition: 0.2s ease-in-out;
@@ -31,7 +31,7 @@ export const Anchor = styled(Link)`
 export const Fill = styled.span`
   left: 0;
   top: 0;
-  background: ${greenColor};
+  background: ${redColor};
   width: 0%;
   height: 100%;
   position: absolute;
