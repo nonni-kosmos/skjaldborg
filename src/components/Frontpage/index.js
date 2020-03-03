@@ -25,8 +25,12 @@ export default props => (
     query={graphql`
       {
         imageSharp(fluid: { originalName: { eq: "cinema.jpg" } }) {
-          fluid(maxHeight: 2000) {
-            ...GatsbyImageSharpFluid
+          fluid(
+            maxHeight: 2000
+            traceSVG: { color: "rgb(190, 69, 69)" }
+            toFormat: JPG
+          ) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }

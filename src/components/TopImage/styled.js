@@ -15,4 +15,10 @@ export const Container = styled.div`
 `
 export const Image = styled(Img)`
   height: 100%;
+  width: 100%;
+  ${props =>
+    props.frontpage &&
+    css`
+      position: fixed !important;
+    `}
 `

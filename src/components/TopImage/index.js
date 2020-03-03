@@ -4,7 +4,7 @@ import { Container, Image } from "./styled"
 const Topimage = ({ image, frontpage }) => {
   return (
     <Container frontpage={frontpage}>
-      <Image fluid={image.fluid}></Image>{" "}
+      <Image frontpage={frontpage} fluid={image.fluid}></Image>{" "}
     </Container>
   )
 }
