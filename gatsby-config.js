@@ -74,29 +74,29 @@ module.exports = {
         path: `${__dirname}/static/gisting`,
       },
     },
-    {
-      resolve: `gatsby-source-firestore`,
-      options: {
-        credential: require("./priv-key.json"),
-        types: [
-          {
-            type: "Movie",
-            collection: "movies",
-            map: doc => ({
-              title: doc.title,
-              accepted: doc.accepted,
-              description: doc.description,
-              director: doc.director,
-              imageLocation: doc.imageLocation,
-              duration: doc.duration,
-              applicantId: doc.applicantId,
-              applicantName: doc.applicantName,
-              createdAt: doc.createdAt,
-            }),
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-firestore`,
+    //   options: {
+    //     credential: require("./priv-key.json"),
+    //     types: [
+    //       {
+    //         type: "Movie",
+    //         collection: "movies",
+    //         map: doc => ({
+    //           title: doc.title,
+    //           accepted: doc.accepted,
+    //           description: doc.description,
+    //           director: doc.director,
+    //           imageLocation: doc.imageLocation,
+    //           duration: doc.duration,
+    //           applicantId: doc.applicantId,
+    //           applicantName: doc.applicantName,
+    //           createdAt: doc.createdAt,
+    //         }),
+    //       },
+    //     ],
+    //   },
+    // },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
