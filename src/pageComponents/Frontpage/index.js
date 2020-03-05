@@ -16,8 +16,6 @@ const Frontpage = ({ data: { imageSharp } }) => {
       <ExcerptBtns />
 
       <Sponsors></Sponsors>
-
-      <BigBtn slug="/" text="Skrá mig á póstlista"></BigBtn>
     </Container>
   )
 }

@@ -77,7 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-source-firestore`,
       options: {
-        credential: require("./skjaldborg-9c060-firebase-adminsdk-a0qf5-b570a59c08.json"),
+        credential: require("./priv-key.json"),
         types: [
           {
             type: "Movie",

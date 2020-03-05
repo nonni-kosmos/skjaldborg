@@ -18,7 +18,6 @@ const ApplicantForm = () => {
   const { collection } = useGetCollection("applicants")
 
   const onSubmit = data => {
-    // anon register
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(u => {

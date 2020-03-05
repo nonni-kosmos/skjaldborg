@@ -14,10 +14,6 @@ exports.onCreatePage = async ({ page, actions }) => {
 
   // page.matchPath is a special key that's used for matching pages
   // only on the client.
-  if (page.path.match(/^\/staff/)) {
-    page.matchPath = "/staff/*"
-    createPage(page)
-  }
   if (page.path.match(/^\/umsokn/)) {
     page.matchPath = "/umsokn/*"
     createPage(page)

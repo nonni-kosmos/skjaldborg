@@ -15,11 +15,7 @@ const PageContainer = ({ children, pathname }) => {
   const platform = useSelector(state => state.reducer.platform)
 
   useEffect(() => {
-    if (pathname.includes("/staff")) {
-      setTheme("staff")
-    } else {
-      setTheme("main")
-    }
+    setTheme("main")
   }, [pathname])
 
   return (
