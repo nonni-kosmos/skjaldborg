@@ -8,8 +8,8 @@ const Sponsors = ({ data: { imageSharp: logo } }) => {
     <Container>
       <h1>Styrktaraðilar</h1>
       <div className="sponsor-grid">
-        {fakeArray.map(item => (
-          <Icon>
+        {fakeArray.map((item, index) => (
+          <Icon key={index}>
             <Image fluid={logo.fluid}></Image>
           </Icon>
         ))}

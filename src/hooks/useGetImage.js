@@ -12,9 +12,9 @@ export const useGetImage = imageLocation => {
     const lazyStorage = import("firebase/storage")
 
     Promise.all([lazyApp, lazyStorage]).then(([firebase]) => {
+      const { storage } = getFirebase(firebase)
       setImage(
-        getFirebase(firebase)
-          .storage()
+        storage
           .ref(imageLocation)
           .getDownloadURL()
           .then(url => {

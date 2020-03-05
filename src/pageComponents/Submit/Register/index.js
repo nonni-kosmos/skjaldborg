@@ -1,24 +1,40 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import ApplicantFrom from "../ApplicantForm"
 import { Container } from "../styled"
-import useAuth from "../../../hooks/useAuth"
 import { navigate } from "gatsby"
 import PageTitle from "../../../reusableComponents/PageTitle"
+import GoogleLogin from "../GoogleLogin"
+import { authState } from "rxfire/auth"
+import useGetFirebase from "../../../hooks/useGetFirebase"
 
 // applicant form
 const Register = () => {
-  const { isLoggedIn } = useAuth()
+  const [authenticated, authenticate] = useState(null)
+
+  const {
+    db: { auth },
+    isLoading,
+  } = useGetFirebase()
+
+  useEffect(() => {
+    if (!isLoading) {
+      authState(auth).subscribe(user => {
+        authenticate(user)
+      })
+    }
+  })
 
   // gets off page if already logged in
   useEffect(() => {
-    if (isLoggedIn) {
+    if (authenticated) {
       navigate("/umsokn/kvikmynd")
     }
-  }, [isLoggedIn])
+  }, [authenticated])
   return (
     <Container>
       <PageTitle nopad>Umsækjandi</PageTitle>
-      <ApplicantFrom></ApplicantFrom>
+      {/* <ApplicantFrom></ApplicantFrom> */}
+      <GoogleLogin></GoogleLogin>
     </Container>
   )
 }

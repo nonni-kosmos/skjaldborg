@@ -13,7 +13,7 @@ export const useUpdateSingleDoc = (colName, docId, payload) => {
 
     Promise.all([lazyApp, lazyDB]).then(([firebase]) => {
       setIsLoading(false)
-      const db = getFirebase(firebase).firestore()
+      const { firestore: db } = getFirebase(firebase)
       const unsubscribe = db
         .collection(colName)
         .doc(docId)

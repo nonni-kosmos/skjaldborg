@@ -18,9 +18,7 @@ const Header = ({
         <Text meta={siteMetadata} about></Text>
         <Text meta={siteMetadata} info></Text>
       </div>
-      <div id="user-wrapper">
-        <User></User>
-      </div>
+      <div id="user-wrapper">{/* <User></User> */}</div>
     </Container>
   )
 }

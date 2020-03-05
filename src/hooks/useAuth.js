@@ -11,8 +11,7 @@ const useAuth = () => {
     const lazyApp = import("firebase/app")
     const lazyAuth = import("firebase/auth")
     Promise.all([lazyApp, lazyAuth]).then(([firebase]) => {
-      const auth = getFirebase(firebase).auth()
-
+      const { auth } = getFirebase(firebase)
       const unsubscribe = auth.onAuthStateChanged(user => {
         if (user) {
           setProfile(user)

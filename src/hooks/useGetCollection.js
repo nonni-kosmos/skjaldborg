@@ -10,8 +10,7 @@ export const useGetCollection = colName => {
     const lazyDB = import("firebase/firestore")
 
     Promise.all([lazyApp, lazyDB]).then(([firebase]) => {
-      const db = getFirebase(firebase).firestore()
-
+      const { firestore: db } = getFirebase(firebase)
       setCollection(db.collection(colName))
     })
   }, [colName])

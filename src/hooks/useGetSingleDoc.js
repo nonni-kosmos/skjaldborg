@@ -12,6 +12,7 @@ export const useGetSingleDoc = (colName, docId) => {
 
     Promise.all([lazyApp, lazyDB]).then(([firebase]) => {
       setIsLoading(false)
+      const { firestore: db } = getFirebase(firebase)
       const db = getFirebase(firebase).firestore()
       setDoc(db.collection(colName).doc(docId))
     })

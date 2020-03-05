@@ -51,9 +51,9 @@ export const useGetAcceptedMovies = () => {
     const lazyDB = import("firebase/firestore")
 
     Promise.all([lazyApp, lazyDB]).then(([firebase]) => {
-      const db = getFirebase(firebase).firestore()
+      const { firestore } = getFirebase(firebase)
+      const db = firestore
       let items = []
-
       const unsubscribe = db
         .collection("movies")
         .where("accepted", "==", true)

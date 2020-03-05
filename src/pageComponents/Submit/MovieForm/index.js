@@ -1,58 +1,74 @@
 import React, { useState, useEffect } from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
-import { useGetCollection } from "../../../hooks/useGetCollection"
-import { useGetStorage } from "../../../hooks/useGetStorage"
+// import { useGetCollection } from "../../../hooks/useGetCollection"
 import { submitData } from "../submitData"
-import useAuth from "../../../hooks/useAuth"
-import { errorMsg, uploadLimit, defaultMovieValues } from "../config"
+import { errorMsg, defaultMovieValues, generateImageLocation } from "../config"
+
+import useGetFirebase from "../../../hooks/useGetFirebase"
+import { collectionData, fromDocRef } from "rxfire/firestore"
+import { authState } from "rxfire/auth"
+import { put } from "rxfire/storage"
+import { navigate } from "gatsby"
 
 const MovieForm = () => {
+  const {
+    db: { storage, firestore, auth },
+    isLoading,
+  } = useGetFirebase()
+
   const [applicant, setApplicant] = useState({
     name: "",
     email: "",
-    applicantId: "",
+    id: "",
   })
-  const [file, setFile] = useState({ ok: false, name: null })
 
   const { register, handleSubmit, errors } = useForm({
     defaultValues: defaultMovieValues,
   })
 
-  const { collection: movieCollection } = useGetCollection("movies")
-  const { collection: applicantCollection } = useGetCollection("applicants")
-  const { storage } = useGetStorage()
-
-  // register applicant when profile has loaded
-  const { profile, isLoading } = useAuth()
+  // create applicant object from auth user
   useEffect(() => {
-    if (profile && !isLoading) {
-      applicantCollection
-        .where("applicantId", "==", profile.uid)
-        .get()
-        .then(d => {
-          d.forEach(applicant => {
-            setApplicant({
-              name: applicant.data().name,
-              email: applicant.data().email,
-              applicantId: applicant.data().applicantId,
-            })
-          })
+    if (!isLoading) {
+      authState(auth).subscribe(user => {
+        setApplicant({
+          name: user.displayName,
+          email: user.email,
+          id: user.uid,
         })
+      })
     }
-  })
-
-  const validateFile = e => {
-    for (var i = 0; i < e.target.files.length; i++) {
-      if (e.target.files[i].size <= uploadLimit) {
-        setFile({ ok: true, name: e.target.files[i].name })
-      }
-    }
-  }
+  }, [isLoading])
 
   const onSubmit = (data, e) => {
+    let uploadComplete = false
     console.log(data)
-    submitData(data, movieCollection, applicant, storage, e)
+
+    // generate url name
+    const imageURL =
+      generateImageLocation(data.title) + "/" + data.image[0].name
+
+    // upload it
+    const imageRef = storage.ref(imageURL)
+    put(imageRef, data.image[0]).subscribe(snap => {
+      console.log(snap)
+    })
+
+    // then save the movie
+    firestore.collection("movies").add({
+      accepted: false,
+      applicantId: applicant.id,
+      applicantName: applicant.name,
+      createdAt: Date.now(),
+      description: data.description,
+      director: data.director,
+      duration: data.duration,
+      title: data.title,
+      imageLocation: imageURL, // imageRef
+    })
+
+    e.target.reset()
+    navigate("/")
   }
 
   return (
@@ -99,12 +115,7 @@ const MovieForm = () => {
         />
         {errors.duration && <Warning>Invalid duration</Warning>}
 
-        <FileBTN
-          status={file.ok ? "ok" : null}
-          style={{ paddingTop: "1rem" }}
-          htmlFor="image"
-        >
-          {file.ok ? file.name : "Veldu stillu (hámark 5MB)"}
+        <FileBTN style={{ paddingTop: "1rem" }} htmlFor="image">
           <InputBox
             style={{ display: "none" }}
             accept="image/png, image/jpg, image/jpeg"
@@ -112,8 +123,7 @@ const MovieForm = () => {
             name="image"
             id="image"
             placeholder="Engin skrá valin"
-            ref={register}
-            onChange={e => validateFile(e)}
+            ref={register({ required: true })}
           />
           {errors.image && <Warning>{errorMsg}</Warning>}
         </FileBTN>

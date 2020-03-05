@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react"
-import useAuth from "../../hooks/useAuth"
 import { navigate } from "gatsby"
+import useGetFirebase from "../../hooks/useGetFirebase"
+import { authState } from "rxfire/auth"
 
 const RestrictedRoute = ({ component: Component, redirectPath }) => {
-  const { isLoggedIn, isLoading } = useAuth()
   const [authenticated, authenticate] = useState(undefined)
+  const {
+    db: { auth },
+    isLoading,
+  } = useGetFirebase()
 
   useEffect(() => {
     if (!isLoading) {
-      authenticate(isLoggedIn)
+      authState(auth).subscribe(user => {
+        // is null if logged out
+        authenticate(user)
+      })
     }
-  }, [isLoggedIn, isLoading])
+  }, [isLoading, auth])
 
   // has not determined
   if (authenticated === undefined) {
