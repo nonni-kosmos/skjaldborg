@@ -8,7 +8,7 @@ const SEO = ({
   },
 }) => {
   return (
-    <Helmet title={meta.title}>
+    <Helmet title={meta.title + " 2020"}>
       <meta name="title" content={meta.title}></meta>
       <meta name="description" content={meta.subtitle} />
       <meta name="url" content={meta.url} />

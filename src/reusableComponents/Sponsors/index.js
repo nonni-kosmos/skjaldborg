@@ -22,8 +22,8 @@ export default props => (
   <StaticQuery
     query={graphql`
       {
-        imageSharp(fixed: { originalName: { eq: "spons.png" } }) {
-          fluid {
+        imageSharp(fluid: { originalName: { eq: "spons.png" } }) {
+          fluid(maxHeight: 1000) {
             ...GatsbyImageSharpFluid
           }
         }

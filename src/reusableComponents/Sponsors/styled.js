@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 export const Container = styled.div`
   background: ${greenColor};
-  padding: 5rem;
+  padding: 3rem;
   margin: 2rem 0 0 0;
   position: relative;
 
@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
   div.sponsor-grid {
     display: grid;
-    grid-template-columns: repeat(5, 7.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 7rem));
     grid-gap: 4rem;
     box-sizing: border-box;
     width: 100%;
@@ -26,7 +26,6 @@ export const Container = styled.div`
 `
 export const Icon = styled.div`
   box-sizing: border-box;
-  padding: 10%;
 `
 export const Image = styled(Img)`
   height: 100%;

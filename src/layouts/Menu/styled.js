@@ -20,8 +20,8 @@ export const List = styled.div`
   z-index: 2;
   position: absolute;
   overflow: auto;
-  display: table;
-  margin-top: 7.5rem;
+  display: flex;
+  height: 100%;
   margin-left: 2.5rem;
 `
 export const Sensor = styled.div`

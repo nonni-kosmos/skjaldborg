@@ -3,7 +3,7 @@ const pages = [
   { name: `Hátíðin`, slug: `/hatidin` },
   // { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   // { name: `Dagskrá`, slug: `/dagskra` },
-  { name: `Sarpur`, slug: `/sarpur` },
+  // { name: `Sarpur`, slug: `/sarpur` },
   { name: `Umsókn`, slug: `/umsokn` },
 ]
 const dropdownPages = [

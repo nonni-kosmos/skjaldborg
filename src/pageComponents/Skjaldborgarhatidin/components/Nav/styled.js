@@ -1,9 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import {
-  greenTextColor,
-  redColor,
-} from "../../../../layouts/PageContainer/styled"
+import { greenTextColor } from "../../../../layouts/PageContainer/styled"
 
 export const List = styled.div``
 export const Item = styled.p`
