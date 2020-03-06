@@ -9,6 +9,7 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 1.5rem;
   button {
     background: transparent;
     border: ${redColor} 1px solid;
@@ -39,7 +40,7 @@ const Applicant = () => {
     <Box>
       <legend>Tengiliður: </legend>
       <p>{applicant ? applicant.email : ""}</p>
-      <button>Breyta tengilið</button>
+      <button onClick={() => auth.signOut()}>Breyta tengilið</button>
     </Box>
   )
 }

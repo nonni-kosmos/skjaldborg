@@ -24,7 +24,7 @@ const Register = () => {
         authenticate(user)
       })
     }
-  })
+  }, [isLoading, auth])
 
   // gets off page if already logged in
   useEffect(() => {

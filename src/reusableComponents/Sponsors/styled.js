@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 export const Container = styled.div`
   background: ${greenColor};
   padding: 3rem;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 7.5rem 0;
   position: relative;
 
   h1 {

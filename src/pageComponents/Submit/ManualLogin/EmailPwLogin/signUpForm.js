@@ -31,7 +31,11 @@ const Form = () => {
         })
       })
       .catch(err => {
-        console.log(err)
+        if (err.code === "auth/email-already-in-use")
+          alert("Email already in use!")
+        else {
+          alert("Rang!!!")
+        }
       })
   }
   return (

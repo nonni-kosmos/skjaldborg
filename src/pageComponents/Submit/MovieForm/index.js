@@ -66,7 +66,7 @@ const MovieForm = () => {
     })
 
     e.target.reset()
-    navigate("/")
+    navigate("/umsokn/kvikmynd/vel-gert")
   }
 
   return (
