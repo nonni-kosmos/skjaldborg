@@ -1,5 +1,6 @@
 import React from "react"
 import useGetFirebase from "../../../hooks/useGetFirebase"
+import BigBtn from "../../../reusableComponents/BigBtn"
 
 const GoogleLogin = () => {
   const {
@@ -13,7 +14,7 @@ const GoogleLogin = () => {
     auth.signInWithPopup(provider)
   }
 
-  return <button onClick={() => login()}>Skráðu þig með Google</button>
+  return <BigBtn text={`Google`} button action={() => login()}></BigBtn>
 }
 
 export default GoogleLogin

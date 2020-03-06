@@ -7,6 +7,12 @@ export const Container = styled.div`
   max-width: 50%;
   margin: 0 auto;
 
+  .login-options-wrap {
+    display: grid;
+    grid-gap: 1.5rem;
+    text-align: center;
+  }
+
   /** mobile */
   width: 100%;
   max-width: 100%;

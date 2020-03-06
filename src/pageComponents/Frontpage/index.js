@@ -11,7 +11,7 @@ const Frontpage = ({ data: { imageSharp } }) => {
     <Container>
       <TopImage frontpage image={imageSharp}></TopImage>
 
-      <BigBtn text="Innsending mynda 2020" slug="/umsokn"></BigBtn>
+      <BigBtn text="Innsending mynda 2020" action="/umsokn"></BigBtn>
 
       <ExcerptBtns />
 

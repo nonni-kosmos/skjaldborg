@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
-// import { useGetCollection } from "../../../hooks/useGetCollection"
-import { submitData } from "../submitData"
 import { errorMsg, defaultMovieValues, generateImageLocation } from "../config"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
-import { collectionData, fromDocRef } from "rxfire/firestore"
 import { authState } from "rxfire/auth"
 import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
+import Applicant from "./applicant"
+import BigBtn from "../../../reusableComponents/BigBtn"
 
 const MovieForm = () => {
   const {
@@ -31,17 +30,18 @@ const MovieForm = () => {
   useEffect(() => {
     if (!isLoading) {
       authState(auth).subscribe(user => {
-        setApplicant({
-          name: user.displayName,
-          email: user.email,
-          id: user.uid,
-        })
+        if (user) {
+          setApplicant({
+            name: user.displayName,
+            email: user.email,
+            id: user.uid,
+          })
+        }
       })
     }
-  }, [isLoading])
+  }, [isLoading, auth])
 
   const onSubmit = (data, e) => {
-    let uploadComplete = false
     console.log(data)
 
     // generate url name
@@ -78,8 +78,7 @@ const MovieForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
       >
-        <legend>Tengiliður: </legend>
-        <p>{applicant ? applicant.name : ""}</p>
+        <Applicant></Applicant>
         <legend>Kvikmynd</legend>
         <InputBox
           ref={register({ required: true, maxLength: 80 })}
@@ -137,12 +136,7 @@ const MovieForm = () => {
         ></textarea>
         {errors.description && <Warning>{errorMsg}</Warning>}
 
-        <input
-          name="submitFormBtn"
-          className="submit-btn"
-          type="submit"
-          value="Submit"
-        />
+        <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
       </form>
     </>
   )

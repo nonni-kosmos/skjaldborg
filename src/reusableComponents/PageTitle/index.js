@@ -3,6 +3,7 @@ import { redColor } from "../../layouts/PageContainer/styled"
 
 export default styled.h1`
   color: ${redColor};
+  padding: 2rem 0 2rem 0rem;
   ${props =>
     !props.nopad &&
     css`
