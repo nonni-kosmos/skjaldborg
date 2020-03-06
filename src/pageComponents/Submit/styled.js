@@ -77,7 +77,8 @@ export const Warning = styled.p`
 `
 export const FileBTN = styled.label`
   padding: 1rem;
-  border: 1px solid;
+  border: 1px solid ${redColor};
+  color: ${redColor};
   width: auto;
   margin: 0 auto;
   margin-bottom: 1rem;

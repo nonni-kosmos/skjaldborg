@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
-import { errorMsg, defaultMovieValues, generateImageLocation } from "../config"
+import { errorMsg, generateImageLocation } from "../config"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import { authState } from "rxfire/auth"
@@ -22,9 +22,7 @@ const MovieForm = () => {
     id: "",
   })
 
-  const { register, handleSubmit, errors } = useForm({
-    defaultValues: defaultMovieValues,
-  })
+  const { register, handleSubmit, errors } = useForm()
 
   // create applicant object from auth user
   useEffect(() => {
@@ -115,6 +113,7 @@ const MovieForm = () => {
         {errors.duration && <Warning>Invalid duration</Warning>}
 
         <FileBTN style={{ paddingTop: "1rem" }} htmlFor="image">
+          Veldu stillu
           <InputBox
             style={{ display: "none" }}
             accept="image/png, image/jpg, image/jpeg"
