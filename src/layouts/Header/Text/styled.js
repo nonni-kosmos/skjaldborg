@@ -2,13 +2,14 @@ import styled, { css } from "styled-components"
 import { redColor } from "../../PageContainer/styled"
 
 export const Container = styled.div`
-  padding-top: 1.5rem;
   max-width: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h1 {
     margin: 0;
     font-size: 1.6rem;
     color: ${redColor};
-    padding-bottom: 0.5rem;
     ${props =>
       props.color === "white" &&
       css`

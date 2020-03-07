@@ -12,8 +12,8 @@ const Header = ({
 }) => {
   return (
     <Container>
-      <div id="header-text-wrapper">
-        <Logo></Logo>
+      <Logo></Logo>
+      <div id="box">
         <Text meta={siteMetadata} about></Text>
         <Text meta={siteMetadata} info></Text>
       </div>

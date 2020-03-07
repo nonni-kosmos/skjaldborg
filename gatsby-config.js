@@ -34,6 +34,25 @@ const metadata = {
   location: `Patreksfjörður`,
   pages: pages,
   dropdownpages: dropdownPages,
+  contact: {
+    people: [
+      { name: "Tengiliður #1", tel: "1234-567" },
+      { name: "Tengiliður #2", tel: "1234-567" },
+    ],
+    socialMedia: [
+      {
+        name: "facebook",
+        icon: "/assets/facebook.png",
+        url: "https://m.facebook.com/skjaldborg.hatid.islenskra.heimildamynda/",
+      },
+      {
+        name: "instagram",
+        icon: "/assets/instagram.png",
+        url:
+          "https://instagram.com/skjaldborg_heimildamyndahatid?igshid=zqeiffioceg2",
+      },
+    ],
+  },
 }
 
 module.exports = {

@@ -1,40 +1,15 @@
 import React from "react"
 import { Container } from "./styled"
 import Logo from "../Header/Logo"
-import Text from "../Header/Text"
-import { graphql, StaticQuery } from "gatsby"
+import Contact from "./contact"
 
-const Footer = ({
-  data: {
-    site: { siteMetadata },
-  },
-}) => {
+const Footer = () => {
   return (
     <Container>
-      <div id="header-text-wrapper">
-        <Logo footer></Logo>
-        <Text footer meta={siteMetadata} about></Text>
-        <Text footer meta={siteMetadata} info></Text>
-      </div>
+      <Logo footer></Logo>
+      <Contact></Contact>
     </Container>
   )
 }
 
-export default props => (
-  <StaticQuery
-    query={graphql`
-      {
-        site {
-          siteMetadata {
-            title
-            subtitle
-            year
-            period
-            location
-          }
-        }
-      }
-    `}
-    render={data => <Footer data={data} {...props}></Footer>}
-  ></StaticQuery>
-)
+export default Footer
