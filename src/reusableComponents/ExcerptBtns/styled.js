@@ -17,6 +17,7 @@ export const Box = styled(Link)`
   color: inherit;
   text-decoration: none;
   position: relative;
+  overflow: hidden;
   p {
     color: white;
     font-size: 1.5rem;
@@ -33,9 +34,9 @@ export const FillerImage = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: 0.4s ease-in-out;
+  opacity: 0.7;
+  transition: 0.5s ease-in-out;
   ${Box}:hover & {
-    opacity: 0.7;
+    transform: scale(1.05);
   }
 `
