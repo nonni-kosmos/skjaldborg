@@ -30,6 +30,9 @@ const Above = styled.h1`
   a {
     padding-right: 1rem;
   }
+  img {
+    height: 2rem;
+  }
 `
 const Below = styled.p`
   color: white;

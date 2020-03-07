@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
-import { Container } from "./styled"
+import { Container, Wrap } from "./styled"
 import Logo from "./Logo"
 import Text from "./Text"
 
@@ -11,13 +11,15 @@ const Header = ({
   },
 }) => {
   return (
-    <Container>
-      <Logo></Logo>
-      <div id="box">
-        <Text meta={siteMetadata} about></Text>
-        <Text meta={siteMetadata} info></Text>
-      </div>
-    </Container>
+    <Wrap>
+      <Container>
+        <Logo></Logo>
+        <div id="box">
+          <Text meta={siteMetadata} about></Text>
+          <Text meta={siteMetadata} info></Text>
+        </div>
+      </Container>
+    </Wrap>
   )
 }
 
