@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div``
 export const Wrap = styled.div`
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  grid-template-columns: 1fr;
   box-sizing: border-box;
   /** mobile */
   padding: 1rem;

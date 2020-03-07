@@ -14,12 +14,12 @@ const dropdownPages = [
   },
   {
     name: `Skjaldborgarbíó`,
-    slug: `/hatidin/bio`,
+    slug: `/bio`,
     image: `/assets/skjaldborg_092dscf5141_byontkovic.jpg`,
   },
   {
     name: `Gisting/Ferðalag`,
-    slug: `/hatidin/gisting-ferdalag`,
+    slug: `/gisting-ferdalagid`,
     image: `/assets/skjaldborg_060dscf4118_byontkovic.jpg`,
   },
 ]
@@ -121,5 +121,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-layout`,
+    `gatsby-plugin-transition-link`,
   ],
 }

@@ -8,6 +8,7 @@ import Content from "../../../reusableComponents/Content"
 import { GuesthousesGrid } from "./styled"
 import Guesthouse from "./Guesthouse"
 import Fadeinsection from "../../../techComponents/FadeInSection"
+import Footer from "../../../layouts/Footer"
 
 // Gisting / Ferðalagið
 const Gisting = ({
@@ -21,7 +22,7 @@ const Gisting = ({
       <PageTitle>Gisting / Ferðalagið</PageTitle>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        <Nav></Nav>
+        {/* <Nav></Nav> */}
         <Content html={html}></Content>
       </Wrap>
       <GuesthousesGrid>

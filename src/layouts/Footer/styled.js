@@ -6,7 +6,8 @@ export const Wrap = styled.div`
   background: ${redColor};
   width: 100%;
   height: 8.5rem;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 4;
 `
 export const Container = styled.div`

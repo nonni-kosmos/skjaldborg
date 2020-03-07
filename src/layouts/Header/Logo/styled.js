@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-export const Container = styled(Link)`
+export const Container = styled(AniLink)`
   height: 100%;
   width: 8.5rem;
   padding-left: 1rem;

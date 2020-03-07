@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { Container, Box, FillerImage } from "./styled"
 import Fadeinsection from "../../techComponents/FadeInSection"
+import { redColor } from "../../layouts/PageContainer/styled"
 
 const ExcerptBtns = ({
   data: {
@@ -14,7 +15,7 @@ const ExcerptBtns = ({
     <Fadeinsection>
       <Container>
         {dropdownpages.map((page, index) => (
-          <Box to={page.slug} key={index}>
+          <Box cover bg="#be4545" to={page.slug} key={index}>
             <FillerImage src={page.image}></FillerImage>
             <p>{page.name}</p>
           </Box>

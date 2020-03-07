@@ -25,7 +25,8 @@ export const greenTextColor = theme("mode", {
 export const Container = styled.div`
   background: ${backgroundColor};
   box-sizing: border-box;
-  min-height: 75vh;
+  min-height: 85vh;
+  margin-bottom: 8.5rem;
 `
 export const Loader = styled.div`
   opacity: ${props => (props.opacity ? 1 : 0)};

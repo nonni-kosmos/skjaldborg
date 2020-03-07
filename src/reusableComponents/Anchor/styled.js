@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import {
   redColor,
   greenTextColor,
   greenColor,
 } from "../../layouts/PageContainer/styled"
 
-export const Container = styled(Link)`
+export const Container = styled(AniLink)`
   text-decoration: none;
   color: inherit;
   position: relative;

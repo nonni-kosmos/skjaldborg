@@ -6,6 +6,7 @@ export const GuesthousesGrid = styled.div`
   grid-auto-rows: 20rem;
   justify-content: space-evenly;
   grid-gap: 3rem;
+  overflow: hidden;
   /** mobile */
   padding: 1rem;
   /** tablets */

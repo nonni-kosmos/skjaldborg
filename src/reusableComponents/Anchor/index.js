@@ -4,6 +4,8 @@ import { Container } from "./styled"
 const Anchor = ({ item, color }) => {
   return (
     <Container
+      cover
+      bg="#be4545"
       color={color}
       activeStyle={
         color === "red"

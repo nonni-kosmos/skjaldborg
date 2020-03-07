@@ -5,6 +5,7 @@ import Content from "../../reusableComponents/Content"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "./styled"
 import Nav from "./components/Nav"
+import Footer from "../../layouts/Footer"
 
 const Skjaldborgarhatidin = ({
   data: {
@@ -16,9 +17,10 @@ const Skjaldborgarhatidin = ({
       <PageTitle>Skjaldborgarhátíðin</PageTitle>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        <Nav></Nav>
+        {/* <Nav></Nav> */}
         <Content html={html}></Content>
       </Wrap>
+      <Footer></Footer>
     </>
   )
 }

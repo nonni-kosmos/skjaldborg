@@ -6,6 +6,9 @@ import { graphql, StaticQuery } from "gatsby"
 import ExcerptBtns from "../../reusableComponents/ExcerptBtns"
 import Sponsors from "../../reusableComponents/Sponsors"
 
+import Footer from "../../layouts/Footer"
+import Header from "../../layouts/Header"
+
 const Frontpage = ({ data: { imageSharp } }) => {
   return (
     <Container>
@@ -16,6 +19,8 @@ const Frontpage = ({ data: { imageSharp } }) => {
       <ExcerptBtns />
 
       <Sponsors></Sponsors>
+
+      <Footer></Footer>
     </Container>
   )
 }

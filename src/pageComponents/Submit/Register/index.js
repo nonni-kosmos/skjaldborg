@@ -7,6 +7,7 @@ import EmailPwLogin from "../ManualLogin/EmailPwLogin"
 import { authState } from "rxfire/auth"
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import ManualLogin from "../ManualLogin"
+import Footer from "../../../layouts/Footer"
 
 // applicant form
 const Register = () => {
@@ -33,22 +34,25 @@ const Register = () => {
     }
   }, [authenticated])
   return (
-    <Container>
-      <PageTitle nopad>Tengiliður</PageTitle>
-      <p style={{ color: "gray" }}>
-        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-        below for those interested.
-      </p>
-      {manualSignUp ? (
-        <ManualLogin></ManualLogin>
-      ) : (
-        <div className="login-options-wrap">
-          <h3>Skráðu þig inn með:</h3>
-          <GoogleLogin></GoogleLogin>
-          <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>
-        </div>
-      )}
-    </Container>
+    <>
+      <Container>
+        <PageTitle nopad>Tengiliður</PageTitle>
+        <p style={{ color: "gray" }}>
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+          below for those interested.
+        </p>
+        {manualSignUp ? (
+          <ManualLogin></ManualLogin>
+        ) : (
+          <div className="login-options-wrap">
+            <h3>Skráðu þig inn með:</h3>
+            <GoogleLogin></GoogleLogin>
+            <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>
+          </div>
+        )}
+      </Container>
+      <Footer></Footer>
+    </>
   )
 }
 

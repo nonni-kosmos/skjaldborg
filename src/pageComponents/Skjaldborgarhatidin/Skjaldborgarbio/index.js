@@ -16,7 +16,7 @@ const Skjaldborgarbio = ({
       <PageTitle>Skjaldborgarbíó</PageTitle>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        <Nav></Nav>
+        {/* <Nav></Nav> */}
         <Content html={html}></Content>
       </Wrap>
     </>

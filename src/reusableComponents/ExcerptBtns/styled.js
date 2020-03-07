@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 import { redColor } from "../../layouts/PageContainer/styled"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const Container = styled.div`
   display: grid;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   padding: 0 1rem;
   box-sizing: border-box;
 `
-export const Box = styled(Link)`
+export const Box = styled(AniLink)`
   background: ${redColor};
   color: inherit;
   text-decoration: none;

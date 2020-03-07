@@ -21,11 +21,13 @@ const PageContainer = ({ children, pathname }) => {
   return (
     <ThemeProvider theme={{ mode: theme }}>
       <Loader opacity={platform}>
-        <Header></Header>
-        <Burger></Burger>
-        <Menu></Menu>
-        <Container>{children}</Container>
-        <Footer></Footer>
+        <div style={{ background: "white" }} className="page-wrap">
+          {/* <Header></Header> */}
+          <Burger></Burger>
+          <Menu></Menu>
+          <Container>{children}</Container>
+          {/* <Footer></Footer> */}
+        </div>
       </Loader>
     </ThemeProvider>
   )

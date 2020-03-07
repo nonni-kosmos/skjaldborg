@@ -12,6 +12,10 @@ const Item = ({ item }) => {
         <Dropdown>{item.name}</Dropdown>
       ) : (
         <Anchor
+          cover
+          bg="#be4545"
+          direction="left"
+          duration={1}
           className="titlar"
           partiallyActive={item.name === "Staff"}
           activeStyle={{ color: `rgb(188,220,186)` }}
