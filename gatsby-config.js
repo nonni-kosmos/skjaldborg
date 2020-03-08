@@ -93,6 +93,14 @@ module.exports = {
         path: `${__dirname}/static/gisting`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/static/assets/svg`,
+        },
+      },
+    },
     // {
     //   resolve: `gatsby-source-firestore`,
     //   options: {

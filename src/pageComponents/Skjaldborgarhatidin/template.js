@@ -9,9 +9,11 @@ import Fadeinsection from "../../techComponents/FadeInSection"
 import Navigator from "./Navigator"
 
 const getNextPageFromTitle = title => {
-  if (title === "Skjaldborgarhátíðin") return "/bio"
-  else if (title === "Skjaldborgarbíó") return "/gisting-ferdalagid"
-  else return "/hatidin"
+  if (title === "Skjaldborgarhátíðin")
+    return { url: "/bio", name: "Skjaldborgarbíó" }
+  else if (title === "Skjaldborgarbíó")
+    return { url: "/gisting-ferdalagid", name: "Gisting / Ferðalagið" }
+  else return { url: "/hatidin", name: "Skjaldborgarhátíðin" }
 }
 
 // extra component is optional
@@ -34,7 +36,7 @@ const Template = ({ image, title, html, extraComponent: Component }) => {
             <Content html={html}></Content>
           </Wrap>
         </Fadeinsection>
-        <Navigator url={getNextPageFromTitle(title)}></Navigator>
+        <Navigator next={getNextPageFromTitle(title)}></Navigator>
       </div>
       {Component ? <Component></Component> : null}
       <Footer></Footer>
