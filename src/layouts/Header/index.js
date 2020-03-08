@@ -15,7 +15,6 @@ const Header = ({
       <Container>
         <Logo></Logo>
         <div id="box">
-          <Text meta={siteMetadata} about></Text>
           <Text meta={siteMetadata} info></Text>
         </div>
       </Container>

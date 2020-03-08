@@ -11,7 +11,6 @@ const Text = ({ meta, about, footer }) => {
         </>
       ) : (
         <>
-          <h1>{meta.year}</h1>
           <p>{meta.period}</p>
           <p>{meta.location}</p>
         </>

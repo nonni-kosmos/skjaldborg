@@ -7,9 +7,7 @@ const Logo = ({ data: { logo_colored }, footer }) => {
     <Container to="/">
       <img
         alt="logo"
-        style={
-          footer ? { filter: "grayscale(1) invert(1) contrast(5.5)" } : null
-        }
+        style={{ filter: "grayscale(1) invert(1) contrast(5.5)" }}
         src={logo_colored.fluid.src}
       ></img>
     </Container>

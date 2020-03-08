@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 
 const Slider = styled.div`
   opacity: 0;
-  transform: translateY(20vh);
+  transform: ${props => props.translate};
   visibility: hidden;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: opacity, visibility;
@@ -28,9 +28,18 @@ const Fader = styled.div`
       visibility: visible;
     `}
 `
-
-const Fadeinsection = ({ children, direction, effectType }) => {
+// intensity should be between 1-100
+const Fadeinsection = ({ children, direction, intensity, effectType }) => {
   const [isVisible, setVisible] = useState(true)
+  const [translate, setTranslate] = useState(`translateY(20vh)`)
+
+  useEffect(() => {
+    if (direction === "left") setTranslate(`translateX(-${intensity}vh)`)
+    else if (direction === "right") setTranslate(`translateX(${intensity}vh)`)
+    else if (direction === "up") setTranslate(`translateY(-${intensity}vh)`)
+    else if (direction === "down") setTranslate(`translateY(${intensity}vh)`)
+    else setTranslate(`translateY(20vh)`)
+  }, [direction, intensity])
 
   const domRef = useRef()
 
@@ -57,7 +66,7 @@ const Fadeinsection = ({ children, direction, effectType }) => {
       {children}
     </Fader>
   ) : (
-    <Slider direction={direction} visible={isVisible} ref={domRef}>
+    <Slider translate={translate} visible={isVisible} ref={domRef}>
       {children}
     </Slider>
   )

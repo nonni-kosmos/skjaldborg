@@ -4,7 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import TopImage from "../../../reusableComponents/TopImage"
 import Content from "../../../reusableComponents/Content"
 import { Wrap } from "../styled"
-import Nav from "../components/Nav"
+import Header from "../../../layouts/Header"
 
 const Skjaldborgarbio = ({
   data: {
@@ -13,10 +13,10 @@ const Skjaldborgarbio = ({
 }) => {
   return (
     <>
-      <PageTitle>Skjaldborgarbíó</PageTitle>
+      <Header></Header>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        {/* <Nav></Nav> */}
+        <PageTitle>Skjaldborgarbíó</PageTitle>
         <Content html={html}></Content>
       </Wrap>
     </>

@@ -3,7 +3,9 @@ import { redColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div`
   line-height: 135%;
-  max-width: 35rem;
+  /* max-width: 35rem; */
+  box-sizing: border-box;
+  padding: 0 2rem;
   * {
     font-family: les;
   }
@@ -21,6 +23,6 @@ export const Container = styled.div`
   }
   h1 {
     text-transform: uppercase;
-    color ${redColor};
+    color: ${redColor};
   }
 `

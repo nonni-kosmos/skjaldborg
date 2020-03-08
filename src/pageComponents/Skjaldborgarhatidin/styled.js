@@ -1,20 +1,11 @@
 import styled from "styled-components"
+import { redColor, greenColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div``
 export const Wrap = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 0.5fr;
   box-sizing: border-box;
-  /** mobile */
-  padding: 1rem;
-
-  /** tablets */
-  @media only screen and (min-width: 600px) {
-    padding: 2rem;
-  }
-
-  /** desktop */
-  @media only screen and (min-width: 850px) {
-    padding: 1rem 10rem 5rem;
-  }
+  padding: 1rem 5rem 5rem;
+  background: ${greenColor};
+  margin-right: 30rem;
 `

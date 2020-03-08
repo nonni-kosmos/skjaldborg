@@ -1,14 +1,14 @@
 import React from "react"
-import PageTitle from "../../../reusableComponents/PageTitle"
 import TopImage from "../../../reusableComponents/TopImage"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "../styled"
-import Nav from "../components/Nav"
 import Content from "../../../reusableComponents/Content"
 import { GuesthousesGrid } from "./styled"
 import Guesthouse from "./Guesthouse"
 import Fadeinsection from "../../../techComponents/FadeInSection"
-import Footer from "../../../layouts/Footer"
+import Header from "../../../layouts/Header"
+
+import PageTitle from "../../../reusableComponents/PageTitle"
 
 // Gisting / Ferðalagið
 const Gisting = ({
@@ -19,10 +19,10 @@ const Gisting = ({
 }) => {
   return (
     <>
-      <PageTitle>Gisting / Ferðalagið</PageTitle>
+      <Header></Header>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        {/* <Nav></Nav> */}
+        <PageTitle>Gisting / Ferðalagið</PageTitle>
         <Content html={html}></Content>
       </Wrap>
       <GuesthousesGrid>

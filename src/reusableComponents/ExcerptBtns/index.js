@@ -12,7 +12,7 @@ const ExcerptBtns = ({
   },
 }) => {
   return (
-    <Fadeinsection>
+    <Fadeinsection direction="down" intensity="10">
       <Container>
         {dropdownpages.map((page, index) => (
           <Box cover bg="#be4545" to={page.slug} key={index}>

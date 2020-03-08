@@ -2,13 +2,12 @@ import styled, { css } from "styled-components"
 import Img from "gatsby-image"
 
 export const Container = styled.div`
-  height: 35rem;
+  height: 100vh;
   ${props =>
     props.frontpage &&
     css`
       /** make the image fullscreen, relative to header height of 8.5rem */
       min-height: 100vh;
-      margin-top: -8.5rem;
     `}
   width: 100%;
   padding: 0;

@@ -12,6 +12,8 @@ import Header from "../../layouts/Header"
 const Frontpage = ({ data: { imageSharp } }) => {
   return (
     <Container>
+      <Header></Header>
+
       <TopImage frontpage image={imageSharp}></TopImage>
 
       <BigBtn text="Innsending mynda 2020" action="/umsokn"></BigBtn>

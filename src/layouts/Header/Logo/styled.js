@@ -4,7 +4,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const Container = styled(AniLink)`
   height: 100%;
-  width: 8.5rem;
+  width: 11rem;
   padding-left: 1rem;
   box-sizing: border-box;
   display: flex;

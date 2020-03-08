@@ -3,7 +3,7 @@ import theme from "styled-theming"
 // import { breakpoints } from "../../constants"
 
 const backgroundColor = theme("mode", {
-  main: "rgb(188,220,186)",
+  main: "transparent",
   staff: "#E5E5E5",
 })
 
@@ -12,6 +12,7 @@ export const Wrap = styled.div`
   height: 8.5rem;
   width: 100%;
   background: ${backgroundColor};
+  position: absolute;
 `
 
 export const Container = styled.div`
@@ -19,8 +20,8 @@ export const Container = styled.div`
   position: relative;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 10rem 25rem;
-  grid-gap: 2rem;
+  grid-template-columns: 10rem 30rem;
+  grid-gap: 3rem;
   div {
   }
   #box {

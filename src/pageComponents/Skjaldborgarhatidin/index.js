@@ -4,8 +4,9 @@ import TopImage from "../../reusableComponents/TopImage"
 import Content from "../../reusableComponents/Content"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "./styled"
-import Nav from "./components/Nav"
 import Footer from "../../layouts/Footer"
+import FadeInSection from "../../techComponents/FadeInSection"
+import Header from "../../layouts/Header"
 
 const Skjaldborgarhatidin = ({
   data: {
@@ -14,10 +15,10 @@ const Skjaldborgarhatidin = ({
 }) => {
   return (
     <>
-      <PageTitle>Skjaldborgarhátíðin</PageTitle>
+      <Header></Header>
       <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
       <Wrap>
-        {/* <Nav></Nav> */}
+        <PageTitle>Skjaldborgarhátíðin</PageTitle>
         <Content html={html}></Content>
       </Wrap>
       <Footer></Footer>
