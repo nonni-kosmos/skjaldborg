@@ -1,32 +1,10 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import { Container } from "./styled"
+import { Container, Logo } from "./styled"
 
-const Logo = ({ data: { logo_colored }, footer }) => {
+export default () => {
   return (
     <Container to="/">
-      <img
-        alt="logo"
-        style={{ filter: "grayscale(1) invert(1) contrast(5.5)" }}
-        src={logo_colored.fluid.src}
-      ></img>
+      <Logo></Logo>
     </Container>
   )
 }
-
-export default props => (
-  <StaticQuery
-    query={graphql`
-      {
-        logo_colored: imageSharp(
-          fluid: { originalName: { eq: "logo_colored.png" } }
-        ) {
-          fluid(maxHeight: 1000) {
-            src
-          }
-        }
-      }
-    `}
-    render={data => <Logo data={data} {...props}></Logo>}
-  ></StaticQuery>
-)

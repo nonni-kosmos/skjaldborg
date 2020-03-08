@@ -14,6 +14,7 @@ const Anchor = styled(AniLink)`
   color: ${redColor};
 `
 
+// 🚀
 const Arrow = styled(ArrowSvg)``
 
 const Navigator = ({ next: { url, name } }) => {
