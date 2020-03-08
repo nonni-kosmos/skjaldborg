@@ -1,10 +1,6 @@
 import React from "react"
-import PageTitle from "../../../reusableComponents/PageTitle"
 import { graphql, StaticQuery } from "gatsby"
-import TopImage from "../../../reusableComponents/TopImage"
-import Content from "../../../reusableComponents/Content"
-import { Wrap } from "../styled"
-import Header from "../../../layouts/Header"
+import Template from "./template"
 
 const Skjaldborgarbio = ({
   data: {
@@ -12,14 +8,12 @@ const Skjaldborgarbio = ({
   },
 }) => {
   return (
-    <>
-      <Header></Header>
-      <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
-      <Wrap>
-        <PageTitle>Skjaldborgarbíó</PageTitle>
-        <Content html={html}></Content>
-      </Wrap>
-    </>
+    <Template
+      image={frontmatter.mynd}
+      title="Skjaldborgarbíó"
+      html={html}
+      extraComponent={null}
+    ></Template>
   )
 }
 

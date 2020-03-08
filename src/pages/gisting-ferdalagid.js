@@ -1,5 +1,5 @@
 import React from "react"
-import Gisting from "../pageComponents/Skjaldborgarhatidin/Gisting"
+import Gisting from "../pageComponents/Skjaldborgarhatidin/gisting"
 import Footer from "../layouts/Footer"
 
 const GistingFerdalagid = () => {

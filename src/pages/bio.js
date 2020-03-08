@@ -1,6 +1,6 @@
 import React from "react"
-import Skjaldborgarbio from "../pageComponents/Skjaldborgarhatidin/Skjaldborgarbio"
 import Footer from "../layouts/Footer"
+import Skjaldborgarbio from "../pageComponents/Skjaldborgarhatidin/bio"
 
 const Bio = () => {
   return (

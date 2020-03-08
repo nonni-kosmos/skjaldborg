@@ -1,11 +1,6 @@
 import React from "react"
-import PageTitle from "../../reusableComponents/PageTitle"
-import TopImage from "../../reusableComponents/TopImage"
-import Content from "../../reusableComponents/Content"
 import { graphql, StaticQuery } from "gatsby"
-import { Wrap } from "./styled"
-import Footer from "../../layouts/Footer"
-import Header from "../../layouts/Header"
+import Template from "./template"
 
 const Skjaldborgarhatidin = ({
   data: {
@@ -13,15 +8,12 @@ const Skjaldborgarhatidin = ({
   },
 }) => {
   return (
-    <>
-      <Header></Header>
-      <TopImage image={frontmatter.mynd.childImageSharp}></TopImage>
-      <Wrap>
-        <PageTitle>Skjaldborgarhátíðin</PageTitle>
-        <Content html={html}></Content>
-      </Wrap>
-      <Footer></Footer>
-    </>
+    <Template
+      image={frontmatter.mynd}
+      title="Skjaldborgarhátíðin"
+      html={html}
+      extraComponent={null}
+    ></Template>
   )
 }
 

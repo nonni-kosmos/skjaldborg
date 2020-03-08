@@ -7,14 +7,5 @@ export const GuesthousesGrid = styled.div`
   justify-content: space-evenly;
   grid-gap: 3rem;
   overflow: hidden;
-  /** mobile */
-  padding: 1rem;
-  /** tablets */
-  @media only screen and (min-width: 600px) {
-    padding: 2rem;
-  }
-  /** desktop */
-  @media only screen and (min-width: 850px) {
-    padding: 1rem 10rem 5rem;
-  }
+  padding: 4rem 1rem;
 `
