@@ -33,6 +33,7 @@ const Fadeinsection = ({ children, direction, intensity, effectType }) => {
   const [isVisible, setVisible] = useState(true)
   const [translate, setTranslate] = useState(`translateY(20vh)`)
 
+  // config setup
   useEffect(() => {
     if (direction === "left") setTranslate(`translateX(-${intensity}vh)`)
     else if (direction === "right") setTranslate(`translateX(${intensity}vh)`)
@@ -49,6 +50,7 @@ const Fadeinsection = ({ children, direction, intensity, effectType }) => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
+          console.log(entry.isIntersecting)
           setVisible(entry.isIntersecting)
           if (entry.isIntersecting) {
             observer.unobserve(current)
@@ -58,8 +60,9 @@ const Fadeinsection = ({ children, direction, intensity, effectType }) => {
       { threshold: [0.2, 0.4, 0.6, 0.8] }
     )
     observer.observe(current)
+
     return () => observer.unobserve(current)
-  }, [])
+  })
 
   return effectType === "fader" ? (
     <Fader visible={isVisible} ref={domRef}>

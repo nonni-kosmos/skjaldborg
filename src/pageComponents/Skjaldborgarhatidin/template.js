@@ -5,6 +5,14 @@ import Content from "../../reusableComponents/Content"
 import { Wrap } from "./styled"
 import Footer from "../../layouts/Footer"
 import Header from "../../layouts/Header"
+import Fadeinsection from "../../techComponents/FadeInSection"
+import Navigator from "./Navigator"
+
+const getNextPageFromTitle = title => {
+  if (title === "Skjaldborgarhátíðin") return "/bio"
+  else if (title === "Skjaldborgarbíó") return "/gisting-ferdalagid"
+  else return "/hatidin"
+}
 
 // extra component is optional
 const Template = ({ image, title, html, extraComponent: Component }) => {
@@ -20,11 +28,13 @@ const Template = ({ image, title, html, extraComponent: Component }) => {
           gridTemplateColumns: "1fr .5fr",
         }}
       >
-        <Wrap>
-          <PageTitle>{title}</PageTitle>
-          <Content html={html}></Content>
-        </Wrap>
-        <p>I AM TO THE RIGHT</p>
+        <Fadeinsection direction="left" intensity="20">
+          <Wrap>
+            <PageTitle>{title}</PageTitle>
+            <Content html={html}></Content>
+          </Wrap>
+        </Fadeinsection>
+        <Navigator url={getNextPageFromTitle(title)}></Navigator>
       </div>
       {Component ? <Component></Component> : null}
       <Footer></Footer>
