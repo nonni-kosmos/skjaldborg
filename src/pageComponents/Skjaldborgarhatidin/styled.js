@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { redColor, greenColor } from "../../layouts/PageContainer/styled"
+import { greenColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div``
 export const Wrap = styled.div`

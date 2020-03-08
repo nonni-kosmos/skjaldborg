@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import { redColor } from "../../PageContainer/styled"
 
 export const Container = styled.div`
   max-width: 9rem;

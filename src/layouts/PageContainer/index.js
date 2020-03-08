@@ -1,8 +1,6 @@
 // components
-import Header from "../Header"
 import Burger from "../Burger"
 import Menu from "../Menu"
-import Footer from "../Footer"
 import { Loader, Container } from "./styled"
 
 // tech

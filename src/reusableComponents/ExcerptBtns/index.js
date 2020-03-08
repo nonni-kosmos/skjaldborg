@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { Container, Box, FillerImage } from "./styled"
 import Fadeinsection from "../../techComponents/FadeInSection"
-import { redColor } from "../../layouts/PageContainer/styled"
 
 const ExcerptBtns = ({
   data: {

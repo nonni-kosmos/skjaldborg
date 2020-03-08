@@ -5,7 +5,6 @@ import Content from "../../reusableComponents/Content"
 import { graphql, StaticQuery } from "gatsby"
 import { Wrap } from "./styled"
 import Footer from "../../layouts/Footer"
-import FadeInSection from "../../techComponents/FadeInSection"
 import Header from "../../layouts/Header"
 
 const Skjaldborgarhatidin = ({
