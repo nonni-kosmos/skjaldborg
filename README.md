@@ -3,5 +3,11 @@
 - [ ] fix thirsty panini
 - [ ] scale for mobile
 - [ ] ívar's points
+  - [x] stafir hverfa í input formi
+  - [x] letur input Monserrat
+  - [ ] Staðfesting að mynd sé uploaduð
+    - [ ] setja fleiri en 1 mynd
 - [ ] social media icons + home btn in success page
-- [ ] confirmation at send movie
+- [X] confirmation at send movie
+- [ ] captcha
+- [ ] logo animate

@@ -52,6 +52,7 @@ export const Container = styled.div`
   }
 `
 export const InputBox = styled.input`
+  font-family: les;
   padding: 1rem;
   font-size: 1rem;
   margin: 1em 0 1rem;
