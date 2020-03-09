@@ -51,7 +51,6 @@ const Register = () => {
           </div>
         )}
       </Container>
-      <Footer></Footer>
     </>
   )
 }

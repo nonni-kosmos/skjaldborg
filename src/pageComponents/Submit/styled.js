@@ -3,10 +3,10 @@ import { redColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div`
   box-sizing: border-box;
-  padding: 0 5rem 5rem;
+  padding: 5rem;
   max-width: 50%;
   margin: 0 auto;
-
+  max-height: 50%;
   .login-options-wrap {
     display: grid;
     grid-gap: 1.5rem;
