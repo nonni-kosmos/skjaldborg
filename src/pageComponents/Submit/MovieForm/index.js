@@ -29,13 +29,18 @@ const MovieForm = () => {
       }
       // upload it
       const imageOneRef = storage.ref(imageOneURL)
-      const imageTwoRef = storage.ref(imageTwoURL)
+
       put(imageOneRef, data.imageOne[0]).subscribe(snap => {
         console.log(snap)
       })
-      put(imageTwoRef, data.imageTwo[0]).subscribe(snap => {
-        console.log(snap)
-      })
+
+      // allow 1 image only
+      if (data.imageTwo.length > 0) {
+        const imageTwoRef = storage.ref(imageTwoURL)
+        put(imageTwoRef, data.imageTwo[0]).subscribe(snap => {
+          console.log(snap)
+        })
+      }
 
       const user = auth.currentUser
 
@@ -50,7 +55,7 @@ const MovieForm = () => {
         director: data.director,
         duration: data.duration,
         title: data.title,
-        imageOneLocation: imageOneURL, // imageRef
+        imageOneLocation: imageOneURL,
         imageTwoLocation: imageTwoURL,
       })
 
