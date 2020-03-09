@@ -3,12 +3,32 @@ import Img from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import LogoSVG from "../../../../static/assets/svg/logo.svg"
 
-const ballMove = keyframes`
-  from {
-    transform: translateX(100%):
+const breath = keyframes`
+  0% {
+    transform: scale(1)
   }
-  to {
-    transform: translateX(0%);
+  25% {
+    transform: scale(0.97)
+  }
+  50% {
+    transform: scale(1.02)
+  }
+  75% {
+    transform: scale(0.97)
+  }
+  100% {
+    transform: scale(1)
+  }
+`
+const beamGrow = keyframes`
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(0.97)
+  }
+  100% {
+    transform: scale(1)
   }
 `
 
@@ -26,7 +46,11 @@ export const Image = styled(Img)`
 export const Logo = styled(LogoSVG)`
   height: 100%;
   #ball {
-    transform: translateX(100%);
-    animation: ${ballMove} 1s ease-out 0.5s forwards;
+    transform-origin: 10% 50%;
+    animation: ${breath} 4s ease-out 0.5s forwards infinite;
+  }
+  #beam {
+    transform-origin: 20% 50%;
+    animation: ${beamGrow} 2s ease-out 3s forwards infinite;
   }
 `
