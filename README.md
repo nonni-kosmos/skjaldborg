@@ -5,8 +5,8 @@
 - [ ] ívar's points
   - [x] stafir hverfa í input formi
   - [x] letur input Monserrat
-  - [ ] Staðfesting að mynd sé uploaduð
-    - [ ] setja fleiri en 1 mynd
+  - [x] Staðfesting að mynd sé uploaduð
+    - [x] setja fleiri en 1 mynd
 - [ ] social media icons + home btn in success page
 - [X] confirmation at send movie
 - [ ] captcha

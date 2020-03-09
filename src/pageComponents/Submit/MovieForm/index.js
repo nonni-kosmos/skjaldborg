@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
 import { errorMsg, generateImageLocation } from "../config"
@@ -19,13 +19,21 @@ const MovieForm = () => {
   const onSubmit = (data, e) => {
     console.log(data)
     if (window.confirm("Confirm submission")) {
-      // generate url name
-      const imageURL =
-        generateImageLocation(data.title) + "/" + data.image[0].name
-
+      // generate url names
+      let imageOneURL =
+        generateImageLocation(data.title) + "/" + data.imageOne[0].name
+      let imageTwoURL = ""
+      if (imageTwo) {
+        imageTwoURL =
+          generateImageLocation(data.title) + "/" + data.imageTwo[0].name
+      }
       // upload it
-      const imageRef = storage.ref(imageURL)
-      put(imageRef, data.image[0]).subscribe(snap => {
+      const imageOneRef = storage.ref(imageOneURL)
+      const imageTwoRef = storage.ref(imageTwoURL)
+      put(imageOneRef, data.imageOne[0]).subscribe(snap => {
+        console.log(snap)
+      })
+      put(imageTwoRef, data.imageTwo[0]).subscribe(snap => {
         console.log(snap)
       })
 
@@ -42,13 +50,17 @@ const MovieForm = () => {
         director: data.director,
         duration: data.duration,
         title: data.title,
-        imageLocation: imageURL, // imageRef
+        imageOneLocation: imageOneURL, // imageRef
+        imageTwoLocation: imageTwoURL,
       })
 
       e.target.reset()
       navigate("/umsokn/kvikmynd/vel-gert")
     }
   }
+
+  const [imageOne, setImageOne] = useState(null)
+  const [imageTwo, setImageTwo] = useState(null)
 
   return (
     <>
@@ -93,19 +105,51 @@ const MovieForm = () => {
         />
         {errors.duration && <Warning>Invalid duration</Warning>}
 
-        <FileBTN style={{ paddingTop: "1rem" }} htmlFor="image">
-          Veldu stillu
+        {/* IMAGE #1 */}
+        <FileBTN
+          style={
+            ({ paddingTop: "1rem" },
+            imageOne ? { color: "green", borderColor: "green" } : null)
+          }
+          htmlFor="imageOne"
+        >
+          {imageOne ? imageOne.name : "Stilla #1"}
           <InputBox
+            onChange={e => setImageOne(e.target.files[0])}
             style={{ display: "none" }}
             accept="image/png, image/jpg, image/jpeg"
             type="file"
-            name="image"
-            id="image"
+            name="imageOne"
+            id="imageOne"
             placeholder="Engin skrá valin"
             ref={register({ required: true })}
           />
-          {errors.image && <Warning>{errorMsg}</Warning>}
+          {errors.imageOne && <Warning>{errorMsg}</Warning>}
         </FileBTN>
+
+        {/* IMAGE #2 */}
+        {imageOne ? (
+          <FileBTN
+            style={
+              ({ paddingTop: "1rem" },
+              imageTwo ? { color: "green", borderColor: "green" } : null)
+            }
+            htmlFor="imageTwo"
+          >
+            {imageTwo ? imageTwo.name : "Stilla #2"}
+            <InputBox
+              onChange={e => setImageTwo(e.target.files[0])}
+              style={{ display: "none" }}
+              accept="image/png, image/jpg, image/jpeg"
+              type="file"
+              name="imageTwo"
+              id="imageTwo"
+              placeholder="Engin skrá valin"
+              ref={register}
+            />
+          </FileBTN>
+        ) : null}
+
         <textarea
           placeholder="Description"
           name="description"

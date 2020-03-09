@@ -50,7 +50,6 @@ const Fadeinsection = ({ children, direction, intensity, effectType }) => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          console.log(entry.isIntersecting)
           setVisible(entry.isIntersecting)
           if (entry.isIntersecting) {
             observer.unobserve(current)
