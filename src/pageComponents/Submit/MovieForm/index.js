@@ -18,35 +18,36 @@ const MovieForm = () => {
 
   const onSubmit = (data, e) => {
     console.log(data)
+    if (window.confirm("Confirm submission")) {
+      // generate url name
+      const imageURL =
+        generateImageLocation(data.title) + "/" + data.image[0].name
 
-    // generate url name
-    const imageURL =
-      generateImageLocation(data.title) + "/" + data.image[0].name
+      // upload it
+      const imageRef = storage.ref(imageURL)
+      put(imageRef, data.image[0]).subscribe(snap => {
+        console.log(snap)
+      })
 
-    // upload it
-    const imageRef = storage.ref(imageURL)
-    put(imageRef, data.image[0]).subscribe(snap => {
-      console.log(snap)
-    })
+      const user = auth.currentUser
 
-    const user = auth.currentUser
+      // then save the movie
+      firestore.collection("movies").add({
+        accepted: false,
+        applicantId: user.uid,
+        applicantName: user.displayName,
+        applicantEmail: user.email,
+        createdAt: Date.now(),
+        description: data.description,
+        director: data.director,
+        duration: data.duration,
+        title: data.title,
+        imageLocation: imageURL, // imageRef
+      })
 
-    // then save the movie
-    firestore.collection("movies").add({
-      accepted: false,
-      applicantId: user.uid,
-      applicantName: user.displayName,
-      applicantEmail: user.email,
-      createdAt: Date.now(),
-      description: data.description,
-      director: data.director,
-      duration: data.duration,
-      title: data.title,
-      imageLocation: imageURL, // imageRef
-    })
-
-    e.target.reset()
-    navigate("/umsokn/kvikmynd/vel-gert")
+      e.target.reset()
+      navigate("/umsokn/kvikmynd/vel-gert")
+    }
   }
 
   return (
