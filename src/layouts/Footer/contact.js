@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, StaticQuery } from "gatsby"
+import SocialMediaIcons from "../../reusableComponents/SocialMediaIcons"
 
 const Box = styled.div`
   display: grid;
@@ -37,7 +38,6 @@ const Above = styled.h1`
 const Below = styled.p`
   color: white;
 `
-
 const Contact = ({
   data: {
     site: {
@@ -59,16 +59,7 @@ const Contact = ({
       </div>
       <div className="box" id="right-box">
         <Above>
-          {socialMedia.map((item, index) => (
-            <a
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={item.url}
-            >
-              <img src={item.icon} alt={item.name + " icon"}></img>
-            </a>
-          ))}
+          <SocialMediaIcons color="white"></SocialMediaIcons>
         </Above>
         {people.map((item, index) => (
           <Below className="les-texti" key={index}>
@@ -94,7 +85,6 @@ export default props => (
               socialMedia {
                 name
                 url
-                icon
               }
             }
           }

@@ -1,14 +1,13 @@
 - [x] display name saves correctly
 - [ ] fix thirsty panini
-- [ ] scale for mobile
 - [x] ívar's points
   - [x] stafir hverfa í input formi
   - [x] letur input Monserrat
   - [x] Staðfesting að mynd sé uploaduð
     - [x] setja fleiri en 1 mynd
-- [ ] social media icons + home btn in success page
+- [x] social media icons + home btn in success page
 - [x] confirmation at send movie
 - [ ] captcha
 - [ ] logo animate
-- [ ] set images names to image1 & image2 on upload
+- [x] set images names to image1 & image2 on upload
 - [x] allow 1 image

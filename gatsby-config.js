@@ -42,12 +42,10 @@ const metadata = {
     socialMedia: [
       {
         name: "facebook",
-        icon: "/assets/facebook.png",
         url: "https://m.facebook.com/skjaldborg.hatid.islenskra.heimildamynda/",
       },
       {
         name: "instagram",
-        icon: "/assets/instagram.png",
         url:
           "https://instagram.com/skjaldborg_heimildamyndahatid?igshid=zqeiffioceg2",
       },
