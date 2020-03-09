@@ -38,9 +38,15 @@ const Applicant = () => {
   }, [isLoading, auth])
   return (
     <Box>
-      <legend>Tengiliður: </legend>
-      <p>{applicant ? applicant.email : ""}</p>
-      <button onClick={() => auth.signOut()}>Breyta tengilið</button>
+      {!isLoading ? (
+        <>
+          <legend>Tengiliður: </legend>
+          <p>{applicant ? applicant.email : ""}</p>
+          <button onClick={() => auth.signOut()}>Breyta tengilið</button>
+        </>
+      ) : (
+        <p>Loading applicant...</p>
+      )}
     </Box>
   )
 }

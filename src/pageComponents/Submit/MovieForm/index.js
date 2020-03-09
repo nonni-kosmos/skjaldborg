@@ -29,6 +29,7 @@ const MovieForm = () => {
     if (!isLoading) {
       authState(auth).subscribe(user => {
         if (user) {
+          console.log(user)
           setApplicant({
             name: user.displayName,
             email: user.email,
@@ -57,6 +58,7 @@ const MovieForm = () => {
       accepted: false,
       applicantId: applicant.id,
       applicantName: applicant.name,
+      applicantEmail: applicant.email,
       createdAt: Date.now(),
       description: data.description,
       director: data.director,

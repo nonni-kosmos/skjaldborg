@@ -7,7 +7,6 @@ import EmailPwLogin from "../ManualLogin/EmailPwLogin"
 import { authState } from "rxfire/auth"
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import ManualLogin from "../ManualLogin"
-import Footer from "../../../layouts/Footer"
 
 // applicant form
 const Register = () => {
