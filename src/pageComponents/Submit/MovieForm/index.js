@@ -19,22 +19,20 @@ const MovieForm = () => {
   const onSubmit = (data, e) => {
     console.log(data)
     if (window.confirm("Confirm submission")) {
+      // Image one, required
       // generate url names
-      let imageOneURL =
-        generateImageLocation(data.title) + "/" + data.imageOne[0].name
-      let imageTwoURL = ""
-      if (imageTwo) {
-        imageTwoURL =
-          generateImageLocation(data.title) + "/" + data.imageTwo[0].name
-      }
+      let imageOneURL = generateImageLocation(data.title) + "/image1"
       // upload it
       const imageOneRef = storage.ref(imageOneURL)
-
       put(imageOneRef, data.imageOne[0]).subscribe(snap => {
         console.log(snap)
       })
 
-      // allow 1 image only
+      // image 2, if desired...
+      let imageTwoURL = ""
+      if (imageTwo) {
+        imageTwoURL = generateImageLocation(data.title) + "/image2"
+      }
       if (data.imageTwo.length > 0) {
         const imageTwoRef = storage.ref(imageTwoURL)
         put(imageTwoRef, data.imageTwo[0]).subscribe(snap => {
