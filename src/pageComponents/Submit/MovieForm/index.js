@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { InputBox, Warning, FileBTN } from "../styled"
 import { useForm } from "react-hook-form"
 import { errorMsg, generateImageLocation } from "../config"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
-import { authState } from "rxfire/auth"
 import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
 import Applicant from "./applicant"
@@ -13,32 +12,9 @@ import BigBtn from "../../../reusableComponents/BigBtn"
 const MovieForm = () => {
   const {
     db: { storage, firestore, auth },
-    isLoading,
   } = useGetFirebase()
 
-  const [applicant, setApplicant] = useState({
-    name: "",
-    email: "",
-    id: "",
-  })
-
   const { register, handleSubmit, errors } = useForm()
-
-  // create applicant object from auth user
-  useEffect(() => {
-    if (!isLoading) {
-      authState(auth).subscribe(user => {
-        if (user) {
-          console.log(user)
-          setApplicant({
-            name: user.displayName,
-            email: user.email,
-            id: user.uid,
-          })
-        }
-      })
-    }
-  }, [isLoading, auth])
 
   const onSubmit = (data, e) => {
     console.log(data)
@@ -53,12 +29,14 @@ const MovieForm = () => {
       console.log(snap)
     })
 
+    const user = auth.currentUser
+
     // then save the movie
     firestore.collection("movies").add({
       accepted: false,
-      applicantId: applicant.id,
-      applicantName: applicant.name,
-      applicantEmail: applicant.email,
+      applicantId: user.uid,
+      applicantName: user.displayName,
+      applicantEmail: user.email,
       createdAt: Date.now(),
       description: data.description,
       director: data.director,

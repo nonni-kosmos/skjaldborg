@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import useGetFirebase from "../../../hooks/useGetFirebase"
-import { authState } from "rxfire/auth"
 import styled from "styled-components"
 import { redColor } from "../../../layouts/PageContainer/styled"
 
@@ -28,27 +27,18 @@ const Applicant = () => {
     db: { auth },
     isLoading,
   } = useGetFirebase()
-  const [applicant, setApplicant] = useState(null)
-  useEffect(() => {
-    if (!isLoading) {
-      authState(auth).subscribe(user => {
-        setApplicant(user)
-      })
-    }
-  }, [isLoading, auth])
-  return (
-    <Box>
-      {!isLoading ? (
+
+  if (!isLoading && auth.currentUser) {
+    return (
+      <Box>
         <>
           <legend>Tengiliður: </legend>
-          <p>{applicant ? applicant.email : ""}</p>
+          <p>{auth.currentUser.email}</p>
           <button onClick={() => auth.signOut()}>Breyta tengilið</button>
         </>
-      ) : (
-        <p>Loading applicant...</p>
-      )}
-    </Box>
-  )
+      </Box>
+    )
+  } else return <p>loading applicant</p>
 }
 
 export default Applicant
