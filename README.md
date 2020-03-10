@@ -15,7 +15,7 @@
  - [x] frontpage video
  - [x] bíó video
  - [x] þrengja textadálk á undirsíðum
- - [ ] remove svg load on images
+ - [x] remove svg load on images
  - [ ] sponsors
  - [ ] mobile scaling
    - [ ] frontpage

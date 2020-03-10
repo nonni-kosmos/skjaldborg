@@ -5,6 +5,17 @@ media_folder: "static/assets"
 public_folder: "assets"
 
 collections:
+  # Styrktaraðilar
+  - name: "styrktaradilar"
+    label: "Styrktaraðilar"
+    folder: "static/styrktaradilar"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Lógó", name: "logo", widget: "image" }
+      - { label: "Línkur", name: "url", widget: "string" }
   # Hátíðin
   - name: "hatidin-undirsidur"
     label: "Hátíðin undirsíður"
