@@ -2,30 +2,20 @@ import React from "react"
 import { Container } from "./styled"
 import { StaticQuery, graphql } from "gatsby"
 import FadeInSection from "../../techComponents/FadeInSection"
+import SponsorsQuery from "./query"
 
-const Sponsors = ({
-  data: {
-    allMarkdownRemark: { topfive },
-  },
-}) => {
+const Sponsors = () => {
   return (
     <Container>
       <h1>Styrktaraðilar</h1>
       <FadeInSection intensity="10">
         <div className="sponsor-grid-top5">
-          {topfive.map((item, index) => (
-            <a
-              key={index}
-              href={item.frontmatter.sponsor_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt={item.frontmatter.title + "-logo"}
-                src={item.frontmatter.logo.publicURL}
-              ></img>
-            </a>
-          ))}
+          <SponsorsQuery vip></SponsorsQuery>
+        </div>
+      </FadeInSection>
+      <FadeInSection intensity="10">
+        <div className="sponsor-grid-rest">
+          <SponsorsQuery></SponsorsQuery>
         </div>
       </FadeInSection>
     </Container>

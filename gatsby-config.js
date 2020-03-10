@@ -94,8 +94,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gisting`,
+        name: `styrktaradilar_top5`,
         path: `${__dirname}/static/styrktaradilar_top5`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `styrktaradilar_rest`,
+        path: `${__dirname}/static/styrktaradilar_rest`,
       },
     },
     {

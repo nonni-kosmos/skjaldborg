@@ -30,6 +30,22 @@ export const Container = styled.div`
       margin: 0 auto;
     }
   }
+  div.sponsor-grid-rest {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 7.5rem));
+    grid-gap: 4rem;
+    box-sizing: border-box;
+    width: 100%;
+    img {
+      height: 5rem;
+      max-width: 7rem;
+      margin: 0 auto;
+    }
+    a {
+      margin: 0 auto;
+    }
+  }
 `
 export const Icon = styled.div`
   box-sizing: border-box;

@@ -16,6 +16,7 @@
  - [x] bíó video
  - [x] þrengja textadálk á undirsíðum
  - [x] remove svg load on images
+ - [ ] add loading on pages
  - [ ] sponsors
    - [ ] cms
    - [ ] implementation
