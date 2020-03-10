@@ -5,7 +5,6 @@ import { graphql, StaticQuery } from "gatsby"
 import ExcerptBtns from "../../reusableComponents/ExcerptBtns"
 import Sponsors from "../../reusableComponents/Sponsors"
 
-// import TopImage from "../../reusableComponents/TopImage"
 import TopVideo from "../../reusableComponents/TopImage/video"
 
 import Footer from "../../layouts/Footer"
@@ -16,7 +15,6 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
     <Container>
       <Header></Header>
 
-      {/* <TopImage frontpage image={imageSharp}></TopImage> */}
       <TopVideo videoSource={video.publicURL}></TopVideo>
 
       <BigBtn text="Innsending mynda 2020" action="/umsokn"></BigBtn>

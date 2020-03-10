@@ -13,6 +13,8 @@
 - [x] allow 1 image
  # todo
  - [x] frontpage video
+ - [x] bíó video
+ - [ ] þrengja textadálk á undirsíðum
  - [ ] sponsors
  - [ ] mobile scaling
    - [ ] frontpage
