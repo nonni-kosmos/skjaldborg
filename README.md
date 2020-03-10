@@ -8,6 +8,14 @@
 - [x] social media icons + home btn in success page
 - [x] confirmation at send movie
 - [ ] captcha
-- [ ] logo animate
+- [x] logo animate
 - [x] set images names to image1 & image2 on upload
 - [x] allow 1 image
+ # todo
+ - [x] frontpage video
+ - [ ] sponsors
+ - [ ] mobile scaling
+   - [ ] frontpage
+   - [ ] submit
+   - [ ] sub-pages
+   - [ ] header / footer
