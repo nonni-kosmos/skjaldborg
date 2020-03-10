@@ -1,6 +1,6 @@
 ---
 title: Orkubúa Vestfjarða
 logo: /assets/orkubu_vestfjarda_nota.png
-sponsor-url: 'https://www.ov.is/'
+sponsor_url: 'https://www.ov.is/'
 ---
 
