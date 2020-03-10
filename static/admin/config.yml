@@ -15,7 +15,7 @@ collections:
     fields:
       - { label: "Titill", name: "title", widget: "string" }
       - { label: "Lógó", name: "logo", widget: "image" }
-      - { label: "Línkur", name: "sponsor-url", widget: "string" }
+      - { label: "Línkur", name: "sponsor_url", widget: "string" }
   # Hátíðin
   - name: "hatidin-undirsidur"
     label: "Hátíðin undirsíður"
