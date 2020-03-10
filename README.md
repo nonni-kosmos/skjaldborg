@@ -17,6 +17,8 @@
  - [x] þrengja textadálk á undirsíðum
  - [x] remove svg load on images
  - [ ] sponsors
+   - [ ] cms
+   - [ ] implementation
  - [ ] mobile scaling
    - [ ] frontpage
    - [ ] submit
