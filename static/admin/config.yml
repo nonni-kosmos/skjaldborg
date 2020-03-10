@@ -5,10 +5,21 @@ media_folder: "static/assets"
 public_folder: "assets"
 
 collections:
-  # Styrktaraðilar
+  # Styrktaraðilar | Top 5
   - name: "styrktaradilar_top5"
     label: "Styrktaraðilar Top 5"
     folder: "static/styrktaradilar_top5"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Lógó", name: "logo", widget: "image" }
+      - { label: "Línkur", name: "sponsor_url", widget: "string" }
+  # Styrktaraðilar | Rest
+  - name: "styrktaradilar_rest"
+    label: "Styrktaraðilar Rest"
+    folder: "static/styrktaradilar_rest"
     create: true
     editor:
       preview: false
