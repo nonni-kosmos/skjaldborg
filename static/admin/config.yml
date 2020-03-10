@@ -6,9 +6,9 @@ public_folder: "assets"
 
 collections:
   # Styrktaraðilar
-  - name: "styrktaradilar"
-    label: "Styrktaraðilar"
-    folder: "static/styrktaradilar"
+  - name: "styrktaradilar_top5"
+    label: "Styrktaraðilar Top 5"
+    folder: "static/styrktaradilar_top5"
     create: true
     editor:
       preview: false
