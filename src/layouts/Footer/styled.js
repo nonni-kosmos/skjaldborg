@@ -16,4 +16,11 @@ export const Container = styled.div`
   grid-template-rows: 1fr;
   grid-template-columns: 10rem 25rem;
   grid-gap: 2rem;
+  .mobile-sm-icon-wrap {
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `

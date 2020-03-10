@@ -11,16 +11,19 @@
 - [x] logo animate
 - [x] set images names to image1 & image2 on upload
 - [x] allow 1 image
+
  # todo
  - [x] frontpage video
  - [x] bíó video
  - [x] þrengja textadálk á undirsíðum
  - [x] remove svg load on images
  - [ ] add loading on pages
- - [ ] sponsors
-   - [ ] cms
-   - [ ] implementation
- - [ ] mobile scaling
+ - [x] sponsors
+   - [x] cms
+   - [x] implementation
+
+
+ - [ ] Scaling
    - [ ] frontpage
    - [ ] submit
    - [ ] sub-pages

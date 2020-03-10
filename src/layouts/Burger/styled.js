@@ -19,7 +19,7 @@ export const Container = styled.div`
 export const Line = styled.span`
   height: 4px;
   width: 100%;
-  border-bottom: 0.1rem solid ${redColor};
+  border-bottom: 0.2rem solid ${redColor};
   transition: 0.2s ease-in-out;
   ${props =>
     props.ex &&

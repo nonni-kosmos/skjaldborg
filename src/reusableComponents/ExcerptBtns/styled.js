@@ -1,16 +1,22 @@
 import styled from "styled-components"
 import { redColor } from "../../layouts/PageContainer/styled"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { breakpoints } from "../../constants"
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-auto-rows: minmax(15rem, 30rem);
   grid-gap: 1rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   box-sizing: border-box;
+
+  grid-auto-rows: minmax(15rem, 20rem);
+  /** desktop */
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    grid-auto-rows: minmax(15rem, 30rem);
+  }
 `
 export const Box = styled(AniLink)`
   background: ${redColor};

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 import { redColor, greenColor } from "../../layouts/PageContainer/styled"
+import { breakpoints } from "../../constants"
 
 export const Text = styled.p`
   height: 3rem;
@@ -22,9 +23,6 @@ const BTNstyle = css`
   justify-content: center;
   align-items: center;
   border: 2px solid ${redColor};
-  &&:hover {
-    color: ${redColor};
-  }
   position: relative;
   transition: 0.2s ease-in-out;
 `
@@ -45,10 +43,13 @@ export const Fill = styled.span`
   left: 0;
   top: 0;
   background: ${greenColor};
-  width: 0%;
   height: 100%;
   position: absolute;
   z-index: 0;
+  width: 100%;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    width: 0%;
+  }
   ${Anchor}:hover & {
     width: 100%;
   }

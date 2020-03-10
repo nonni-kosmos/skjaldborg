@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { useSelector } from "react-redux"
 
 import { Container, Wrap } from "./styled"
 import Logo from "./Logo"
@@ -10,13 +11,16 @@ const Header = ({
     site: { siteMetadata },
   },
 }) => {
+  const platform = useSelector(state => state.reducer.platform)
   return (
     <Wrap>
-      <Container>
+      <Container platform={platform}>
         <Logo></Logo>
-        <div id="box">
-          <Text meta={siteMetadata} info></Text>
-        </div>
+        {platform === "desktop" ? (
+          <div id="box">
+            <Text meta={siteMetadata} info></Text>
+          </div>
+        ) : null}
       </Container>
     </Wrap>
   )
