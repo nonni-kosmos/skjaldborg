@@ -1,6 +1,6 @@
 ---
 title: Vesturbyggð
 logo: /assets/vesturbyggd.png
-url: 'https://vesturbyggd.is/'
+sponsor-url: 'https://vesturbyggd.is/'
 ---
 
