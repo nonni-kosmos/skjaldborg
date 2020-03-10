@@ -27,8 +27,8 @@ export default props => (
             title
             mynd {
               childImageSharp {
-                fluid(maxHeight: 1200, quality: 85) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxHeight: 1200, quality: 65) {
+                  ...GatsbyImageSharpFluid_noBase64
                 }
               }
             }
