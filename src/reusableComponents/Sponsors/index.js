@@ -1,19 +1,33 @@
 import React from "react"
-import { Container, Image, Icon } from "./styled"
+import { Container } from "./styled"
 import { StaticQuery, graphql } from "gatsby"
+import FadeInSection from "../../techComponents/FadeInSection"
 
-const Sponsors = ({ data: { imageSharp: logo } }) => {
-  let fakeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+const Sponsors = ({
+  data: {
+    allMarkdownRemark: { topfive },
+  },
+}) => {
   return (
     <Container>
       <h1>Styrktaraðilar</h1>
-      <div className="sponsor-grid">
-        {fakeArray.map((item, index) => (
-          <Icon key={index}>
-            <Image fluid={logo.fluid}></Image>
-          </Icon>
-        ))}
-      </div>
+      <FadeInSection intensity="10">
+        <div className="sponsor-grid-top5">
+          {topfive.map((item, index) => (
+            <a
+              key={index}
+              href={item.frontmatter.sponsor_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt={item.frontmatter.title + "-logo"}
+                src={item.frontmatter.logo.publicURL}
+              ></img>
+            </a>
+          ))}
+        </div>
+      </FadeInSection>
     </Container>
   )
 }
@@ -22,9 +36,17 @@ export default props => (
   <StaticQuery
     query={graphql`
       {
-        imageSharp(fluid: { originalName: { eq: "spons.png" } }) {
-          fluid(maxHeight: 1000) {
-            ...GatsbyImageSharpFluid
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/styrktaradilar_top5/" } }
+        ) {
+          topfive: nodes {
+            frontmatter {
+              title
+              sponsor_url
+              logo {
+                publicURL
+              }
+            }
           }
         }
       }

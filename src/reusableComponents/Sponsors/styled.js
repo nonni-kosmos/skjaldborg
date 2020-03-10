@@ -15,13 +15,20 @@ export const Container = styled.div`
     margin-top: 0;
     margin-bottom: 3rem;
   }
-  div.sponsor-grid {
+  div.sponsor-grid-top5 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 7rem));
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 4rem;
     box-sizing: border-box;
     width: 100%;
-    justify-content: center;
+    img {
+      height: 8rem;
+      max-width: 15rem;
+      margin: 0 auto;
+    }
+    a {
+      margin: 0 auto;
+    }
   }
 `
 export const Icon = styled.div`
