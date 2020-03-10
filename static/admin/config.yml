@@ -16,7 +16,7 @@ collections:
       - { label: "Titill", name: "title", widget: "string" }
       - { label: "Lógó", name: "logo", widget: "image" }
       - { label: "Línkur", name: "sponsor_url", widget: "string" }
-      - { label: "Vefsíða", name: "vefsida", widget: "string" }
+      - { label: "Vefsíða", name: url, widget: "string" }
   # Hátíðin
   - name: "hatidin-undirsidur"
     label: "Hátíðin undirsíður"
