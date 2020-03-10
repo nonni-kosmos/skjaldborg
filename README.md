@@ -14,7 +14,8 @@
  # todo
  - [x] frontpage video
  - [x] bíó video
- - [ ] þrengja textadálk á undirsíðum
+ - [x] þrengja textadálk á undirsíðum
+ - [ ] remove svg load on images
  - [ ] sponsors
  - [ ] mobile scaling
    - [ ] frontpage

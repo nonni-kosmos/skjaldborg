@@ -2,10 +2,11 @@ import styled from "styled-components"
 import { redColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div`
-  line-height: 135%;
+  line-height: 138%;
   /* max-width: 35rem; */
   box-sizing: border-box;
   padding: 0 2rem;
+  max-width: 40rem;
   * {
     font-family: les;
   }
