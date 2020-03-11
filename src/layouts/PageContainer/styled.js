@@ -23,7 +23,6 @@ export const greenTextColor = theme("mode", {
 })
 
 export const Container = styled.div`
-  background: ${backgroundColor};
   box-sizing: border-box;
   min-height: 85vh;
   margin-bottom: 8.5rem;

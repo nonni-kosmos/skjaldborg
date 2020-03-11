@@ -11,7 +11,6 @@ const backgroundColor = theme("mode", {
 export const Wrap = styled.div`
   z-index: 4;
   height: 8.5rem;
-  width: 100%;
   background: ${backgroundColor};
   position: absolute;
 `
