@@ -9,7 +9,7 @@ export const Container = styled.div`
   overflow: hidden;
 
   /** mobile */
-  height: auto;
+  height: 100vh;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
@@ -21,10 +21,14 @@ export const Image = styled(Img)`
 `
 
 export const Video = styled.video`
-  position: relative;
-  width: 100%;
+  position: absolute;
+  left: -120%;
+  height: 100%;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
   }
 `
