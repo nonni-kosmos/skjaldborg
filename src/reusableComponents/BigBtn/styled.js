@@ -13,6 +13,7 @@ export const Text = styled.p`
   color: ${redColor};
   padding: 2rem 0 2rem 0;
   position: relative;
+  z-index: 4;
 `
 const BTNstyle = css`
   color: inherit;

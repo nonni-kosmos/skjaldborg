@@ -7,12 +7,13 @@ export const Container = styled.div`
   padding: 0;
   position: relative;
   overflow: hidden;
-
+  margin-bottom: -3.5rem;
   /** mobile */
-  height: 65vh;
+  height: 50vh;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
+    margin-bottom: 0;
   }
 `
 export const Image = styled(Img)`
@@ -23,7 +24,7 @@ export const Image = styled(Img)`
 export const Video = styled.video`
   position: absolute;
   height: 100%;
-  left: -50%;
+  left: -30%;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     position: absolute;

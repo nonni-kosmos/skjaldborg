@@ -11,13 +11,14 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-
+  margin-top: -3.5rem;
   grid-auto-rows: minmax(15rem, 20rem);
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     grid-auto-rows: minmax(15rem, 30rem);
     padding: 0 1rem;
     grid-gap: 1rem;
+    margin-top: 0;
   }
 `
 export const Box = styled(AniLink)`
