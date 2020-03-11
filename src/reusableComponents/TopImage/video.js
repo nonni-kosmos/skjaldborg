@@ -8,7 +8,7 @@ export default ({ videoSource }) => {
   return (
     <Container>
       <Video playsInline autoPlay muted loop>
-        <source src={videoSource}></source>
+        <source type="video/mp4" src={videoSource}></source>
       </Video>
       {platform === "mobile" ? (
         <LogoMobileWrap>
