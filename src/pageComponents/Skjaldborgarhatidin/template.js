@@ -1,7 +1,7 @@
 import React from "react"
 import PageTitle from "../../reusableComponents/PageTitle"
 import Content from "../../reusableComponents/Content"
-import { Wrap } from "./styled"
+import { Wrap, Grid } from "./styled"
 import Footer from "../../layouts/Footer"
 import Header from "../../layouts/Header"
 import Fadeinsection from "../../techComponents/FadeInSection"
@@ -28,14 +28,7 @@ const Template = ({ image, video, title, html, extraComponent: Component }) => {
       ) : (
         <TopImage image={image.childImageSharp}></TopImage>
       )}
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "1fr .5fr",
-        }}
-      >
+      <Grid>
         <Fadeinsection direction="left" intensity="20">
           <Wrap>
             <PageTitle>{title}</PageTitle>
@@ -43,7 +36,7 @@ const Template = ({ image, video, title, html, extraComponent: Component }) => {
           </Wrap>
         </Fadeinsection>
         <Navigator next={getNextPageFromTitle(title)}></Navigator>
-      </div>
+      </Grid>
       {Component ? <Component></Component> : null}
       <Footer></Footer>
     </>

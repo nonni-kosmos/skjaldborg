@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import { redColor } from "../../layouts/PageContainer/styled"
+import { breakpoints } from "../../constants"
 
 export default styled.h1`
   color: ${redColor};
@@ -10,4 +11,9 @@ export default styled.h1`
       padding: 0 0 0rem 2rem;
     `}
   text-transform: uppercase;
+  font-size: 1.5rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 2rem;
+  }
 `

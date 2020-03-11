@@ -1,12 +1,18 @@
 import styled, { css } from "styled-components"
 import { redColor } from "../../layouts/PageContainer/styled"
+import { breakpoints } from "../../constants"
 
 export const Container = styled.div`
   box-sizing: border-box;
-  padding: 5rem;
   max-width: 50%;
-  margin: 0 auto;
+
+  margin: 5rem 0;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    margin: 0 auto;
+  }
+
   max-height: 50%;
+
   .login-options-wrap {
     display: grid;
     grid-gap: 1.5rem;
@@ -16,15 +22,18 @@ export const Container = styled.div`
   /** mobile */
   width: 100%;
   max-width: 100%;
+  padding: 1rem;
 
   /** tablets */
   @media only screen and (min-width: 600px) {
     max-width: 85%;
+    padding: 5rem;
   }
 
   /** desktop */
   @media only screen and (min-width: 850px) {
     max-width: 65%;
+    padding: 5rem;
   }
 
   form {
@@ -46,7 +55,10 @@ export const Container = styled.div`
     font-size: 1rem;
   }
   legend {
-    margin: 1rem 0 1rem -3rem;
+    margin: 1rem 0 1rem 0rem;
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      margin-left: -3rem;
+    }
     font-size: 1.5rem;
     text-transform: uppercase;
   }
