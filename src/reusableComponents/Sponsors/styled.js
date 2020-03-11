@@ -6,8 +6,11 @@ import { breakpoints } from "../../constants"
 export const Container = styled.div`
   background: ${greenColor};
   padding: 3rem;
-  margin: 2rem 0 0 0;
   position: relative;
+
+  /** mobile */
+  margin: 0;
+  /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     margin: 2rem 0 7.5rem 0;
   }
@@ -47,6 +50,7 @@ export const Container = styled.div`
     grid-gap: 4rem;
     box-sizing: border-box;
     width: 100%;
+    justify-content: center;
     img {
       height: 100%;
       width: 100%;

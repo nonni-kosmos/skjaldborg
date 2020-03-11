@@ -6,16 +6,18 @@ import { breakpoints } from "../../constants"
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 0rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
   box-sizing: border-box;
 
   grid-auto-rows: minmax(15rem, 20rem);
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     grid-auto-rows: minmax(15rem, 30rem);
+    padding: 0 1rem;
+    grid-gap: 1rem;
   }
 `
 export const Box = styled(AniLink)`
@@ -31,6 +33,13 @@ export const Box = styled(AniLink)`
     text-transform: uppercase;
     position: absolute;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      height: auto;
+    }
   }
 `
 export const FillerImage = styled.img`
