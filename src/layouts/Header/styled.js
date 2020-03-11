@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import theme from "styled-theming"
+import { breakpoints } from "../../constants"
 // import { breakpoints } from "../../constants"
 
 const backgroundColor = theme("mode", {
@@ -18,10 +19,13 @@ export const Wrap = styled.div`
 export const Container = styled.div`
   height: 100%;
   position: relative;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 10rem 30rem;
-  grid-gap: 3rem;
+  display: none;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10rem 30rem;
+    grid-gap: 3rem;
+  }
   div {
   }
   #box {

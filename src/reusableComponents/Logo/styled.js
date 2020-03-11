@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components"
 import Img from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import LogoSVG from "../../../../static/assets/svg/logo.svg"
+import LogoSVG from "../../../static/assets/svg/logo.svg"
 
 const breath = keyframes`
   0% {

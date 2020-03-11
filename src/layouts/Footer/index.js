@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Wrap } from "./styled"
-import Logo from "../Header/Logo"
+import Logo from "../../reusableComponents/Logo"
 import Contact from "./contact"
 
 import { useSelector } from "react-redux"

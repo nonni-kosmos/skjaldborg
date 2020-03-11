@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { useSelector } from "react-redux"
 
 import { Container, Wrap } from "./styled"
-import Logo from "./Logo"
+import Logo from "../../reusableComponents/Logo"
 import Text from "./Text"
 
 const Header = ({
