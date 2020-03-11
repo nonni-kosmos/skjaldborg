@@ -142,5 +142,20 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-transition-link`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Skjaldborg 2020`,
+        short_name: `Skjaldborg`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#C34545`,
+        display: `standalone`,
+        icon: `static/assets/mobile-icon.png`,
+        lang: `en`,
+        description: metadata.subtitle,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
