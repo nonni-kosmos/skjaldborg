@@ -10,8 +10,7 @@ export const Container = styled.div`
   overflow: hidden;
   margin-bottom: -3.5rem;
   /** mobile */
-  height: auto;
-  padding-top: 6rem;
+  height: 50vh;
   background: ${greenColor}; /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
@@ -26,21 +25,23 @@ export const Image = styled(Img)`
 
 export const Video = styled.video`
   position: relative;
-  width: 100%;
+  height: 100%;
   margin-bottom: -1rem;
+  margin-left: -7.5rem;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     position: absolute;
     width: 100%;
     height: auto;
     margin-bottom: 0;
+    margin-left: 0;
   }
 `
 export const LogoMobileWrap = styled.div`
   position: absolute;
-  top: 3rem;
+  top: 1rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-left: -4rem;
+  margin-left: -6rem;
 `
