@@ -7,7 +7,7 @@ export default ({ videoSource }) => {
   const platform = useSelector(state => state.reducer.platform)
   return (
     <Container>
-      <Video playsInline autoPlay muted loop>
+      <Video autoPlay playsInline muted loop>
         <source type="video/mp4" src={videoSource}></source>
       </Video>
       {platform === "mobile" ? (

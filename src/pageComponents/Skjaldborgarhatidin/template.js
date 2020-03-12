@@ -1,7 +1,7 @@
 import React from "react"
 import PageTitle from "../../reusableComponents/PageTitle"
 import Content from "../../reusableComponents/Content"
-import { Wrap, Grid } from "./styled"
+import { Wrap, Grid, Container } from "./styled"
 import Footer from "../../layouts/Footer"
 import Header from "../../layouts/Header"
 import Fadeinsection from "../../techComponents/FadeInSection"
@@ -21,7 +21,7 @@ const getNextPageFromTitle = title => {
 // extra component is optional
 const Template = ({ image, video, title, html, extraComponent: Component }) => {
   return (
-    <>
+    <Container>
       <Header></Header>
       {video ? (
         <TopVideo videoSource={video}></TopVideo>
@@ -39,7 +39,7 @@ const Template = ({ image, video, title, html, extraComponent: Component }) => {
       </Grid>
       {Component ? <Component></Component> : null}
       <Footer></Footer>
-    </>
+    </Container>
   )
 }
 
