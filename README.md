@@ -29,3 +29,8 @@
    - [x] sub-pages
    - [x] header / footer
 
+
+
+- [ ] menu dropdown 
+- [ ] navigation mobile undir guesthouses
+- [ ] guesthouse línkur á heimasíðu
