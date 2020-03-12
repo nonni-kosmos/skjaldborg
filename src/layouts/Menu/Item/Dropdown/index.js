@@ -21,7 +21,7 @@ const Dropdown = ({
         {children}
         {open ? "-" : "+"}
       </Title>
-      <List height={open ? 5 + "rem" : "0"} padTop={open ? "1.5rem" : 0}>
+      <List height={open ? 6.5 + "rem" : "0"} padTop={open ? "1.5rem" : 0}>
         {dropdownpages.map((item, index) => (
           <Item
             className="titlar"

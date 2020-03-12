@@ -9,7 +9,7 @@ export const Text = styled.h1`
 `
 export const Anchor = styled(AniLink)`
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 4rem;
   padding: 0rem;
   color: white;
   @media only screen and (min-width: ${breakpoints.desktop}) {

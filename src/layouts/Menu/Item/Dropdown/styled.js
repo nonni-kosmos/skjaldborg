@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 export const Button = styled.div`
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 4rem;
 `
 export const Title = styled.span`
   color: white;
@@ -21,11 +21,11 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 7.5rem;
+  padding-left: 4rem;
 `
 export const Item = styled.p`
-  font-size: 1rem;
-  margin: 0;
+  font-size: 1.1rem;
+  margin: 0.5rem;
   &&:hover {
     cursor: pointer;
   }
