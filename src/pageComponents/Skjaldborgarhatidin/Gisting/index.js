@@ -40,6 +40,7 @@ export default props => (
                 }
               }
               google_maps_url
+              heimasida
               stadsetning {
                 baer
                 heimilisfang

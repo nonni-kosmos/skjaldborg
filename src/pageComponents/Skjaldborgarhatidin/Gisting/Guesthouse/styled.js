@@ -8,6 +8,10 @@ import {
 export const Box = styled.div`
   text-decoration: none;
   color: inherit;
+  .guesthouse-website-anchor {
+    color: inherit;
+    text-decoration: none;
+  }
 `
 export const ImageContainer = styled.div``
 export const Image = styled(Img)``
@@ -30,7 +34,7 @@ export const Info = styled.div`
       color: ${redColor};
       font-family: les;
     }
-    .guesthouse-anchor {
+    .guesthouse-map-anchor {
       color: inherit;
     }
   }

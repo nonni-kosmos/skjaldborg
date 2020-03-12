@@ -18,10 +18,6 @@ exports.onCreatePage = async ({ page, actions }) => {
     page.matchPath = "/umsokn/*"
     createPage(page)
   }
-  if (page.path.match(/^\/hatidin/)) {
-    page.matchPath = "/hatidin/*"
-    createPage(page)
-  }
 }
 
 // env variable fix

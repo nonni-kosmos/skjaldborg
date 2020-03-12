@@ -18,8 +18,8 @@ const dropdownPages = [
     image: `/assets/skjaldborg_092dscf5141_byontkovic.jpg`,
   },
   {
-    name: `Gisting/Ferðalag`,
-    slug: `/gisting-ferdalagid`,
+    name: `Ferðalagið/Gisting`,
+    slug: `/ferdalagid-gisting`,
     image: `/assets/skjaldborg_060dscf4118_byontkovic.jpg`,
   },
 ]

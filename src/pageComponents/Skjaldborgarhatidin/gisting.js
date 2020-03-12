@@ -13,7 +13,7 @@ const Gisting = ({
   return (
     <Template
       image={frontmatter.mynd}
-      title="Gisting / Ferðalagið"
+      title={frontmatter.title}
       html={html}
       extraComponent={GuestHouseGrid}
     ></Template>

@@ -15,7 +15,7 @@ const getNextPageFromTitle = title => {
   if (title === "Skjaldborgarhátíðin")
     return { url: "/bio", name: "Skjaldborgarbíó" }
   else if (title === "Skjaldborgarbíó")
-    return { url: "/gisting-ferdalagid", name: "Gisting / Ferðalagið" }
+    return { url: "/ferdalagid-gisting", name: "Ferðalagið / Gisting" }
   else return { url: "/hatidin", name: "Skjaldborgarhátíðin" }
 }
 
