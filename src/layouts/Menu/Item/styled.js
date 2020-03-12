@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { greenColor } from "../../PageContainer/styled"
+import { breakpoints } from "../../../constants"
 
 export const Text = styled.h1`
   margin: 0;
@@ -11,8 +12,10 @@ export const Anchor = styled(AniLink)`
   font-size: 3rem;
   padding: 0rem;
   color: white;
-  &&:hover {
-    color: ${greenColor};
-    cursor: pointer;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    &&:hover {
+      color: ${greenColor};
+      cursor: pointer;
+    }
   }
 `
