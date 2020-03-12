@@ -5,12 +5,11 @@ import Template from "./template"
 const Skjaldborgarbio = ({
   data: {
     markdownRemark: { html, frontmatter },
-    video,
   },
 }) => {
   return (
     <Template
-      video={video.publicURL}
+      video={frontmatter.video.publicURL}
       title={frontmatter.title}
       html={html}
       extraComponent={null}
@@ -27,6 +26,9 @@ export default props => (
           html
           frontmatter {
             title
+            video {
+              publicURL
+            }
             mynd {
               childImageSharp {
                 fluid {
@@ -35,9 +37,6 @@ export default props => (
               }
             }
           }
-        }
-        video: file(name: { eq: "Skjaldborgarbio" }) {
-          publicURL
         }
       }
     `}
