@@ -28,6 +28,10 @@ export const Info = styled.div`
     p {
       margin: 0;
       color: ${redColor};
+      font-family: les;
+    }
+    .guesthouse-anchor {
+      color: inherit;
     }
   }
 `

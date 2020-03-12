@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { greenTextColor, redColor } from "../../../layouts/PageContainer/styled"
 import SocialMediaIcons from "../../../reusableComponents/SocialMediaIcons"
 import { Link } from "gatsby"
@@ -33,8 +33,16 @@ const Anchor = styled(Link)`
 const HomeText = styled.h2`
   color: ${redColor};
 `
-const Arrow = styled(ArrowSvg)`
+export const Arrow = styled(ArrowSvg)`
   transform: rotate(180deg);
+  &&:hover {
+    cursor: pointer;
+  }
+  ${props =>
+    props.hideonstate === "hide" &&
+    css`
+      display: none;
+    `}
 `
 
 const Success = () => {
@@ -47,7 +55,7 @@ const Success = () => {
           með!
         </Message>
         <SocialMediaIcons color="black"></SocialMediaIcons>
-        <Anchor cover to="/">
+        <Anchor to="/">
           <HomeText className="titlar">Aftur á forsíðu</HomeText>
           <Arrow></Arrow>
         </Anchor>

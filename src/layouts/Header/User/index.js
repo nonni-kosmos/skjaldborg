@@ -8,10 +8,12 @@ const User = () => {
   const { auth, isLoading } = useGetFirebase()
 
   useEffect(() => {
+    let subscription
     if (!isLoading) {
-      auth.onAuthStateChanged(u => {
+      subscription = auth.onAuthStateChanged(u => {
         setUser(u)
       })
+      return () => subscription.unsubsribe()
     }
   }, [isLoading, auth])
 

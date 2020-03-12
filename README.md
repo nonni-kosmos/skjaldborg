@@ -23,8 +23,9 @@
    - [x] implementation
 
 
- - [ ] Scaling
-   - [ ] frontpage
-   - [ ] submit
-   - [ ] sub-pages
-   - [ ] header / footer
+ - [x] Scaling
+   - [x] frontpage
+   - [x] submit
+   - [x] sub-pages
+   - [x] header / footer
+

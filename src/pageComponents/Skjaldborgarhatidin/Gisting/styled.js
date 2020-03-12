@@ -7,5 +7,5 @@ export const GuesthousesGrid = styled.div`
   justify-content: space-evenly;
   grid-gap: 3rem;
   overflow: hidden;
-  padding: 4rem 1rem;
+  padding: 5rem;
 `

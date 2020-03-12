@@ -7,6 +7,7 @@ import EmailPwLogin from "../ManualLogin/EmailPwLogin"
 import { authState } from "rxfire/auth"
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import ManualLogin from "../ManualLogin"
+import { Arrow } from "../Success"
 
 // applicant form
 const Register = () => {
@@ -19,10 +20,12 @@ const Register = () => {
   } = useGetFirebase()
 
   useEffect(() => {
+    let subscription
     if (!isLoading) {
-      authState(auth).subscribe(user => {
+      subscription = authState(auth).subscribe(user => {
         authenticate(user)
       })
+      return () => subscription.unsubscribe()
     }
   }, [isLoading, auth])
 
@@ -35,7 +38,14 @@ const Register = () => {
   return (
     <>
       <Container>
+        <Arrow
+          hideonstate={!manualSignUp ? "hide" : null}
+          onClick={() => setManualSignUp(false)}
+        >
+          Tilbaka
+        </Arrow>
         <PageTitle nopad>Tengiliður</PageTitle>
+
         <p style={{ color: "gray" }}>
           The standard chunk of Lorem Ipsum used since the 1500s is reproduced
           below for those interested.

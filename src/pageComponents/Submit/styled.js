@@ -5,7 +5,7 @@ import { breakpoints } from "../../constants"
 export const Container = styled.div`
   box-sizing: border-box;
   max-width: 50%;
-
+  position: relative;
   margin: 5rem 0;
   @media only screen and (min-width: ${breakpoints.desktop}) {
     margin: 0 auto;

@@ -10,11 +10,13 @@ const RestrictedRoute = ({ component: Component, redirectPath }) => {
     isLoading,
   } = useGetFirebase()
   useEffect(() => {
+    let subscription
     if (!isLoading) {
-      authState(auth).subscribe(user => {
+      subscription = authState(auth).subscribe(user => {
         // is null if logged out
         authenticate(user)
       })
+      return () => subscription.unsubscribe()
     }
   }, [isLoading, auth])
 
