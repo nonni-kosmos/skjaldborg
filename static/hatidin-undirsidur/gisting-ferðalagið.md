@@ -1,6 +1,6 @@
 ---
 title: Gisting/Ferðalagið
-mynd: /assets/skjaldborg_060dscf4118_byontkovic.jpg
+mynd: /assets/skjaldborg_001dscf2957_byontkovic.jpg
 ---
 Flugfélagið Ernir flýgur frá Reykjavík til Bíldudals, og þaðan fer rúta til Patreksfjarðar. Það ferðalag tekur um klukktíma frá Reykjavík. Innritun í flug fer sunnan megin við Hótel Loftleiði.
 
