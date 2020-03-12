@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { InputBox, Warning, FileBTN } from "../styled"
+import { InputBox, Warning, FileBTN, Hint } from "../styled"
 import { useForm } from "react-hook-form"
 import { errorMsg, generateImageLocation } from "../config"
 
@@ -55,6 +55,9 @@ const MovieForm = () => {
         title: data.title,
         imageOneLocation: imageOneURL,
         imageTwoLocation: imageTwoURL,
+        trailerlinkur: data.trailerlinkur,
+        kvikmyndlinkur: data.kvikmyndlinkur,
+        athugasemdir: data.athugasemdir,
       })
 
       e.target.reset()
@@ -153,6 +156,7 @@ const MovieForm = () => {
           </FileBTN>
         ) : null}
 
+        <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
         <textarea
           placeholder="Description"
           name="description"
@@ -162,6 +166,37 @@ const MovieForm = () => {
           ref={register({ required: true })}
         ></textarea>
         {errors.description && <Warning>{errorMsg}</Warning>}
+
+        {/* ATHUGASEMDIR */}
+        <textarea
+          placeholder="Athugasemdir"
+          name="athugasemdir"
+          id="athugasemdir"
+          cols="30"
+          rows="5"
+          ref={register()}
+        ></textarea>
+        {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
+
+        {/* HLEKKIR */}
+        <legend>Hlekkir</legend>
+        <Hint>Leyfileg skáarsnið eru eftirfarandi...</Hint>
+        <InputBox
+          placeholder="Trailer"
+          type="text"
+          name="trailerlinkur"
+          id="trailerlinkur"
+          ref={register({ required: true })}
+        />
+        {errors.trailerlinkur && <Warning>{errorMsg}</Warning>}
+        <InputBox
+          placeholder="Kvikmynd"
+          type="text"
+          name="kvikmyndlinkur"
+          id="kvikmyndlinkur"
+          ref={register({ required: true })}
+        />
+        {errors.kvikmyndlinkur && <Warning>{errorMsg}</Warning>}
 
         <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
       </form>

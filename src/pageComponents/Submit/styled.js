@@ -48,6 +48,7 @@ export const Container = styled.div`
     padding: 1rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    font-family: les;
   }
   .submit-btn {
     margin: 1rem auto;
@@ -104,4 +105,10 @@ export const FileBTN = styled.label`
       background: green;
       color: white;
     `}
+`
+
+export const Hint = styled.p`
+  color: gray;
+  font-family: les;
+  font-size: 0.9rem;
 `
