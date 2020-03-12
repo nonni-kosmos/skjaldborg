@@ -1,6 +1,7 @@
 ---
 title: Gistihúsið Stekkaból
 mynd: /assets/stekkabol.jpg
+heimasida: 'http://stekkabol.net/'
 google-maps-url: 'https://goo.gl/maps/AC7cU2DZHTyzY7sf6'
 stadsetning:
   baer: Patreksfjörður
