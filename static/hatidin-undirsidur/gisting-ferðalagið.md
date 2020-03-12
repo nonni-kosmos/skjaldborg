@@ -2,8 +2,6 @@
 title: Gisting/Ferðalagið
 mynd: /assets/skjaldborg_060dscf4118_byontkovic.jpg
 ---
-# Ferðalagið
-
 Flugfélagið Ernir flýgur frá Reykjavík til Bíldudals, og þaðan fer rúta til Patreksfjarðar. Það ferðalag tekur um klukktíma frá Reykjavík. Innritun í flug fer sunnan megin við Hótel Loftleiði.
 
 Ekið er til Stykkishólms, þaðan er ferjan Baldur tekin yfir á Brjánslæk og þá tekur við 40 mín akstur til Patreksfjarðar. Hægt er að fara úr ferjunni í Flatey og eiga þar dagsstund áður en haldið er áfram ferðalaginu. Baldur siglir tvisvar á sólarhring frá Stykkishólmi og vissara er að lesa tímatöfluna á heimasíðu þeirra.
