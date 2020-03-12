@@ -27,7 +27,7 @@ export const Video = styled.video`
   position: relative;
   height: 100%;
   margin-bottom: -1rem;
-  margin-left: -7.5rem;
+  margin-left: 0rem;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     position: absolute;
