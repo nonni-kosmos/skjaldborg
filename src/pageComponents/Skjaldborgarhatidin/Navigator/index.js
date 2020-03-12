@@ -12,8 +12,16 @@ const Anchor = styled(AniLink)`
   text-decoration: none;
   padding: 1rem 0;
   color: ${redColor};
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.2s;
+  &&:hover {
+    width: 85%;
+  }
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    height: 20rem;
+    height: 5rem;
+    margin-top: 50%;
   }
 `
 

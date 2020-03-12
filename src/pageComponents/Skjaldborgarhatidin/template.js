@@ -41,9 +41,14 @@ const Template = ({ image, video, title, html, extraComponent: Component }) => {
             <Content html={html}></Content>
           </Wrap>
         </Fadeinsection>
-        <Navigator next={getNextPageFromTitle(title)}></Navigator>
+        {platform === "desktop" ? (
+          <Navigator next={getNextPageFromTitle(title)}></Navigator>
+        ) : null}
       </Grid>
       {Component ? <Component></Component> : null}
+      {platform === "mobile" ? (
+        <Navigator next={getNextPageFromTitle(title)}></Navigator>
+      ) : null}
       <Footer></Footer>
     </Container>
   )

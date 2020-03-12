@@ -31,6 +31,6 @@
 
 
 
-- [ ] menu dropdown 
-- [ ] navigation mobile undir guesthouses
+- [x] menu dropdown 
+- [x] navigation mobile undir guesthouses
 - [ ] guesthouse línkur á heimasíðu
