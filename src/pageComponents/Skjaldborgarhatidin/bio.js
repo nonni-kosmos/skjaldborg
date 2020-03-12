@@ -14,6 +14,7 @@ const Skjaldborgarbio = ({
       title={frontmatter.title}
       html={html}
       extraComponent={null}
+      image={frontmatter.mynd}
     ></Template>
   )
 }
@@ -26,6 +27,13 @@ export default props => (
           html
           frontmatter {
             title
+            mynd {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
           }
         }
         video: file(name: { eq: "Skjaldborgarbio" }) {

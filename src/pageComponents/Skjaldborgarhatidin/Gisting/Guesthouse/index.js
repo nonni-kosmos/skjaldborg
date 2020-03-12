@@ -18,16 +18,14 @@ const Guesthouse = ({
             <p>{stadsetning.heimilisfang}</p>
             <p>Sími {stadsetning.simi}</p>
           </div>
-          <p>
-            <a
-              className="guesthouse-anchor"
-              href={google_maps_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kort
-            </a>
-          </p>
+          <a
+            className="guesthouse-anchor"
+            href={google_maps_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p>Kort</p>
+          </a>
         </div>
       </Info>
     </Box>

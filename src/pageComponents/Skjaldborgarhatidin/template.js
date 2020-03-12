@@ -9,6 +9,7 @@ import Navigator from "./Navigator"
 
 import TopImage from "../../reusableComponents/TopImage"
 import TopVideo from "../../reusableComponents/TopImage/video"
+import { useSelector } from "react-redux"
 
 const getNextPageFromTitle = title => {
   if (title === "Skjaldborgarhátíðin")
@@ -20,11 +21,16 @@ const getNextPageFromTitle = title => {
 
 // extra component is optional
 const Template = ({ image, video, title, html, extraComponent: Component }) => {
+  const platform = useSelector(state => state.reducer.platform)
   return (
     <Container>
       <Header></Header>
       {video ? (
-        <TopVideo videoSource={video}></TopVideo>
+        platform === "mobile" ? (
+          <TopImage image={image.childImageSharp}></TopImage>
+        ) : (
+          <TopVideo videoSource={video}></TopVideo>
+        )
       ) : (
         <TopImage image={image.childImageSharp}></TopImage>
       )}

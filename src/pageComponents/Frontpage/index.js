@@ -9,13 +9,20 @@ import TopVideo from "../../reusableComponents/TopImage/video"
 
 import Footer from "../../layouts/Footer"
 import Header from "../../layouts/Header"
+import { useSelector } from "react-redux"
+import Topimage from "../../reusableComponents/TopImage"
 
 const Frontpage = ({ data: { imageSharp, video } }) => {
+  const platform = useSelector(state => state.reducer.platform)
   return (
     <Container>
       <Header></Header>
 
-      <TopVideo videoSource={video.publicURL}></TopVideo>
+      {platform === "mobile" ? (
+        <Topimage image={imageSharp}></Topimage>
+      ) : (
+        <TopVideo videoSource={video.publicURL}></TopVideo>
+      )}
 
       <BigBtn text="Innsending mynda 2020" action="/umsokn"></BigBtn>
 
@@ -38,7 +45,7 @@ export default props => (
             traceSVG: { color: "rgb(190, 69, 69)" }
             toFormat: JPG
           ) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
         video: file(name: { eq: "Forsida_skura" }) {

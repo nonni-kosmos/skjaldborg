@@ -5,7 +5,7 @@ import {
   redColor,
 } from "../../../../layouts/PageContainer/styled"
 
-export const Box = styled.a`
+export const Box = styled.div`
   text-decoration: none;
   color: inherit;
 `
