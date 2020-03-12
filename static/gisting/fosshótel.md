@@ -1,6 +1,6 @@
 ---
 title: Fosshótel
-mynd: /assets/fosshotel_westfjords_11-1-280x200.jpg
+mynd: /assets/fosshotel_patro.jpg
 google-maps-url: 'https://goo.gl/maps/FMzQeV4FCqqRePiD9'
 stadsetning:
   baer: Patreksfjörður
