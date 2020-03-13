@@ -12,25 +12,28 @@
 - [x] set images names to image1 & image2 on upload
 - [x] allow 1 image
 
- # todo
- - [x] frontpage video
- - [x] bíó video
- - [x] þrengja textadálk á undirsíðum
- - [x] remove svg load on images
- - [ ] add loading on pages
- - [x] sponsors
-   - [x] cms
-   - [x] implementation
+# todo
 
+- [x] frontpage video
+- [x] bíó video
+- [x] þrengja textadálk á undirsíðum
+- [x] remove svg load on images
+- [ ] add loading on pages
+- [x] sponsors
+  - [x] cms
+  - [x] implementation
 
- - [x] Scaling
-   - [x] frontpage
-   - [x] submit
-   - [x] sub-pages
-   - [x] header / footer
+* [x] Scaling
+  - [x] frontpage
+  - [x] submit
+  - [x] sub-pages
+  - [x] header / footer
 
-
-
-- [x] menu dropdown 
+- [x] menu dropdown
 - [x] navigation mobile undir guesthouses
-- [ ] guesthouse línkur á heimasíðu
+- [x] guesthouse línkur á heimasíðu
+
+- [ ] ívar comments
+  - [ ] guesthose images size fix
+  - [ ] red underline, guesthouse
+  - [x] even white space frontpage, bigBtn

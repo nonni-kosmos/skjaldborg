@@ -11,7 +11,7 @@ export const Text = styled.p`
   margin: 0 auto;
   text-transform: uppercase;
   color: ${redColor};
-  padding: 2rem 0 2rem 0;
+  padding: 1.8rem 0 2rem 0;
   position: relative;
   z-index: 4;
 `
