@@ -34,6 +34,9 @@
 - [x] guesthouse línkur á heimasíðu
 
 - [x] ívar comments
+
   - [x] guesthose images size fix
   - [x] red underline, guesthouse
   - [x] even white space frontpage, bigBtn
+
+- [ ] flugfélagið Ernir

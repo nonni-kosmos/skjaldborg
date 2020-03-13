@@ -7,16 +7,17 @@ import GuestHouseGrid from "./Gisting/index"
 const Gisting = ({
   data: {
     markdownRemark: { html, frontmatter },
-    guesthouses,
   },
 }) => {
   return (
-    <Template
-      image={frontmatter.mynd}
-      title={frontmatter.title}
-      html={html}
-      extraComponent={GuestHouseGrid}
-    ></Template>
+    <>
+      <Template
+        image={frontmatter.mynd}
+        title={frontmatter.title}
+        html={html}
+        extraComponent={GuestHouseGrid}
+      ></Template>
+    </>
   )
 }
 

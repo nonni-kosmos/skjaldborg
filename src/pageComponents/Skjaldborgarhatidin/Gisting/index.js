@@ -3,22 +3,26 @@ import { graphql, StaticQuery } from "gatsby"
 import { GuesthousesGrid } from "./styled"
 import Guesthouse from "./Guesthouse"
 import Fadeinsection from "../../../techComponents/FadeInSection"
+import Ernir from "../../../reusableComponents/Ernir"
 
 // Gistihúsin
 const Gistihusin = ({ data: { guesthouses } }) => {
   return (
-    <GuesthousesGrid>
-      {guesthouses.nodes.map((guesthouse, index) => (
-        <Fadeinsection
-          key={index}
-          effectType="slider"
-          direction={"down"}
-          intensity="20"
-        >
-          <Guesthouse guesthouse={guesthouse}></Guesthouse>
-        </Fadeinsection>
-      ))}
-    </GuesthousesGrid>
+    <>
+      <GuesthousesGrid>
+        {guesthouses.nodes.map((guesthouse, index) => (
+          <Fadeinsection
+            key={index}
+            effectType="slider"
+            direction={"down"}
+            intensity="20"
+          >
+            <Guesthouse guesthouse={guesthouse}></Guesthouse>
+          </Fadeinsection>
+        ))}
+      </GuesthousesGrid>
+      <Ernir></Ernir>
+    </>
   )
 }
 
