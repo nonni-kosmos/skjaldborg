@@ -50,7 +50,6 @@ collections:
       - { label: "Nafn", name: "title", widget: "string" }
       - { label: "Mynd", name: "mynd", widget: "image" }
       - { label: "Texti", name: "body", widget: "markdown" }
-      - { label: "Vefsíða", name: "heimasida", widget: "string" }
   # Gisting
   - name: "Gisting"
     label: "Gisting"
