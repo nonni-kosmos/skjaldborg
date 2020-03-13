@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { TRIGGER_MENU } from "../../state/action"
 import Item from "./Item"
 import { graphql, StaticQuery } from "gatsby"
+import LangBtn from "../LangBtn"
 
 const Menu = ({
   data: {
@@ -33,6 +34,7 @@ const Menu = ({
         ></Sensor>
       ) : null}
       <Container width={menu === "open" ? menuMaxSize : "0%"}>
+        {platform === "mobile" ? <LangBtn></LangBtn> : null}
         <List>
           {pages.map((item, index) => (
             <Item key={index} item={item}></Item>

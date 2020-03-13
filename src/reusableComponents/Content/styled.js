@@ -26,4 +26,7 @@ export const Container = styled.div`
     text-transform: uppercase;
     color: ${redColor};
   }
+  a {
+    color: inherit;
+  }
 `

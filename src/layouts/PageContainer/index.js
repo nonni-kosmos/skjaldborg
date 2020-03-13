@@ -1,6 +1,7 @@
 // components
 import Burger from "../Burger"
 import Menu from "../Menu"
+import LangBtn from "../LangBtn"
 import { Loader, Container } from "./styled"
 
 // tech
@@ -20,11 +21,10 @@ const PageContainer = ({ children, pathname }) => {
     <ThemeProvider theme={{ mode: theme }}>
       <Loader opacity={platform}>
         <div style={{ background: "white" }} className="page-wrap">
-          {/* <Header></Header> */}
           <Burger></Burger>
+          {platform !== "mobile" ? <LangBtn></LangBtn> : null}
           <Menu></Menu>
           <Container>{children}</Container>
-          {/* <Footer></Footer> */}
         </div>
       </Loader>
     </ThemeProvider>

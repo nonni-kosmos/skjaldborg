@@ -3,24 +3,12 @@ export const setPLATFORM = width => ({
   type: SET_PLATFORM,
   width,
 })
-export const GET_FIREBASE = "GET_FIREBASE"
-export const getFirebase = firebase => ({
-  type: GET_FIREBASE,
-  firebase,
-})
-export const AUTHENTICATE = "AUTHENTICATE"
-export const authenticate = user => ({
-  type: AUTHENTICATE,
-  user,
-})
 export const TRIGGER_MENU = "TRIGGER_MENU"
 export const triggerMenu = trigger => ({
   type: TRIGGER_MENU,
   trigger,
 })
-
-export const SELECT_MOVIE = "SELECT_MOVIE"
-export const selectMovie = movieId => ({
-  type: SELECT_MOVIE,
-  movieId,
+export const CHANGE_LANGUAGE = "CHANGE_LANGUAGE"
+export const changeLanguage = () => ({
+  type: CHANGE_LANGUAGE,
 })
