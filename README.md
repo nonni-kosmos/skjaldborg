@@ -33,7 +33,7 @@
 - [x] navigation mobile undir guesthouses
 - [x] guesthouse línkur á heimasíðu
 
-- [ ] ívar comments
-  - [ ] guesthose images size fix
-  - [ ] red underline, guesthouse
+- [x] ívar comments
+  - [x] guesthose images size fix
+  - [x] red underline, guesthouse
   - [x] even white space frontpage, bigBtn

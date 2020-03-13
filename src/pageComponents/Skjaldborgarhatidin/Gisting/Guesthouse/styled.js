@@ -13,8 +13,12 @@ export const Box = styled.div`
     text-decoration: none;
   }
 `
-export const ImageContainer = styled.div``
-export const Image = styled(Img)``
+export const ImageContainer = styled.div`
+  height: 15rem;
+`
+export const Image = styled(Img)`
+  height: 100%;
+`
 
 export const Info = styled.div`
   display: flex;
