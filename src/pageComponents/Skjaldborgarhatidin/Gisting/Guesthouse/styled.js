@@ -36,6 +36,7 @@ export const Info = styled.div`
     }
     .guesthouse-map-anchor {
       color: inherit;
+      color: ${redColor};
     }
   }
 `
