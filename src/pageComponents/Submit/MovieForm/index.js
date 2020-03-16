@@ -68,141 +68,143 @@ const MovieForm = () => {
   const [imageOne, setImageOne] = useState(null)
   const [imageTwo, setImageTwo] = useState(null)
 
+  const [phaseOneComplete, setPhaseOneComplete] = useState(false)
+
   return (
     <>
-      <Applicant
-        saveApplicant={() => console.log("Set the state!")}
-      ></Applicant>
+      <Applicant saveApplicant={() => setPhaseOneComplete(true)}></Applicant>
 
-      <form
-        name="moviesubmitform"
-        onSubmit={handleSubmit(onSubmit)}
-        method="POST"
-      >
-        <legend>Verk</legend>
-        <InputBox
-          ref={register({ required: true, maxLength: 80 })}
-          placeholder="Titill"
-          type="text"
-          name="title"
-          id="movie-title"
-        />
-        {errors.title && <Warning>{errorMsg}</Warning>}
-
-        <InputBox
-          placeholder="Leikstjóri"
-          type="text"
-          name="director"
-          id="director"
-          ref={register({ required: true, maxLength: 80 })}
-        />
-        {errors.director && <Warning>{errorMsg}</Warning>}
-
-        <InputBox
-          placeholder="Framleiðandi"
-          type="text"
-          name="producer"
-          id="producer"
-          ref={register({ maxLength: 80 })}
-        />
-        <InputBox
-          placeholder="Lengd í mínútum"
-          type="number"
-          name="duration"
-          id="duration"
-          ref={register({ required: true, min: 1 })}
-        />
-        {errors.duration && <Warning>Invalid duration</Warning>}
-
-        {/* IMAGE #1 */}
-        <FileBTN
-          style={
-            ({ paddingTop: "1rem" },
-            imageOne ? { color: "green", borderColor: "green" } : null)
-          }
-          htmlFor="imageOne"
+      {phaseOneComplete ? (
+        <form
+          name="moviesubmitform"
+          onSubmit={handleSubmit(onSubmit)}
+          method="POST"
         >
-          {imageOne ? imageOne.name : "Stilla #1"}
+          <legend>Verk</legend>
           <InputBox
-            onChange={e => setImageOne(e.target.files[0])}
-            style={{ display: "none" }}
-            accept="image/png, image/jpg, image/jpeg"
-            type="file"
-            name="imageOne"
-            id="imageOne"
-            placeholder="Engin skrá valin"
-            ref={register({ required: true })}
+            ref={register({ required: true, maxLength: 80 })}
+            placeholder="Titill"
+            type="text"
+            name="title"
+            id="movie-title"
           />
-          {errors.imageOne && <Warning>{errorMsg}</Warning>}
-        </FileBTN>
+          {errors.title && <Warning>{errorMsg}</Warning>}
 
-        {/* IMAGE #2 */}
-        {imageOne ? (
+          <InputBox
+            placeholder="Leikstjóri"
+            type="text"
+            name="director"
+            id="director"
+            ref={register({ required: true, maxLength: 80 })}
+          />
+          {errors.director && <Warning>{errorMsg}</Warning>}
+
+          <InputBox
+            placeholder="Framleiðandi"
+            type="text"
+            name="producer"
+            id="producer"
+            ref={register({ maxLength: 80 })}
+          />
+          <InputBox
+            placeholder="Lengd í mínútum"
+            type="number"
+            name="duration"
+            id="duration"
+            ref={register({ required: true, min: 1 })}
+          />
+          {errors.duration && <Warning>Invalid duration</Warning>}
+
+          {/* IMAGE #1 */}
           <FileBTN
             style={
               ({ paddingTop: "1rem" },
-              imageTwo ? { color: "green", borderColor: "green" } : null)
+              imageOne ? { color: "green", borderColor: "green" } : null)
             }
-            htmlFor="imageTwo"
+            htmlFor="imageOne"
           >
-            {imageTwo ? imageTwo.name : "Stilla #2"}
+            {imageOne ? imageOne.name : "Stilla #1"}
             <InputBox
-              onChange={e => setImageTwo(e.target.files[0])}
+              onChange={e => setImageOne(e.target.files[0])}
               style={{ display: "none" }}
               accept="image/png, image/jpg, image/jpeg"
               type="file"
-              name="imageTwo"
-              id="imageTwo"
+              name="imageOne"
+              id="imageOne"
               placeholder="Engin skrá valin"
-              ref={register}
+              ref={register({ required: true })}
             />
+            {errors.imageOne && <Warning>{errorMsg}</Warning>}
           </FileBTN>
-        ) : null}
 
-        <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
-        <textarea
-          placeholder="Description"
-          name="description"
-          id="description"
-          cols="30"
-          rows="10"
-          ref={register({ required: true })}
-        ></textarea>
-        {errors.description && <Warning>{errorMsg}</Warning>}
+          {/* IMAGE #2 */}
+          {imageOne ? (
+            <FileBTN
+              style={
+                ({ paddingTop: "1rem" },
+                imageTwo ? { color: "green", borderColor: "green" } : null)
+              }
+              htmlFor="imageTwo"
+            >
+              {imageTwo ? imageTwo.name : "Stilla #2"}
+              <InputBox
+                onChange={e => setImageTwo(e.target.files[0])}
+                style={{ display: "none" }}
+                accept="image/png, image/jpg, image/jpeg"
+                type="file"
+                name="imageTwo"
+                id="imageTwo"
+                placeholder="Engin skrá valin"
+                ref={register}
+              />
+            </FileBTN>
+          ) : null}
 
-        {/* ATHUGASEMDIR */}
-        <textarea
-          placeholder="Athugasemdir"
-          name="athugasemdir"
-          id="athugasemdir"
-          cols="30"
-          rows="5"
-          ref={register()}
-        ></textarea>
-        {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
+          <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
+          <textarea
+            placeholder="Description"
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            ref={register({ required: true })}
+          ></textarea>
+          {errors.description && <Warning>{errorMsg}</Warning>}
 
-        {/* HLEKKIR */}
-        <legend>Hlekkir</legend>
-        <Hint>Leyfileg skáarsnið eru eftirfarandi...</Hint>
-        <InputBox
-          placeholder="Trailer"
-          type="text"
-          name="trailerlinkur"
-          id="trailerlinkur"
-          ref={register({ required: true })}
-        />
-        {errors.trailerlinkur && <Warning>{errorMsg}</Warning>}
-        <InputBox
-          placeholder="Kvikmynd"
-          type="text"
-          name="kvikmyndlinkur"
-          id="kvikmyndlinkur"
-          ref={register({ required: true })}
-        />
-        {errors.kvikmyndlinkur && <Warning>{errorMsg}</Warning>}
+          {/* ATHUGASEMDIR */}
+          <textarea
+            placeholder="Athugasemdir"
+            name="athugasemdir"
+            id="athugasemdir"
+            cols="30"
+            rows="5"
+            ref={register()}
+          ></textarea>
+          {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
 
-        <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
-      </form>
+          {/* HLEKKIR */}
+          <legend>Hlekkir</legend>
+          <Hint>Leyfileg skáarsnið eru eftirfarandi...</Hint>
+          <InputBox
+            placeholder="Trailer"
+            type="text"
+            name="trailerlinkur"
+            id="trailerlinkur"
+            ref={register({ required: true })}
+          />
+          {errors.trailerlinkur && <Warning>{errorMsg}</Warning>}
+          <InputBox
+            placeholder="Kvikmynd"
+            type="text"
+            name="kvikmyndlinkur"
+            id="kvikmyndlinkur"
+            ref={register({ required: true })}
+          />
+          {errors.kvikmyndlinkur && <Warning>{errorMsg}</Warning>}
+
+          <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
+        </form>
+      ) : null}
     </>
   )
 }
