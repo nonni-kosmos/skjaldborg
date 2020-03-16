@@ -70,13 +70,16 @@ const MovieForm = () => {
 
   return (
     <>
+      <Applicant
+        saveApplicant={() => console.log("Set the state!")}
+      ></Applicant>
+
       <form
         name="moviesubmitform"
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
       >
-        <Applicant></Applicant>
-        <legend>Kvikmynd</legend>
+        <legend>Verk</legend>
         <InputBox
           ref={register({ required: true, maxLength: 80 })}
           placeholder="Titill"

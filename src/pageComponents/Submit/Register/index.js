@@ -46,10 +46,9 @@ const Register = () => {
         </Arrow>
         <PageTitle nopad>Tengiliður</PageTitle>
 
-        <p style={{ color: "gray" }}>
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-          below for those interested.
-        </p>
+        {/* <p style={{ color: "gray" }}>
+          Forsvarsaðili verkefnis skráist sjálfkrafa á póstlista.. TODO
+        </p> */}
         {manualSignUp ? (
           <ManualLogin></ManualLogin>
         ) : (

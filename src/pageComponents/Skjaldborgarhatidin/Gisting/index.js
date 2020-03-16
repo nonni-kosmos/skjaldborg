@@ -32,6 +32,7 @@ export default props => (
       {
         guesthouses: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/static/gisting/" } }
+          sort: { fields: frontmatter___title }
         ) {
           nodes {
             frontmatter {
@@ -39,7 +40,7 @@ export default props => (
               mynd {
                 childImageSharp {
                   fluid(quality: 95, maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
+                    src
                   }
                 }
               }

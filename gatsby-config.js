@@ -36,8 +36,9 @@ const metadata = {
   dropdownpages: dropdownPages,
   contact: {
     people: [
-      { name: "Tengiliður #1", tel: "1234-567" },
-      { name: "Tengiliður #2", tel: "1234-567" },
+      { name: "Kristín Andrea Þórðardóttir", tel: "+354 820 3646" },
+      { name: "Helga Rakel Rafnsdóttir", tel: "+354 696 7719" },
+      { name: "Karna Sigurðardóttir", tel: "+354 866 6977" },
     ],
     socialMedia: [
       {
