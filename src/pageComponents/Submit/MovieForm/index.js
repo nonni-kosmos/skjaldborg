@@ -8,6 +8,8 @@ import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
 import Applicant from "./applicant"
 import BigBtn from "../../../reusableComponents/BigBtn"
+import { Box } from "./styled"
+import { useSelector } from "react-redux"
 
 const MovieForm = () => {
   const {
@@ -21,7 +23,7 @@ const MovieForm = () => {
     if (window.confirm("Confirm submission")) {
       // Image one, required
       // generate url names
-      let imageOneURL = generateImageLocation(data.title) + "/image1"
+      let imageOneURL = generateImageLocation(data.titill) + "/image1"
       // upload it
       const imageOneRef = storage.ref(imageOneURL)
       put(imageOneRef, data.imageOne[0]).subscribe(snap => {
@@ -31,7 +33,7 @@ const MovieForm = () => {
       // image 2, if desired...
       let imageTwoURL = ""
       if (imageTwo) {
-        imageTwoURL = generateImageLocation(data.title) + "/image2"
+        imageTwoURL = generateImageLocation(data.titill) + "/image2"
       }
       if (data.imageTwo.length > 0) {
         const imageTwoRef = storage.ref(imageTwoURL)
@@ -40,25 +42,46 @@ const MovieForm = () => {
         })
       }
 
-      const user = auth.currentUser
+      // save movie
+      // deconstruct data that we can spread
+      const {
+        titill,
+        leikstjori,
+        framleidandi,
+        lengd,
+        lysing,
+        athugasemdir,
+        hlekkurStikla,
+        hlekkurVerk,
+      } = data
 
-      // then save the movie
-      firestore.collection("movies").add({
-        accepted: false,
-        applicantId: user.uid,
-        applicantName: user.displayName,
-        applicantEmail: user.email,
-        createdAt: Date.now(),
-        description: data.description,
-        director: data.director,
-        duration: data.duration,
-        title: data.title,
-        imageOneLocation: imageOneURL,
-        imageTwoLocation: imageTwoURL,
-        trailerlinkur: data.trailerlinkur,
-        kvikmyndlinkur: data.kvikmyndlinkur,
-        athugasemdir: data.athugasemdir,
-      })
+      firestore
+        .collection("movies")
+        .add({
+          // meta
+          createdAt: Date.now(),
+          accepted: false,
+          // key to applicant store
+          userId: auth.currentUser.uid,
+          // form data
+          // - images
+          imageOneLocation: imageOneURL,
+          imageTwoLocation: imageTwoURL,
+          // - rest
+          titill,
+          leikstjori,
+          framleidandi,
+          lengd,
+          lysing,
+          athugasemdir,
+          hlekkurStikla,
+          hlekkurVerk,
+        })
+        .then(() => {
+          firestore.collection("applicants").add({
+            ...applicant,
+          })
+        })
 
       e.target.reset()
       navigate("/umsokn/kvikmynd/vel-gert")
@@ -70,141 +93,155 @@ const MovieForm = () => {
 
   const [phaseOneComplete, setPhaseOneComplete] = useState(false)
 
+  const applicant = useSelector(state => state.reducer.applicant)
+
   return (
     <>
-      <Applicant saveApplicant={() => setPhaseOneComplete(true)}></Applicant>
-
       {phaseOneComplete ? (
-        <form
-          name="moviesubmitform"
-          onSubmit={handleSubmit(onSubmit)}
-          method="POST"
-        >
-          <legend>Verk</legend>
-          <InputBox
-            ref={register({ required: true, maxLength: 80 })}
-            placeholder="Titill"
-            type="text"
-            name="title"
-            id="movie-title"
-          />
-          {errors.title && <Warning>{errorMsg}</Warning>}
-
-          <InputBox
-            placeholder="Leikstjóri"
-            type="text"
-            name="director"
-            id="director"
-            ref={register({ required: true, maxLength: 80 })}
-          />
-          {errors.director && <Warning>{errorMsg}</Warning>}
-
-          <InputBox
-            placeholder="Framleiðandi"
-            type="text"
-            name="producer"
-            id="producer"
-            ref={register({ maxLength: 80 })}
-          />
-          <InputBox
-            placeholder="Lengd í mínútum"
-            type="number"
-            name="duration"
-            id="duration"
-            ref={register({ required: true, min: 1 })}
-          />
-          {errors.duration && <Warning>Invalid duration</Warning>}
-
-          {/* IMAGE #1 */}
-          <FileBTN
-            style={
-              ({ paddingTop: "1rem" },
-              imageOne ? { color: "green", borderColor: "green" } : null)
-            }
-            htmlFor="imageOne"
+        <>
+          <Box>
+            <legend>Tengiliður </legend>
+            <p>
+              <i id="check" class="gg-check-o"></i>
+              {applicant
+                ? applicant.fulltnafn + " | " + applicant.netfang
+                : auth.currentUser.email}
+            </p>
+            <button onClick={() => auth.signOut()}>Breyta tengilið</button>
+          </Box>
+          <form
+            name="moviesubmitform"
+            onSubmit={handleSubmit(onSubmit)}
+            method="POST"
           >
-            {imageOne ? imageOne.name : "Stilla #1"}
+            <legend>Verk</legend>
             <InputBox
-              onChange={e => setImageOne(e.target.files[0])}
-              style={{ display: "none" }}
-              accept="image/png, image/jpg, image/jpeg"
-              type="file"
-              name="imageOne"
-              id="imageOne"
-              placeholder="Engin skrá valin"
-              ref={register({ required: true })}
+              ref={register({ required: true, maxLength: 80 })}
+              placeholder="Titill"
+              type="text"
+              name="titill"
             />
-            {errors.imageOne && <Warning>{errorMsg}</Warning>}
-          </FileBTN>
+            {errors.titill && <Warning>{errorMsg}</Warning>}
 
-          {/* IMAGE #2 */}
-          {imageOne ? (
+            <InputBox
+              placeholder="Leikstjóri"
+              type="text"
+              name="leikstjori"
+              ref={register({ required: true, maxLength: 80 })}
+            />
+            {errors.leikstjori && <Warning>{errorMsg}</Warning>}
+
+            <InputBox
+              placeholder="Framleiðandi"
+              type="text"
+              name="framleidandi"
+              ref={register({ maxLength: 80 })}
+            />
+            <InputBox
+              placeholder="Lengd í mínútum"
+              type="number"
+              name="lengd"
+              ref={register({ required: true, min: 1 })}
+            />
+            {errors.lengd && <Warning>Invalid duration</Warning>}
+
+            {/* IMAGE #1 */}
             <FileBTN
               style={
                 ({ paddingTop: "1rem" },
-                imageTwo ? { color: "green", borderColor: "green" } : null)
+                imageOne ? { color: "green", borderColor: "green" } : null)
               }
-              htmlFor="imageTwo"
+              htmlFor="imageOne"
             >
-              {imageTwo ? imageTwo.name : "Stilla #2"}
+              {imageOne ? imageOne.name : "Stilla #1"}
               <InputBox
-                onChange={e => setImageTwo(e.target.files[0])}
+                onChange={e => setImageOne(e.target.files[0])}
                 style={{ display: "none" }}
                 accept="image/png, image/jpg, image/jpeg"
                 type="file"
-                name="imageTwo"
-                id="imageTwo"
+                name="imageOne"
+                id="imageOne"
                 placeholder="Engin skrá valin"
-                ref={register}
+                ref={register({ required: true })}
               />
+              {errors.imageOne && <Warning>{errorMsg}</Warning>}
             </FileBTN>
-          ) : null}
 
-          <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
-          <textarea
-            placeholder="Description"
-            name="description"
-            id="description"
-            cols="30"
-            rows="10"
-            ref={register({ required: true })}
-          ></textarea>
-          {errors.description && <Warning>{errorMsg}</Warning>}
+            {/* IMAGE #2 */}
+            {imageOne ? (
+              <FileBTN
+                style={
+                  ({ paddingTop: "1rem" },
+                  imageTwo ? { color: "green", borderColor: "green" } : null)
+                }
+                htmlFor="imageTwo"
+              >
+                {imageTwo ? imageTwo.name : "Stilla #2"}
+                <InputBox
+                  onChange={e => setImageTwo(e.target.files[0])}
+                  style={{ display: "none" }}
+                  accept="image/png, image/jpg, image/jpeg"
+                  type="file"
+                  name="imageTwo"
+                  id="imageTwo"
+                  placeholder="Engin skrá valin"
+                  ref={register}
+                />
+              </FileBTN>
+            ) : null}
 
-          {/* ATHUGASEMDIR */}
-          <textarea
-            placeholder="Athugasemdir"
-            name="athugasemdir"
-            id="athugasemdir"
-            cols="30"
-            rows="5"
-            ref={register()}
-          ></textarea>
-          {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
+            <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
+            <textarea
+              placeholder="Stutt lýsing"
+              name="lysing"
+              id="lysing"
+              cols="30"
+              rows="10"
+              ref={register({ required: true })}
+            ></textarea>
+            {errors.lysing && <Warning>{errorMsg}</Warning>}
 
-          {/* HLEKKIR */}
-          <legend>Hlekkir</legend>
-          <Hint>Leyfileg skáarsnið eru eftirfarandi...</Hint>
-          <InputBox
-            placeholder="Trailer"
-            type="text"
-            name="trailerlinkur"
-            id="trailerlinkur"
-            ref={register({ required: true })}
-          />
-          {errors.trailerlinkur && <Warning>{errorMsg}</Warning>}
-          <InputBox
-            placeholder="Kvikmynd"
-            type="text"
-            name="kvikmyndlinkur"
-            id="kvikmyndlinkur"
-            ref={register({ required: true })}
-          />
-          {errors.kvikmyndlinkur && <Warning>{errorMsg}</Warning>}
+            {/* ATHUGASEMDIR */}
+            <textarea
+              placeholder="Athugasemdir"
+              name="athugasemdir"
+              id="athugasemdir"
+              cols="30"
+              rows="5"
+              ref={register()}
+            ></textarea>
+            {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
 
-          <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
-        </form>
-      ) : null}
+            {/* HLEKKIR */}
+            <legend>Hlekkir</legend>
+
+            <Hint style={{ marginBottom: "-0.3rem" }}>Youtube / Vimeo</Hint>
+            <InputBox
+              placeholder="Stikla"
+              type="url"
+              name="hlekkurStikla"
+              ref={register({ required: true })}
+            />
+            {errors.hlekkurStikla && <Warning>{errorMsg}</Warning>}
+
+            <InputBox
+              placeholder="Kvikmynd"
+              type="url"
+              name="hlekkurVerk"
+              ref={register({ required: true })}
+            />
+            {errors.hlekkurVerk && <Warning>{errorMsg}</Warning>}
+
+            <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
+          </form>
+        </>
+      ) : (
+        <>
+          <Applicant
+            completePhaseOne={() => setPhaseOneComplete(true)}
+          ></Applicant>
+        </>
+      )}
     </>
   )
 }

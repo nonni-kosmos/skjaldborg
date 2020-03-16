@@ -1,9 +1,15 @@
-import { SET_PLATFORM, TRIGGER_MENU, CHANGE_LANGUAGE } from "./action"
+import {
+  SET_PLATFORM,
+  TRIGGER_MENU,
+  CHANGE_LANGUAGE,
+  SAVE_APPLICANT,
+} from "./action"
 
 const initialState = {
   platform: null,
   menu: `closed`,
   icelandic: true,
+  applicant: null,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -24,6 +30,8 @@ export const reducer = (state = initialState, action) => {
       return { ...state, menu: action.trigger }
     case CHANGE_LANGUAGE:
       return { ...state, icelandic: !state.icelandic }
+    case SAVE_APPLICANT:
+      return { ...state, applicant: action.applicant }
     default:
       return state
   }
