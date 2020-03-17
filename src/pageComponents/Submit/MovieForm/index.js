@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { InputBox, Warning, FileBTN, Hint } from "../styled"
 import { useForm } from "react-hook-form"
-import { errorMsg, generateImageLocation } from "../config"
+import { errorMsg, generateImageLocation, formSchema } from "../config"
 import { useDispatch } from "react-redux"
 import { SAVE_APPLICANT } from "../../../state/action"
 
@@ -12,7 +12,6 @@ import Applicant from "./components/applicant"
 import BigBtn from "../../../reusableComponents/BigBtn"
 import { Box } from "./styled"
 import { useSelector } from "react-redux"
-import ApplicationType from "./components/application-type"
 
 const MovieForm = () => {
   const {
@@ -47,18 +46,13 @@ const MovieForm = () => {
         })
       }
 
-      // save movie
-      // deconstruct data that we can spread
-      const {
-        titill,
-        leikstjori,
-        framleidandi,
-        lengd,
-        lysing,
-        athugasemdir,
-        hlekkurStikla,
-        hlekkurVerk,
-      } = data
+      let spreadData = []
+      for (var i = 0; i < data.length; i++) {
+        // I will add images manually later
+        if (data[i] !== imageOne || data[i] !== imageTwo) {
+          spreadData.push(data[i])
+        }
+      }
 
       firestore
         .collection("movies")
@@ -66,21 +60,16 @@ const MovieForm = () => {
           // meta
           createdAt: Date.now(),
           accepted: false,
+          // work in progress?
+          wip: wip,
           // key to applicant store
           userId: auth.currentUser.uid,
           // form data
-          // - images
+          // - images manually added
           imageOneLocation: imageOneURL,
           imageTwoLocation: imageTwoURL,
-          // - rest
-          titill,
-          leikstjori,
-          framleidandi,
-          lengd,
-          lysing,
-          athugasemdir,
-          hlekkurStikla,
-          hlekkurVerk,
+          // - spread that butter baby
+          ...spreadData,
         })
         .then(() => {
           firestore.collection("applicants").add({
@@ -97,9 +86,13 @@ const MovieForm = () => {
   const [imageOne, setImageOne] = useState(null)
   const [imageTwo, setImageTwo] = useState(null)
   const [phaseOneComplete, setPhaseOneComplete] = useState(false)
-  const [workInProgress, setWorkInProgress] = useState(false)
+  const [wip, setWip] = useState(false) // wip === work in progress
 
   const applicant = useSelector(state => state.reducer.applicant)
+
+  const passDown = value => {
+    setWip(value === "wip")
+  }
 
   return (
     <>
@@ -114,19 +107,40 @@ const MovieForm = () => {
                 : auth.currentUser.email}
             </p>
             <button onClick={() => auth.signOut()}>Breyta tengilið</button>
-            {/* SÓTT ER UM */}
-            <ApplicationType
-              label="Sótt er um:"
-              ref={register}
-            ></ApplicationType>
+
+            <p>Sótt er um:</p>
+            <select onChange={e => setWip(e.target.value === "wip")}>
+              <option value="nowip">Að frumsýna verk á hátíðinni</option>
+              <option value="wip">Að kynna verk í vinnslu</option>
+            </select>
           </Box>
           <form
             name="moviesubmitform"
             onSubmit={handleSubmit(onSubmit)}
             method="POST"
           >
-            <legend>Verk</legend>
-
+            <legend>Upplýsingar um verk</legend>
+            {/* AÐSTANDENDUR begin */}
+            {formSchema.adstandendur.map((item, index) =>
+              !wip ? (
+                <InputBox
+                  key={index}
+                  name={item.name}
+                  placeholder={item.placeholder}
+                  type={item.type}
+                  ref={item.required ? register({ required: true }) : register}
+                ></InputBox>
+              ) : item.wip ? (
+                <InputBox
+                  key={index}
+                  name={item.name}
+                  placeholder={item.placeholder}
+                  type={item.type}
+                  ref={item.required ? register({ required: true }) : register}
+                ></InputBox>
+              ) : null
+            )}
+            {/* AÐSTANDENDUR end */}
             <InputBox
               ref={register({ required: true, maxLength: 80 })}
               placeholder="Titill"
@@ -135,20 +149,6 @@ const MovieForm = () => {
             />
             {errors.titill && <Warning>{errorMsg}</Warning>}
 
-            <InputBox
-              placeholder="Leikstjóri"
-              type="text"
-              name="leikstjori"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-            {errors.leikstjori && <Warning>{errorMsg}</Warning>}
-
-            <InputBox
-              placeholder="Framleiðandi"
-              type="text"
-              name="framleidandi"
-              ref={register({ maxLength: 80 })}
-            />
             <InputBox
               placeholder="Lengd í mínútum"
               type="number"
@@ -178,7 +178,6 @@ const MovieForm = () => {
               />
               {errors.imageOne && <Warning>{errorMsg}</Warning>}
             </FileBTN>
-
             {/* IMAGE #2 */}
             {imageOne ? (
               <FileBTN
@@ -201,7 +200,6 @@ const MovieForm = () => {
                 />
               </FileBTN>
             ) : null}
-
             <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
             <textarea
               placeholder="Stutt lýsing"
@@ -212,7 +210,6 @@ const MovieForm = () => {
               ref={register({ required: true })}
             ></textarea>
             {errors.lysing && <Warning>{errorMsg}</Warning>}
-
             {/* ATHUGASEMDIR */}
             <textarea
               placeholder="Athugasemdir"
@@ -223,10 +220,8 @@ const MovieForm = () => {
               ref={register()}
             ></textarea>
             {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
-
             {/* HLEKKIR */}
             <legend>Hlekkir</legend>
-
             <Hint style={{ marginBottom: "-0.3rem" }}>Youtube / Vimeo</Hint>
             <InputBox
               placeholder="Stikla"
@@ -235,7 +230,6 @@ const MovieForm = () => {
               ref={register({ required: true })}
             />
             {errors.hlekkurStikla && <Warning>{errorMsg}</Warning>}
-
             <InputBox
               placeholder="Kvikmynd"
               type="url"
@@ -243,7 +237,6 @@ const MovieForm = () => {
               ref={register({ required: true })}
             />
             {errors.hlekkurVerk && <Warning>{errorMsg}</Warning>}
-
             <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
           </form>
         </>
