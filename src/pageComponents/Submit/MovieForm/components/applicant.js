@@ -1,14 +1,14 @@
 import React from "react"
-import useGetFirebase from "../../../hooks/useGetFirebase"
+import useGetFirebase from "../../../../hooks/useGetFirebase"
 import { useForm } from "react-hook-form"
-import { errorMsg } from "../config"
+import { errorMsg } from "../../config"
 import { useDispatch } from "react-redux"
 
 // components
-import { Box } from "./styled"
-import { InputBox, Warning } from "../styled"
-import BigBtn from "../../../reusableComponents/BigBtn"
-import { SAVE_APPLICANT } from "../../../state/action"
+import { Box } from "../styled"
+import { InputBox, Warning } from "../../styled"
+import BigBtn from "../../../../reusableComponents/BigBtn"
+import { SAVE_APPLICANT } from "../../../../state/action"
 
 const Applicant = ({ completePhaseOne }) => {
   const {

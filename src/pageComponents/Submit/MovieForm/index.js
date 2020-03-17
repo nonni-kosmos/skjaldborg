@@ -2,14 +2,17 @@ import React, { useState } from "react"
 import { InputBox, Warning, FileBTN, Hint } from "../styled"
 import { useForm } from "react-hook-form"
 import { errorMsg, generateImageLocation } from "../config"
+import { useDispatch } from "react-redux"
+import { SAVE_APPLICANT } from "../../../state/action"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
-import Applicant from "./applicant"
+import Applicant from "./components/applicant"
 import BigBtn from "../../../reusableComponents/BigBtn"
 import { Box } from "./styled"
 import { useSelector } from "react-redux"
+import ApplicationType from "./components/application-type"
 
 const MovieForm = () => {
   const {
@@ -17,6 +20,8 @@ const MovieForm = () => {
   } = useGetFirebase()
 
   const { register, handleSubmit, errors } = useForm()
+
+  const dispatch = useDispatch()
 
   const onSubmit = (data, e) => {
     console.log(data)
@@ -82,6 +87,7 @@ const MovieForm = () => {
             ...applicant,
           })
         })
+        .then(() => dispatch({ type: SAVE_APPLICANT, applicant: null }))
 
       e.target.reset()
       navigate("/umsokn/kvikmynd/vel-gert")
@@ -90,8 +96,8 @@ const MovieForm = () => {
 
   const [imageOne, setImageOne] = useState(null)
   const [imageTwo, setImageTwo] = useState(null)
-
   const [phaseOneComplete, setPhaseOneComplete] = useState(false)
+  const [workInProgress, setWorkInProgress] = useState(false)
 
   const applicant = useSelector(state => state.reducer.applicant)
 
@@ -101,13 +107,18 @@ const MovieForm = () => {
         <>
           <Box>
             <legend>Tengiliður </legend>
-            <i id="check" class="gg-check-o"></i>
+            <i id="check" className="gg-check-o"></i>
             <p>
               {applicant
                 ? applicant.fulltnafn + " | " + applicant.netfang
                 : auth.currentUser.email}
             </p>
             <button onClick={() => auth.signOut()}>Breyta tengilið</button>
+            {/* SÓTT ER UM */}
+            <ApplicationType
+              label="Sótt er um:"
+              ref={register}
+            ></ApplicationType>
           </Box>
           <form
             name="moviesubmitform"
@@ -115,6 +126,7 @@ const MovieForm = () => {
             method="POST"
           >
             <legend>Verk</legend>
+
             <InputBox
               ref={register({ required: true, maxLength: 80 })}
               placeholder="Titill"

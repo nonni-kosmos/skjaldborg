@@ -6,10 +6,12 @@ import "./font.css"
 import { GlobalStyle } from "./GlobalStyle"
 import PageContainer from "./PageContainer"
 import SEO from "./seo"
+import { useSelector } from "react-redux"
 
 const Layout = ({ children, location }) => {
   useSetPlatform()
-
+  const applicant = useSelector(state => state.reducer.applicant)
+  console.log(applicant)
   return (
     <>
       <SEO></SEO>

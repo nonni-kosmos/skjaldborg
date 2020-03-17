@@ -43,3 +43,11 @@
 
 - [ ] muna að núlstilla applicant í store!
 - [ ] þýðingar
+
+* [ ] umsókn uppfærsla
+  - [ ] simplify the form
+  * [ ] sótt er um: að frumsýna/kynna verk í vinnslu
+  * [ ] hlekkir: password?
+  * [ ] auka hlutverk
+  * [ ] stilla min/max
+  * [ ] 350 max lýsing
