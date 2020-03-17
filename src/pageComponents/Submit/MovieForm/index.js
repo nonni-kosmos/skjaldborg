@@ -101,8 +101,8 @@ const MovieForm = () => {
         <>
           <Box>
             <legend>Tengiliður </legend>
+            <i id="check" class="gg-check-o"></i>
             <p>
-              <i id="check" class="gg-check-o"></i>
               {applicant
                 ? applicant.fulltnafn + " | " + applicant.netfang
                 : auth.currentUser.email}

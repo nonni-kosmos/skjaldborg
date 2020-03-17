@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { breakpoints } from "../../constants"
-import { greenColor } from "../../layouts/PageContainer/styled"
 
 export const Container = styled.div`
   width: 100%;
@@ -11,7 +10,6 @@ export const Container = styled.div`
   margin-bottom: -3.5rem;
   /** mobile */
   height: 50vh;
-  background: ${greenColor}; /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
     margin-bottom: 0;
@@ -21,6 +19,7 @@ export const Container = styled.div`
 export const Image = styled(Img)`
   height: 100%;
   width: 100%;
+  overflow: inherit !important;
 `
 
 export const Video = styled.video`

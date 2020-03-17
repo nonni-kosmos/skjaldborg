@@ -10,9 +10,9 @@ export const Box = styled.div`
   padding-bottom: 1.5rem;
   position: relative;
   #check {
-    color: green;
     position: absolute;
-    right: 1rem;
+    color: green;
+    left: -2.5rem;
     top: 4.2rem;
   }
   button {

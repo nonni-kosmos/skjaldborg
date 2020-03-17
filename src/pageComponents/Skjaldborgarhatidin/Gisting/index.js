@@ -40,7 +40,7 @@ export default props => (
               mynd {
                 childImageSharp {
                   fluid(quality: 95, maxWidth: 500) {
-                    src
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }

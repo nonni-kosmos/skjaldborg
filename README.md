@@ -39,4 +39,7 @@
   - [x] red underline, guesthouse
   - [x] even white space frontpage, bigBtn
 
-- [ ] flugfélagið Ernir
+- [x] flugfélagið Ernir
+
+- [ ] muna að núlstilla applicant í store!
+- [ ] þýðingar
