@@ -15,6 +15,17 @@ export const Box = styled.div`
     left: -2.5rem;
     top: 4.2rem;
   }
+  select,
+  p,
+  button {
+    font-family: les;
+    font-size: 1rem;
+  }
+  select {
+    background: transparent;
+    box-sizing: border-box;
+    padding: 0.5rem;
+  }
   button {
     background: transparent;
     border: ${redColor} 1px solid;

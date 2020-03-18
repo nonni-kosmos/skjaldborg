@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import { InputBox, Warning, FileBTN, Hint } from "../styled"
 import { useForm } from "react-hook-form"
-import { errorMsg, generateImageLocation, formSchema } from "../config"
+import { generateImageLocation, formSchema } from "../config"
 import { useDispatch } from "react-redux"
 import { SAVE_APPLICANT } from "../../../state/action"
 
@@ -10,8 +9,13 @@ import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
 import Applicant from "./components/applicant"
 import BigBtn from "../../../reusableComponents/BigBtn"
-import { Box } from "./styled"
 import { useSelector } from "react-redux"
+import FileInput from "./components/fileInput"
+import TextArea from "./components/textArea"
+import Hlekkir from "./components/hlekkir"
+import Adstandendur from "./components/adstandendur"
+import VerkText from "./components/verkText"
+import TopBox from "./components/topBox"
 
 const MovieForm = () => {
   const {
@@ -34,25 +38,8 @@ const MovieForm = () => {
         console.log(snap)
       })
 
-      // image 2, if desired...
-      let imageTwoURL = ""
-      if (imageTwo) {
-        imageTwoURL = generateImageLocation(data.titill) + "/image2"
-      }
-      if (data.imageTwo.length > 0) {
-        const imageTwoRef = storage.ref(imageTwoURL)
-        put(imageTwoRef, data.imageTwo[0]).subscribe(snap => {
-          console.log(snap)
-        })
-      }
-
-      let spreadData = []
-      for (var i = 0; i < data.length; i++) {
-        // I will add images manually later
-        if (data[i] !== imageOne || data[i] !== imageTwo) {
-          spreadData.push(data[i])
-        }
-      }
+      // Remove image from data object so we can spread it safely
+      delete data.imageOne
 
       firestore
         .collection("movies")
@@ -65,11 +52,10 @@ const MovieForm = () => {
           // key to applicant store
           userId: auth.currentUser.uid,
           // form data
-          // - images manually added
+          // - image manually added
           imageOneLocation: imageOneURL,
-          imageTwoLocation: imageTwoURL,
           // - spread that butter baby
-          ...spreadData,
+          ...data,
         })
         .then(() => {
           firestore.collection("applicants").add({
@@ -84,160 +70,93 @@ const MovieForm = () => {
   }
 
   const [imageOne, setImageOne] = useState(null)
-  const [imageTwo, setImageTwo] = useState(null)
   const [phaseOneComplete, setPhaseOneComplete] = useState(false)
   const [wip, setWip] = useState(false) // wip === work in progress
 
   const applicant = useSelector(state => state.reducer.applicant)
 
-  const passDown = value => {
-    setWip(value === "wip")
-  }
+  const icelandic = useSelector(state => state.reducer.icelandic)
 
   return (
     <>
       {phaseOneComplete ? (
         <>
-          <Box>
-            <legend>Tengiliður </legend>
-            <i id="check" className="gg-check-o"></i>
-            <p>
-              {applicant
-                ? applicant.fulltnafn + " | " + applicant.netfang
-                : auth.currentUser.email}
-            </p>
-            <button onClick={() => auth.signOut()}>Breyta tengilið</button>
-
-            <p>Sótt er um:</p>
-            <select onChange={e => setWip(e.target.value === "wip")}>
-              <option value="nowip">Að frumsýna verk á hátíðinni</option>
-              <option value="wip">Að kynna verk í vinnslu</option>
-            </select>
-          </Box>
+          <TopBox
+            icelandic={icelandic}
+            auth={auth}
+            applicant={applicant}
+            onChange={setWip}
+          ></TopBox>
           <form
             name="moviesubmitform"
             onSubmit={handleSubmit(onSubmit)}
             method="POST"
           >
-            <legend>Upplýsingar um verk</legend>
-            {/* AÐSTANDENDUR begin */}
-            {formSchema.adstandendur.map((item, index) =>
-              !wip ? (
-                <InputBox
-                  key={index}
-                  name={item.name}
-                  placeholder={item.placeholder}
-                  type={item.type}
-                  ref={item.required ? register({ required: true }) : register}
-                ></InputBox>
-              ) : item.wip ? (
-                <InputBox
-                  key={index}
-                  name={item.name}
-                  placeholder={item.placeholder}
-                  type={item.type}
-                  ref={item.required ? register({ required: true }) : register}
-                ></InputBox>
-              ) : null
-            )}
-            {/* AÐSTANDENDUR end */}
-            <InputBox
-              ref={register({ required: true, maxLength: 80 })}
-              placeholder="Titill"
-              type="text"
-              name="titill"
-            />
-            {errors.titill && <Warning>{errorMsg}</Warning>}
-
-            <InputBox
-              placeholder="Lengd í mínútum"
-              type="number"
-              name="lengd"
-              ref={register({ required: true, min: 1 })}
-            />
-            {errors.lengd && <Warning>Invalid duration</Warning>}
+            <legend>
+              {icelandic ? "Upplýsingar um verk" : "Project information"}
+            </legend>
+            {/* VERK */}
+            {formSchema.verk.text.map((item, index) => (
+              <VerkText
+                key={index}
+                item={item}
+                icelandic={icelandic}
+                forwardedRef={
+                  item.required ? register({ required: true }) : register
+                }
+                wip={wip}
+              ></VerkText>
+            ))}
+            {/* AÐSTANDENDUR */}
+            {formSchema.adstandendur.map((item, index) => (
+              <Adstandendur
+                key={index}
+                forwardedRef={
+                  item.required ? register({ required: true }) : register
+                }
+                item={item}
+                icelandic={icelandic}
+                wip={wip}
+              ></Adstandendur>
+            ))}
 
             {/* IMAGE #1 */}
-            <FileBTN
-              style={
-                ({ paddingTop: "1rem" },
-                imageOne ? { color: "green", borderColor: "green" } : null)
-              }
-              htmlFor="imageOne"
-            >
-              {imageOne ? imageOne.name : "Stilla #1"}
-              <InputBox
-                onChange={e => setImageOne(e.target.files[0])}
-                style={{ display: "none" }}
-                accept="image/png, image/jpg, image/jpeg"
-                type="file"
-                name="imageOne"
-                id="imageOne"
-                placeholder="Engin skrá valin"
-                ref={register({ required: true })}
-              />
-              {errors.imageOne && <Warning>{errorMsg}</Warning>}
-            </FileBTN>
-            {/* IMAGE #2 */}
-            {imageOne ? (
-              <FileBTN
-                style={
-                  ({ paddingTop: "1rem" },
-                  imageTwo ? { color: "green", borderColor: "green" } : null)
+            <FileInput
+              icelandic={icelandic}
+              errors={errors}
+              imageOne={imageOne}
+              setImageOne={setImageOne}
+              ref={register({ required: true })}
+            ></FileInput>
+            {formSchema.verk.textArea.map((item, index) => (
+              <TextArea
+                key={index}
+                item={item}
+                forwardedRef={
+                  item.required ? register({ required: true }) : register
                 }
-                htmlFor="imageTwo"
-              >
-                {imageTwo ? imageTwo.name : "Stilla #2"}
-                <InputBox
-                  onChange={e => setImageTwo(e.target.files[0])}
-                  style={{ display: "none" }}
-                  accept="image/png, image/jpg, image/jpeg"
-                  type="file"
-                  name="imageTwo"
-                  id="imageTwo"
-                  placeholder="Engin skrá valin"
-                  ref={register}
-                />
-              </FileBTN>
-            ) : null}
-            <Hint>Þessi texti verður notaður í dagskrá Skjaldborgar</Hint>
-            <textarea
-              placeholder="Stutt lýsing"
-              name="lysing"
-              id="lysing"
-              cols="30"
-              rows="10"
-              ref={register({ required: true })}
-            ></textarea>
-            {errors.lysing && <Warning>{errorMsg}</Warning>}
-            {/* ATHUGASEMDIR */}
-            <textarea
-              placeholder="Athugasemdir"
-              name="athugasemdir"
-              id="athugasemdir"
-              cols="30"
-              rows="5"
-              ref={register()}
-            ></textarea>
-            {errors.athugasemdir && <Warning>{errorMsg}</Warning>}
+                icelandic={icelandic}
+              ></TextArea>
+            ))}
             {/* HLEKKIR */}
-            <legend>Hlekkir</legend>
-            <Hint style={{ marginBottom: "-0.3rem" }}>Youtube / Vimeo</Hint>
-            <InputBox
-              placeholder="Stikla"
-              type="url"
-              name="hlekkurStikla"
-              ref={register({ required: true })}
-            />
-            {errors.hlekkurStikla && <Warning>{errorMsg}</Warning>}
-            <InputBox
-              placeholder="Kvikmynd"
-              type="url"
-              name="hlekkurVerk"
-              ref={register({ required: true })}
-            />
-            {errors.hlekkurVerk && <Warning>{errorMsg}</Warning>}
-            <BigBtn buttonSubmit text={`Senda inn`}></BigBtn>
+
+            <legend>{icelandic ? "Hlekkir" : "Links"}</legend>
+            {formSchema.verk.hlekkir.map((item, index) => (
+              <Hlekkir
+                wip={wip}
+                icelandic={icelandic}
+                item={item}
+                key={index}
+                forwardedRef={
+                  item.required ? register({ required: true }) : register
+                }
+              ></Hlekkir>
+            ))}
+
+            <BigBtn
+              buttonSubmit
+              text={icelandic ? "Senda inn" : "Submit"}
+            ></BigBtn>
           </form>
         </>
       ) : (

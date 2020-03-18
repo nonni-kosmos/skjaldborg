@@ -28,7 +28,6 @@ const Applicant = ({ completePhaseOne }) => {
         type: SAVE_APPLICANT,
         applicant: {
           fulltnafn: data.fulltnafn,
-          hlutverk: data.hlutverk,
           simanumer: data.simanumer,
           userId: auth.currentUser.uid,
           netfang: auth.currentUser.email,
@@ -55,13 +54,6 @@ const Applicant = ({ completePhaseOne }) => {
             name="fulltnafn"
           />
           {errors.fulltnafn && <Warning>{errorMsg}</Warning>}
-          <InputBox
-            ref={register({ required: true, maxLength: 80 })}
-            placeholder="Hlutverk"
-            type="text"
-            name="hlutverk"
-          />
-          {errors.hlutverk && <Warning>{errorMsg}</Warning>}
           <InputBox
             ref={register({ required: true, maxLength: 20 })}
             placeholder="Símanúmer"

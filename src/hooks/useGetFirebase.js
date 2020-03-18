@@ -31,7 +31,6 @@ const useGetFirebase = () => {
           // more providers go here...
         },
       })
-
       setIsLoading(false)
     })
   }, [])
