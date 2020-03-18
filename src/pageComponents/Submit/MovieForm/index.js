@@ -98,22 +98,20 @@ const MovieForm = () => {
             {/* VERK */}
             {formSchema.verk.text.map((item, index) => (
               <VerkText
+                errors={errors}
                 key={index}
                 item={item}
                 icelandic={icelandic}
-                forwardedRef={
-                  item.required ? register({ required: true }) : register
-                }
+                forwardedRef={register(item.register)}
                 wip={wip}
               ></VerkText>
             ))}
             {/* AÐSTANDENDUR */}
             {formSchema.adstandendur.map((item, index) => (
               <Adstandendur
+                errors={errors}
                 key={index}
-                forwardedRef={
-                  item.required ? register({ required: true }) : register
-                }
+                forwardedRef={register(item.register)}
                 item={item}
                 icelandic={icelandic}
                 wip={wip}
@@ -126,15 +124,14 @@ const MovieForm = () => {
               errors={errors}
               imageOne={imageOne}
               setImageOne={setImageOne}
-              ref={register({ required: true })}
+              forwardedRef={register({ required: true })}
             ></FileInput>
             {formSchema.verk.textArea.map((item, index) => (
               <TextArea
+                errors={errors}
                 key={index}
                 item={item}
-                forwardedRef={
-                  item.required ? register({ required: true }) : register
-                }
+                forwardedRef={register(item.register)}
                 icelandic={icelandic}
               ></TextArea>
             ))}
@@ -143,13 +140,12 @@ const MovieForm = () => {
             <legend>{icelandic ? "Hlekkir" : "Links"}</legend>
             {formSchema.verk.hlekkir.map((item, index) => (
               <Hlekkir
+                errors={errors}
                 wip={wip}
                 icelandic={icelandic}
                 item={item}
                 key={index}
-                forwardedRef={
-                  item.required ? register({ required: true }) : register
-                }
+                forwardedRef={register(item.register)}
               ></Hlekkir>
             ))}
 

@@ -16,6 +16,7 @@ export const formSchema = {
       },
       type: "text",
       required: false,
+      register: { required: false },
       wip: false,
     },
     {
@@ -26,6 +27,9 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: {
+        required: true,
+      },
       wip: true,
     },
     {
@@ -36,6 +40,7 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: { required: true },
       wip: true,
     },
     {
@@ -46,6 +51,7 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: { required: true },
       wip: false,
     },
     {
@@ -56,6 +62,7 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: { required: true },
       wip: false,
     },
     {
@@ -66,6 +73,7 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: { required: true },
       wip: false,
     },
     {
@@ -76,6 +84,7 @@ export const formSchema = {
       },
       type: "text",
       required: true,
+      register: { required: true },
       wip: false,
     },
 
@@ -87,6 +96,7 @@ export const formSchema = {
       },
       type: "text",
       required: false,
+      register: { required: false },
       wip: true,
     },
   ],
@@ -99,7 +109,7 @@ export const formSchema = {
           en: "Title",
         },
         type: "text",
-        required: true,
+        register: { required: true },
         wip: true,
       },
       {
@@ -109,7 +119,7 @@ export const formSchema = {
           en: "Duration in minutes",
         },
         type: "number",
-        required: true,
+        register: { required: true },
         wip: false,
       },
     ],
@@ -122,7 +132,7 @@ export const formSchema = {
         },
         cols: "30",
         rows: "10",
-        required: true,
+        register: { required: true },
         wip: true,
         hint: {
           is:
@@ -139,7 +149,7 @@ export const formSchema = {
         },
         cols: "30",
         rows: "5",
-        required: false,
+        register: { required: false },
         wip: true,
         hint: {
           is:
@@ -157,7 +167,7 @@ export const formSchema = {
           en: "Trailer",
         },
         type: "url",
-        required: true,
+        register: { required: true },
         wip: true,
       },
       {
@@ -167,7 +177,7 @@ export const formSchema = {
           en: "Film",
         },
         type: "url",
-        required: false,
+        register: { required: false },
         wip: false,
       },
       {
@@ -177,7 +187,7 @@ export const formSchema = {
           en: "Password",
         },
         type: "text",
-        required: false,
+        register: { required: false },
         wip: false,
         hint: {
           is: "Ef hlekkur að kvikmynd er varin með lykilorði",
