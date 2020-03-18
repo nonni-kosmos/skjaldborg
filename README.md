@@ -45,9 +45,11 @@
 - [ ] þýðingar
 
 * [ ] umsókn uppfærsla
-  - [ ] simplify the form
-  * [ ] sótt er um: að frumsýna/kynna verk í vinnslu
-  * [ ] hlekkir: password?
-  * [ ] auka hlutverk
+  - [x] simplify the form
+  * [x] sótt er um: að frumsýna/kynna verk í vinnslu
+  * [x] hlekkir: password?
+  * [x] auka hlutverk
   * [ ] stilla min/max
   * [ ] 350 max lýsing
+  * [ ] update stilla upload?
+  * [ ] submit logic in separate file
