@@ -6,6 +6,29 @@ export const generateImageLocation = movieTitle => {
 
 export const uploadLimit = 5 * 1000000 // 5MB
 
+export const applicantFormSchema = {
+  data: [
+    {
+      name: "fulltnafn",
+      placeholder: {
+        is: "Fullt nafn",
+        en: "Full name",
+      },
+      type: "text",
+      register: { required: true, maxLength: 80 },
+    },
+    {
+      name: "simanumer",
+      placeholder: {
+        is: "Símanúmer",
+        en: "Phone number",
+      },
+      type: "text",
+      register: { required: true, maxLength: 20 },
+    },
+  ],
+}
+
 export const formSchema = {
   adstandendur: [
     {
@@ -163,8 +186,8 @@ export const formSchema = {
       {
         name: "hlekkurStikla",
         placeholder: {
-          is: "Stikla",
-          en: "Trailer",
+          is: "Stikla / Sýnishorn",
+          en: "Trailer / Scenes",
         },
         type: "url",
         register: { required: true },

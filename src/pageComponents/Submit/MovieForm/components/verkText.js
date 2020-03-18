@@ -1,5 +1,5 @@
 import React from "react"
-import { InputBox } from "../../styled"
+import { InputBox, Warning } from "../../styled"
 import { ErrorMessage } from "react-hook-form"
 
 const VerkText = ({ forwardedRef, item, icelandic, wip, errors }) => {
@@ -15,6 +15,7 @@ const VerkText = ({ forwardedRef, item, icelandic, wip, errors }) => {
         name={item.name}
         message={icelandic ? "Útfyllist" : "Required"}
         errors={errors}
+        as={<Warning></Warning>}
       ></ErrorMessage>
     </>
   ) : item.wip ? (
@@ -29,6 +30,7 @@ const VerkText = ({ forwardedRef, item, icelandic, wip, errors }) => {
         name={item.name}
         message={icelandic ? "Útfyllist" : "Required"}
         errors={errors}
+        as={<Warning></Warning>}
       ></ErrorMessage>
     </>
   ) : null

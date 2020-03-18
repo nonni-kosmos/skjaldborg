@@ -1,5 +1,5 @@
 import React from "react"
-import { InputBox } from "../../styled"
+import { InputBox, Warning } from "../../styled"
 import { ErrorMessage } from "react-hook-form"
 
 const Adstandendur = ({ forwardedRef, wip, item, icelandic, errors }) => {
@@ -15,6 +15,7 @@ const Adstandendur = ({ forwardedRef, wip, item, icelandic, errors }) => {
         message={icelandic ? "Útfyllist" : "Required"}
         name={item.name}
         errors={errors}
+        as={<Warning></Warning>}
       ></ErrorMessage>
     </>
   ) : item.wip ? (
@@ -29,6 +30,7 @@ const Adstandendur = ({ forwardedRef, wip, item, icelandic, errors }) => {
         message={icelandic ? "Útfyllist" : "Required"}
         name={item.name}
         errors={errors}
+        as={<Warning></Warning>}
       ></ErrorMessage>
     </>
   ) : null

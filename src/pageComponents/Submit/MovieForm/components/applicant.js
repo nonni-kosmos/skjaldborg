@@ -1,8 +1,8 @@
 import React from "react"
 import useGetFirebase from "../../../../hooks/useGetFirebase"
-import { useForm } from "react-hook-form"
-import { errorMsg } from "../../config"
-import { useDispatch } from "react-redux"
+import { useForm, ErrorMessage } from "react-hook-form"
+import { applicantFormSchema } from "../../config"
+import { useDispatch, useSelector } from "react-redux"
 
 // components
 import { Box } from "../styled"
@@ -17,6 +17,8 @@ const Applicant = ({ completePhaseOne }) => {
   } = useGetFirebase()
 
   const { errors, handleSubmit, register } = useForm()
+
+  const icelandic = useSelector(state => state.reducer.icelandic)
 
   const dispatch = useDispatch()
 
@@ -47,20 +49,25 @@ const Applicant = ({ completePhaseOne }) => {
         </Box>
         {/* applicant form */}
         <form onSubmit={handleSubmit(onSubmit)} name="applicant-form">
-          <InputBox
-            ref={register({ required: true, maxLength: 80 })}
-            placeholder="Fullt nafn"
-            type="text"
-            name="fulltnafn"
-          />
-          {errors.fulltnafn && <Warning>{errorMsg}</Warning>}
-          <InputBox
-            ref={register({ required: true, maxLength: 20 })}
-            placeholder="Símanúmer"
-            type="text"
-            name="simanumer"
-          />
-          {errors.simanumer && <Warning>{errorMsg}</Warning>}
+          {applicantFormSchema.data.map((item, index) => (
+            <>
+              <InputBox
+                key={index}
+                name={item.name}
+                type={item.type}
+                ref={register(item.register)}
+                placeholder={
+                  icelandic ? item.placeholder.is : item.placeholder.en
+                }
+              ></InputBox>
+              <ErrorMessage
+                as={<Warning></Warning>}
+                errors={errors}
+                name={item.name}
+                message={icelandic ? "Útfyllist" : "Required"}
+              ></ErrorMessage>
+            </>
+          ))}
           <BigBtn buttonSubmit text="Vista tengilið"></BigBtn>
         </form>
       </>

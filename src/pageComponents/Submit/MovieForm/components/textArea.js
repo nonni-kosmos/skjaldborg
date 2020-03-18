@@ -1,5 +1,5 @@
 import React from "react"
-import { Hint } from "../../styled"
+import { Hint, Warning } from "../../styled"
 import { ErrorMessage } from "react-hook-form"
 
 const TextArea = ({ forwardedRef, item, icelandic, errors }) => {
@@ -17,6 +17,7 @@ const TextArea = ({ forwardedRef, item, icelandic, errors }) => {
         name={item.name}
         errors={errors}
         message={icelandic ? "Útfyllist" : "Required"}
+        as={<Warning></Warning>}
       ></ErrorMessage>
     </>
   )

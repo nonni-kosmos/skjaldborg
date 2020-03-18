@@ -87,7 +87,7 @@ export const Warning = styled.p`
   color: ${redColor};
   margin: 0;
   margin-top: -0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `
 export const FileBTN = styled.label`
   padding: 1rem;
