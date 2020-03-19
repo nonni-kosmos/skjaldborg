@@ -45,7 +45,10 @@ const Applicant = ({ completePhaseOne }) => {
         <Box>
           <legend>Tengiliður </legend>
           <p>{auth.currentUser.email}</p>
-          <button onClick={() => auth.signOut()}>Breyta tengilið</button>
+          <button onClick={() => auth.signOut()}>
+            {" "}
+            {icelandic ? "Breyta tengilið" : "Change contact"}
+          </button>
         </Box>
         {/* applicant form */}
         <form onSubmit={handleSubmit(onSubmit)} name="applicant-form">
@@ -68,7 +71,7 @@ const Applicant = ({ completePhaseOne }) => {
               ></ErrorMessage>
             </React.Fragment>
           ))}
-          <BigBtn buttonSubmit text="Vista tengilið"></BigBtn>
+          <BigBtn buttonSubmit text={icelandic ? "Áfram" : "Continue"}></BigBtn>
         </form>
       </>
     )

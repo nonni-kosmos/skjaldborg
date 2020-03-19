@@ -5,6 +5,7 @@ import { InputBox, Warning } from "../../styled"
 import styled from "styled-components"
 import BigBtn from "../../../../reusableComponents/BigBtn"
 import useGetFirebase from "../../../../hooks/useGetFirebase"
+import { useSelector } from "react-redux"
 
 const StyledForm = styled.form`
   max-width: 30rem;
@@ -32,6 +33,9 @@ const Form = () => {
         }
       })
   }
+
+  const icelandic = useSelector(state => state.reducer.icelandic)
+
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)} action="POST">
       <InputBox
@@ -50,7 +54,7 @@ const Form = () => {
         id="applicant-password"
       ></InputBox>
       {errors.name && <Warning>{errorMsg}</Warning>}
-      <BigBtn buttonSubmit text={`Innskráning`}></BigBtn>
+      <BigBtn buttonSubmit text={icelandic ? "Innskráning" : "Log in"}></BigBtn>
     </StyledForm>
   )
 }

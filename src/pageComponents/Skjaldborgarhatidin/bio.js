@@ -4,7 +4,7 @@ import Template from "./template"
 
 const Skjaldborgarbio = ({
   data: {
-    markdownRemark: { html, frontmatter, id },
+    markdownRemark: { html, frontmatter },
   },
 }) => {
   return (
@@ -14,7 +14,7 @@ const Skjaldborgarbio = ({
       html={html}
       extraComponent={null}
       image={frontmatter.mynd}
-      currentId={id}
+      order={frontmatter.order}
     ></Template>
   )
 }
@@ -28,6 +28,7 @@ export default props => (
           id
           frontmatter {
             title
+            order
             video {
               publicURL
             }

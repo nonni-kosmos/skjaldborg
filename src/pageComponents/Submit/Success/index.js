@@ -4,6 +4,7 @@ import { greenTextColor, redColor } from "../../../layouts/PageContainer/styled"
 import SocialMediaIcons from "../../../reusableComponents/SocialMediaIcons"
 import { Link } from "gatsby"
 import ArrowSvg from "../../../../static/assets/svg/arrow.svg"
+import { useSelector } from "react-redux"
 
 const Box = styled.div`
   text-align: center;
@@ -20,10 +21,11 @@ const Box = styled.div`
 const Title = styled.h1`
   color: ${greenTextColor};
   text-transform: uppercase;
+  padding-bottom: 4rem;
 `
-const Message = styled.p`
-  color: gray;
-`
+// const Message = styled.p`
+//   color: gray;
+// `
 
 const Anchor = styled(Link)`
   color: inherit;
@@ -46,17 +48,22 @@ export const Arrow = styled(ArrowSvg)`
 `
 
 const Success = () => {
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Box>
-      <Title>Innsending tókst!</Title>
+      <Title>
+        {icelandic ? "Innsending tókst!" : "Submission was successful!"}
+      </Title>
       <div id="info-box">
-        <Message className="les-texti">
+        {/* <Message className="les-texti">
           Tengiliður er skráður sjálfkrafa á póstlista Skjaldborgar. Fylgist
           með!
-        </Message>
+        </Message> */}
         <SocialMediaIcons color="black"></SocialMediaIcons>
         <Anchor to="/">
-          <HomeText className="titlar">Aftur á forsíðu</HomeText>
+          <HomeText className="titlar">
+            {icelandic ? "Á forsíðu" : "To frontpage"}
+          </HomeText>
           <Arrow></Arrow>
         </Anchor>
       </div>

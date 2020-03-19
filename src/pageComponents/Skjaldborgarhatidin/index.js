@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 
 const Skjaldborgarhatidin = ({
   data: {
-    markdownRemark: { html, id, frontmatter },
+    markdownRemark: { html, frontmatter },
   },
 }) => {
   const icelandic = useSelector(state => state.reducer.icelandic)
@@ -15,7 +15,7 @@ const Skjaldborgarhatidin = ({
       title={icelandic ? frontmatter.title : frontmatter.title_en}
       html={html}
       extraComponent={null}
-      currentId={id}
+      order={frontmatter.order}
     ></Template>
   )
 }
@@ -26,10 +26,10 @@ export default props => (
       {
         markdownRemark(fileAbsolutePath: { regex: "/skjaldborgarhátíðin/" }) {
           html
-          id
           frontmatter {
             title
             title_en
+            order
             mynd {
               childImageSharp {
                 fluid(maxHeight: 1200, quality: 65) {

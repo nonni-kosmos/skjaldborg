@@ -8,6 +8,7 @@ import { authState } from "rxfire/auth"
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import ManualLogin from "../ManualLogin"
 import { Arrow } from "../Success"
+import { useSelector } from "react-redux"
 
 // applicant form
 const Register = () => {
@@ -35,6 +36,9 @@ const Register = () => {
       navigate("/umsokn/kvikmynd")
     }
   }, [authenticated])
+
+  const icelandic = useSelector(state => state.reducer.icelandic)
+
   return (
     <>
       <Container>
@@ -44,7 +48,7 @@ const Register = () => {
         >
           Tilbaka
         </Arrow>
-        <PageTitle nopad>Tengiliður</PageTitle>
+        <PageTitle nopad>{icelandic ? "Tengiliður" : "Contact"}</PageTitle>
 
         {/* <p style={{ color: "gray" }}>
           Forsvarsaðili verkefnis skráist sjálfkrafa á póstlista.. TODO
@@ -53,7 +57,7 @@ const Register = () => {
           <ManualLogin></ManualLogin>
         ) : (
           <div className="login-options-wrap">
-            <h3>Skráðu þig inn með:</h3>
+            <h3>{icelandic ? "Skráðu þig inn með:" : "Log in with:"}</h3>
             <GoogleLogin></GoogleLogin>
             <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>
           </div>

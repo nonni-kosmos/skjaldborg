@@ -14,7 +14,7 @@ const GoogleLogin = () => {
     auth.signInWithPopup(provider)
   }
 
-  return <BigBtn text={`Google`} button action={() => login()}></BigBtn>
+  return <BigBtn text="Gmail" button action={() => login()}></BigBtn>
 }
 
 export default GoogleLogin

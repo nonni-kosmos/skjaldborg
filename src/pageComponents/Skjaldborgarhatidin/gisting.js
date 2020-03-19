@@ -16,7 +16,7 @@ const Gisting = ({
         title={frontmatter.title}
         html={html}
         extraComponent={GuestHouseGrid}
-        currentId={id}
+        order={frontmatter.order}
       ></Template>
     </>
   )
@@ -31,6 +31,7 @@ export default props => (
           id
           frontmatter {
             title
+            order
             mynd {
               childImageSharp {
                 fluid(maxHeight: 1200, quality: 65) {
