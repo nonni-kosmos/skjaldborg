@@ -3,6 +3,7 @@ title: Skjaldborgarbíó
 title-en: Skjaldborg Cinema
 mynd: /assets/skjaldborg_092dscf5141_byontkovic-copy.jpg
 video: /assets/skjaldborgarbio.mp4
+order: 2
 ---
 Húsið stendur við Aðalstræti 27 á Patreksfirði og er í daglegu tali kallað Skjaldborg. Í dag er rekið bíó í húsinu og hefur Lionsklúbbur Patreksfjarðar haldið utan um þær sýningar. 
 
