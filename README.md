@@ -41,7 +41,7 @@
 
 - [x] flugfélagið Ernir
 
-- [ ] muna að núlstilla applicant í store!
+- [x] muna að núlstilla applicant í store!
 - [ ] þýðingar
 
 * [ ] umsókn uppfærsla
@@ -49,7 +49,7 @@
   * [x] sótt er um: að frumsýna/kynna verk í vinnslu
   * [x] hlekkir: password?
   * [x] auka hlutverk
-  * [ ] stilla min/max
+  * [x] stilla min/max
   * [ ] 350 max lýsing
   * [ ] update stilla upload?
   * [ ] submit logic in separate file

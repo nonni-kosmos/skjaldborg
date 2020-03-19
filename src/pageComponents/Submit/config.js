@@ -4,7 +4,11 @@ export const generateImageLocation = movieTitle => {
   return movieTitle.toLowerCase().replace(/ /g, "-")
 }
 
-export const uploadLimit = 5 * 1000000 // 5MB
+const MegaByte = 1000000
+export const uploadLimit = {
+  max: 5 * MegaByte, // 5MB
+  min: MegaByte / 2, // 500KB
+}
 
 export const applicantFormSchema = {
   data: [
@@ -218,5 +222,15 @@ export const formSchema = {
         },
       },
     ],
+    image: {
+      name: "image",
+      type: "file",
+      register: { required: true },
+      wip: true,
+      hint: {
+        is: "Skáarstærð ljósmyndar verður að vera á milli 500KB og 5MB.",
+        en: "Still file size must be between 500KB and 5MB.",
+      },
+    },
   },
 }

@@ -31,10 +31,10 @@ const MovieForm = () => {
     if (window.confirm("Confirm submission")) {
       // Image one, required
       // generate url names
-      let imageOneURL = generateImageLocation(data.titill) + "/image1"
+      let imageOneURL = generateImageLocation(data.titill) + "/image"
       // upload it
       const imageOneRef = storage.ref(imageOneURL)
-      put(imageOneRef, data.imageOne[0]).subscribe(snap => {
+      put(imageOneRef, imageOne).subscribe(snap => {
         console.log(snap)
       })
 
@@ -124,7 +124,8 @@ const MovieForm = () => {
               errors={errors}
               imageOne={imageOne}
               setImageOne={setImageOne}
-              forwardedRef={register({ required: true })}
+              forwardedRef={register(formSchema.verk.image.register)}
+              item={formSchema.verk.image}
             ></FileInput>
             {formSchema.verk.textArea.map((item, index) => (
               <TextArea

@@ -50,7 +50,7 @@ const Applicant = ({ completePhaseOne }) => {
         {/* applicant form */}
         <form onSubmit={handleSubmit(onSubmit)} name="applicant-form">
           {applicantFormSchema.data.map((item, index) => (
-            <>
+            <React.Fragment key={index}>
               <InputBox
                 key={index}
                 name={item.name}
@@ -66,7 +66,7 @@ const Applicant = ({ completePhaseOne }) => {
                 name={item.name}
                 message={icelandic ? "Útfyllist" : "Required"}
               ></ErrorMessage>
-            </>
+            </React.Fragment>
           ))}
           <BigBtn buttonSubmit text="Vista tengilið"></BigBtn>
         </form>
