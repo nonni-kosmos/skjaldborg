@@ -21,7 +21,9 @@ const TextArea = ({ forwardedRef, item, icelandic, errors }) => {
     <>
       <Hint>
         {icelandic ? item.hint.is : item.hint.en} <br /> <br />
-        {"Stafir eftir: " + charsLeft}
+        {icelandic
+          ? "Stafir eftir: " + charsLeft
+          : "Characters left: " + charsLeft}
       </Hint>
       <textarea
         onChange={e => handleTyping(e)}

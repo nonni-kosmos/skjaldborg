@@ -56,3 +56,6 @@
 - [ ] þýðingar
 - [x] fix scroll issue mobile
 - [x] remove theme provider junk
+- [ ] tengiliður skrá póstlista
+- [ ] bil á milli login & register
+- [ ] full name ?

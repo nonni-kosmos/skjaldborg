@@ -220,7 +220,7 @@ export const formSchema = {
         wip: false,
         hint: {
           is: "Ef hlekkur að kvikmynd er varin með lykilorði",
-          en: "If link to movie is password protected",
+          en: "If link to film is password protected",
         },
       },
     ],

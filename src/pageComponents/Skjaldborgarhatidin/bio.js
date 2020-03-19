@@ -1,16 +1,18 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Template from "./template"
+import { useSelector } from "react-redux"
 
 const Skjaldborgarbio = ({
   data: {
     markdownRemark: { html, frontmatter },
   },
 }) => {
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Template
       video={frontmatter.video.publicURL}
-      title={frontmatter.title}
+      title={icelandic ? frontmatter.title : frontmatter.title_en}
       html={html}
       extraComponent={null}
       image={frontmatter.mynd}
@@ -28,6 +30,7 @@ export default props => (
           id
           frontmatter {
             title
+            title_en
             order
             video {
               publicURL

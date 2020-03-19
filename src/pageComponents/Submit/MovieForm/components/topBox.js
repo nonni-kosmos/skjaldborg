@@ -15,7 +15,7 @@ const TopBox = ({ onChange, applicant, auth, icelandic }) => {
         {icelandic ? "Breyta tengilið" : "Change contact"}
       </button>
 
-      <p>{icelandic ? "Sótt er um:" : "Applying for:"}</p>
+      <p>{icelandic ? "Sótt er um að:" : "Apply to:"}</p>
       <select onInput={e => onChange(e.target.value === "wip")}>
         <option value="nowip">
           {icelandic

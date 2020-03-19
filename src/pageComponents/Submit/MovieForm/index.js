@@ -94,7 +94,7 @@ const MovieForm = () => {
             method="POST"
           >
             <legend>
-              {icelandic ? "Upplýsingar um verk" : "Project information"}
+              {icelandic ? "Upplýsingar um verk" : "Project details"}
             </legend>
             {/* VERK */}
             {formSchema.verk.text.map((item, index) => (
