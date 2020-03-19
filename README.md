@@ -50,6 +50,6 @@
   * [x] hlekkir: password?
   * [x] auka hlutverk
   * [x] stilla min/max
-  * [ ] 350 max lýsing
+  * [x] Max chars í textareas
   * [ ] update stilla upload?
   * [ ] submit logic in separate file

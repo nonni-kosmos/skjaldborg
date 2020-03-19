@@ -159,7 +159,8 @@ export const formSchema = {
         },
         cols: "30",
         rows: "10",
-        register: { required: true },
+        maxLength: 350,
+        register: { required: true, maxLength: 350 },
         wip: true,
         hint: {
           is:
@@ -175,8 +176,9 @@ export const formSchema = {
           en: "Comments",
         },
         cols: "30",
-        rows: "5",
-        register: { required: false },
+        rows: "7",
+        maxLength: 250,
+        register: { required: false, maxLength: 200 },
         wip: true,
         hint: {
           is:
