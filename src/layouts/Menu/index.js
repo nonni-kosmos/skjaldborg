@@ -53,6 +53,7 @@ export default props => (
           siteMetadata {
             pages {
               name
+              name_en
               slug
             }
           }

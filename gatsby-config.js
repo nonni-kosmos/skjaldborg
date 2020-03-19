@@ -1,24 +1,27 @@
 const pages = [
-  { name: `Heim`, slug: `/` },
-  { name: `Hátíðin`, slug: `/hatidin` },
+  { name: `Heim`, name_en: `Home`, slug: `/` },
+  { name: `Hátíðin`, name_en: `The Festival`, slug: `/hatidin` },
+  { name: `Umsókn`, name_en: `Application`, slug: `/umsokn` },
   // { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   // { name: `Dagskrá`, slug: `/dagskra` },
   // { name: `Sarpur`, slug: `/sarpur` },
-  { name: `Umsókn`, slug: `/umsokn` },
 ]
 const dropdownPages = [
   {
     name: `Skjaldborgarhátíðin`,
+    name_en: `Skaldborg Festival`,
     slug: `/hatidin`,
     image: `/assets/skjaldborg_byontkovic.jpg`,
   },
   {
     name: `Skjaldborgarbíó`,
+    name_en: `Skjaldborg Cinema`,
     slug: `/bio`,
     image: `/assets/skjaldborg_092dscf5141_byontkovic.jpg`,
   },
   {
-    name: `Ferðalagið/Gisting`,
+    name: `Ferðalagið / Gisting`,
+    name_en: `How to get there / Accommodation`,
     slug: `/ferdalagid-gisting`,
     image: `/assets/skjaldborg_060dscf4118_byontkovic.jpg`,
   },
@@ -35,11 +38,7 @@ const metadata = {
   pages: pages,
   dropdownpages: dropdownPages,
   contact: {
-    people: [
-      { name: "Kristín Andrea Þórðardóttir", tel: "+354 820 3646" },
-      { name: "Helga Rakel Rafnsdóttir", tel: "+354 696 7719" },
-      { name: "Karna Sigurðardóttir", tel: "+354 866 6977" },
-    ],
+    people: [{ name: "Kristín Andrea Þórðardóttir", tel: "+354 820 3646" }],
     socialMedia: [
       {
         name: "facebook",

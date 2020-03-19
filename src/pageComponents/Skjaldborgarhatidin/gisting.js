@@ -6,7 +6,7 @@ import GuestHouseGrid from "./Gisting/index"
 // Gisting / Ferðalagið
 const Gisting = ({
   data: {
-    markdownRemark: { html, frontmatter },
+    markdownRemark: { html, frontmatter, id },
   },
 }) => {
   return (
@@ -16,6 +16,7 @@ const Gisting = ({
         title={frontmatter.title}
         html={html}
         extraComponent={GuestHouseGrid}
+        currentId={id}
       ></Template>
     </>
   )
@@ -27,6 +28,7 @@ export default props => (
       {
         markdownRemark(fileAbsolutePath: { regex: "/gisting-ferðalagið/" }) {
           html
+          id
           frontmatter {
             title
             mynd {

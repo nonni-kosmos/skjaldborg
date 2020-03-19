@@ -44,6 +44,7 @@ export default props => (
           siteMetadata {
             dropdownpages {
               name
+              name_en
               slug
             }
           }

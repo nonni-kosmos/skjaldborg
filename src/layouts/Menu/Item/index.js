@@ -1,15 +1,16 @@
 import React from "react"
 import { Text, Anchor } from "./styled"
 import Dropdown from "./Dropdown"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { TRIGGER_MENU } from "../../../state/action"
 
 const Item = ({ item }) => {
   const dispatch = useDispatch()
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Text>
       {item.name === `Hátíðin` ? (
-        <Dropdown>{item.name}</Dropdown>
+        <Dropdown>{icelandic ? item.name : item.name_en}</Dropdown>
       ) : (
         <Anchor
           cover
@@ -17,7 +18,6 @@ const Item = ({ item }) => {
           direction="left"
           duration={1}
           className="titlar"
-          partiallyActive={item.name === "Staff"}
           activeStyle={{ color: `rgb(188,220,186)` }}
           onClick={() =>
             dispatch({
@@ -27,7 +27,7 @@ const Item = ({ item }) => {
           }
           to={item.slug}
         >
-          {item.name}
+          {icelandic ? item.name : item.name_en}
         </Anchor>
       )}
     </Text>

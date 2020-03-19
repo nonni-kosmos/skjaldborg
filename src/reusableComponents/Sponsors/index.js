@@ -3,11 +3,13 @@ import { Container } from "./styled"
 import { StaticQuery, graphql } from "gatsby"
 import FadeInSection from "../../techComponents/FadeInSection"
 import SponsorsQuery from "./query"
+import { useSelector } from "react-redux"
 
 const Sponsors = () => {
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Container>
-      <h1>Styrktaraðilar</h1>
+      <h1>{icelandic ? "Styrktaraðilar" : "Sponsors"}</h1>
       <FadeInSection intensity="10">
         <div className="sponsor-grid-top5">
           <SponsorsQuery vip></SponsorsQuery>

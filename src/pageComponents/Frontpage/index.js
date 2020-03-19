@@ -14,6 +14,7 @@ import Topimage from "../../reusableComponents/TopImage"
 
 const Frontpage = ({ data: { imageSharp, video } }) => {
   const platform = useSelector(state => state.reducer.platform)
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Container>
       <Header></Header>
@@ -27,7 +28,7 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
       <SubmitBtnWrap>
         <BigBtn
           frontpage
-          text="Innsending mynda 2020"
+          text={icelandic ? "Senda inn mynd" : "Submit a film"}
           action="/umsokn"
         ></BigBtn>
       </SubmitBtnWrap>

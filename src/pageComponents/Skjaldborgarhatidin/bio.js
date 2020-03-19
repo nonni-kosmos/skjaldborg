@@ -4,7 +4,7 @@ import Template from "./template"
 
 const Skjaldborgarbio = ({
   data: {
-    markdownRemark: { html, frontmatter },
+    markdownRemark: { html, frontmatter, id },
   },
 }) => {
   return (
@@ -14,6 +14,7 @@ const Skjaldborgarbio = ({
       html={html}
       extraComponent={null}
       image={frontmatter.mynd}
+      currentId={id}
     ></Template>
   )
 }
@@ -24,6 +25,7 @@ export default props => (
       {
         markdownRemark(fileAbsolutePath: { regex: "/skjaldborgarbíó/" }) {
           html
+          id
           frontmatter {
             title
             video {

@@ -1,18 +1,21 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Template from "./template"
+import { useSelector } from "react-redux"
 
 const Skjaldborgarhatidin = ({
   data: {
-    markdownRemark: { html, frontmatter },
+    markdownRemark: { html, id, frontmatter },
   },
 }) => {
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Template
       image={frontmatter.mynd}
-      title="Skjaldborgarhátíðin"
+      title={icelandic ? frontmatter.title : frontmatter.title_en}
       html={html}
       extraComponent={null}
+      currentId={id}
     ></Template>
   )
 }
@@ -23,8 +26,10 @@ export default props => (
       {
         markdownRemark(fileAbsolutePath: { regex: "/skjaldborgarhátíðin/" }) {
           html
+          id
           frontmatter {
             title
+            title_en
             mynd {
               childImageSharp {
                 fluid(maxHeight: 1200, quality: 65) {

@@ -1,7 +1,9 @@
 import React from "react"
 import { Container } from "./styled"
+import { useSelector } from "react-redux"
 
 const Anchor = ({ item, color }) => {
+  const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Container
       cover
@@ -14,7 +16,7 @@ const Anchor = ({ item, color }) => {
       }
       to={item.slug}
     >
-      {item.name}
+      {icelandic ? item.name : item.name_en}
     </Container>
   )
 }
