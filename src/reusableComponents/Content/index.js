@@ -12,13 +12,13 @@ const Content = ({ html }) => {
 
   useEffect(() => {
     let languages = splitLang(html)
-
     if (icelandic) {
       setLang(languages[0])
     } else {
       setLang(languages.length > 1 ? languages[1] : languages[0])
     }
   }, [icelandic, html])
+
   return <Container dangerouslySetInnerHTML={{ __html: lang }}></Container>
 }
 
