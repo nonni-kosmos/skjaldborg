@@ -1,5 +1,6 @@
 ---
 title: Skjaldborgarbíó
+title-en: Skjaldborg Cinema
 mynd: /assets/skjaldborg_092dscf5141_byontkovic-copy.jpg
 video: /assets/skjaldborgarbio.mp4
 ---
