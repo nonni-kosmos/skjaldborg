@@ -12,7 +12,7 @@ export const Container = styled.div`
   margin: 0;
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    margin: 2rem 0 7.5rem 0;
+    margin: 0 0 7.5rem 0;
   }
   h1 {
     color: white;

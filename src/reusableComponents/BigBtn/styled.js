@@ -29,6 +29,14 @@ const BTNstyle = css`
 `
 export const Anchor = styled(Link)`
   ${BTNstyle};
+  &&:hover {
+    color: ${redColor};
+    border-color: ${redColor};
+  }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    border-color: white;
+    color: white;
+  }
 `
 export const Button = styled.button`
   ${BTNstyle};

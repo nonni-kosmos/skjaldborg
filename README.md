@@ -51,8 +51,8 @@
   * [x] stilla min/max
   * [x] Max chars í textareas
 
-- [ ] færa takka á forsíðu
+- [x] færa takka á forsíðu
 - [ ] fótur uppfærsla
 - [ ] þýðingar
-- [ ] fix scroll issue mobile
+- [x] fix scroll issue mobile
 - [x] remove theme provider junk

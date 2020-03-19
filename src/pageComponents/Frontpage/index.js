@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from "./styled"
+import { Container, SubmitBtnWrap } from "./styled"
 import BigBtn from "../../reusableComponents/BigBtn"
 import { graphql, StaticQuery } from "gatsby"
 import ExcerptBtns from "../../reusableComponents/ExcerptBtns"
@@ -24,8 +24,13 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
         <TopVideo videoSource={video.publicURL}></TopVideo>
       )}
 
-      <BigBtn text="Innsending mynda 2020" action="/umsokn"></BigBtn>
-
+      <SubmitBtnWrap>
+        <BigBtn
+          frontpage
+          text="Innsending mynda 2020"
+          action="/umsokn"
+        ></BigBtn>
+      </SubmitBtnWrap>
       <ExcerptBtns />
 
       <Sponsors></Sponsors>
