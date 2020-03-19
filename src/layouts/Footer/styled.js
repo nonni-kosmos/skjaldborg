@@ -5,10 +5,12 @@ import { redColor } from "../PageContainer/styled"
 export const Wrap = styled.div`
   background: ${redColor};
   width: 100%;
-  height: 8.5rem;
+  height: 20rem;
   position: absolute;
   bottom: 0;
   z-index: 4;
+  z-index: 8;
+  /* display: none; */
 `
 export const Container = styled.div`
   height: 100%;

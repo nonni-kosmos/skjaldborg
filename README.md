@@ -42,12 +42,16 @@
 - [x] flugfélagið Ernir
 
 - [x] muna að núlstilla applicant í store!
-- [ ] þýðingar
 
-* [ ] umsókn uppfærsla
+* [x] umsókn uppfærsla
   - [x] simplify the form
   * [x] sótt er um: að frumsýna/kynna verk í vinnslu
   * [x] hlekkir: password?
   * [x] auka hlutverk
   * [x] stilla min/max
   * [x] Max chars í textareas
+
+- [ ] færa takka á forsíðu
+- [ ] fótur uppfærsla
+- [ ] þýðingar
+- [ ] fix scroll issue mobile

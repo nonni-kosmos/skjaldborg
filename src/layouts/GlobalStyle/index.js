@@ -14,4 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     .selected > span {
         transform: scale(1);
     }
+    .tl-edges {
+        overflow: inherit !important;
+    }
 `
