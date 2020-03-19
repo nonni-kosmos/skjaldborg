@@ -1,10 +1,14 @@
 import styled from "styled-components"
 import { greenColor } from "../../../PageContainer/styled"
 import { Link } from "gatsby"
+import { breakpoints } from "../../../../constants"
 
 export const Button = styled.div`
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 2.5rem;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 4rem;
+  }
 `
 export const Title = styled.span`
   color: white;

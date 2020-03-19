@@ -9,10 +9,11 @@ export const Text = styled.h1`
 `
 export const Anchor = styled(AniLink)`
   text-decoration: none;
-  font-size: 4rem;
   padding: 0rem;
   color: white;
+  font-size: 2.5rem;
   @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 4rem;
     &&:hover {
       color: ${greenColor};
       cursor: pointer;
