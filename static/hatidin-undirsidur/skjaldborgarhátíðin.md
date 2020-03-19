@@ -1,5 +1,6 @@
 ---
-title: Skjaldborgarhátíðin
+title: Hátíðin
+title-en: The Festival
 mynd: /assets/skjaldborg_byontkovic.jpg
 ---
 Skjaldborg sýnir heimildamyndir sem annars kæmu varla fyrir augu almennings og ber jafna virðingu fyrir hinu smáa, stóra, skrýtna og fokdýra. Efnistök heimildamyndanna sem hafa verið á dagskrá hátíðarinnar í gegn um árin hafa verið fjölbreytt en þær hafa verið allt frá örstuttum myndum upp í myndir í fullri lengd. 
