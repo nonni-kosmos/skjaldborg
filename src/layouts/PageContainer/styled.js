@@ -1,26 +1,12 @@
 import styled from "styled-components"
-import theme from "styled-theming"
 
-// Theme configs
-export const backgroundColor = theme("mode", {
-  main: "white",
-  staff: "white",
-})
+export const backgroundColor = "white"
 
-export const greenColor = theme("mode", {
-  main: "rgb(188,220,186)",
-  staff: "black",
-})
+export const greenColor = "rgb(188,220,186)"
 
-export const redColor = theme("mode", {
-  main: `rgb(190, 69, 69)`,
-  staff: "gray",
-})
+export const redColor = "rgb(190, 69, 69)"
 
-export const greenTextColor = theme("mode", {
-  main: "#9DD79A",
-  staff: "black",
-})
+export const greenTextColor = "#9DD79A"
 
 export const Container = styled.div`
   box-sizing: border-box;

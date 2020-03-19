@@ -5,29 +5,21 @@ import LangBtn from "../LangBtn"
 import { Loader, Container } from "./styled"
 
 // tech
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useSelector } from "react-redux"
-import { ThemeProvider } from "styled-components"
 
 const PageContainer = ({ children, pathname }) => {
-  const [theme, setTheme] = useState("main")
   const platform = useSelector(state => state.reducer.platform)
 
-  useEffect(() => {
-    setTheme("main")
-  }, [pathname])
-
   return (
-    <ThemeProvider theme={{ mode: theme }}>
-      <Loader opacity={platform}>
-        <div style={{ background: "white" }} className="page-wrap">
-          <Burger></Burger>
-          {platform !== "mobile" ? <LangBtn></LangBtn> : null}
-          <Menu></Menu>
-          <Container>{children}</Container>
-        </div>
-      </Loader>
-    </ThemeProvider>
+    <Loader opacity={platform}>
+      <div style={{ background: "white" }} className="page-wrap">
+        <Burger></Burger>
+        {platform !== "mobile" ? <LangBtn></LangBtn> : null}
+        <Menu></Menu>
+        <Container>{children}</Container>
+      </div>
+    </Loader>
   )
 }
 

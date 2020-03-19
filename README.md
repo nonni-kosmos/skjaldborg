@@ -55,3 +55,4 @@
 - [ ] fótur uppfærsla
 - [ ] þýðingar
 - [ ] fix scroll issue mobile
+- [x] remove theme provider junk

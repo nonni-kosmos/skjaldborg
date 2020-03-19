@@ -1,17 +1,9 @@
 import styled from "styled-components"
-import theme from "styled-theming"
 import { breakpoints } from "../../constants"
-// import { breakpoints } from "../../constants"
-
-const backgroundColor = theme("mode", {
-  main: "transparent",
-  staff: "#E5E5E5",
-})
 
 export const Wrap = styled.div`
   z-index: 4;
   height: 8.5rem;
-  background: ${backgroundColor};
   position: absolute;
 `
 
