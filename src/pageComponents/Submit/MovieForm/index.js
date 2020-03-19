@@ -35,7 +35,8 @@ const MovieForm = () => {
       // upload it
       const imageOneRef = storage.ref(imageOneURL)
       put(imageOneRef, imageOne).subscribe(snap => {
-        console.log(snap)
+        let progress = snap.bytesTransferred / snap.totalBytes
+        console.log(progress * 100 + "%")
       })
 
       // Remove image from data object so we can spread it safely

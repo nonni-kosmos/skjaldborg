@@ -7,7 +7,6 @@ const TextArea = ({ forwardedRef, item, icelandic, errors }) => {
   const [message, setMessage] = useState({ is: "Útfyllist", en: "Required" })
 
   const handleTyping = event => {
-    console.log(event.target.value.length)
     let result = item.maxLength - event.target.value.length
     if (result >= 0) {
       if (result === 0) setMessage({ is: "Útfyllist", en: "Required" })

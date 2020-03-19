@@ -51,5 +51,3 @@
   * [x] auka hlutverk
   * [x] stilla min/max
   * [x] Max chars í textareas
-  * [ ] update stilla upload?
-  * [ ] submit logic in separate file
