@@ -2,6 +2,7 @@
 title: Hátíðin
 title-en: The Festival
 mynd: /assets/skjaldborg_byontkovic.jpg
+order: 1
 ---
 Skjaldborg - hátíð íslenskra heimildamynda er haldin um hvítasunnuhelgina ár hvert. Hátíðin var stofnuð árið 2007 og hefur síðan þá verið eini sérhæfði vettvangurinn fyrir frumsýningu íslenskra heimildamynda hér á landi. Fagið og hátíðin hafa vaxað og dafnað hönd í hönd og er óhætt að segja að Skjaldborgarbíó og Patreksfjörður séu orðin að heimili íslenskra heimildamynda. Umhverfið, gestirnir og heimamenn hafa í gegnum árin skapað aðstæður sem mynda einstakt andrúmsloft og samveru. Hátíðin leiðir saman reynslubolta í faginu, byrjendur og hinn almenna áhorfanda en þannig stuðlar hún að skemmtilegu og skapandi samtali sem gegnir mikilvægu hlutverki fyrir þróun og miðlun íslenskrar heimildamyndagerðar.
 
