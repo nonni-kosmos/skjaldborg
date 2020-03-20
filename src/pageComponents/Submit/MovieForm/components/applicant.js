@@ -16,7 +16,13 @@ const Applicant = ({ completePhaseOne }) => {
     isLoading,
   } = useGetFirebase()
 
-  const { errors, handleSubmit, register } = useForm()
+  const { errors, handleSubmit, register } = useForm({
+    defaultValues: {
+      fulltnafn: auth ? auth.currentUser.displayName : "",
+      simanumer: "",
+      postlisti: true,
+    },
+  })
 
   const icelandic = useSelector(state => state.reducer.icelandic)
 
@@ -29,10 +35,9 @@ const Applicant = ({ completePhaseOne }) => {
       dispatch({
         type: SAVE_APPLICANT,
         applicant: {
-          fulltnafn: data.fulltnafn,
-          simanumer: data.simanumer,
           userId: auth.currentUser.uid,
           netfang: auth.currentUser.email,
+          ...data,
         },
       })
       completePhaseOne()
@@ -54,15 +59,38 @@ const Applicant = ({ completePhaseOne }) => {
         <form onSubmit={handleSubmit(onSubmit)} name="applicant-form">
           {applicantFormSchema.data.map((item, index) => (
             <React.Fragment key={index}>
-              <InputBox
-                key={index}
-                name={item.name}
-                type={item.type}
-                ref={register(item.register)}
-                placeholder={
-                  icelandic ? item.placeholder.is : item.placeholder.en
-                }
-              ></InputBox>
+              {item.type === "checkbox" ? (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                    alignItems: "center",
+                    paddingBottom: "1rem",
+                    maxWidth: "25rem",
+                  }}
+                >
+                  <label style={{ paddingLeft: "1rem" }}>
+                    {icelandic ? item.placeholder.is : item.placeholder.en}
+                  </label>
+                  <InputBox
+                    key={index}
+                    name={item.name}
+                    type={item.type}
+                    ref={register(item.register)}
+                  ></InputBox>
+                </div>
+              ) : (
+                <InputBox
+                  key={index}
+                  name={item.name}
+                  type={item.type}
+                  ref={register(item.register)}
+                  placeholder={
+                    icelandic ? item.placeholder.is : item.placeholder.en
+                  }
+                ></InputBox>
+              )}
+
               <ErrorMessage
                 as={<Warning></Warning>}
                 errors={errors}

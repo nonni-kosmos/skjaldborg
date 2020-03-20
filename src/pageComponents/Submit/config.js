@@ -30,6 +30,15 @@ export const applicantFormSchema = {
       type: "text",
       register: { required: true, maxLength: 20 },
     },
+    {
+      name: "postlisti",
+      placeholder: {
+        is: "Tengiliður skráður á póstlista skjaldborgar",
+        en: "Contact person subsribed to skjaldborg email list",
+      },
+      type: "checkbox",
+      register: { required: false },
+    },
   ],
 }
 

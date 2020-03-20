@@ -55,13 +55,13 @@
 - [x] þýðingar
 - [x] fix scroll issue mobile
 - [x] remove theme provider junk
-- [ ] tengiliður skrá póstlista
-- [ ] bil á milli login & register
-- [ ] full name ?
-- [ ] Titlar í Content
+- [x] tengiliður skrá póstlista
+- [x] bil á milli login & register
+- [x] full name ?
+- [x] Titlar í Content
 - [ ] Lang Btn
 - [ ] Baldur
 - [x] Safari fix
-- [ ] Checkbox tengiliður
+- [x] Checkbox tengiliður
 - [ ] Ýta Erni ofar
 - [ ] fótur uppfærsla

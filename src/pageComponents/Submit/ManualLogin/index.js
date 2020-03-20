@@ -12,6 +12,8 @@ const ManualLogin = () => {
       <>
         <SignIn></SignIn>
         <br></br>
+        <p style={{ textAlign: "center" }}>{icelandic ? "EÐA" : "OR"}</p>
+        <br></br>
         <BigBtn
           action={() => setRegistered(false)}
           button

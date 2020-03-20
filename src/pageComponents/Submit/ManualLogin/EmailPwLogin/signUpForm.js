@@ -26,11 +26,6 @@ const Form = () => {
   const onSubmit = data => {
     auth
       .createUserWithEmailAndPassword(data.email, data.password)
-      .then(result => {
-        result.user.updateProfile({
-          displayName: data.name,
-        })
-      })
       .catch(err => {
         if (err.code === "auth/email-already-in-use")
           alert("Email already in use!")
@@ -47,15 +42,7 @@ const Form = () => {
       <StyledForm onSubmit={handleSubmit(onSubmit)} action="POST">
         <InputBox
           ref={register({ required: true })}
-          placeholder="Name"
-          type="name"
-          name="name"
-          id="applicant-name"
-        ></InputBox>
-        {errors.name && <Warning>{errorMsg}</Warning>}
-        <InputBox
-          ref={register({ required: true })}
-          placeholder="Email"
+          placeholder={icelandic ? "Netfang" : "Email"}
           type="email"
           name="email"
           id="applicant-email"
@@ -63,7 +50,7 @@ const Form = () => {
         {errors.name && <Warning>{errorMsg}</Warning>}
         <InputBox
           ref={register({ required: true })}
-          placeholder="Password"
+          placeholder={icelandic ? "Lykilorð" : "Password"}
           type="password"
           name="password"
           id="applicant-password"

@@ -40,7 +40,7 @@ const Form = () => {
     <StyledForm onSubmit={handleSubmit(onSubmit)} action="POST">
       <InputBox
         ref={register({ required: true })}
-        placeholder="Email"
+        placeholder={icelandic ? "Netfang" : "Email"}
         type="email"
         name="email"
         id="applicant-email"
@@ -48,7 +48,7 @@ const Form = () => {
       {errors.name && <Warning>{errorMsg}</Warning>}
       <InputBox
         ref={register({ required: true })}
-        placeholder="Password"
+        placeholder={icelandic ? "Lykilorð" : "Password"}
         type="password"
         name="password"
         id="applicant-password"
