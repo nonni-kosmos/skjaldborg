@@ -60,9 +60,9 @@
 - [x] full name ?
 - [x] Titlar í Content
 - [x] Lang Btn
-- [ ] Baldur
+- [x] Baldur
 - [x] Safari fix
 - [x] Checkbox tengiliður
-- [ ] Ýta Erni ofar
+- [x] Ýta Erni ofar
 - [ ] fótur uppfærsla
 - [ ] fix umsokn stuttering if logged in

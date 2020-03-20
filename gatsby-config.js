@@ -38,7 +38,8 @@ const metadata = {
   pages: pages,
   dropdownpages: dropdownPages,
   contact: {
-    people: [{ name: "Kristín Andrea Þórðardóttir", tel: "+354 820 3646" }],
+    email: "skjaldborg@skjaldborg.is",
+    tel: "+354 844 2983",
     socialMedia: [
       {
         name: "facebook",
