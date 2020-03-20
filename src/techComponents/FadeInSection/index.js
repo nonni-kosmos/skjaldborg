@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import styled, { css } from "styled-components"
+require("intersection-observer")
 
 const Slider = styled.div`
   opacity: 0;
