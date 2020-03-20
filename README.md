@@ -65,3 +65,5 @@
 - [ ] Checkbox tengiliður
 - [ ] Ýta Erni ofar
 - [ ] fótur uppfærsla
+
+COM EON!!!
