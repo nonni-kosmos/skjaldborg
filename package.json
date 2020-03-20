@@ -4,6 +4,7 @@
   "description": "Rock on!",
   "version": "0.1.0",
   "license": "MIT",
+  "browserslist": [">0.25%", "not dead", "safari > 9"],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
