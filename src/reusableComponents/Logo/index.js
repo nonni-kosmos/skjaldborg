@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Logo } from "./styled"
 
-export default () => {
+export default ({ footer }) => {
   return (
-    <Container to="/">
+    <Container footer={footer ? "true" : "false"} to="/">
       <Logo></Logo>
     </Container>
   )

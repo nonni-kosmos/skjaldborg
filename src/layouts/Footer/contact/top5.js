@@ -4,8 +4,9 @@ import styled from "styled-components"
 
 const LogoWrap = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
   img {
     height: 5rem;
     max-width: 9rem;

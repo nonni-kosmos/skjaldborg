@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import Img from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import LogoSVG from "../../../static/assets/svg/logo.svg"
@@ -34,11 +34,17 @@ const beamGrow = keyframes`
 
 export const Container = styled(AniLink)`
   height: 100%;
-  width: 11rem;
   padding-left: 2rem;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  ${props =>
+    props.footer === "true" &&
+    css`
+      position: absolute;
+      top: 0;
+      height: 12rem;
+    `}
 `
 export const Image = styled(Img)`
   width: 100%;
