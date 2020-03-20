@@ -53,9 +53,15 @@
 
 - [x] færa takka á forsíðu
 - [ ] fótur uppfærsla
-- [ ] þýðingar
+- [x] þýðingar
 - [x] fix scroll issue mobile
 - [x] remove theme provider junk
 - [ ] tengiliður skrá póstlista
 - [ ] bil á milli login & register
 - [ ] full name ?
+- [ ] Titlar í Content
+- [ ] Lang Btn
+- [ ] Baldur
+- [ ] Safari!
+- [ ] Checkbox tengiliður
+- [ ] Ýta Erni ofar

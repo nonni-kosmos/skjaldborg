@@ -1,3 +1,6 @@
+// fix for Safari
+require("intersection-observer")
+
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const path = require("path")
 const slugify = require("slugify")
