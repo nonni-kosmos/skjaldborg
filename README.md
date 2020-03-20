@@ -61,7 +61,7 @@
 - [ ] Titlar í Content
 - [ ] Lang Btn
 - [ ] Baldur
-- [ ] Safari!
+- [ ] Safari fix
 - [ ] Checkbox tengiliður
 - [ ] Ýta Erni ofar
 - [ ] fótur uppfærsla
