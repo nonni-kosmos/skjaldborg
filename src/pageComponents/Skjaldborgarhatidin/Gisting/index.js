@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { GuesthousesGrid } from "./styled"
 import Guesthouse from "./Guesthouse"
 import Fadeinsection from "../../../techComponents/FadeInSection"
-import Ernir from "../../../reusableComponents/Ernir"
+import Adili from "../../../reusableComponents/Adili"
 
 // Gistihúsin
 const Gistihusin = ({ data: { guesthouses } }) => {
@@ -21,7 +21,7 @@ const Gistihusin = ({ data: { guesthouses } }) => {
           </Fadeinsection>
         ))}
       </GuesthousesGrid>
-      <Ernir></Ernir>
+      <Adili></Adili>
     </>
   )
 }

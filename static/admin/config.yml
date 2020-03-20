@@ -41,10 +41,10 @@ collections:
       - { label: "Video", name: "video", widget: "file", required: false }
       - { label: "Texti", name: "body", widget: "markdown" }
       - { label: "Order", name: "order", widget: "number" }
-  # Flugfélagið Ernir
-  - name: "Ernir"
-    label: "Flugfélagið Ernir"
-    folder: "static/ernir"
+  # Aðilar
+  - name: "Adilar"
+    label: "Aðilar"
+    folder: "static/adilar"
     create: true
     editor:
       preview: false

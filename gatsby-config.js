@@ -109,8 +109,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `ernir`,
-        path: `${__dirname}/static/ernir`,
+        name: `adilar`,
+        path: `${__dirname}/static/adilar`,
       },
     },
     {

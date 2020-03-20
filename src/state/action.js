@@ -18,3 +18,8 @@ export const saveApplicant = applicant => ({
   type: SAVE_APPLICANT,
   applicant,
 })
+export const SET_PATHNAME = "SET_PATHNAME"
+export const setPathname = pathname => ({
+  type: SET_PATHNAME,
+  pathname,
+})

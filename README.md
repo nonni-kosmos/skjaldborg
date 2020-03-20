@@ -59,9 +59,10 @@
 - [x] bil á milli login & register
 - [x] full name ?
 - [x] Titlar í Content
-- [ ] Lang Btn
+- [x] Lang Btn
 - [ ] Baldur
 - [x] Safari fix
 - [x] Checkbox tengiliður
 - [ ] Ýta Erni ofar
 - [ ] fótur uppfærsla
+- [ ] fix umsokn stuttering if logged in

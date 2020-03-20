@@ -3,6 +3,7 @@ import {
   TRIGGER_MENU,
   CHANGE_LANGUAGE,
   SAVE_APPLICANT,
+  SET_PATHNAME,
 } from "./action"
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   menu: `closed`,
   icelandic: true,
   applicant: null,
+  pathname: "/",
 }
 
 export const reducer = (state = initialState, action) => {
@@ -32,6 +34,8 @@ export const reducer = (state = initialState, action) => {
       return { ...state, icelandic: !state.icelandic }
     case SAVE_APPLICANT:
       return { ...state, applicant: action.applicant }
+    case SET_PATHNAME:
+      return { ...state, pathname: action.pathname }
     default:
       return state
   }
