@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { redColor } from "../../layouts/PageContainer/styled"
+import { breakpoints } from "../../constants"
 
 export const Container = styled.div`
   line-height: 138%;
@@ -12,6 +13,7 @@ export const Container = styled.div`
   }
   p {
     color: ${redColor};
+    margin-top: 1.5rem;
   }
   blockquote > * {
     text-transform: uppercase;
@@ -28,5 +30,16 @@ export const Container = styled.div`
   }
   a {
     color: inherit;
+  }
+  strong {
+    font-family: titlar;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+    font-size: 1.6rem;
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      font-size: 2rem;
+    }
   }
 `

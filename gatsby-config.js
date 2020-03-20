@@ -56,6 +56,7 @@ const metadata = {
 module.exports = {
   siteMetadata: metadata,
   plugins: [
+    `gatsby-plugin-polyfill-io`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

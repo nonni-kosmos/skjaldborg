@@ -1,6 +1,3 @@
-// fix for Safari
-require("intersection-observer")
-
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const path = require("path")
 const slugify = require("slugify")
@@ -9,9 +6,6 @@ exports.onCreateNode = ({ node }) => {
   fmImagesToRelative(node)
 }
 
-// gatsby-node.js
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 

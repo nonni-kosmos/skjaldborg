@@ -52,7 +52,6 @@
   * [x] Max chars í textareas
 
 - [x] færa takka á forsíðu
-- [ ] fótur uppfærsla
 - [x] þýðingar
 - [x] fix scroll issue mobile
 - [x] remove theme provider junk
@@ -65,3 +64,4 @@
 - [ ] Safari!
 - [ ] Checkbox tengiliður
 - [ ] Ýta Erni ofar
+- [ ] fótur uppfærsla
