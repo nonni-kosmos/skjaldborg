@@ -6,7 +6,7 @@ import Fadeinsection from "../../../techComponents/FadeInSection"
 import Adili from "../../../reusableComponents/Adili"
 
 // Gistihúsin
-const Gistihusin = ({ data: { guesthouses } }) => {
+const Gistihusin = ({ data: { guesthouses, ernir, baldur } }) => {
   return (
     <>
       <GuesthousesGrid>
@@ -21,7 +21,8 @@ const Gistihusin = ({ data: { guesthouses } }) => {
           </Fadeinsection>
         ))}
       </GuesthousesGrid>
-      <Adili></Adili>
+      <Adili item={ernir}></Adili>
+      <Adili item={baldur}></Adili>
     </>
   )
 }
@@ -50,6 +51,36 @@ export default props => (
                 baer
                 heimilisfang
                 simi
+              }
+            }
+          }
+        }
+        ernir: markdownRemark(
+          fileAbsolutePath: { regex: "/flugfélagið-ernir.md/" }
+        ) {
+          html
+          frontmatter {
+            title
+            title_en
+            mynd {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        baldur: markdownRemark(fileAbsolutePath: { regex: "/baldur.md/" }) {
+          html
+          frontmatter {
+            title
+            title_en
+            mynd {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }

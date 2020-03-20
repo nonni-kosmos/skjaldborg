@@ -4,12 +4,13 @@ import Img from "gatsby-image"
 
 export const Container = styled.div`
   box-sizing: border-box;
-  padding: 0;
+  padding: 1rem 0;
+
   .content-wrap {
     display: grid;
   }
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    padding: 5rem;
+    padding: 1rem 5rem 3rem;
     .content-wrap {
       grid-template-columns: 1fr 1fr;
     }
