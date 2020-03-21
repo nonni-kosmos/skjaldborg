@@ -10,7 +10,7 @@ Auk þess að frumsýna íslenskar myndir sinnir hátíðin heimildamyndagerð �
 
 Þær íslensku heimildamyndir sem sýndar eru á hátíðinni keppa um tvenn verðlaun; áhorfendaverðlaunin Einarinn, sem hafa verið veitt frá upphafi, og dómnefndarverðlaunin Ljóskastarann, sem kynnt voru til leiks árið 2017. Það þykir orðinn gæðastimpill að komast inn á hátíðna en verðlaunamyndir hátíðarinnar hafa oftar en ekki verið tilnefndar til Edduverðlaunanna í kjölfarið og margar unnið til alþjóðlegra kvikmyndaverðlauna.
 
-**Upphafið**
+# Upphafið
 
 Leikmyndahönnuðurinn Hálfdán Pedersen kom óvænt til Patreksfjarðar árið 2006. Á rölti sínu um bæinn rambaði hann inn í Skjaldborgarbíó og uppgötvaði þá bíósalinn fagra og hið einstaka starf sem Lionsmenn höfðu unnið til að reka og viðhalda bíóinu. Hálfdán fór aftur heim en bíóið sat áfram í huga hans. Nokkru síðar átti hann spjall við félaga sinn, handritshöfundinn og rithöfundinn Huldar Breiðfjörð og í sameiningu ákváðu þeir að koma á fót sérhæfðri íslenskri heimildamyndahátíð sem haldin yrði í Skjaldborgarbíói enda var á þeim tíma enginn slíkur vettvangur var til staðar á Íslandi. Komið var á fót skipulagsnefnd með heimamönnum og bransafólki að sunnan og fyrsta hátíðin haldin um hvítasunnuhelgina 2007. Hátíðin hefur allar götur síðan verið árlegur fögnuður íslenskrar heimildamyndagerðar með sérstaka áherslu á metnaðarfulla dagskrá og skemmtilegt andrúmsloft.
 
