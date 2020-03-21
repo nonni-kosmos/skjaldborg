@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Container } from "./styled"
 import { useSelector } from "react-redux"
+import useSetTargetBlank from "../../hooks/useSetTargetBlank"
 
 const splitLang = html => {
   return html.split("<p>-ENSKA-</p>")
@@ -19,7 +20,14 @@ const Content = ({ html }) => {
     }
   }, [icelandic, html])
 
-  return <Container dangerouslySetInnerHTML={{ __html: lang }}></Container>
+  useSetTargetBlank("content-wrap")
+
+  return (
+    <Container
+      id="content-wrap"
+      dangerouslySetInnerHTML={{ __html: lang }}
+    ></Container>
+  )
 }
 
 export default Content

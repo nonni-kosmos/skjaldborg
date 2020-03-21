@@ -17,8 +17,9 @@ const LogoWrap = styled.div`
 const Top5 = ({ data: { topfive } }) => {
   return (
     <LogoWrap>
-      {topfive.nodes.map(item => (
+      {topfive.nodes.map((item, index) => (
         <a
+          key={index}
           rel="noopener noreferrer"
           href={item.frontmatter.sponsor_url}
           target="_blank"

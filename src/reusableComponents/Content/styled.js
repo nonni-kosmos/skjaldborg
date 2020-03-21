@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
   p {
     color: ${redColor};
-    margin-top: 1.5rem;
+    margin: 0.8rem 0 0.8rem 0;
   }
   blockquote > * {
     text-transform: uppercase;
@@ -35,11 +35,11 @@ export const Container = styled.div`
     font-family: titlar;
     font-weight: normal;
     text-transform: uppercase;
-    margin: 1rem 0;
+    margin: 0;
 
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     @media only screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 `

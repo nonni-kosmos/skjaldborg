@@ -33,8 +33,8 @@ export const applicantFormSchema = {
     {
       name: "postlisti",
       placeholder: {
-        is: "Tengiliður skráður á póstlista skjaldborgar",
-        en: "Contact person subsribed to skjaldborg email list",
+        is: "Tengiliður skráður á póstlista Skjaldborgar",
+        en: "Contact person subsribed to Skjaldborg email list",
       },
       type: "checkbox",
       register: { required: false },

@@ -66,8 +66,10 @@
 - [x] Ýta Erni ofar
 - [ ] fótur uppfærsla
 - [ ] fix umsokn stuttering if logged in
-- [ ] upphafið titill minnka & minka bil milli málsgreina
-- [ ] línkar í bíó
-- [ ] lítið -s í skjaldborg póstlista checkbox
-- [ ] titlar verða línkar => Aðilar
+- [x] upphafið titill minnka & minka bil milli málsgreina
+- [x] línkar í bíó
+- [x] lítið -s í skjaldborg póstlista checkbox
+- [x] titlar verða línkar => Aðilar
 - [x] Sæferðir: Baldur | Sea Tours: Baldur
+- [ ] skoða alla síðuna í Safari
+- [x] línkar open in new tab

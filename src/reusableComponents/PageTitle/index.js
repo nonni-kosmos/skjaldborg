@@ -12,7 +12,10 @@ export default styled.h1`
     `}
   text-transform: uppercase;
   font-size: 1.6rem;
-
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     font-size: 2rem;
   }

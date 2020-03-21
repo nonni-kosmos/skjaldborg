@@ -10,7 +10,13 @@ const Adili = ({ item }) => {
   return (
     <Container>
       <PageTitle>
-        {icelandic ? item.frontmatter.title : item.frontmatter.title_en}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={item.frontmatter.heimasida}
+        >
+          {icelandic ? item.frontmatter.title : item.frontmatter.title_en}
+        </a>
       </PageTitle>
       <div className="content-wrap">
         <ImageContainer>

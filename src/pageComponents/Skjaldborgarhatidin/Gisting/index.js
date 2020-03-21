@@ -62,6 +62,7 @@ export default props => (
           frontmatter {
             title
             title_en
+            heimasida
             mynd {
               childImageSharp {
                 fluid {
@@ -76,6 +77,7 @@ export default props => (
           frontmatter {
             title
             title_en
+            heimasida
             mynd {
               childImageSharp {
                 fluid {
