@@ -2,6 +2,7 @@
 title: Flugfélagið Ernir
 title-en: Eagle Air
 mynd: /assets/ernir.jpg
+heimasida: 'https://www.ernir.is/'
 ---
 Flugfélagið Ernir flýgur til 6 áfangastaða innanlands auk þess að bjóða upp hentugar flugvélar í leiguflug innanlands sem utan. Vélarnar henta vel til flugs á Íslandi, Grænlandi, Færeyjum og meginlandi Evrópu.
 
