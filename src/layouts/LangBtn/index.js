@@ -9,7 +9,7 @@ const LangBtn = () => {
   const pathname = useSelector(state => state.reducer.pathname)
   return (
     <Box onClick={() => dispatch({ type: CHANGE_LANGUAGE })}>
-      <Text umsokn={pathname.includes("/umsokn/")}>
+      <Text umsokn={pathname.includes("/umsokn")}>
         <Lang>{icelandic ? "English" : "Íslenska"}</Lang>
       </Text>
     </Box>

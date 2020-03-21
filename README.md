@@ -70,4 +70,4 @@
 - [ ] línkar í bíó
 - [ ] lítið -s í skjaldborg póstlista checkbox
 - [ ] titlar verða línkar => Aðilar
-- [ ] Sæferðir: Baldur | Sea Tours: Baldur
+- [x] Sæferðir: Baldur | Sea Tours: Baldur
