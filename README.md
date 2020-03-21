@@ -73,3 +73,4 @@
 - [x] Sæferðir: Baldur | Sea Tours: Baldur
 - [ ] skoða alla síðuna í Safari
 - [x] línkar open in new tab
+- [ ] forsíðu myndir fix - 3 litlar
