@@ -11,7 +11,7 @@ Skjaldborgarbíó stendur við Aðalstræti 27 á Patreksfirði ([Sjá á korti]
 
 Samstarf Lionsklúbbsins og aðstandenda Skjaldborgar - hátíðar íslenskra heimildamynda hefur verið farsælt frá stofnun hátíðarinnar og þegar Lionsklúbburinn ákvað að ráðast í það stórvirki að safna fyrir stafrænu DCP sýningarkerfi tóku aðstandendur hátíðarinnar þátt í því ferli. Lionsklúbburinn lyfti grettistaki í söfnuninni en einstaklingar, fyrirtæki og stofnanir lögðust á eitt og jafnframt fór fram hópfjármögnunarsöfnun á Karolina Fund. Árið 2016 var hið nýja stafræna sýningarkerfi svo tekið í notkun.
 
-Það er einsdæmi á Íslandi og jafnvel á heimsvísu að sjálfboðaliðasamtök á borð við Lionsklúbbinn reki kvikmyndahús í svo fámennum bæ. Þetta þykir aðstandenum hátíðarinnar mikil fyrirmyndar samfélagsþjónusta!
+Það er einsdæmi á Íslandi og jafnvel á heimsvísu að sjálfboðaliðasamtök á borð við Lionsklúbbinn reki kvikmyndahús í svo fámennum bæ. Þetta þykir aðstandendum hátíðarinnar mikil fyrirmyndar samfélagsþjónusta!
 
 \-ENSKA-
 
