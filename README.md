@@ -76,3 +76,6 @@
 - [ ] forsíðu myndir fix - 3 litlar
 - [ ] tengja mailjet with firebase/kóða
 - [x] drag & drop
+- [ ] aðrir aðstandendur
+- [ ] max stafir í boxi stoppar
+- [ ] ekki nógu áberandi dropdown

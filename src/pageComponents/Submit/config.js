@@ -123,19 +123,17 @@ export const formSchema = {
       register: { required: true },
       wip: false,
     },
-
-    {
-      name: "adrir",
-      placeholder: {
-        is: "Aðrir aðstandendur",
-        en: "Other participants",
-      },
-      type: "text",
-      required: false,
-      register: { required: false },
-      wip: true,
-    },
   ],
+  adrir: {
+    name: "adrir",
+    placeholder: {
+      is: "Aðrir aðstandendur",
+      en: "Other participants",
+    },
+    type: "text",
+    register: { required: false },
+    wip: true,
+  },
   verk: {
     text: [
       {
@@ -243,8 +241,10 @@ export const formSchema = {
         en: "Still file size must be between 500KB and 5MB.",
       },
       placeholder: {
-        is: "Smelltu hér til að velja ljósmynd",
-        en: "Click here to upload a still",
+        is: "Dragðu / Smelltu hér til að velja ljósmynd",
+        en: "Drag / Click here to upload a still",
+        is_mobile: "Snertu hér til að velja ljósmynd",
+        en_mobile: "Touch to upload a still",
       },
       accept: "image/png, image/jpg, image/jpeg",
     },

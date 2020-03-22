@@ -17,6 +17,7 @@ import Adstandendur from "./components/adstandendur"
 import VerkText from "./components/verkText"
 import TopBox from "./components/topBox"
 import { Hint } from "../styled"
+import Adrir from "./components/adrir"
 
 const MovieForm = () => {
   const {
@@ -124,6 +125,9 @@ const MovieForm = () => {
                 wip={wip}
               ></Adstandendur>
             ))}
+
+            {/* AÐRIR
+            <Adrir></Adrir> */}
 
             {/* IMAGE #1 */}
             <FileInput

@@ -2,6 +2,7 @@ import React from "react"
 import { FileBTN, InputBox, Hint } from "../../styled"
 import { ErrorMessage } from "react-hook-form"
 import { uploadLimit } from "../../config"
+import { useSelector } from "react-redux"
 
 const FileInput = ({
   imageOne,
@@ -40,6 +41,19 @@ const FileInput = ({
     console.log(event.type)
   }
 
+  const platform = useSelector(state => state.reducer.platform)
+
+  const [placeholder, setPlaceholder] = React.useState("")
+  React.useEffect(() => {
+    if (platform !== "desktop") {
+      setPlaceholder(
+        icelandic ? item.placeholder.is_mobile : item.placeholder.en_mobile
+      )
+    } else {
+      setPlaceholder(icelandic ? item.placeholder.is : item.placeholder.en)
+    }
+  }, [platform, icelandic, item])
+
   return (
     <>
       <Hint>{icelandic ? item.hint.is : item.hint.en} ( png, jpg, jpeg )</Hint>
@@ -54,11 +68,7 @@ const FileInput = ({
         }
         htmlFor={item.name}
       >
-        {imageOne
-          ? imageOne.name
-          : icelandic
-          ? item.placeholder.is
-          : item.placeholder.en}
+        {imageOne ? imageOne.name : placeholder}
         <InputBox
           onChange={e => validate(e, e.target.files[0])}
           style={{ display: "none" }}
