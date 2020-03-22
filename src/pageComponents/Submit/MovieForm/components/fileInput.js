@@ -11,10 +11,9 @@ const FileInput = ({
   forwardedRef,
   item,
 }) => {
-  const validate = event => {
-    const image = event.target.files[0]
+  const validate = (event, image) => {
+    // const image = event.target.files[0]
     // validation
-    const { size } = image
 
     const messages = {
       en: "Chosen image is not within acceptable paramters.",
@@ -23,42 +22,54 @@ const FileInput = ({
 
     // if validated
 
-    if (size >= uploadLimit.min && size <= uploadLimit.max) {
+    if (image.size >= uploadLimit.min && image.size <= uploadLimit.max) {
       setImageOne(image)
     } else {
       setImageOne(null)
-      event.target.value = ""
+      // event.target.value = ""
       alert(icelandic ? messages.is : messages.en)
     }
+  }
+
+  // prevents drop
+  const handleDrop = event => {
+    event.preventDefault()
+
+    if (event.type === "drop") validate(event, event.dataTransfer.files[0])
+
+    console.log(event.type)
   }
 
   return (
     <>
       <Hint>{icelandic ? item.hint.is : item.hint.en} ( png, jpg, jpeg )</Hint>
       <FileBTN
+        onDrop={e => handleDrop(e)}
+        onDragOver={e => handleDrop(e)}
+        onDragEnter={e => handleDrop(e)}
+        id="file-btn"
         style={
           ({ paddingTop: "1rem" },
           imageOne ? { color: "green", borderColor: "green" } : null)
         }
-        htmlFor="imageOne"
+        htmlFor={item.name}
       >
-        {imageOne ? imageOne.name : icelandic ? "Ljósmynd" : "Still"}
+        {imageOne
+          ? imageOne.name
+          : icelandic
+          ? item.placeholder.is
+          : item.placeholder.en}
         <InputBox
-          onChange={e => validate(e)}
+          onChange={e => validate(e, e.target.files[0])}
           style={{ display: "none" }}
-          accept="image/png, image/jpg, image/jpeg"
-          type="file"
-          name="imageOne"
-          id="imageOne"
-          placeholder="Engin skrá valin"
+          accept={item.accept}
+          type={item.type}
+          name={item.name}
+          id={item.name}
           ref={forwardedRef}
         />
-        <ErrorMessage
-          name="imageOne"
-          errors={errors}
-          message={icelandic ? " vantar!" : " required!"}
-        ></ErrorMessage>
       </FileBTN>
+      <ErrorMessage name={item.name} errors={errors}></ErrorMessage>
     </>
   )
 }

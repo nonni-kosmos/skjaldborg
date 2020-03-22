@@ -74,3 +74,5 @@
 - [ ] skoða alla síðuna í Safari
 - [x] línkar open in new tab
 - [ ] forsíðu myndir fix - 3 litlar
+- [ ] tengja mailjet with firebase/kóða
+- [x] drag & drop

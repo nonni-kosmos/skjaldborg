@@ -90,14 +90,21 @@ export const Warning = styled.p`
   font-size: 0.9rem;
 `
 export const FileBTN = styled.label`
-  padding: 1rem;
-  border: 1px solid ${redColor};
+  padding: 5rem;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px dashed ${redColor};
   color: ${redColor};
   width: auto;
   margin: 0 auto;
   margin-bottom: 1rem;
-  &&:hover {
-    cursor: pointer;
+  transition: 0.2s;
+  overflow: hidden;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    &&:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+    }
   }
   ${props =>
     props.status === "ok" &&

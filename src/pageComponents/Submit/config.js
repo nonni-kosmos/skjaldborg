@@ -234,7 +234,7 @@ export const formSchema = {
       },
     ],
     image: {
-      name: "image",
+      name: "imageOne",
       type: "file",
       register: { required: true },
       wip: true,
@@ -242,6 +242,11 @@ export const formSchema = {
         is: "Skáarstærð ljósmyndar verður að vera á milli 500KB og 5MB.",
         en: "Still file size must be between 500KB and 5MB.",
       },
+      placeholder: {
+        is: "Smelltu hér til að velja ljósmynd",
+        en: "Click here to upload a still",
+      },
+      accept: "image/png, image/jpg, image/jpeg",
     },
   },
 }

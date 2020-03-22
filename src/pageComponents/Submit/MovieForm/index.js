@@ -16,6 +16,7 @@ import Hlekkir from "./components/hlekkir"
 import Adstandendur from "./components/adstandendur"
 import VerkText from "./components/verkText"
 import TopBox from "./components/topBox"
+import { Hint } from "../styled"
 
 const MovieForm = () => {
   const {
@@ -97,6 +98,11 @@ const MovieForm = () => {
               {icelandic ? "Upplýsingar um verk" : "Project details"}
             </legend>
             {/* VERK */}
+            <Hint>
+              {icelandic
+                ? "Vinsamlegast athugið: Aðskiljið með kommu milli nafna ef fleiri en einn aðili í hverri stöðu."
+                : "Please note: Separate names with commas if more than one person per position."}
+            </Hint>
             {formSchema.verk.text.map((item, index) => (
               <VerkText
                 errors={errors}
