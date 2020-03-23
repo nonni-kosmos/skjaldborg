@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { generateImageLocation, formSchema } from "../config"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { SAVE_APPLICANT } from "../../../state/action"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
@@ -9,7 +9,6 @@ import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
 import Applicant from "./components/applicant"
 import BigBtn from "../../../reusableComponents/BigBtn"
-import { useSelector } from "react-redux"
 import FileInput from "./components/fileInput"
 import TextArea from "./components/textArea"
 import Hlekkir from "./components/hlekkir"
@@ -27,6 +26,10 @@ const MovieForm = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const dispatch = useDispatch()
+
+  const adrir = useSelector(state => state.reducer.adrir)
+
+  console.log(adrir)
 
   const onSubmit = (data, e) => {
     console.log(data)
@@ -59,6 +62,7 @@ const MovieForm = () => {
           imageOneLocation: imageOneURL,
           // - spread that butter baby
           ...data,
+          adrir: { ...adrir },
         })
         .then(() => {
           firestore.collection("applicants").add({
@@ -126,8 +130,8 @@ const MovieForm = () => {
               ></Adstandendur>
             ))}
 
-            {/* AÐRIR
-            <Adrir></Adrir> */}
+            {/* AÐRIR */}
+            <Adrir></Adrir>
 
             {/* IMAGE #1 */}
             <FileInput

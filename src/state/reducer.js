@@ -4,6 +4,8 @@ import {
   CHANGE_LANGUAGE,
   SAVE_APPLICANT,
   SET_PATHNAME,
+  ADD_ADRIR,
+  RESET_ADRIR,
 } from "./action"
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   icelandic: true,
   applicant: null,
   pathname: "/",
+  adrir: [],
 }
 
 export const reducer = (state = initialState, action) => {
@@ -36,6 +39,20 @@ export const reducer = (state = initialState, action) => {
       return { ...state, applicant: action.applicant }
     case SET_PATHNAME:
       return { ...state, pathname: action.pathname }
+    case ADD_ADRIR:
+      let list = state.adrir
+      let stringifiedList = []
+
+      // stringify object list so it is comparable
+      for (var i = 0; i < list.length; i++) {
+        stringifiedList.push(JSON.stringify(list[i]))
+      }
+
+      if (!stringifiedList.includes(JSON.stringify(action.annar))) {
+        return { ...state, adrir: [...state.adrir, action.annar] }
+      } else return state
+    case RESET_ADRIR:
+      return { ...state, adrir: [] }
     default:
       return state
   }

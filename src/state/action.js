@@ -23,3 +23,12 @@ export const setPathname = pathname => ({
   type: SET_PATHNAME,
   pathname,
 })
+export const ADD_ADRIR = "ADD_ADRIR"
+export const addAdrir = annar => ({
+  type: ADD_ADRIR,
+  annar,
+})
+export const RESET_ADRIR = "RESET_ADRIR"
+export const resetAdrir = () => ({
+  type: RESET_ADRIR,
+})

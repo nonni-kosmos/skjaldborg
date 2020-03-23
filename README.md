@@ -64,18 +64,22 @@
 - [x] Safari fix
 - [x] Checkbox tengiliður
 - [x] Ýta Erni ofar
-- [ ] fótur uppfærsla
-- [ ] fix umsokn stuttering if logged in
+
 - [x] upphafið titill minnka & minka bil milli málsgreina
 - [x] línkar í bíó
 - [x] lítið -s í skjaldborg póstlista checkbox
 - [x] titlar verða línkar => Aðilar
 - [x] Sæferðir: Baldur | Sea Tours: Baldur
-- [ ] skoða alla síðuna í Safari
 - [x] línkar open in new tab
-- [ ] forsíðu myndir fix - 3 litlar
-- [ ] tengja mailjet with firebase/kóða
 - [x] drag & drop
-- [ ] aðrir aðstandendur
-- [ ] max stafir í boxi stoppar
-- [ ] ekki nógu áberandi dropdown
+
+# Mánudagur 23-3-2020
+
+- [x] aðrir aðstandendur | umsókn
+- [ ] max stafir í boxi stoppar input | umsókn
+- [ ] ekki nógu áberandi dropdown | umsókn
+- [ ] fótur uppfærsla | framendi
+- [ ] fix umsokn stuttering if logged in | bakendi
+- [ ] skoða alla síðuna í Safari | almennt
+- [ ] forsíðu myndir fix - 3 litlar | framendi
+- [ ] tengja mailjet with firebase/kóða | bakendi
