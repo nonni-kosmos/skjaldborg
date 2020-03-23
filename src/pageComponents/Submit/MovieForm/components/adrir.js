@@ -6,21 +6,35 @@ import styled from "styled-components"
 import { useDispatch } from "react-redux"
 import { ADD_ADRIR, RESET_ADRIR } from "../../../../state/action"
 import { redColor, greenColor } from "../../../../layouts/PageContainer/styled"
+import { breakpoints } from "../../../../constants"
 
 const InputWrap = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 1rem 0 1rem 0;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    flex-direction: row;
+    padding: 0;
+    border-bottom: none;
+  }
 `
 export const Button = styled.button`
   padding: 1rem;
   box-sizing: border-box;
-  margin: 1rem 0 1rem 1rem;
   border: 2px solid ${redColor};
   color: ${redColor};
   background: ${props => props.background};
+
+  margin: 1rem;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    margin: 1rem 0 1rem 1rem;
+  }
 `
 const PlusWrap = styled.div`
-  height: 2rem;
+  height: 7rem;
   width: 100%;
   display: flex;
   justify-content: center;

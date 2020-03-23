@@ -33,7 +33,7 @@ const metadata = {
   favicon: `/assets/favicon.png`,
   logo: `/assets/logo_colored.png`,
   year: 2020,
-  period: `29. maí - 1. júní`,
+  period: `14. ágúst - 17. ágúst`,
   location: `Patreksfjörður`,
   pages: pages,
   dropdownpages: dropdownPages,

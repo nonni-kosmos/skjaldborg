@@ -95,6 +95,7 @@ const MovieForm = () => {
             onChange={setWip}
           ></TopBox>
           <form
+            style={{ marginBottom: "2rem" }}
             name="moviesubmitform"
             onSubmit={handleSubmit(onSubmit)}
             method="POST"
