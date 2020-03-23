@@ -41,16 +41,16 @@ export const reducer = (state = initialState, action) => {
       return { ...state, pathname: action.pathname }
     case ADD_ADRIR:
       let list = state.adrir
-      let stringifiedList = []
 
-      // stringify object list so it is comparable
-      for (var i = 0; i < list.length; i++) {
-        stringifiedList.push(JSON.stringify(list[i]))
-      }
-
-      if (!stringifiedList.includes(JSON.stringify(action.annar))) {
+      // already exists, let's update it
+      if (list[action.annar.id]) {
+        console.log("Uppfæri númer " + action.annar.id)
+        list[action.annar.id] = action.annar
+        return { ...state, adrir: [...list] }
+      } else {
+        // append if not exists
         return { ...state, adrir: [...state.adrir, action.annar] }
-      } else return state
+      }
     case RESET_ADRIR:
       return { ...state, adrir: [] }
     default:

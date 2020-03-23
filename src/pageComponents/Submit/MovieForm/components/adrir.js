@@ -5,11 +5,19 @@ import { InputBox } from "../../styled"
 import styled from "styled-components"
 import { useDispatch } from "react-redux"
 import { ADD_ADRIR, RESET_ADRIR } from "../../../../state/action"
+import { redColor, greenColor } from "../../../../layouts/PageContainer/styled"
 
 const InputWrap = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  display: flex;
+  justify-content: space-between;
+`
+export const Button = styled.button`
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 1rem 0 1rem 1rem;
+  border: 2px solid ${redColor};
+  color: ${redColor};
+  background: ${props => props.background};
 `
 const PlusWrap = styled.div`
   height: 2rem;
@@ -33,6 +41,46 @@ const PlusWrap = styled.div`
   }
 `
 
+const Input = ({ index, icelandic }) => {
+  const [nafn, setNafn] = useState("")
+  const [hlutverk, setHlutverk] = useState("")
+
+  const dispatch = useDispatch()
+
+  const [saved, setSaved] = useState(false)
+
+  return (
+    <InputWrap onChange={() => setSaved(false)}>
+      <InputBox
+        onChange={e => {
+          setNafn(e.target.value)
+        }}
+        name={"nafn"}
+        placeholder={icelandic ? "Nafn" : "Name"}
+      ></InputBox>
+      <InputBox
+        onChange={e => setHlutverk(e.target.value)}
+        name={"hlutverk"}
+        placeholder={icelandic ? "Hlutverk" : "Role"}
+      ></InputBox>
+      <Button
+        background={saved ? greenColor : "transparent"}
+        onClick={e => {
+          e.preventDefault()
+          dispatch({
+            type: ADD_ADRIR,
+            annar: { [hlutverk]: nafn, id: index },
+          })
+          setSaved(true)
+          console.log(saved)
+        }}
+      >
+        {icelandic ? "Vista" : "Saved"}
+      </Button>
+    </InputWrap>
+  )
+}
+
 // A repeatable input type text box
 const Adrir = () => {
   const icelandic = useSelector(state => state.reducer.icelandic)
@@ -44,40 +92,15 @@ const Adrir = () => {
   const [others, setOthers] = useState([])
 
   const appendInput = () => {
-    setInputs([...inputs, <Input key={inputs.length}></Input>])
+    setInputs([
+      ...inputs,
+      <Input
+        index={inputs.length}
+        icelandic={icelandic}
+        key={inputs.length}
+      ></Input>,
+    ])
     setOthers([...others, { nafn: "", hlutverk: "" }])
-  }
-
-  const Input = () => {
-    const [nafn, setNafn] = useState("")
-    const [hlutverk, setHlutverk] = useState("")
-
-    const dispatch = useDispatch()
-
-    return (
-      <InputWrap>
-        <InputBox
-          onChange={e => {
-            setNafn(e.target.value)
-          }}
-          name={"nafn"}
-          placeholder={icelandic ? "Nafn" : "Name"}
-        ></InputBox>
-        <InputBox
-          onChange={e => setHlutverk(e.target.value)}
-          name={"hlutverk"}
-          placeholder={icelandic ? "Hlutverk" : "Role"}
-        ></InputBox>
-        <button
-          onClick={e => {
-            e.preventDefault()
-            dispatch({ type: ADD_ADRIR, annar: { [hlutverk]: nafn } })
-          }}
-        >
-          save!
-        </button>
-      </InputWrap>
-    )
   }
 
   const dispatch = useDispatch()
