@@ -11,7 +11,7 @@ import { breakpoints } from "../../../../constants"
 const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   border-bottom: 1px solid gray;
   padding: 1rem 0 1rem 0;
 
