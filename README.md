@@ -76,6 +76,7 @@
 # Mánudagur 23-3-2020
 
 - [x] aðrir aðstandendur | umsókn
+- [x] aðrir | simplify / clean / optimize
 - [ ] max stafir í boxi stoppar input | umsókn
 - [ ] ekki nógu áberandi dropdown | umsókn
 - [ ] fótur uppfærsla | framendi
@@ -83,3 +84,4 @@
 - [ ] skoða alla síðuna í Safari | almennt
 - [ ] forsíðu myndir fix - 3 litlar | framendi
 - [ ] tengja mailjet with firebase/kóða | bakendi
+- [ ] ipad overview

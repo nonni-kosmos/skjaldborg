@@ -126,9 +126,11 @@ export const formSchema = {
   ],
   adrir: {
     name: "adrir",
-    placeholder: {
-      is: "Aðrir aðstandendur",
-      en: "Other participants",
+    hint: {
+      is:
+        "Notaðu plúsinn til að bæta við öðru aðstandendum. Mundu að vista eftir að nafn og hlutverk hefur verið útfyllt.",
+      en:
+        "Use the plus to add other participants. Remember to save after participant name and role has been filled out.",
     },
     type: "text",
     register: { required: false },
