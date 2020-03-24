@@ -23,12 +23,12 @@ const BTNstyle = css`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${redColor};
   position: relative;
   transition: 0.2s ease-in-out;
 `
 export const Anchor = styled(Link)`
   ${BTNstyle};
+  border: 2px solid ${props => (props.white ? "white" : redColor)};
   &&:hover {
     color: ${redColor};
     border-color: ${redColor};
@@ -40,11 +40,12 @@ export const Anchor = styled(Link)`
 `
 export const Button = styled.button`
   ${BTNstyle};
+  border: 2px solid ${props => (props.white ? "white" : redColor)};
   background: transparent;
   height: 4rem;
   max-width: 15rem;
   margin: 0 auto;
-  color: ${redColor};
+  color: ${props => (props.white ? "white" : redColor)};
   text-transform: uppercase;
   font-size: 1.5rem;
 `

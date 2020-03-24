@@ -32,3 +32,7 @@ export const RESET_ADRIR = "RESET_ADRIR"
 export const resetAdrir = () => ({
   type: RESET_ADRIR,
 })
+export const POSTLIST = "POSTLIST"
+export const postList = () => ({
+  type: POSTLIST,
+})

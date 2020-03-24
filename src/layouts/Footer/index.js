@@ -1,9 +1,11 @@
 import React from "react"
+import { useSelector } from "react-redux"
+
+// components
+import Contact from "./contact"
 import { Container, Wrap } from "./styled"
 import Logo from "../../reusableComponents/Logo"
-import Contact from "./contact"
-
-import { useSelector } from "react-redux"
+import Postlist from "../../reusableComponents/Postlist"
 
 const Footer = () => {
   const platform = useSelector(state => state.reducer.platform)
@@ -12,6 +14,7 @@ const Footer = () => {
       <Container>
         {platform === "desktop" ? <Logo footer></Logo> : null}
         <Contact></Contact>
+        <Postlist></Postlist>
       </Container>
     </Wrap>
   )

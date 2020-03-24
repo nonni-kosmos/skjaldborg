@@ -6,6 +6,7 @@ import {
   SET_PATHNAME,
   ADD_ADRIR,
   RESET_ADRIR,
+  POSTLIST,
 } from "./action"
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   applicant: null,
   pathname: "/",
   adrir: [],
+  postlisted: false,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -53,6 +55,8 @@ export const reducer = (state = initialState, action) => {
       }
     case RESET_ADRIR:
       return { ...state, adrir: [] }
+    case POSTLIST:
+      return { ...state, postlisted: true }
     default:
       return state
   }

@@ -77,11 +77,25 @@
 
 - [x] aðrir aðstandendur | umsókn
 - [x] aðrir | simplify / clean / optimize
-- [ ] max stafir í boxi stoppar input | umsókn
-- [ ] ekki nógu áberandi dropdown | umsókn
+
+
+# Þriðjudagur 24-3-2020
+
+## Fær forgang
+
+- [ ] Mailjet
+  - [ ] gera takka í fæti
+  - [ ] tengja takka við póstlista mailjet
+  - [ ] tengja mailjet with póstlistann í firebase
+
 - [ ] fótur uppfærsla | framendi
-- [ ] fix umsokn stuttering if logged in | bakendi
 - [ ] skoða alla síðuna í Safari | almennt
 - [ ] forsíðu myndir fix - 3 litlar | framendi
-- [ ] tengja mailjet with firebase/kóða | bakendi
 - [ ] ipad overview
+
+
+## Mætir afgang
+
+- [ ] max stafir í boxi stoppar input | umsókn
+- [ ] ekki nógu áberandi dropdown | umsókn
+- [ ] fix umsokn stuttering if logged in | bakendi

@@ -12,6 +12,10 @@ export const Wrap = styled.div`
 `
 export const Container = styled.div`
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media only screen and (min-width: ${breakpoints.desktop}) {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
