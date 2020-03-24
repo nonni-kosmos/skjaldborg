@@ -78,14 +78,14 @@
 - [x] aðrir aðstandendur | umsókn
 - [x] aðrir | simplify / clean / optimize
 
-
 # Þriðjudagur 24-3-2020
 
 ## Fær forgang
 
 - [ ] Mailjet
-  - [ ] gera takka í fæti
-  - [ ] tengja takka við póstlista mailjet
+
+  - [x] gera takka í fæti
+  - [x] tengja takka við póstlista firebase
   - [ ] tengja mailjet with póstlistann í firebase
 
 - [ ] fótur uppfærsla | framendi
@@ -93,9 +93,9 @@
 - [ ] forsíðu myndir fix - 3 litlar | framendi
 - [ ] ipad overview
 
-
 ## Mætir afgang
 
 - [ ] max stafir í boxi stoppar input | umsókn
 - [ ] ekki nógu áberandi dropdown | umsókn
 - [ ] fix umsokn stuttering if logged in | bakendi
+- [ ] koma í veg fyrir duplicates í póstlista

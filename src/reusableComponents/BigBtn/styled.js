@@ -41,13 +41,13 @@ export const Anchor = styled(Link)`
 export const Button = styled.button`
   ${BTNstyle};
   border: 2px solid ${props => (props.white ? "white" : redColor)};
+  font-size: ${props => (props.white ? "1.1rem" : "1.5rem")};
   background: transparent;
   height: 4rem;
   max-width: 15rem;
   margin: 0 auto;
   color: ${props => (props.white ? "white" : redColor)};
   text-transform: uppercase;
-  font-size: 1.5rem;
 `
 export const Fill = styled.span`
   left: 0;

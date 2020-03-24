@@ -10,4 +10,3 @@ export const Form = styled.form`
   padding-top: 2rem;
   box-sizing: border-box;
 `
-export const Input = styled.input``
