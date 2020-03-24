@@ -41,7 +41,7 @@ const Postlist = () => {
       <InputBox
         disabled={postlisted}
         ref={register({ required: true })}
-        name="email"
+        name="netfang"
         type="email"
         placeholder={icelandic ? "Netfang" : "Email"}
       ></InputBox>

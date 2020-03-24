@@ -68,6 +68,12 @@ const MovieForm = () => {
           firestore.collection("applicants").add({
             ...applicant,
           })
+          // add to postlist ?
+          if (applicant.postlisti) {
+            firestore.collection("postlist").add({
+              netfang: applicant.netfang,
+            })
+          }
         })
         .then(() => dispatch({ type: SAVE_APPLICANT, applicant: null }))
 

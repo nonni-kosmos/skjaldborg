@@ -82,13 +82,13 @@
 
 ## Fær forgang
 
-- [ ] Mailjet
+- [x] Mailjet
 
   - [x] gera takka í fæti
   - [x] tengja takka við póstlista firebase
-  - [ ] tengja mailjet with póstlistann í firebase
+  - [x] tengja mailjet with póstlistann í firebase
 
-- [ ] fótur uppfærsla | framendi
+- [x] fótur uppfærsla | framendi
 - [ ] skoða alla síðuna í Safari | almennt
 - [ ] forsíðu myndir fix - 3 litlar | framendi
 - [ ] ipad overview
