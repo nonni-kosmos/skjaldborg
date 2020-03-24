@@ -86,7 +86,7 @@
 
   - [x] gera takka í fæti
   - [x] tengja takka við póstlista firebase
-  - [x] tengja mailjet with póstlistann í firebase
+  - [x] skráist sjálfkrafa á póstlista eftir umsókn
 
 - [x] fótur uppfærsla | framendi
 - [ ] skoða alla síðuna í Safari | almennt
