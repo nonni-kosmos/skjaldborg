@@ -90,7 +90,7 @@
 
 - [x] fótur uppfærsla | framendi
 - [ ] skoða alla síðuna í Safari | almennt
-- [ ] forsíðu myndir fix - 3 litlar | framendi
+- [x] forsíðu myndir fix - 3 litlar | framendi
 - [ ] ipad overview
 
 ## Mætir afgang

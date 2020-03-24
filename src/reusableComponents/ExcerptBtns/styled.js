@@ -15,7 +15,7 @@ export const Container = styled.div`
   grid-auto-rows: minmax(15rem, 20rem);
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    grid-auto-rows: minmax(15rem, 30rem);
+    grid-auto-rows: 27vw;
     padding: 1rem;
     grid-gap: 1rem;
     margin-top: 0;
