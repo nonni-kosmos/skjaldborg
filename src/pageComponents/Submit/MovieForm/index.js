@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { generateImageLocation, formSchema } from "../config"
 import { useDispatch, useSelector } from "react-redux"
-import { SAVE_APPLICANT } from "../../../state/action"
+import { SAVE_APPLICANT, POSTLIST } from "../../../state/action"
 
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import { put } from "rxfire/storage"
@@ -73,6 +73,7 @@ const MovieForm = () => {
             firestore.collection("postlist").add({
               netfang: applicant.netfang,
             })
+            dispatch({ type: POSTLIST })
           }
         })
         .then(() => dispatch({ type: SAVE_APPLICANT, applicant: null }))
