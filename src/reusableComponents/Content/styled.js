@@ -8,6 +8,11 @@ export const Container = styled.div`
   box-sizing: border-box;
   padding: 0 2rem;
   max-width: 40rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    margin-top: -15px;
+  }
+
   * {
     font-family: les;
   }
@@ -27,19 +32,14 @@ export const Container = styled.div`
   h1 {
     text-transform: uppercase;
     color: ${redColor};
-  }
-  a {
-    color: inherit;
-  }
-  strong {
-    font-family: titlar;
-    font-weight: normal;
-    text-transform: uppercase;
-    margin: 0;
-
-    font-size: 1.4rem;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    margin-top: 35px;
     @media only screen and (min-width: ${breakpoints.desktop}) {
       font-size: 1.5rem;
     }
+  }
+  a {
+    color: inherit;
   }
 `

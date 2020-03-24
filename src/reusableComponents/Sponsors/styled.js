@@ -14,6 +14,7 @@ export const Container = styled.div`
   @media only screen and (min-width: ${breakpoints.desktop}) {
     margin: 0 0 7.5rem 0;
   }
+
   h1 {
     color: white;
     text-align: center;
@@ -23,6 +24,9 @@ export const Container = styled.div`
   }
   div.sponsor-grid-top5 {
     display: grid;
+    @media only screen and (min-width: ${breakpoints.tablet}) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @media only screen and (min-width: ${breakpoints.desktop}) {
       grid-template-columns: repeat(5, 1fr);
     }
@@ -44,6 +48,9 @@ export const Container = styled.div`
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
+    @media only screen and (min-width: ${breakpoints.tablet}) {
+      grid-template-columns: repeat(4, 1fr);
+    }
     @media only screen and (min-width: ${breakpoints.desktop}) {
       grid-template-columns: repeat(auto-fill, minmax(7.5rem, 7.5rem));
     }

@@ -11,13 +11,15 @@ const Anchor = styled(AniLink)`
   text-align: center;
   color: inherit;
   text-decoration: none;
-  padding: 1rem;
   box-sizing: border-box;
   color: ${redColor};
   display: inline-flex;
   justify-content: space-evenly;
   align-items: center;
   transition: 0.2s;
+  margin-bottom: 1rem;
+  padding: 3rem;
+
   &&:hover {
     width: 85%;
   }

@@ -19,6 +19,7 @@ export const Container = styled.div`
     font-family: les;
     margin: 0;
     color: white;
+    font-size: 0.9rem;
     ${props =>
       props.color === "white" &&
       css`

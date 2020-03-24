@@ -13,8 +13,13 @@ export const Container = styled.div`
   box-sizing: border-box;
   margin-top: -3.5rem;
   grid-auto-rows: minmax(15rem, 20rem);
+
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
   /** desktop */
   @media only screen and (min-width: ${breakpoints.desktop}) {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-auto-rows: 27vw;
     padding: 1rem;
     grid-gap: 1rem;
