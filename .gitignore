@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 priv-key.json
+
+.env.development
