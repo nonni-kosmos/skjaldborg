@@ -5,9 +5,7 @@ import useGetFirebase from "../../hooks/useGetFirebase"
 import { POSTLIST } from "../../state/action"
 
 // components
-import { Form } from "./styled"
-import BigBtn from "../BigBtn"
-import { InputBox } from "../../pageComponents/Submit/styled"
+import { Form, Input, Button } from "./styled"
 
 const Postlist = () => {
   const {
@@ -38,18 +36,17 @@ const Postlist = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <InputBox
+      <Input
         disabled={postlisted}
         ref={register({ required: true })}
         name="netfang"
         type="email"
         placeholder={icelandic ? "Netfang" : "Email"}
-      ></InputBox>
-      <BigBtn
-        white
-        action={() => console.log("Sign up")}
-        button
-        text={
+      ></Input>
+      <Button
+        disabled={postlisted}
+        type="submit"
+        value={
           postlisted
             ? icelandic
               ? "Skráður"
@@ -58,7 +55,7 @@ const Postlist = () => {
             ? "Skrá mig á póstlista"
             : "Sign up for postlist"
         }
-      ></BigBtn>
+      ></Button>
     </Form>
   )
 }

@@ -7,7 +7,7 @@ export const InputWrap = styled.div`
   flex-direction: column;
   justify-content: end;
   border-bottom: 1px solid gray;
-  padding: 1rem 0 1rem 0;
+  padding: 0;
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
     display: grid;
@@ -29,7 +29,7 @@ export const Button = styled.button`
   }
 `
 export const PlusWrap = styled.div`
-  height: 7rem;
+  height: 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -47,7 +47,16 @@ export const PlusWrap = styled.div`
   button:hover {
     cursor: pointer;
   }
-  i {
-    color: green;
+  span {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+  }
+  #one {
+    transform: rotate(90deg);
+    border-bottom: 2px solid green;
+  }
+  #two {
+    border-top: 2px solid green;
   }
 `

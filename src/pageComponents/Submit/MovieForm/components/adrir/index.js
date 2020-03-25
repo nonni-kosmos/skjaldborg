@@ -19,7 +19,8 @@ const Adrir = () => {
 
   const [others, setOthers] = useState([])
 
-  const appendInput = () => {
+  const appendInput = e => {
+    e.preventDefault()
     setInputs([
       ...inputs,
       <Input
@@ -43,12 +44,11 @@ const Adrir = () => {
       {inputs}
 
       <PlusWrap>
-        <button onClick={() => appendInput()}>
-          <i className="gg-math-plus"></i>
+        <button onClick={e => appendInput(e)}>
+          <span id="one"></span>
+          <span id="two"></span>
         </button>
       </PlusWrap>
-
-      <link href="https://css.gg/math-plus.css" rel="stylesheet"></link>
     </>
   )
 }

@@ -5,7 +5,7 @@ import { breakpoints } from "../../constants"
 
 export const Container = styled.div`
   background: ${greenColor};
-  padding: 3rem;
+  padding: 3rem 3rem 7.5rem 3rem;
   position: relative;
 
   /** mobile */

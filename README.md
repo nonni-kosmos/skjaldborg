@@ -99,3 +99,12 @@
 - [ ] ekki nógu áberandi dropdown | umsókn
 - [ ] fix umsokn stuttering if logged in | bakendi
 - [ ] koma í veg fyrir duplicates í póstlista
+- [ ] eyða öðru aðstandendum
+- [ ] leita af memory leaks
+
+# Fundur fixes
+
+- [x] sponsor spacing
+- [x] hotel west
+- [x] minnka póstlista input & takka
+- [x] færa plúsin ofar og stækka
