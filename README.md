@@ -101,6 +101,7 @@
 - [ ] koma í veg fyrir duplicates í póstlista
 - [ ] eyða öðru aðstandendum
 - [ ] leita af memory leaks
+- [ ] animate the PLUS
 
 # Fundur fixes
 

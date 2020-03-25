@@ -1,5 +1,5 @@
 import React from "react"
-import { FileBTN, InputBox, Hint } from "../../styled"
+import { FileBTN, InputBox, Hint, Warning } from "../../styled"
 import { ErrorMessage } from "react-hook-form"
 import { uploadLimit } from "../../config"
 import { useSelector } from "react-redux"
@@ -79,7 +79,15 @@ const FileInput = ({
           ref={forwardedRef}
         />
       </FileBTN>
-      <ErrorMessage name={item.name} errors={errors}></ErrorMessage>
+      <ErrorMessage
+        name={item.name}
+        errors={errors}
+        message={
+          <Warning style={{ textAlign: "center" }}>
+            {icelandic ? "Vantar" : "Missing"}
+          </Warning>
+        }
+      ></ErrorMessage>
     </>
   )
 }

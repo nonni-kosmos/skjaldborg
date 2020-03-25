@@ -44,7 +44,13 @@ export default ({ index }) => {
           console.log(saved)
         }}
       >
-        {icelandic ? "Vista" : "Saved"}
+        {saved
+          ? icelandic
+            ? "Vistað"
+            : "Saved"
+          : icelandic
+          ? "Vista"
+          : "Save"}
       </Button>
     </InputWrap>
   )
