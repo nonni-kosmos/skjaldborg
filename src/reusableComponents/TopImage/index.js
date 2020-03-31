@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Image, LogoMobileWrap } from "./styled"
+import { Container, LogoMobileWrap } from "./styled"
 import Logo from "../Logo"
 import { useSelector } from "react-redux"
 import CloudinaryImage from "./cloudinaryImage"

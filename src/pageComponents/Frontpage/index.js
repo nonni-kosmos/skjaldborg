@@ -19,10 +19,10 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
     <Container>
       <Header></Header>
 
-      {platform === "mobile" ? (
-        <Topimage image={imageSharp}></Topimage>
+      {platform === "shit" ? (
+        <Topimage publicId="cinema_uw8cmq"></Topimage>
       ) : (
-        <TopVideo videoSource={"Forsida_skura_zma3ut"}></TopVideo>
+        <TopVideo videoSource="Forsida_skura_zma3ut"></TopVideo>
       )}
 
       <SubmitBtnWrap>

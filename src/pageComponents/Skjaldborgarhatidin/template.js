@@ -54,11 +54,7 @@ const Template = ({
     <Container>
       <Header></Header>
       {video ? (
-        platform === "mobile" ? (
-          <TopImage publicId={imageId}></TopImage>
-        ) : (
-          <TopVideo videoSource={video}></TopVideo>
-        )
+        <TopVideo videoSource={video}></TopVideo>
       ) : (
         <TopImage publicId={imageId}></TopImage>
       )}
