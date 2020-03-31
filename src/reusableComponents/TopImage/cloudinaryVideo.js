@@ -34,7 +34,7 @@ const CloudinaryVideo = ({ publicId }) => {
         secure
         cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
       >
-        {platform !== "desktop" ? (
+        {platform === "mobile" || platform === "tablet" ? (
           <Transformation
             crop="fill"
             gravity={"center"}
