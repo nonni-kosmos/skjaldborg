@@ -9,7 +9,7 @@ export const Container = styled.div`
   overflow: hidden;
   margin-bottom: -3.5rem;
   /** mobile */
-  height: 50vh;
+  height: 60vh;
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
     margin-bottom: 0;

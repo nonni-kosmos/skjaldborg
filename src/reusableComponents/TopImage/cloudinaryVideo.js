@@ -35,12 +35,7 @@ const CloudinaryVideo = ({ publicId }) => {
         cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
       >
         {platform === "mobile" || platform === "tablet" ? (
-          <Transformation
-            crop="fill"
-            gravity={"center"}
-            height={"400"}
-            aspectRatio={"1:1"}
-          ></Transformation>
+          <Transformation crop="fill"></Transformation>
         ) : null}
       </Video>
     </Wrap>

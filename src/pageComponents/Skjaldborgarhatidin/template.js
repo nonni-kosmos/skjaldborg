@@ -59,12 +59,10 @@ const Template = ({
         <TopImage publicId={imageId}></TopImage>
       )}
       <Grid>
-        <Fadeinsection direction="left" intensity="20">
-          <Wrap>
-            <PageTitle>{title}</PageTitle>
-            <Content html={html}></Content>
-          </Wrap>
-        </Fadeinsection>
+        <Wrap>
+          <PageTitle>{title}</PageTitle>
+          <Content html={html}></Content>
+        </Wrap>
         {platform === "desktop" ? (
           <Navigator next={getNextPage(order)}></Navigator>
         ) : null}
