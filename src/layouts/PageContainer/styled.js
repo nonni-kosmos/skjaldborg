@@ -14,6 +14,6 @@ export const Container = styled.div`
   margin-bottom: 20rem;
 `
 export const Loader = styled.div`
-  opacity: ${props => (props.opacity ? 1 : 0)};
+  opacity: 1;
   transition: 1s;
 `
