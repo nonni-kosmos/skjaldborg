@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import { redColor } from "../PageContainer/styled"
+import { breakpoints } from "../../constants"
 
 export const Box = styled.div`
   position: absolute;
@@ -21,7 +22,9 @@ export const Text = styled.p`
   ${props =>
     props.umsokn &&
     css`
-      color: ${redColor};
+      @media only screen and (min-width: ${breakpoints.desktop}) {
+        color: ${redColor};
+      }
     `}
 `
 export const Lang = styled.span`

@@ -51,13 +51,15 @@ const Register = () => {
         </Arrow>
         <PageTitle nopad>{icelandic ? "Tengiliður" : "Contact"}</PageTitle>
 
-        {/* <p style={{ color: "gray" }}>
-          Forsvarsaðili verkefnis skráist sjálfkrafa á póstlista.. TODO
-        </p> */}
         {manualSignUp ? (
           <ManualLogin></ManualLogin>
         ) : (
           <div className="login-options-wrap">
+            <h2>
+              {icelandic
+                ? "Umsóknarfrestur er til miðnættis 9.júní 2020"
+                : "Application deadline is at midnight June 9th 2020"}
+            </h2>
             <h3>{icelandic ? "Skráðu þig inn með:" : "Log in with:"}</h3>
             <GoogleLogin></GoogleLogin>
             <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>

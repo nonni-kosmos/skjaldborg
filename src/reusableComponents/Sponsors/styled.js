@@ -52,7 +52,7 @@ export const Container = styled.div`
       grid-template-columns: repeat(4, 1fr);
     }
     @media only screen and (min-width: ${breakpoints.desktop}) {
-      grid-template-columns: repeat(auto-fill, minmax(7.5rem, 7.5rem));
+      grid-template-columns: repeat(auto-fill, minmax(7.5rem, 8rem));
     }
     grid-gap: 4rem;
     box-sizing: border-box;
@@ -62,7 +62,7 @@ export const Container = styled.div`
       height: 100%;
       width: 100%;
       @media only screen and (min-width: ${breakpoints.desktop}) {
-        max-width: 7rem;
+        max-width: 8rem;
         width: 100%;
         height: auto;
         margin: 0 auto;
