@@ -11,7 +11,7 @@ const Skjaldborgarhatidin = ({
   const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Template
-      image={frontmatter.mynd}
+      imageId="skjaldborg_byontkovic_irgylu"
       title={icelandic ? frontmatter.title : frontmatter.title_en}
       html={html}
       extraComponent={null}

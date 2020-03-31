@@ -2,12 +2,13 @@ import React from "react"
 import { Container, Image, LogoMobileWrap } from "./styled"
 import Logo from "../Logo"
 import { useSelector } from "react-redux"
+import CloudinaryImage from "./cloudinaryImage"
 
-const Topimage = ({ image, frontpage }) => {
+const Topimage = ({ publicId, frontpage }) => {
   const platform = useSelector(state => state.reducer.platform)
   return (
     <Container frontpage={frontpage}>
-      <Image frontpage={frontpage} fluid={image.fluid}></Image>{" "}
+      <CloudinaryImage publicId={publicId}></CloudinaryImage>
       {platform === "mobile" ? (
         <LogoMobileWrap>
           <Logo></Logo>

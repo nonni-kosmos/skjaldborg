@@ -42,7 +42,7 @@ const getNextPage = order => {
 
 // extra component is optional
 const Template = ({
-  image,
+  imageId,
   video,
   title,
   order,
@@ -55,12 +55,12 @@ const Template = ({
       <Header></Header>
       {video ? (
         platform === "mobile" ? (
-          <TopImage image={image.childImageSharp}></TopImage>
+          <TopImage publicId={imageId}></TopImage>
         ) : (
           <TopVideo videoSource={video}></TopVideo>
         )
       ) : (
-        <TopImage image={image.childImageSharp}></TopImage>
+        <TopImage publicId={imageId}></TopImage>
       )}
       <Grid>
         <Fadeinsection direction="left" intensity="20">

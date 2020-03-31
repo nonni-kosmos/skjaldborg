@@ -14,7 +14,7 @@ const Gisting = ({
   return (
     <>
       <Template
-        image={frontmatter.mynd}
+        imageId="skjaldborg_001dscf2957_byontkovic_iocr3e"
         title={icelandic ? frontmatter.title : frontmatter.title_en}
         html={html}
         extraComponent={GuestHouseGrid}

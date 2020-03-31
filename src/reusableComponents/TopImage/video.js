@@ -2,14 +2,13 @@ import React from "react"
 import { Container, Video, LogoMobileWrap } from "./styled"
 import { useSelector } from "react-redux"
 import Logo from "../Logo"
+import CloudinaryVideo from "./cloudinaryVideo"
 
 export default ({ videoSource }) => {
   const platform = useSelector(state => state.reducer.platform)
   return (
     <Container>
-      <Video autoPlay playsInline muted loop>
-        <source type="video/mp4" src={videoSource}></source>
-      </Video>
+      <CloudinaryVideo publicId={videoSource}></CloudinaryVideo>
       {platform === "mobile" ? (
         <LogoMobileWrap>
           <Logo></Logo>

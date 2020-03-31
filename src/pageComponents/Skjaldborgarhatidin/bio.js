@@ -11,7 +11,7 @@ const Skjaldborgarbio = ({
   const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <Template
-      video={frontmatter.video.publicURL}
+      video={"skjaldborgarbio_nhmin0"}
       title={icelandic ? frontmatter.title : frontmatter.title_en}
       html={html}
       extraComponent={null}

@@ -22,7 +22,7 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
       {platform === "mobile" ? (
         <Topimage image={imageSharp}></Topimage>
       ) : (
-        <TopVideo videoSource={video.publicURL}></TopVideo>
+        <TopVideo videoSource={"Forsida_skura_zma3ut"}></TopVideo>
       )}
 
       <SubmitBtnWrap>
