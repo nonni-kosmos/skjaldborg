@@ -13,6 +13,7 @@ const CloudinaryImage = ({ publicId }) => {
   return (
     <Wrap>
       <Image
+        secure
         cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
         publicId={publicId}
         responsive

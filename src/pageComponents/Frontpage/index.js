@@ -20,7 +20,7 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
       <Header></Header>
 
       {platform === "shit" ? (
-        <Topimage publicId="cinema_uw8cmq"></Topimage>
+        <Topimage publicId={"cinema_uw8cmq"}></Topimage>
       ) : (
         <TopVideo videoSource="Forsida_skura_zma3ut"></TopVideo>
       )}

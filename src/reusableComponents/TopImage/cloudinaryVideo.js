@@ -31,6 +31,7 @@ const CloudinaryVideo = ({ publicId }) => {
         playsInline
         autoPlay
         publicId={publicId}
+        secure
         cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
       >
         {platform !== "desktop" ? (
