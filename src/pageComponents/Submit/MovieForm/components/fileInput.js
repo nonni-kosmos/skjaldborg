@@ -37,8 +37,6 @@ const FileInput = ({
     event.preventDefault()
 
     if (event.type === "drop") validate(event, event.dataTransfer.files[0])
-
-    console.log(event.type)
   }
 
   const platform = useSelector(state => state.reducer.platform)

@@ -17,7 +17,6 @@ export default ({ index }) => {
 
   const icelandic = useSelector(state => state.reducer.icelandic)
 
-  console.log(icelandic)
   return (
     <InputWrap onChange={() => setSaved(false)}>
       <InputBox
@@ -41,7 +40,6 @@ export default ({ index }) => {
             annar: { [hlutverk]: nafn, id: index },
           })
           setSaved(true)
-          console.log(saved)
         }}
       >
         {saved
