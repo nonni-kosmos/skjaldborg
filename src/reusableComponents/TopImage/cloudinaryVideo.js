@@ -36,7 +36,9 @@ const CloudinaryVideo = ({ publicId }) => {
       >
         {platform === "mobile" || platform === "tablet" ? (
           <Transformation crop="fill"></Transformation>
-        ) : null}
+        ) : (
+          <Transformation quality="100"></Transformation>
+        )}
       </Video>
     </Wrap>
   )

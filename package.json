@@ -48,6 +48,7 @@
     "lodash": "^4.17.15",
     "netlify-cms-app": "^2.9.7",
     "node-mailjet": "^3.3.1",
+    "node-sass": "^4.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",

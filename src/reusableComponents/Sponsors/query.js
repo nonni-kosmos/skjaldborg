@@ -16,6 +16,7 @@ const SponsorsQuery = ({ vip, data }) => {
 
   return list.map((item, index) => (
     <a
+      className="column"
       key={index}
       href={item.frontmatter.sponsor_url}
       target="_blank"

@@ -23,52 +23,48 @@ export const Container = styled.div`
     margin-bottom: 3rem;
   }
   div.sponsor-grid-top5 {
-    display: grid;
-    @media only screen and (min-width: ${breakpoints.tablet}) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media only screen and (min-width: ${breakpoints.desktop}) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    grid-gap: 4rem;
+    display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
+    flex-direction: column;
+    @media (min-width: ${breakpoints.desktop}) {
+      flex-direction: row;
+    }
+    @media (min-width: ${breakpoints.tablet}) {
+      flex-direction: row;
+    }
     img {
+      max-width: 12rem;
+      object-fit: contain;
+      width: auto;
       height: 8rem;
-      max-width: 15rem;
       margin: 0 auto;
     }
     a {
+      padding: 2.5rem 0 2.5rem 0;
       margin: 0 auto;
     }
   }
   div.sponsor-grid-rest {
     padding-top: 4rem;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
-    @media only screen and (min-width: ${breakpoints.tablet}) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    @media only screen and (min-width: ${breakpoints.desktop}) {
-      grid-template-columns: repeat(auto-fill, minmax(7.5rem, 8rem));
-    }
-    grid-gap: 4rem;
+    align-items: center;
+    justify-content: space-evenly;
     box-sizing: border-box;
     width: 100%;
-    justify-content: center;
     img {
-      height: 100%;
-      width: 100%;
-      @media only screen and (min-width: ${breakpoints.desktop}) {
-        max-width: 8rem;
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-      }
+      max-width: 7rem;
+      object-fit: contain;
+      height: 6rem;
+      margin: 0;
     }
     a {
+      padding: 1.5rem 0 1.5rem 0;
       margin: 0 auto;
     }
   }
