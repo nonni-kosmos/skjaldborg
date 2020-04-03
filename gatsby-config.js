@@ -58,7 +58,6 @@ const metadata = {
 module.exports = {
   siteMetadata: metadata,
   plugins: [
-    `gatsby-plugin-polyfill-io`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -146,6 +145,7 @@ module.exports = {
     //     ],
     //   },
     // },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
