@@ -32,6 +32,19 @@ export const Box = styled(AniLink)`
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: 0.5s ease-in-out;
+  }
+  img:hover {
+    transform: scale(1.05);
+  }
   p {
     color: white;
     font-size: 1.5rem;

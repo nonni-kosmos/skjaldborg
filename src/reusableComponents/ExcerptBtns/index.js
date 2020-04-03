@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import { Container, Box, FillerImage } from "./styled"
+import { Container, Box } from "./styled"
 import Fadeinsection from "../../techComponents/FadeInSection"
 import { useSelector } from "react-redux"
+import { Image, Transformation } from "cloudinary-react"
 
 const ExcerptBtns = ({
   data: {
@@ -17,7 +18,13 @@ const ExcerptBtns = ({
       <Container>
         {dropdownpages.map((page, index) => (
           <Box cover bg="#be4545" to={page.slug} key={index}>
-            <FillerImage src={page.image}></FillerImage>
+            <Image
+              cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
+              publicId={page.image}
+              secure
+            >
+              <Transformation quality="auto" fetchFormat="auto" />
+            </Image>
             <p>{icelandic ? page.name : page.name_en}</p>
           </Box>
         ))}
