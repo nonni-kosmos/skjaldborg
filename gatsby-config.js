@@ -11,19 +11,19 @@ const dropdownPages = [
     name: `Skjaldborgarhátíðin`,
     name_en: `Skaldborg Festival`,
     slug: `/hatidin`,
-    image: `https://res.cloudinary.com/dgekvli3k/image/upload/v1585652602/skjaldborg_byontkovic_irgylu.jpg`,
+    image: `skjaldborg_byontkovic_irgylu`,
   },
   {
     name: `Skjaldborgarbíó`,
     name_en: `Skjaldborg Cinema`,
     slug: `/bio`,
-    image: `https://res.cloudinary.com/dgekvli3k/image/upload/v1585934474/skjaldborg_092dscf5141_byontkovic_svwmuy.jpg`,
+    image: `skjaldborg_092dscf5141_byontkovic_svwmuy`,
   },
   {
     name: `Ferðalagið / Gisting`,
     name_en: `How to get there / Accommodation`,
     slug: `/ferdalagid-gisting`,
-    image: `https://res.cloudinary.com/dgekvli3k/image/upload/v1585934438/skjaldborg_060dscf4118_byontkovic_nmyb8t.jpg`,
+    image: `skjaldborg_060dscf4118_byontkovic_nmyb8t`,
   },
 ]
 const metadata = {
