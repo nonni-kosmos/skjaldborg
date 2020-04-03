@@ -20,7 +20,7 @@ const SEO = ({
       {meta.description && (
         <meta property="og:description" content={meta.description} />
       )}
-      {meta.image && <meta property="og:image" content={meta.image} />}
+      {meta.image && <meta property="og:image" content={meta.logo} />}
 
       <link
         sizes="20x20"
