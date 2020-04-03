@@ -6,7 +6,7 @@ const LOCALSTORAGEKEY = "cookieConsentSkjaldborg2020.iss"
 
 const Cookies = () => {
   const icelandic = useSelector(state => state.reducer.icelandic)
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(true)
 
   useEffect(() => {
     if (localStorage.getItem(LOCALSTORAGEKEY)) {
