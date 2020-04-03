@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { Container, Box } from "./styled"
 import Fadeinsection from "../../techComponents/FadeInSection"
 import { useSelector } from "react-redux"
-import { Image } from "cloudinary-react"
+import { Image, Transformation } from "cloudinary-react"
 
 const ExcerptBtns = ({
   data: {
@@ -22,7 +22,9 @@ const ExcerptBtns = ({
               cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
               publicId={page.image}
               secure
-            ></Image>
+            >
+              <Transformation quality="auto" fetchFormat="auto" />
+            </Image>
             <p>{icelandic ? page.name : page.name_en}</p>
           </Box>
         ))}
