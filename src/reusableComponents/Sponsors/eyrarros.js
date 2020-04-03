@@ -2,10 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import RosSvg from "../../../static/assets/eyrarrosin.svg"
 
-const Wrap = styled.div`
+const Wrap = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
   img {
     box-sizing: border-box;
     padding: 1rem;
@@ -18,6 +20,7 @@ const Wrap = styled.div`
     border-left: 2px solid white;
     box-sizing: border-box;
   }
+
   p {
     color: white;
     margin: 0.5rem 0 0.5rem 3rem;
@@ -30,7 +33,11 @@ const Wrap = styled.div`
 
 const Eyrarros = () => {
   return (
-    <Wrap>
+    <Wrap
+      rel="noopener noreferrer"
+      href="https://listahatid.is/eyrarrosin/eyrarrosin"
+      target="_blank"
+    >
       <img src={RosSvg} alt="eyrarros-logo"></img>
       <div className="detail-wrap">
         <p>Handhafi</p>
