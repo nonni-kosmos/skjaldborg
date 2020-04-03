@@ -17,6 +17,7 @@ export const Container = styled.div`
     display: grid;
     grid-gap: 1.5rem;
     text-align: center;
+    width: 100%;
   }
 
   /** mobile */
