@@ -13,9 +13,9 @@ const FileInput = ({
   item,
 }) => {
   const validate = (event, image) => {
+    event.preventDefault()
     // const image = event.target.files[0]
     // validation
-
     const messages = {
       en: "Chosen image is not within acceptable paramters.",
       is: "Valin mynd er ekki innan viðundandi marka.",
@@ -30,13 +30,6 @@ const FileInput = ({
       // event.target.value = ""
       alert(icelandic ? messages.is : messages.en)
     }
-  }
-
-  // prevents drop
-  const handleDrop = event => {
-    event.preventDefault()
-
-    if (event.type === "drop") validate(event, event.dataTransfer.files[0])
   }
 
   const platform = useSelector(state => state.reducer.platform)
@@ -56,9 +49,13 @@ const FileInput = ({
     <>
       <Hint>{icelandic ? item.hint.is : item.hint.en} ( png, jpg, jpeg )</Hint>
       <FileBTN
-        onDrop={e => handleDrop(e)}
-        onDragOver={e => handleDrop(e)}
-        onDragEnter={e => handleDrop(e)}
+        onDrop={e => {
+          e.preventDefault()
+
+          validate(e, e.dataTransfer.items[0].getAsFile())
+        }}
+        onDragOver={e => e.preventDefault()}
+        onDragEnter={e => e.preventDefault()}
         id="file-btn"
         style={
           ({ paddingTop: "1rem" },

@@ -29,10 +29,7 @@ const MovieForm = () => {
 
   const adrir = useSelector(state => state.reducer.adrir)
 
-  console.log(adrir)
-
   const onSubmit = (data, e) => {
-    console.log(data)
     if (window.confirm("Confirm submission")) {
       // Image one, required
       // generate url names
