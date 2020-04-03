@@ -49,7 +49,7 @@ export const Container = styled.div`
     }
   }
   div.sponsor-grid-rest {
-    padding-top: 4rem;
+    padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;

@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import FadeInSection from "../../techComponents/FadeInSection"
 import SponsorsQuery from "./query"
 import { useSelector } from "react-redux"
+import Eyrarrosin from "./eyrarros"
 
 const Sponsors = () => {
   const icelandic = useSelector(state => state.reducer.icelandic)
@@ -19,6 +20,9 @@ const Sponsors = () => {
         <div className="sponsor-grid-rest">
           <SponsorsQuery></SponsorsQuery>
         </div>
+      </FadeInSection>
+      <FadeInSection intensity="10">
+        <Eyrarrosin></Eyrarrosin>
       </FadeInSection>
     </Container>
   )
