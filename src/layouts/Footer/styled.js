@@ -7,7 +7,6 @@ export const Wrap = styled.div`
   width: 100%;
   height: 22rem;
   @media (max-width: 600px) {
-    height: 25rem;
   }
   position: absolute;
   bottom: 0;

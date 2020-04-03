@@ -9,16 +9,19 @@ const SEO = ({
 }) => {
   return (
     <Helmet title={meta.title + " 2020"}>
-      <meta name="title" content={meta.title}></meta>
       <meta name="description" content={meta.subtitle} />
-      <meta name="url" content={meta.url} />
+
       <meta name="image" content={meta.logo} />
+
       {meta.url && <meta property="og:url" content={meta.url} />}
+
       {meta.title && <meta property="og:title" content={meta.title} />}
-      {meta.subtitle && (
-        <meta property="og:description" content={meta.subtitle} />
+
+      {meta.description && (
+        <meta property="og:description" content={meta.description} />
       )}
-      {meta.logo && <meta property="og:image" content={meta.logo} />}
+      {meta.image && <meta property="og:image" content={meta.image} />}
+
       <link
         sizes="20x20"
         href={meta.favicon}
