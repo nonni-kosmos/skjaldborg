@@ -1,6 +1,6 @@
 ---
 title: Hótel Ráðagerði
-logo: /assets/hotel_radagerdi.png
+logo: /assets/radagerdi_logo.png
 sponsor_url: 'https://www.radagerdi.net/'
 ---
 
