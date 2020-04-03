@@ -31,7 +31,7 @@ const metadata = {
   subtitle: `Hátíð íslenskra heimildamynda`,
   url: `https://skjaldborg.is/`,
   favicon: `/assets/favicon.png`,
-  logo: `/assets/skjaldborg_logo_fb_1.jpg`,
+  logo: `/assets/skjaldborg_mynd.jpg`,
   year: 2020,
   period: `31. júlí – 3. ágúst`,
   location: `Patreksfjörður`,
