@@ -37,7 +37,7 @@ const Info = ({
   return (
     <InfoWrap>
       <div id="sm-wrap">
-        <SocialMediaIcons></SocialMediaIcons>
+        <SocialMediaIcons color="white"></SocialMediaIcons>
       </div>
       <div id="contact-wrap">
         <p style={{ textTransform: "uppercase" }}>Contact</p>

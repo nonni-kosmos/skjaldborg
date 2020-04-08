@@ -1,5 +1,4 @@
 import styled, { keyframes, css } from "styled-components"
-import Img from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import LogoSVG from "../../../static/assets/svg/logo.svg"
 
@@ -45,10 +44,20 @@ export const Container = styled(AniLink)`
       top: 0;
       height: 12rem;
     `}
+
+  svg {
+    height: 100%;
+    #ball {
+      transform-origin: 10% 50%;
+      animation: ${breath} 4s ease-out 0.5s forwards infinite;
+    }
+    #beam {
+      transform-origin: 20% 50%;
+      animation: ${beamGrow} 2s ease-out 3s forwards infinite;
+    }
+  }
 `
-export const Image = styled(Img)`
-  width: 100%;
-`
+
 export const Logo = styled(LogoSVG)`
   height: 100%;
   #ball {

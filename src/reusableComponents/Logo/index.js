@@ -1,5 +1,6 @@
 import React from "react"
-import { Container, Logo } from "./styled"
+import { Container } from "./styled"
+import Logo from "./svg"
 
 export default ({ footer }) => {
   return (

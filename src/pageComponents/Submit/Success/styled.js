@@ -24,6 +24,12 @@ export const Anchor = styled(Link)`
   color: inherit;
   text-decoration: none;
   margin-top: 4rem;
+  svg {
+    transform: rotate(180deg);
+    &&:hover {
+      cursor: pointer;
+    }
+  }
 `
 export const HomeText = styled.h2`
   color: ${redColor};

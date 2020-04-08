@@ -1,20 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, StaticQuery } from "gatsby"
+import Facebook from "./facebook"
+import Instagram from "./instagram"
 
-import InstagramSVG from "../../../static/assets/svg/instagram.svg"
-import FacebookSVG from "../../../static/assets/svg/facebook.svg"
-
-const Facebook = styled(FacebookSVG)`
-  path {
-    fill: ${props => props.color};
-  }
-`
-const Instagram = styled(InstagramSVG)`
-  path {
-    fill: ${props => props.color};
-  }
-`
 const Wrap = styled.div`
   display: flex;
   justify-content: space-evenly;

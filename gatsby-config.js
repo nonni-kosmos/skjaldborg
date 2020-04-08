@@ -11,19 +11,19 @@ const dropdownPages = [
     name: `Skjaldborgarhátíðin`,
     name_en: `Skaldborg Festival`,
     slug: `/hatidin`,
-    image: `skjaldborg_byontkovic_irgylu`,
+    image: `images/hatidin`,
   },
   {
     name: `Skjaldborgarbíó`,
     name_en: `Skjaldborg Cinema`,
     slug: `/bio`,
-    image: `skjaldborg_092dscf5141_byontkovic_svwmuy`,
+    image: `images/bio`,
   },
   {
     name: `Ferðalagið / Gisting`,
     name_en: `How to get there / Accommodation`,
     slug: `/ferdalagid-gisting`,
-    image: `skjaldborg_060dscf4118_byontkovic_nmyb8t`,
+    image: `images/ferdalag_2`,
   },
 ]
 const metadata = {
@@ -32,7 +32,7 @@ const metadata = {
   url: "https://skjaldborg.is/",
   favicon: "/assets/favicon.png",
   logo:
-    "https://res.cloudinary.com/dgekvli3k/image/upload/v1585934515/skjaldborg_mynd_tt7wlr.jpg",
+    "https://res.cloudinary.com/dynkhs6v9/image/upload/v1586345013/images/skjaldborg_logo.jpg",
   year: 2020,
   period: "31. júlí – 3. ágúst",
   location: `Patreksfjörður`,
@@ -118,7 +118,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: `${__dirname}/static/assets/svg`,
+          include: `${__dirname}/static/assets/svg/**`,
         },
       },
     },

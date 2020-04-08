@@ -2,8 +2,10 @@ import React from "react"
 import SocialMediaIcons from "../../../reusableComponents/SocialMediaIcons"
 import { useSelector } from "react-redux"
 
-import { Box, Title, Anchor, HomeText, Arrow } from "./styled"
+import { Box, Title, Anchor, HomeText } from "./styled"
 import Footer from "../../../layouts/Footer"
+
+import Arrow from "./arrow"
 
 const Success = () => {
   const icelandic = useSelector(state => state.reducer.icelandic)

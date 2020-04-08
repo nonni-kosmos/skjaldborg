@@ -7,7 +7,7 @@ import EmailPwLogin from "../ManualLogin/EmailPwLogin"
 import { authState } from "rxfire/auth"
 import useGetFirebase from "../../../hooks/useGetFirebase"
 import ManualLogin from "../ManualLogin"
-import { Arrow } from "../Success/styled"
+import Arrow from "../Success/arrow"
 import { useSelector } from "react-redux"
 import Footer from "../../../layouts/Footer"
 
