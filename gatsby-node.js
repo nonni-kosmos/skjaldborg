@@ -15,8 +15,8 @@ exports.onCreatePage = async ({ page, actions }) => {
     page.matchPath = "/umsokn/*"
     createPage(page)
   }
-  if (page.path.match(/^\/vel-gert/)) {
-    page.matchPath = "/vel-gert/*"
+  if (page.path.match(/^\/sarpur/)) {
+    page.matchPath = "/sarpur/*"
     createPage(page)
   }
 }
