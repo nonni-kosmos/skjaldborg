@@ -205,7 +205,7 @@ export const formSchema = {
           en: "Trailer / Scenes",
         },
         type: "url",
-        register: { required: true },
+        register: { required: false },
         wip: true,
       },
       {
