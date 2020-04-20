@@ -236,7 +236,7 @@ export const formSchema = {
     image: {
       name: "imageOne",
       type: "file",
-      register: { required: false },
+      register: { required: true },
       wip: true,
       hint: {
         is: "Skáarstærð ljósmyndar verður að vera á milli 500KB og 5MB.",

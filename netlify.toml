@@ -1,3 +1,4 @@
 [[redirects]]
     from = "https://skjaldborg.com/"
     to = "https://skjaldborg.is/"
+    force: true
