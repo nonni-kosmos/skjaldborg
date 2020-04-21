@@ -76,7 +76,7 @@ const MovieForm = () => {
         .then(() => dispatch({ type: SAVE_APPLICANT, applicant: null }))
 
       e.target.reset()
-      navigate("/umsokn/kvikmynd/vel-gert")
+      navigate("/umsokn/vel-gert")
     }
   }
 
@@ -177,12 +177,12 @@ const MovieForm = () => {
           </form>
         </>
       ) : (
-        <>
-          <Applicant
-            completePhaseOne={() => setPhaseOneComplete(true)}
-          ></Applicant>
-        </>
-      )}
+          <>
+            <Applicant
+              completePhaseOne={() => setPhaseOneComplete(true)}
+            ></Applicant>
+          </>
+        )}
     </>
   )
 }

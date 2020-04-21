@@ -15,7 +15,7 @@ const Umsokn = () => {
         redirectPath="/umsokn"
         component={SubmitMovie}
       ></RestrictedRoute>
-      <Success path="/kvikmynd/vel-gert"></Success>
+      <Success path="/vel-gert"></Success>
     </Router>
   )
 }
