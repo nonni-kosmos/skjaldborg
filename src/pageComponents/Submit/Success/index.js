@@ -23,7 +23,7 @@ const Success = () => {
             <HomeText className="titlar">
               {icelandic ? "Á forsíðu" : "To frontpage"}
             </HomeText>
-            <Arrow></Arrow>
+            <Arrow rotation="-180deg"></Arrow>
           </Anchor>
         </div>
       </Box>

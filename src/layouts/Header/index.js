@@ -16,7 +16,7 @@ const Header = ({
   const pathname = useSelector(state => state.reducer.pathname)
   const [color, setColor] = useState("white")
   useEffect(() => {
-    if (pathname.includes("/sarpur") || pathname.includes("/umsokn")) {
+    if (pathname.includes("/sarpur") || pathname.includes("/umsokn") || pathname.includes("/404")) {
       setColor(`${redColor}`)
     } else {
       setColor("white")

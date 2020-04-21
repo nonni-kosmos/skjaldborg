@@ -6,8 +6,8 @@ export const generateImageLocation = movieTitle => {
 
 const MegaByte = 1000000
 export const uploadLimit = {
-  max: 5 * MegaByte, // 5MB
-  min: MegaByte / 2, // 500KB
+  max: 8.5 * MegaByte, // 8.5MB
+  min: MegaByte / 10, // 100KB
 }
 
 export const applicantFormSchema = {
@@ -205,7 +205,7 @@ export const formSchema = {
           en: "Trailer / Scenes",
         },
         type: "url",
-        register: { required: false },
+        register: { required: true },
         wip: true,
       },
       {
