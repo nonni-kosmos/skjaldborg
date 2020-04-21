@@ -76,7 +76,7 @@ const MovieForm = () => {
         .then(() => dispatch({ type: SAVE_APPLICANT, applicant: null }))
 
       e.target.reset()
-      navigate("/umsokn/vel-gert")
+      navigate("/vel-gert")
     }
   }
 

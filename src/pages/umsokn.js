@@ -1,7 +1,6 @@
 import React from "react"
 import SubmitMovie from "../pageComponents/Submit/SubmitMovie"
 import Register from "../pageComponents/Submit/Register"
-import Success from "../pageComponents/Submit/Success"
 import { Router } from "@reach/router"
 import RestrictedRoute from "../techComponents/RestrictedRoute"
 
@@ -15,7 +14,6 @@ const Umsokn = () => {
         redirectPath="/umsokn"
         component={SubmitMovie}
       ></RestrictedRoute>
-      <Success path="/vel-gert"></Success>
     </Router>
   )
 }
