@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react"
-import useGetFirebase from "../../../hooks/useGetFirebase"
+import React, { useEffect, useState, useContext } from "react"
 import { collectionData } from "rxfire/firestore"
 
 // components
 import { Grid } from "../styled"
 import Year from "./year"
+import { RootContext } from "../../../context/main"
 
 const Years = () => {
-  const {
-    isLoading,
-    db: { firestore },
-  } = useGetFirebase()
+  const { firestore } = useContext(RootContext)
+
   const [years, setYears] = useState([])
 
   useEffect(() => {
-    if (!isLoading) {
+    if (firestore) {
       let subscription
       subscription = collectionData(
         firestore.collection("sarpur"),
@@ -25,9 +23,9 @@ const Years = () => {
 
       return () => subscription.unsubscribe()
     }
-  }, [isLoading, firestore])
+  }, [firestore])
 
-  if (!isLoading) {
+  if (firestore) {
     return (
       <Grid>
         {years

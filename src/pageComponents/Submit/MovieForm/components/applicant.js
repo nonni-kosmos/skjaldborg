@@ -1,5 +1,4 @@
-import React from "react"
-import useGetFirebase from "../../../../hooks/useGetFirebase"
+import React, { useContext } from "react"
 import { useForm, ErrorMessage } from "react-hook-form"
 import { applicantFormSchema } from "../../config"
 import { useDispatch, useSelector } from "react-redux"
@@ -10,15 +9,15 @@ import { InputBox, Warning } from "../../styled"
 import BigBtn from "../../../../reusableComponents/BigBtn"
 import { SAVE_APPLICANT } from "../../../../state/action"
 
+import { RootContext } from "../../../../context/main"
+
 const Applicant = ({ completePhaseOne }) => {
-  const {
-    db: { auth },
-    isLoading,
-  } = useGetFirebase()
+
+  const { auth } = useContext(RootContext)
 
   const { errors, handleSubmit, register } = useForm({
     defaultValues: {
-      fulltnafn: auth ? auth.currentUser.displayName : "",
+      fulltnafn: "",
       simanumer: "",
       postlisti: true,
     },
@@ -44,7 +43,7 @@ const Applicant = ({ completePhaseOne }) => {
     }
   }
 
-  if (!isLoading && auth.currentUser) {
+  if (auth.currentUser) {
     return (
       <>
         <Box>
@@ -80,16 +79,16 @@ const Applicant = ({ completePhaseOne }) => {
                   ></InputBox>
                 </div>
               ) : (
-                <InputBox
-                  key={index}
-                  name={item.name}
-                  type={item.type}
-                  ref={register(item.register)}
-                  placeholder={
-                    icelandic ? item.placeholder.is : item.placeholder.en
-                  }
-                ></InputBox>
-              )}
+                  <InputBox
+                    key={index}
+                    name={item.name}
+                    type={item.type}
+                    ref={register(item.register)}
+                    placeholder={
+                      icelandic ? item.placeholder.is : item.placeholder.en
+                    }
+                  ></InputBox>
+                )}
 
               <ErrorMessage
                 as={<Warning></Warning>}

@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { errorMsg } from "../../config"
 import { InputBox, Warning } from "../../styled"
 import styled from "styled-components"
 import BigBtn from "../../../../reusableComponents/BigBtn"
-import useGetFirebase from "../../../../hooks/useGetFirebase"
 import { useSelector } from "react-redux"
+import { RootContext } from "../../../../context/main"
 
 const StyledForm = styled.form`
   max-width: 30rem;
@@ -19,9 +19,7 @@ const Form = () => {
     email: "",
   })
 
-  const {
-    db: { auth },
-  } = useGetFirebase()
+  const { auth } = useContext(RootContext)
 
   const onSubmit = data => {
     auth

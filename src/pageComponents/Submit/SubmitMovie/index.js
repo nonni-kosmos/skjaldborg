@@ -8,7 +8,9 @@ import Header from "../../../layouts/Header"
 // tech
 import React from "react"
 
+
 const Submit = () => {
+
   return (
     <>
       <Header mode="red"></Header>

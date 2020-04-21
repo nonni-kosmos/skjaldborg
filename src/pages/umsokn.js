@@ -1,21 +1,22 @@
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
 import SubmitMovie from "../pageComponents/Submit/SubmitMovie"
 import Register from "../pageComponents/Submit/Register"
-import { Router } from "@reach/router"
-import RestrictedRoute from "../techComponents/RestrictedRoute"
+import { RootContext } from "../context/main"
 
 const Umsokn = () => {
-  // applicant & movie form
-  return (
-    <Router basepath="/umsokn">
-      <Register path="/"></Register>
-      <RestrictedRoute
-        path="/kvikmynd"
-        redirectPath="/umsokn"
-        component={SubmitMovie}
-      ></RestrictedRoute>
-    </Router>
-  )
+  const [loggedIn, setLoggedIn] = useState(false)
+  const { currentUser } = useContext(RootContext)
+  useEffect(() => {
+    if (currentUser) {
+      setLoggedIn(currentUser)
+    }
+    else setLoggedIn(false)
+  }, [currentUser])
+
+  if (loggedIn) {
+    return <SubmitMovie></SubmitMovie>
+  }
+  else return <Register></Register>
 }
 
 export default Umsokn

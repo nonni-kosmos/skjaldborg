@@ -1,3 +1,6 @@
+const { config } = require("dotenv")
+config({ path: `.env.development` })
+
 const pages = [
   { name: `Heim`, name_en: `Home`, slug: `/` },
   { name: `Hátíðin`, name_en: `The Festival`, slug: `/hatidin` },
@@ -166,6 +169,17 @@ module.exports = {
         extensions: ["js"],
       },
     },
-    `gatsby-plugin-webpack-bundle-analyzer`
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: process.env.GATSBY_API_KEY,
+          authDomain: process.env.GATSBY_AUTH_DOMAIN,
+          projectId: process.env.GATSBY_PROJECT_ID,
+          storageBucket: process.env.GATSBY_STORAGE_BUCKET,
+          appId: process.env.GATSBY_APP_ID,
+        }
+      }
+    }
   ],
 }
