@@ -2,9 +2,9 @@ const pages = [
   { name: `Heim`, name_en: `Home`, slug: `/` },
   { name: `Hátíðin`, name_en: `The Festival`, slug: `/hatidin` },
   { name: `Umsókn`, name_en: `Application`, slug: `/umsokn` },
+  { name: `Sarpur`, name_en: `Archive`, slug: `/sarpur` },
   // { name: `Heimildamyndir`, slug: `/heimildamyndir` },
   // { name: `Dagskrá`, slug: `/dagskra` },
-  // { name: `Sarpur`, slug: `/sarpur` },
 ]
 const dropdownPages = [
   {
@@ -122,29 +122,6 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-source-firestore`,
-    //   options: {
-    //     credential: require("./priv-key.json"),
-    //     types: [
-    //       {
-    //         type: "Movie",
-    //         collection: "movies",
-    //         map: doc => ({
-    //           title: doc.title,
-    //           accepted: doc.accepted,
-    //           description: doc.description,
-    //           director: doc.director,
-    //           imageLocation: doc.imageLocation,
-    //           duration: doc.duration,
-    //           applicantId: doc.applicantId,
-    //           applicantName: doc.applicantName,
-    //           createdAt: doc.createdAt,
-    //         }),
-    //       },
-    //     ],
-    //   },
-    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
@@ -180,5 +157,15 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@constants": "src/constants",
+        },
+        extensions: ["js"],
+      },
+    },
+    `gatsby-plugin-webpack-bundle-analyzer`
   ],
 }

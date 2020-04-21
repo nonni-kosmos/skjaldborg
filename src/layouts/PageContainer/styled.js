@@ -11,9 +11,14 @@ export const greenTextColor = "#9DD79A"
 export const Container = styled.div`
   box-sizing: border-box;
   min-height: 85vh;
-  margin-bottom: 20rem;
+  margin-bottom: 22rem;
 `
 export const Loader = styled.div`
   opacity: 1;
   transition: 1s;
+`
+export const PageWrap = styled.div`
+  background: white;
+  position: absolute;
+  width: 100%;
 `

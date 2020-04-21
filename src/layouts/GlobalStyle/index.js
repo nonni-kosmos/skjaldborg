@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     h1,h2,h3 {
         font-weight: normal;
+        letter-spacing: -0.5px;
     }
     ::selection {
         color: #9DD79A;
@@ -16,5 +17,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     .tl-edges {
         overflow: inherit !important;
+    }
+    a {
+        text-decoration: none; 
+        color: inherit;
+    }
+    p {
+        letter-spacing: -0.5px;
     }
 `
