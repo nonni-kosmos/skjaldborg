@@ -1,10 +1,7 @@
-import React from "react"
-import { Provider } from "react-redux"
-import { createStore as createThisStore } from "redux"
-import rootReducer from "./src/state/index"
+import "firebase/auth"
+import "firebase/firestore"
+import "firebase/storage"
 
-const createStore = () => createThisStore(rootReducer)
+import Provider from "./src/context/main"
 
-export const wrapRootElement = ({ element }) => {
-  return <Provider store={createStore()}>{element}</Provider>
-}
+export const wrapRootElement = Provider

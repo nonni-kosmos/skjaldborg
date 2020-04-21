@@ -1,14 +1,12 @@
-import React from "react"
-import useGetFirebase from "../../../hooks/useGetFirebase"
+import React, { useContext } from "react"
 import BigBtn from "../../../reusableComponents/BigBtn"
+import { RootContext } from "../../../context/main"
 
 const GoogleLogin = () => {
   const {
-    db: {
-      auth,
-      providers: { google: provider },
-    },
-  } = useGetFirebase()
+    auth,
+    providers: { google: provider },
+  } = useContext(RootContext)
 
   const login = () => {
     auth.signInWithPopup(provider)

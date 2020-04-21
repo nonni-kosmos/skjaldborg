@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react"
-import useGetFirebase from "../../../hooks/useGetFirebase"
+import React, { useState, useEffect, useContext } from "react"
 import { docData } from "rxfire/firestore"
 import { Grid } from "../styled"
 import Movie from "./movie"
+import { RootContext } from "../../../context/main"
 
 const Movies = ({ year }) => {
-  const {
-    isLoading,
-    db: { firestore },
-  } = useGetFirebase()
+  const { firestore } = useContext(RootContext)
+
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    if (!isLoading) {
+    if (firestore) {
       let docRef = firestore.collection("sarpur").doc(year)
       const subscription = docData(docRef).subscribe(yearData => {
         setMovies(yearData.movies)
@@ -20,9 +18,9 @@ const Movies = ({ year }) => {
 
       return () => subscription.unsubscribe()
     }
-  }, [isLoading, firestore, year])
+  }, [firestore, year])
 
-  if (isLoading) {
+  if (!firestore) {
     return null
   } else {
     return (

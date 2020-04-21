@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Button from "../../../reusableComponents/Button"
 import useGetFirebase from "../../../hooks/useGetFirebase"
-import { authState } from "rxfire/auth"
+import { RootContext } from "../../../context/main"
 
 const User = () => {
   const [user, setUser] = useState(null)
-  const { auth, isLoading } = useGetFirebase()
+  const { auth } = useContext(RootContext)
 
   useEffect(() => {
     let subscription

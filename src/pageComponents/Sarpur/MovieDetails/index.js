@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from "react"
-import useGetFirebase from "../../../hooks/useGetFirebase"
+import React, { useEffect, useState, useContext } from "react"
 import { docData } from "rxfire/firestore"
 
 // components
 import Template from "../../../reusableComponents/SarpurTemplate"
 import Content from "./content"
+import { RootContext } from "../../../context/main"
 
 const Details = ({ id, year }) => {
-  const {
-    db: { firestore },
-    isLoading,
-  } = useGetFirebase()
+  const { firestore } = useContext(RootContext)
 
   const [movie, setMovie] = useState(null)
 
   useEffect(() => {
-    if (!isLoading) {
+    if (firestore) {
       let docRef = firestore.collection("sarpurMovies").doc(id)
       const subscription = docData(docRef).subscribe(data => {
         setMovie(data)
       })
       return () => subscription.unsubscribe()
     }
-  }, [isLoading, firestore, id])
+  }, [firestore, id])
 
-  if (!isLoading && movie) {
+  if (movie) {
     return (
       <Template
         link={"/sarpur/" + year}

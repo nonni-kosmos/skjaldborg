@@ -22,11 +22,11 @@ const Frontpage = ({ data: { imageSharp, video } }) => {
       {platform === "shit" ? (
         <Topimage frontpage publicId={"cinema_uw8cmq"}></Topimage>
       ) : (
-        <TopVideo
-          frontpage
-          videoSource="videos/Forsida_skura_xcbhav"
-        ></TopVideo>
-      )}
+          <TopVideo
+            frontpage
+            videoSource="videos/Forsida_skura_xcbhav"
+          ></TopVideo>
+        )}
 
       <SubmitBtnWrap>
         <BigBtn

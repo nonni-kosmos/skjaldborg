@@ -1,7 +1,7 @@
 import React from "react"
 import { Box } from "../styled"
 
-const TopBox = ({ onChange, applicant, auth, icelandic }) => {
+const TopBox = ({ onChange, applicant, currentUser, icelandic, auth }) => {
   return (
     <Box>
       <legend>{icelandic ? "Tengiliður" : "Contact"} </legend>
@@ -9,7 +9,7 @@ const TopBox = ({ onChange, applicant, auth, icelandic }) => {
       <p>
         {applicant
           ? applicant.fulltnafn + " | " + applicant.netfang
-          : auth.currentUser.email}
+          : currentUser ? currentUser.email : null}
       </p>
       <button onClick={() => auth.signOut()}>
         {icelandic ? "Breyta tengilið" : "Change contact"}

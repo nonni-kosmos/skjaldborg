@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { useForm } from "react-hook-form"
 import { generateImageLocation, formSchema } from "../config"
 import { useDispatch, useSelector } from "react-redux"
 import { SAVE_APPLICANT, POSTLIST } from "../../../state/action"
 
-import useGetFirebase from "../../../hooks/useGetFirebase"
 import { put } from "rxfire/storage"
 import { navigate } from "gatsby"
 import Applicant from "./components/applicant"
@@ -18,10 +17,11 @@ import TopBox from "./components/topBox"
 import { Hint } from "../styled"
 import Adrir from "./components/adrir"
 
+import { RootContext } from "../../../context/main"
+
 const MovieForm = () => {
-  const {
-    db: { storage, firestore, auth },
-  } = useGetFirebase()
+
+  const { firestore, auth, storage, currentUser } = useContext(RootContext)
 
   const { register, handleSubmit, errors } = useForm()
 
@@ -53,7 +53,7 @@ const MovieForm = () => {
           // work in progress?
           wip: wip,
           // key to applicant store
-          userId: auth.currentUser.uid,
+          userId: currentUser.uid,
           // form data
           // - image manually added
           imageOneLocation: imageOneURL,
@@ -94,9 +94,10 @@ const MovieForm = () => {
         <>
           <TopBox
             icelandic={icelandic}
-            auth={auth}
+            currentUser={currentUser ? currentUser : null}
             applicant={applicant}
             onChange={setWip}
+            auth={auth}
           ></TopBox>
           <form
             style={{ marginBottom: "2rem" }}

@@ -1,16 +1,22 @@
-import React from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useForm } from "react-hook-form"
-import useGetFirebase from "../../hooks/useGetFirebase"
 import { POSTLIST } from "../../state/action"
+
+import { RootContext } from "../../context/main"
 
 // components
 import { Form, Input, Button } from "./styled"
 
 const Postlist = () => {
-  const {
-    db: { firestore },
-  } = useGetFirebase()
+  const [store, setStore] = useState(null)
+
+  const { firestore } = useContext(RootContext)
+
+  useEffect(() => {
+    if (firestore)
+      setStore(firestore)
+  }, [firestore])
 
   const icelandic = useSelector(state => state.reducer.icelandic)
   const postlisted = useSelector(state => state.reducer.postlisted)
@@ -19,7 +25,7 @@ const Postlist = () => {
   const { handleSubmit, register } = useForm()
 
   const onSubmit = (data, e) => {
-    firestore
+    store
       .collection("postlist")
       .add({
         ...data,
@@ -52,8 +58,8 @@ const Postlist = () => {
               ? "Skráður"
               : "Registered"
             : icelandic
-            ? "Skrá mig á póstlista"
-            : "Sign up for postlist"
+              ? "Skrá mig á póstlista"
+              : "Sign up for postlist"
         }
       ></Button>
     </Form>
