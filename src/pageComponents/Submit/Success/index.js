@@ -12,7 +12,7 @@ const Success = () => {
   const icelandic = useSelector(state => state.reducer.icelandic)
   return (
     <>
-      <Header></Header>
+      <Header mode="red"></Header>
       <Box>
         <Title>
           {icelandic ? "Innsending tókst!" : "Submission was successful!"}

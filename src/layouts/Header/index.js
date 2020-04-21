@@ -11,17 +11,18 @@ const Header = ({
   data: {
     site: { siteMetadata },
   },
+  mode
 }) => {
   const platform = useSelector(state => state.reducer.platform)
   const pathname = useSelector(state => state.reducer.pathname)
   const [color, setColor] = useState("white")
   useEffect(() => {
-    if (pathname.includes("/sarpur") || pathname.includes("/umsokn") || pathname.includes("/404")) {
+    if (mode === "red") {
       setColor(`${redColor}`)
     } else {
       setColor("white")
     }
-  }, [pathname])
+  }, [pathname, mode])
   return (
     <Wrap>
       <Container platform={platform}>

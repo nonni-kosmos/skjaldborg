@@ -62,6 +62,8 @@ export const Container = styled.div`
       object-fit: contain;
       height: 6rem;
       margin: 0;
+      box-sizing: border-box;
+      padding: .5rem;
     }
     a {
       padding: 1.5rem 0 1.5rem 0;

@@ -9,7 +9,7 @@ import Footer from "../layouts/Footer"
 const Sarpur = () => {
   return (
     <>
-      <Header></Header>
+      <Header mode="red"></Header>
       <Router basepath="/sarpur">
         <SarpurYearsIndex path="/"></SarpurYearsIndex>
         <SarpurMoviesIndex path="/:year"></SarpurMoviesIndex>

@@ -43,7 +43,7 @@ const Register = () => {
 
   return (
     <>
-      <Header></Header>
+      <Header mode="red"></Header>
       <Container>
         <div
           style={{
@@ -64,17 +64,17 @@ const Register = () => {
         {manualSignUp ? (
           <ManualLogin></ManualLogin>
         ) : (
-          <div className="login-options-wrap">
-            <h3>
-              {icelandic
-                ? "Umsóknarfrestur er til miðnættis 9.júní 2020"
-                : "Application deadline is at midnight June 9th 2020"}
-            </h3>
-            <h3>{icelandic ? "Skráðu þig inn með:" : "Log in with:"}</h3>
-            <GoogleLogin></GoogleLogin>
-            <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>
-          </div>
-        )}
+            <div className="login-options-wrap">
+              <h3>
+                {icelandic
+                  ? "Umsóknarfrestur er til miðnættis 9.júní 2020"
+                  : "Application deadline is at midnight June 9th 2020"}
+              </h3>
+              <h3>{icelandic ? "Skráðu þig inn með:" : "Log in with:"}</h3>
+              <GoogleLogin></GoogleLogin>
+              <EmailPwLogin action={() => setManualSignUp(true)}></EmailPwLogin>
+            </div>
+          )}
       </Container>
       <Footer></Footer>
     </>

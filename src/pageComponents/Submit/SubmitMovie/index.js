@@ -11,7 +11,7 @@ import React from "react"
 const Submit = () => {
   return (
     <>
-      <Header></Header>
+      <Header mode="red"></Header>
       <Container>
         <PageTitle className="titlar">Umsókn</PageTitle>
         <MovieForm></MovieForm>

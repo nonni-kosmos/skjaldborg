@@ -2,6 +2,7 @@ import styled, { css } from "styled-components"
 import { redColor, breakpoints } from "@constants"
 
 export const Container = styled.div`
+  min-height: 100vh;
   box-sizing: border-box;
   max-width: 50%;
   position: relative;
@@ -27,13 +28,13 @@ export const Container = styled.div`
   /** tablets */
   @media only screen and (min-width: 600px) {
     max-width: 85%;
-    padding: 5rem;
+    padding: 7.5rem;
   }
 
   /** desktop */
   @media only screen and (min-width: 850px) {
     max-width: 65%;
-    padding: 5rem;
+    padding: 10rem 5rem;
   }
 
   form {

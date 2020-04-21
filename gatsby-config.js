@@ -166,5 +166,6 @@ module.exports = {
         extensions: ["js"],
       },
     },
+    `gatsby-plugin-webpack-bundle-analyzer`
   ],
 }
