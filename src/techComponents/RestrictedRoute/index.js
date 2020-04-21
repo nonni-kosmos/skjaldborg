@@ -20,9 +20,8 @@ const RestrictedRoute = ({ component: Component, redirectPath }) => {
     }
   }, [isLoading, auth])
 
-  // has not determined
   if (authenticated === undefined) {
-    return <p>checking credentials</p>
+    return null
   } else if (!authenticated) {
     navigate(redirectPath)
     return null
