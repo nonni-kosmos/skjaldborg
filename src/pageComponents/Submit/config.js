@@ -239,8 +239,8 @@ export const formSchema = {
       register: { required: true },
       wip: true,
       hint: {
-        is: "Skáarstærð ljósmyndar verður að vera á milli 500KB og 5MB.",
-        en: "Still file size must be between 500KB and 5MB.",
+        is: "Skáarstærð ljósmyndar verður að vera á milli 100KB og 8.5MB.",
+        en: "Still file size must be between 100KB and 8.5MB.",
       },
       placeholder: {
         is: "Dragðu / Smelltu hér til að velja ljósmynd",
